@@ -1,22 +1,11 @@
-<?php
+<?php get_header(); ?>
 
-/* 
-SoloFolio
-Theme - Single page
-*/
-
-?>
-
-<?php get_header(); ?>        
-<div id="content-page"><!-- Begin Content -->
+<div id="content-page">
 	<?php if (have_posts()) : ?>
-	<?php while (have_posts()) : the_post(); ?>	
-		<?php the_content('Read the rest of this entry &raquo;'); ?>
-	<?php endwhile; ?>
-	<?php else : ?>
-		<h2>Not Found</h2>
-		<p>Sorry, but you are looking for something that isn't here.</p>
-		<?php include (TEMPLATEPATH . "/searchform.php"); ?>
+  	<?php while (have_posts()) : the_post(); ?>
+  		<?php the_content('Read the rest of this entry &raquo;'); ?>
+  	<?php endwhile; ?>
 	<?php endif; ?>
-</div><!-- End Content --> 
-<?php get_footer(); ?>	
+</div>
+
+<?php get_footer(); ?>

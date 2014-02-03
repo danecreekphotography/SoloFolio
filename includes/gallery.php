@@ -1,14 +1,7 @@
 <?php
-/* 
-SoloFolio
-Gallery shortcodes
 
-*/
-
-//deactivate WordPress function
+// Deactivate WordPress gallery, activate custom gallery
 remove_shortcode('gallery', 'gallery_shortcode');
- 
-//activate own function
 add_shortcode('gallery', 'solofolio_gallery_shortcode');
 
 function solofolio_gallery_shortcode($attr) {
@@ -54,7 +47,7 @@ function solofolio_gallery_shortcode($attr) {
 		'width'    => '',
 		'exclude'    => ''
 	), $attr));
-	
+
 	$post_content = $post->post_content;
     preg_match('/\[gallery.*ids=.(.*).\]/', $post_content, $ids);
     $attachment_ids = explode(",", $ids[1]);
@@ -66,39 +59,35 @@ function solofolio_gallery_shortcode($attr) {
 	if ( 'RAND' == $order ) {
 		$orderby = 'none';
 	}
-	
+
 	$itemtag = tag_escape($itemtag);
 	$captiontag = tag_escape($captiontag);
-	
-	// New way of loading gallery content. What a mess.
+
 	$post_content = $post->post_content;
     preg_match('/\[gallery.*ids=.(.*).\]/', $post_content, $ids);
     $attachment_ids = explode(",", $ids[1]);
-	
-	
+
 	$selector = "solofolio";
-	
-	// Parse out settings
+
 	if ($type == "") {$type = get_theme_mod('solofolio_gallery_default');}
-	
+
 	function detect_mobile()
 	{
 		$_SERVER['ALL_HTTP'] = isset($_SERVER['ALL_HTTP']) ? $_SERVER['ALL_HTTP'] : '';
-	 
 		$mobile_browser = '0';
-	 
+
 		if(preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|iphone|ipad|ipod|android|xoom)/i', strtolower($_SERVER['HTTP_USER_AGENT'])))
 			$mobile_browser++;
-	 
+
 		if((isset($_SERVER['HTTP_ACCEPT'])) and (strpos(strtolower($_SERVER['HTTP_ACCEPT']),'application/vnd.wap.xhtml+xml') !== false))
 			$mobile_browser++;
-	 
+
 		if(isset($_SERVER['HTTP_X_WAP_PROFILE']))
 			$mobile_browser++;
-	 
+
 		if(isset($_SERVER['HTTP_PROFILE']))
 			$mobile_browser++;
-	 
+
 		$mobile_ua = strtolower(substr($_SERVER['HTTP_USER_AGENT'],0,4));
 		$mobile_agents = array(
 							'w3c ','acs-','alav','alca','amoi','audi','avan','benq','bird','blac',
@@ -111,67 +100,51 @@ function solofolio_gallery_shortcode($attr) {
 							'tosh','tsm-','upg1','upsi','vk-v','voda','wap-','wapa','wapi','wapp',
 							'wapr','webc','winw','winw','xda','xda-'
 							);
-	 
+
 		if(in_array($mobile_ua, $mobile_agents))
 			$mobile_browser++;
-	 
+
 		if(strpos(strtolower($_SERVER['ALL_HTTP']), 'operamini') !== false)
 			$mobile_browser++;
-	 
-		// Pre-final check to reset everything if the user is on Windows
+
 		if(strpos(strtolower($_SERVER['HTTP_USER_AGENT']), 'windows') !== false)
 			$mobile_browser=0;
-	 
-		// But WP7 is also Windows, with a slightly different characteristic
+
 		if(strpos(strtolower($_SERVER['HTTP_USER_AGENT']), 'windows phone') !== false)
 			$mobile_browser++;
-	 
+
 		if($mobile_browser>0)
 			return true;
 		else
 			return false;
 	}
-	
+
 	$mobile = detect_mobile();
-	
-	if ($mobile === true)
-	{
-		$type = "side-scroll";
+
+	if ($mobile === true) { $type = "side-scroll";}
+	if ( is_home() || is_single()) { $type = "vert-scroll";}
+
+	switch ($type) {
+		case "":
+			include("gallery/gallery-cyclereact.php");
+			break;
+		case "slideshow":
+			include("gallery/gallery-slideshow.php");
+			break;
+		case "side-scroll":
+			include("gallery/gallery-sidescroll.php");
+			break;
+		case "vert-scroll":
+			include("gallery/gallery-vertscroll.php");
+			break;
+		case "react":
+			include("gallery/gallery-react.php");
+			break;
+		case "cycle-react":
+			include("gallery/gallery-cyclereact.php");
+			break;
 	}
-	
-	if ( is_home() || is_single()) {
-		$type = "vert-scroll";
-	}
-	
-	if ($type == "") { 
-		include("gallery/gallery-cyclereact.php");
-	}
-	
-	if ($type == "slideshow") { 
-		include("gallery/gallery-default.php");
-	}
-			
-	if ($type == "side-scroll") {
-		include("gallery/gallery-sidescroll.php");
-	}
-	
-	if ($type == "side-scroll2") {
-		include("gallery/gallery-sidescroll2.php");
-	}
-	
-	if ($type == "vert-scroll") {
-		include("gallery/gallery-vertscroll.php");
-	}
-	
-	if ($type == "react") {
-		include("gallery/gallery-react.php");
-	}
-	
-	if ($type == "cycle-react") {
-		include("gallery/gallery-cyclereact.php");
-	}
-		
+
 	return $output;
 }
-
 ?>
