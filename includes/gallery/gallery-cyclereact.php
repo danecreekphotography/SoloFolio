@@ -96,6 +96,9 @@ function sl_cyclereact_js() {
 	#header #header-content .solofolio-cyclereact-sidebar {
 		display: block;
 	}
+	#wrapper img {
+		display: none;
+	}
 	</style>
 	";
 
