@@ -7,7 +7,7 @@
  \___ \| |  | | |   | |  | |  __|| |  | | |      | || |  | |
  ____) | |__| | |___| |__| | |   | |__| | |____ _| || |__| |
 |_____/ \____/|______\____/|_|    \____/|______|_____\____/
-SoloFolio v6.20140216 - github.com/solofolio
+SoloFolio v6.20140216 - github.com/joelhawksley/SoloFolio
 -->
 
 <head>
@@ -104,7 +104,7 @@ SoloFolio v6.20140216 - github.com/solofolio
 
 		<div id="sidebar-footer">
 			<p id="info-footer"><?php echo get_theme_mod( 'solofolio_footer_text' ); ?></p>
-			<p id="solo-footer">Powered by <a title="SoloFolio free photography WordPress theme for creative professionals" href="http://www.solofolio.net">SoloFolio</a></p>
+			<p id="solo-footer">Powered by <a title="The premier free WordPress theme for the creatively inclined." href="http://www.solofolio.net">SoloFolio</a></p>
 		</div>
 
 		<div class="clear"></div>

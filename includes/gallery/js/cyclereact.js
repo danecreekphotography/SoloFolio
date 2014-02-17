@@ -23,9 +23,6 @@ jQuery(window).load(function(){
     $(this).fadeIn('slow');
     $('.solofolio-cyclereact-fill img').fadeIn('slow');
   });
-  $('.solofolio-cyclereact-fill img').load(function() {
-    console.log("yikes! ")
-  });
   $('.solofolio-cyclereact-fill').each(function(i, elm) {
     $(elm).attr('data-picture', '');
   });
