@@ -51,10 +51,6 @@ body {
   text-align: left;
 }
 
-  body#page {
-    overflow: hidden;
-  }
-
 html, body {
   height: 100%;
 }
@@ -172,7 +168,7 @@ p {
   height: 100%;
   left: 0;
   margin: 0;
-  padding: 20px 20px 0 20px;
+  padding: 20px 40px 0 20px;
   position: fixed;
   top: 0;
   width: 200px;
@@ -191,11 +187,14 @@ p {
     bottom: 20px;
     position: absolute;
     max-width: 200px;
+    margin-bottom: 20px;
     width: 100%;
   }
 
     #header-content .solofolio-cyclereact-caption {
-      padding-bottom: 10px;
+      padding-bottom: 15px;
+      line-height: 1.4;
+      font-size: .9em;
     }
 
   #header-content ul li {
@@ -223,7 +222,6 @@ p {
     #logo a img:hover {
       border: none;
     }
-
 
   #logo {
   }
@@ -266,12 +264,6 @@ p {
   left: 270px;
 }
 
-.commentbox {
-  font-size: 11px;
-  margin-bottom: 10px;
-  padding: 2px 5px 2px 5px;
-}
-
 /* Footer */
 
 #sidebar-footer {
@@ -280,18 +272,14 @@ p {
 }
 
   #sidebar-footer p {
-    font-size: 11px;
-    opacity: 0.5;
+    font-size: .8em;
+    line-height: 1.3em;
     margin: 0;
   }
 
   #sidebar-footer a {
     text-decoration: underline;
     }
-
-  #sidebar-footer strong {
-    color: #ffffff;
-  }
 
 /* Header */
 
@@ -384,14 +372,25 @@ h2.post-title {
     width: 100%;
 }
 
+#content-parent {
+  padding-left: 20px;
+}
+
+  #content-parent .children h3 {
+    margin: 0;
+  }
+
+  #content-parent .children li {
+    display: inline-block;
+    padding-right: 30px;
+    padding-bottom: 10px;
+  }
+
 #content-about {
-  max-width: 900px;
-  margin: 0 auto 0;
-  padding-top: 20px;
 }
 
   #content-about p {
-    max-width: 900px;
+    max-width: 600px;
   }
 
   #content-about .attachment-about-image {
@@ -408,8 +407,11 @@ h2.post-title {
 /* Comments */
 
 input, textarea {
-  border: 1px solid #AAAAAA;
+  background-color: #333333;
+  border: none;
+  font-size: 12px;
   margin: 0;
+  padding: 10px 15px
 }
 
 #comments {
@@ -457,16 +459,10 @@ input, textarea {
   margin: 0;
 }
 
-#commentform input, #commentform textarea {
-  padding: 3px;
-  font-size: 12px;
-}
-
 #commentform textarea {
   max-width: 600px;
   width: 100%;
 }
-
 
 .commentlist p {
   font-weight: normal;
@@ -474,8 +470,13 @@ input, textarea {
   text-transform: none;
 }
 
-#commentform p {
+#commentform label {
+  margin-left: 10px;
 }
+
+  #commentform label small {
+    font-size: .7em;
+  }
 
 .commentmetadata {
   font-weight: normal;
@@ -531,29 +532,14 @@ div.aligncenter {
     padding: 15px 0;
   }
 
-/* Forms */
-#searchform {
-  margin: 0 0 1em;
-}
-
-#searchform input {
-  border: 1px solid #AAAAAA;
-  color: #AAAAAA;
-  height: 14px;
-  padding: 3px;
-}
-
 /* Social Media Widget */
 #solofolio-social {
   margin-left: -10px;
 }
 
 #solofolio-social a {
-    padding: 10px 10px;
-    font-size: 14px;
-    margin-right: 5px;
-    text-align: center;
-    line-height: 30px;
+  padding: 10px 10px;
+  font-size: 16px;
 }
 
 /* Side scroll gallery */
@@ -565,7 +551,8 @@ div.aligncenter {
 /* Phone view menu */
 #menu-icon {
   width: 60px;
-  font-size: 20px;
+  line-height: 50px;
+  font-size: 24px;
   border: 0;
   padding: 0 10px 0 0;
   position: absolute;
@@ -575,11 +562,6 @@ div.aligncenter {
   cursor: pointer;
   text-align: center;
   display: none;
-}
-
-#menu-icon .icon-reorder {
-  line-height: 53px;
-  font-size: 22px;
 }
 
 /* Side scroll gallery */
@@ -603,6 +585,46 @@ table tr {
   position: relative;
 }
 
+#solofolio-cyclereact-thumbs {
+  display: none;
+  z-index: 8;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: -10px;
+  right: 0;
+  list-style-type: none;
+}
+
+  #solofolio-cyclereact-thumbs .thumb {
+    float: left;
+    width: 25%;
+    max-width: 300px;
+    border: 10px solid #fff;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+    #solofolio-cyclereact-thumbs .thumb a {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      height: 0;
+      padding-top: 66%;
+    }
+
+      #solofolio-cyclereact-thumbs .thumb img {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+
 #solofolio-cyclereact-stage {
   position: relative;
 }
@@ -622,6 +644,32 @@ table tr {
 #solofolio-cyclereact-controls {
   text-align: center;
 }
+
+  .solofolio-cyclereact-controls a {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 22px;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .thumbs .fa-expand {
+    display: none;
+  }
+
+  .thumbs.show-full .fa-th {
+    display: none;
+  }
+
+  .thumbs.show-full .fa-expand {
+    display: inline-block;
+  }
 
 #solofolio-cyclereact-images {
   z-index: 2;

@@ -41,26 +41,25 @@ if (!empty($post->post_password)) { // if there's a password
 			<?php if ( $user_ID ) : ?>
 				<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out &raquo;</a></p>
 			<?php else : ?>
-
-				<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-				<label for="author"><small>Name<?php if ($req) echo "*"; ?></small></label></p>
-
-				<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-				<label for="email"><small>Email<?php if ($req) echo "*"; ?></small></label></p>
-
-				<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-				<label for="url"><small>Website</small></label></p>
-
+				<p>
+					<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="30" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+					<label for="author">Name <small><?php if ($req) echo "(required)"; ?></small></label>
+				</p>
+				<p>
+					<input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="30" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+					<label for="email">Email <small><?php if ($req) echo "(required)"; ?></small></label>
+				</p>
+				<p>
+					<input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="30" tabindex="3" />
+					<label for="url">Website</label>
+				</p>
 			<?php endif; ?>
 
-			<p>
-				<textarea name="comment" id="comment" cols="35" rows="10" tabindex="4"></textarea>
-			</p>
+			<p><textarea name="comment" id="comment" cols="35" rows="10" tabindex="4"></textarea></p>
 			<p>
 				<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
 				<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
 			</p>
-
 			<?php do_action('comment_form', $post->ID); ?>
 		</form>
 	<?php endif; ?>

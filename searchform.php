@@ -1,10 +1,9 @@
-<?php $search_text = "Search"; ?>
 <form method="get" id="searchform" action="<?php bloginfo('home'); ?>/">
   <input type="text"
-         value="<?php echo $search_text; ?>"
+         value="Search"
          name="s"
          id="s"
-         onblur="if (this.value == '') {this.value = '<?php echo $search_text; ?>';}"
-         onfocus="if (this.value == '<?php echo $search_text; ?>') {this.value = '';}" />
+         onblur="if (this.value == '') {this.value = 'Search';}"
+         onfocus="if (this.value == 'Search') {this.value = '';}" />
   <input type="hidden" id="searchsubmit" />
 </form>

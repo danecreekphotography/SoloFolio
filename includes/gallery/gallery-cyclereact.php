@@ -2,6 +2,26 @@
 global $solofolio_autoplay;
 
 $output .="<div id=\"solofolio-cyclereact-wrap\">";
+
+$output .="<ul id=\"solofolio-cyclereact-thumbs\">";
+
+$i = 0;
+foreach ($attachment_ids as $id) {
+	$attachment = get_post($id);
+	$i++;
+
+	$thumb = wp_get_attachment_image_src($id, 'thumbnail');
+	$medium = wp_get_attachment_image_src($id, 'medium');
+
+	$output .= "<li class=\"thumb\">
+								<a href=\"#" . $i . "\">
+									<img src=\"" . $thumb[0] . "\" data-retina=\"" . $medium[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\">
+								</a>
+							</li>";
+}
+
+$output .="</ul>";
+
 $output .="<div id=\"solofolio-cyclereact-stage\">";
 
 $output .="<div id=\"solofolio-cyclereact-images\"
@@ -14,7 +34,6 @@ $output .="<div id=\"solofolio-cyclereact-images\"
 								data-cycle-manual-speed=\"300\"
 								data-cycle-caption=\".solofolio-cyclereact-caption\"
 								data-cycle-caption-template=\"{{cycleTitle}}\"";
-$output .= "		data-cycle-progressive=\"#slides\"";
 								if ($solofolio_autoplay == "true") {
 									$output .= "Autoplay";
 								} else {
@@ -23,16 +42,9 @@ $output .= "		data-cycle-progressive=\"#slides\"";
 $output .= ">\n\n";
 
 $i = 0;
-$result = count($attachment_ids) - 1;
-
 foreach ($attachment_ids as $id) {
-
-	if ($i == 1) {
-		$output .= "
-		<script id=\"slides\" type=\"text/cycle\" data-cycle-split=\"---\">";
-	}
-
 	$attachment = get_post($id);
+	$i++;
 
 	$link = wp_get_attachment_url($id);
 	$link2 = wp_get_attachment_url($id);
@@ -42,7 +54,9 @@ foreach ($attachment_ids as $id) {
 	$link6 = wp_get_attachment_image_src($id, 'medium');
 
 	$output .= "
-		<div class=\"solofolio-cycelereact-slide\" data-cycle-title=\"" .  wptexturize($attachment->post_excerpt) . "\">
+		<div class=\"solofolio-cycelereact-slide\"
+				 data-cycle-title=\"" .  wptexturize($attachment->post_excerpt) . "\"
+				 data-cycle-hash=\"" .  $i . "\">
 			<div class=\"solofolio-cycelereact-fill\" data-picture>
 				<div data-src=\"" . $link6[0] . "\"></div>
 				<div data-src=\"" . $link4[0] . "\" data-media=\"(min-width: 320px)\" style=\"max-width: 900px;\"></div>
@@ -50,19 +64,7 @@ foreach ($attachment_ids as $id) {
 				<noscript><img src=\"" . $link6[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\"></noscript>
 			</div>
 		</div>";
-
-	if ($i > 0 && $i != (count($attachment_ids) - 1)) {
-		$output .= "
-		---";
-	}
-
-	if ($i == (count($attachment_ids) - 1)) {
-		$output .= "\n</script>";
-	}
-
-	$i++;
-
-} // End ForEach
+}
 
 $output .= "</div>\n";
 
@@ -85,15 +87,17 @@ $output .="<div id=\"solofolio-cyclereact-bar\">
 add_action('wp_footer', 'sl_cyclereact_js');
 
 function sl_cyclereact_js() {
+	$output .= "<script type=\"text/javascript\">window.matchMedia=window.matchMedia||(function(e,f){var c,a=e.documentElement,b=a.firstElementChild||a.firstChild,d=e.createElement(\"body\"),g=e.createElement(\"div\");g.id=\"mq-test-1\";g.style.cssText=\"position:absolute;top:-100em\";d.appendChild(g);return function(h){g.innerHTML='&shy;<style media=\"'+h+'\"> #mq-test-1 { width: 42px; }</style>';a.insertBefore(d,b);c=g.offsetWidth==42;a.removeChild(d);return{matches:c,media:h}}})(document);</script>";
 	$output .="<script src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/cyclereact.js\"></script>";
-	$output .="<script src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/matchmedia.js\"></script>";
 	$output .="<script src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/picturefill.js\"></script>";
 	$output .="<script src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/jquery.cycle2.min.js\"></script>";
 	$output .="
 	<style type=\"text/css\">
 	#header #header-content .solofolio-cyclereact-sidebar {
 		display: block;
-	}";
+	}
+	</style>
+	";
 
   echo $output;
 }

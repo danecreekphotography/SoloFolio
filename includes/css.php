@@ -7,6 +7,36 @@ function solofolio_css_cache() {
   file_put_contents($uploads['basedir'] . '/solofolio.css', $data);
 }
 
+// http://lab.clearpixel.com.au/2008/06/darken-or-lighten-colours-dynamically-using-php/
+function colorBrightness($hex, $percent) {
+  $hash = '';
+  if (stristr($hex,'#')) {
+    $hex = str_replace('#','',$hex);
+    $hash = '#';
+  }
+  $rgb = array(hexdec(substr($hex,0,2)), hexdec(substr($hex,2,2)), hexdec(substr($hex,4,2)));
+  for ($i=0; $i<3; $i++) {
+    if ($percent > 0) {
+      $rgb[$i] = round($rgb[$i] * $percent) + round(255 * (1-$percent));
+    } else {
+      $positivePercent = $percent - ($percent*2);
+      $rgb[$i] = round($rgb[$i] * $positivePercent) + round(0 * (1-$positivePercent));
+    }
+    if ($rgb[$i] > 255) {
+      $rgb[$i] = 255;
+    }
+  }
+  $hex = '';
+  for($i=0; $i < 3; $i++) {
+    $hexDigit = dechex($rgb[$i]);
+    if(strlen($hexDigit) == 1) {
+    $hexDigit = "0" . $hexDigit;
+    }
+    $hex .= $hexDigit;
+  }
+  return $hash.$hex;
+}
+
 function solofolio_css() {
   $styles .= file_get_contents(get_bloginfo('template_url') . "/css/base.css");
 
@@ -30,6 +60,10 @@ function solofolio_css() {
     background-color: ". get_theme_mod('solofolio_background_color') . ";
     color: " . get_theme_mod('solofolio_body_font_color') . ";
     font-size: " . get_theme_mod('solofolio_body_font_size') .";
+  }
+
+  #solofolio-cyclereact-thumbs .thumb {
+    border: 10px solid ". get_theme_mod('solofolio_background_color') . ";
   }
 
   #header {
@@ -85,6 +119,18 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_body_caption_color') . ";
   }
 
+  .solofolio-cyclereact-controls i {
+    color: " . get_theme_mod('solofolio_navigation_link_color') . ";
+  }
+
+  .solofolio-cyclereact-controls a:hover i {
+    color: " . get_theme_mod('solofolio_navigation_link_color_hover') . ";
+  }
+
+  #sidebar-footer p {
+    color: " . get_theme_mod('solofolio_navigation_link_color') . ";
+  }
+
   /* Highlight current page item */
 
   #header #header-content .current_page_item a, #header #header-content .current_page_parent a {
@@ -95,13 +141,15 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_body_link_color_hover') . ";
   }
 
-  /* Forms */
-
   input, textarea {
-    background-color: inherit;
+    color: " . get_theme_mod('solofolio_body_link_color') . ";
+    background-color: " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
   }
 
-  input:focus, textarea:focus {
+  .solofolio-cyclereact-controls a {
+    color: " . get_theme_mod('solofolio_body_font_color') . ";
+    border: 1px solid " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
+    background-color: " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
   }
 
   /* Gallery Styles */
@@ -152,7 +200,7 @@ function solofolio_css() {
 
   $styles .= "
   #wrapper {
-    left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 40) . "px;
+    left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 60) . "px;
     width: auto;
   }
 

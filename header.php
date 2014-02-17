@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html <?php language_attributes(); ?>>
-<!--<![endif]-->
+<!--
+  _____  ____  _      ____  ______ ____  _      _____ ____
+ / ____|/ __ \| |    / __ \|  ____/ __ \| |    |_   _/ __ \
+| (___ | |  | | |   | |  | | |__ | |  | | |      | || |  | |
+ \___ \| |  | | |   | |  | |  __|| |  | | |      | || |  | |
+ ____) | |__| | |___| |__| | |   | |__| | |____ _| || |__| |
+|_____/ \____/|______\____/|_|    \____/|______|_____\____/
+SoloFolio v6.20140216 - github.com/solofolio
+-->
 
-<!-- Hi! This site is using SoloFolio, if you were wondering. You can learn more about the SoloFolio platform at Solofolio.net. Cheers! -->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width" />
@@ -19,25 +19,21 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,700italic' rel='stylesheet' type='text/css'>
 
 	<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
 
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/solofolio-base.js"></script>
-	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/jquery.retina.min.js"></script>
-
 	<?php wp_head(); ?>
 
-	<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-	<![endif]-->
-
-	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 	<?php if (get_theme_mod( 'solofolio_css' ) != '') { ?>
 	<style type="text/css">
 		<?php echo get_theme_mod( 'solofolio_css' ) ?>
 	</style>
 	<?php } ?>
+
+	<script type="text/javascript" src="<?php echo bloginfo('template_url'); ?>/js/jquery.retina.min.js"></script>
+	<script type="text/javascript">$(window).load(function(){$("p:has(img)").css("margin","0");$("p:has(img)").css("padding","0");$("img").each(function(){var e=$(this);var t=new Image;t.src=e.attr("src");var n=t.width;var r=t.height;if(t.width>0){$(this).attr("style","max-width:"+n+"px")}});$("img").each(function(){$(this).removeAttr("width");$(this).removeAttr("height")});$("img").retina();$("#menu-icon").click(function(){$("#header-content").slideToggle();$(this).toggleClass("active")})})</script>
 </head>
 
 <body id="<?php echo get_post_type( $post ); ?>">
@@ -47,7 +43,7 @@
 <div id="header">
 
 	<div id="header-inner">
-		<a id='menu-icon'><i class="icon-reorder"></i></a>
+		<a id='menu-icon'><i class="fa fa-bars"></i></a>
 
 		<div id="logo">
 			<div id="logo-img">
@@ -108,6 +104,7 @@
 
 		<div id="sidebar-footer">
 			<p id="info-footer"><?php echo get_theme_mod( 'solofolio_footer_text' ); ?></p>
+			<p id="solo-footer">Powered by <a title="SoloFolio free photography WordPress theme for creative professionals" href="http://www.solofolio.net">SoloFolio</a></p>
 		</div>
 
 		<div class="clear"></div>

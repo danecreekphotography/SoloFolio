@@ -9,50 +9,62 @@ class solofolio_social_widget extends WP_Widget {
     extract( $args );
     global $wpdb;
 
- 	$facebook = apply_filters('widget_title', $instance['facebook']);
-    $twitter = apply_filters('widget_title', $instance['twitter']);
-    $vimeo = apply_filters('widget_title', $instance['vimeo']);
-    $linkedin = apply_filters('widget_title', $instance['linkedin']);
-    $rss = apply_filters('widget_title', $instance['rss']);
+	$facebook = apply_filters('widget_title', $instance['facebook']);
+  $twitter = apply_filters('widget_title', $instance['twitter']);
+  $instagram = apply_filters('widget_title', $instance['instagram']);
+  $blink = apply_filters('widget_title', $instance['blink']);
+  $vimeo = apply_filters('widget_title', $instance['vimeo']);
+  $linkedin = apply_filters('widget_title', $instance['linkedin']);
 
-    if(!$size)
-      $size = 40;
+  if(!$size)
+    $size = 40;
 
-    echo $before_widget;
-    echo "<div id=\"solofolio-social\">";
-    if ($twitter !="") {echo "<a target=\"_blank\" id=\"solofolio-twitter\" href=\"" . $twitter . "\"><i class=\"icon-twitter\"></i></a>";}
-    if ($facebook !="") {echo "<a target=\"_blank\" id=\"solofolio-facebook\" href=\"" . $facebook . "\"><i class=\"icon-facebook\"></i></a>";}
-    if ($vimeo !="") {echo "<a target=\"_blank\" id=\"solofolio-vimeo\" href=\"" . $vimeo . "\"><i class=\"icon-vimeo\"></i></a>";}
-    if ($linkedin !="") {echo "<a target=\"_blank\" id=\"solofolio-linkedin\" href=\"" . $linkedin . "\"><i class=\"icon-linkedin\"></i></a>";}
-    if ($rss !="") {echo "<a target=\"_blank\" id=\"solofolio-rss\" href=\"" . $rss . "\"><i class=\"icon-rss\"></i></a>";}
+  echo $before_widget;
+  echo "<div id=\"solofolio-social\">";
+    if ($facebook != "") {echo "<a target=\"_blank\" href=\"" . $facebook . "\"><i class=\"fa fa-facebook\"></i></a>";}
+    if ($twitter != "") {echo "<a target=\"_blank\" href=\"" . $twitter . "\"><i class=\"fa fa-twitter\"></i></a>";}
+    if ($instagram != "") {echo "<a target=\"_blank\" href=\"" . $facebook . "\"><i class=\"fa fa-instagram\"></i></a>";}
+    if ($blink != "") {echo "<a target=\"_blank\" href=\"" . $facebook . "\"><i class=\"fa fa-map-marker\"></i></a>";}
+    if ($vimeo != "") {echo "<a target=\"_blank\" href=\"" . $vimeo . "\"><i class=\"fa fa-vimeo-square\"></i></a>";}
+    if ($linkedin != "") {echo "<a target=\"_blank\" href=\"" . $linkedin . "\"><i class=\"fa fa-linkedin\"></i></a>";}
 	echo "</div>";
 	echo $after_widget;
   }
 
   function update( $new_instance, $old_instance ) {
     $instance = $old_instance;
-    $instance['twitter'] = strip_tags($new_instance['twitter']);
     $instance['facebook'] = strip_tags($new_instance['facebook']);
+    $instance['twitter'] = strip_tags($new_instance['twitter']);
+    $instance['instagram'] = strip_tags($new_instance['instagram']);
+    $instance['blink'] = strip_tags($new_instance['blink']);
     $instance['vimeo'] = strip_tags($new_instance['vimeo']);
     $instance['linkedin'] = strip_tags($new_instance['linkedin']);
-    $instance['rss'] = strip_tags($new_instance['rss']);
 
     return $instance;
   }
 
   function form( $instance ) {
-    $twitter = esc_attr($instance['twitter']);
     $facebook = esc_attr($instance['facebook']);
+    $twitter = esc_attr($instance['twitter']);
+    $instagram = esc_attr($instance['instagram']);
+    $blink = esc_attr($instance['blink']);
     $vimeo = esc_attr($instance['vimeo']);
-    $linkedin = esc_attr($instance['linkedin']);
-    $rss = esc_attr($instance['rss']); ?>
-     <p>
-    <label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Twitter:'); ?></label>
-      <input class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" type="text" value="<?php echo $twitter; ?>" />
-    </p>
+    $linkedin = esc_attr($instance['linkedin']); ?>
     <p>
       <label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Facebook:'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" type="text" value="<?php echo $facebook; ?>" />
+    </p>
+    <p>
+      <label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Twitter:'); ?></label>
+      <input class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" type="text" value="<?php echo $twitter; ?>" />
+    </p>
+    <p>
+      <label for="<?php echo $this->get_field_id('instagram'); ?>"><?php _e('Instagram:'); ?></label>
+      <input class="widefat" id="<?php echo $this->get_field_id('Instagram'); ?>" name="<?php echo $this->get_field_name('instagram'); ?>" type="text" value="<?php echo $instagram; ?>" />
+    </p>
+    <p>
+      <label for="<?php echo $this->get_field_id('blink'); ?>"><?php _e('Blink:'); ?></label>
+      <input class="widefat" id="<?php echo $this->get_field_id('blink'); ?>" name="<?php echo $this->get_field_name('blink'); ?>" type="text" value="<?php echo $blink; ?>" />
     </p>
     <p>
       <label for="<?php echo $this->get_field_id('vimeo'); ?>"><?php _e('Vimeo:'); ?></label>
@@ -61,10 +73,6 @@ class solofolio_social_widget extends WP_Widget {
     <p>
       <label for="<?php echo $this->get_field_id('linkedin'); ?>"><?php _e('LinkedIn:'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('linkedin'); ?>" name="<?php echo $this->get_field_name('linkedin'); ?>" type="text" value="<?php echo $linkedin; ?>" />
-    </p>
-    <p>
-      <label for="<?php echo $this->get_field_id('rss'); ?>"><?php _e('RSS:'); ?></label>
-      <input class="widefat" id="<?php echo $this->get_field_id('rss'); ?>" name="<?php echo $this->get_field_name('rss'); ?>" type="text" value="<?php echo $rss; ?>" />
     </p>
     <?php
   }
