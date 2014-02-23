@@ -19,6 +19,14 @@ var setResponsive = function () {
 }
 
 jQuery(window).load(function(){
+  $('#solofolio-cyclereact-thumbs img').load(function() {
+    $(this).fadeIn('slow');
+    $('.solofolio-cyclereact-fill img').fadeIn('slow');
+  });
+  $('.solofolio-cyclereact-fill').each(function(i, elm) {
+    $(elm).attr('data-picture', '');
+  });
+  window.picturefill();
   setResponsive();
   $(".thumbs").click(function(){
     $("#solofolio-cyclereact-thumbs").toggle();

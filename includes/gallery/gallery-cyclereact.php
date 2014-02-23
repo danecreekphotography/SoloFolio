@@ -57,7 +57,7 @@ foreach ($attachment_ids as $id) {
 		<div class=\"solofolio-cycelereact-slide\"
 				 data-cycle-title=\"" .  wptexturize($attachment->post_excerpt) . "\"
 				 data-cycle-hash=\"" .  $i . "\">
-			<div class=\"solofolio-cycelereact-fill\" data-picture>
+			<div class=\"solofolio-cyclereact-fill\">
 				<div data-src=\"" . $link6[0] . "\"></div>
 				<div data-src=\"" . $link4[0] . "\" data-media=\"(min-width: 320px)\" style=\"max-width: 900px;\"></div>
 				<div data-src=\"" . $link5[0] . "\" data-media=\"(min-width: 920px)\" style=\"max-width: 1800px;\"></div>
@@ -95,6 +95,9 @@ function sl_cyclereact_js() {
 	<style type=\"text/css\">
 	#header #header-content .solofolio-cyclereact-sidebar {
 		display: block;
+	}
+	#wrapper img {
+		display: none;
 	}
 	</style>
 	";
