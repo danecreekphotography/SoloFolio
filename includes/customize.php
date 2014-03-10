@@ -29,7 +29,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting( 'solofolio_phone', array(
 			'transport'   => 'postMessage',
 			'default'           => '555-555-5555',
-        ));
+      ));
 
 		$wp_customize->add_control( 'solofolio_phone', array(
 			'label' => 'Phone Number',
@@ -310,7 +310,7 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_control( 'solofolio_blog_showauthor', array(
 			'settings' => 'solofolio_blog_showauthor',
-			'label'    => __('Show author'),
+			'label'    => __('Show author', 'solofolio'),
 			'section'  => 'solofolio_blog_section',
 			'type'     => 'checkbox',
 		));
@@ -319,7 +319,7 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_control( 'solofolio_blog_showcat', array(
 			'settings' => 'solofolio_blog_showcat',
-			'label'    => __('Show category'),
+			'label'    => __('Show category', 'solofolio'),
 			'section'  => 'solofolio_blog_section',
 			'type'     => 'checkbox',
 		));
@@ -334,7 +334,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting('solofolio_gallery_default', array('default' => 'cycle-react'));
 
 		$wp_customize->add_control('solofolio_gallery_default', array(
-			'label'      => __('Default gallery format'),
+			'label'      => __('Default gallery format', 'solofolio'),
 			'section'    => 'solofolio_gallery_section',
 			'settings'   => 'solofolio_gallery_default',
 			'type'       => 'select',
@@ -349,7 +349,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting('solofolio_gallery_icon_color', array('default' => 'light'));
 
 		$wp_customize->add_control('solofolio_gallery_icon_color', array(
-			'label'      => __('Slideshow control icon color'),
+			'label'      => __('Slideshow control icon color', 'solofolio'),
 			'section'    => 'solofolio_gallery_section',
 			'settings'   => 'solofolio_gallery_icon_color',
 			'type'       => 'select',
@@ -363,7 +363,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting('solofolio_gallery_cursor_color', array('default' => 'dark'));
 
 		$wp_customize->add_control('solofolio_gallery_cursor_color', array(
-			'label'      => __('Slideshow control cursor color'),
+			'label'      => __('Slideshow control cursor color', 'solofolio'),
 			'section'    => 'solofolio_gallery_section',
 			'settings'   => 'solofolio_gallery_cursor_color',
 			'type'       => 'select',

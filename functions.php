@@ -1,32 +1,44 @@
 <?php
 
-include_once("includes/gallery.php");     // Include gallery shortcode replacement
+include_once("includes/gallery.php");         // Include gallery shortcode replacement
 include_once("includes/social-widget.php");   // Include social media widget
-include_once("includes/caption-widget.php");    // Include caption media widget
-include_once("includes/customize.php");     // Include WP_customize structure
-include_once("includes/css.php");
+include_once("includes/caption-widget.php");  // Include caption media widget
+include_once("includes/customize.php");       // Include WP_customize structure
+include_once("includes/css.php");             // Include CSS builder
 
 add_theme_support( 'post-thumbnails' );
+add_theme_support( 'automatic-feed-links' );
+
 add_image_size( 'about-image', 400, 600 );
 
 add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 add_filter( 'the_content', 'filter_ptags_on_images' );
 add_filter( 'jpeg_quality', 'solo_jpg_quality_callback' );
+
 add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
 add_action( 'wp_enqueue_scripts', 'register_solofolio_styles' );
+add_action( 'init', 'solofolio_editor_styles' );
+
+if ( ! isset( $content_width ) ) $content_width = 900;
+
+function solofolio_editor_styles() {
+
+    add_editor_style( get_stylesheet_uri() );
+
+}
 
 function register_solofolio_styles() {
   $uploads = wp_upload_dir();
-  wp_register_style('solofolio', $uploads['baseurl'] . '/solofolio.css', 'style');
+  wp_register_style( 'solofolio', $uploads['baseurl'] . '/solofolio.css', 'style' );
   wp_enqueue_style( 'solofolio' );
 }
 
 // Use jQuery Google API
 function modify_jquery() {
   if (!is_admin()) {
-    wp_deregister_script('jquery');
-    wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', false, '2.0.3');
-    wp_enqueue_script('jquery');
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', false, '2.0.3' );
+    wp_enqueue_script( 'jquery' );
   }
 }
 add_action('init', 'modify_jquery');

@@ -50,7 +50,7 @@ add_action('wp_footer', 'solofolio_slideshow_footer');
 function solofolio_slideshow_footer() {
   global $solofolio_autoplay;
 
-	$output .= "<link rel=\"stylesheet\" href=\"" . get_bloginfo('template_url') . "/includes/gallery/js/galleria.solofolio.css\" type=\"text/css\" media=\"screen\" />";
+	$output .= "<link rel=\"stylesheet\" href=\"" . get_template_directory_uri() . "/includes/gallery/js/galleria.solofolio.css\" type=\"text/css\" media=\"screen\" />";
 
   $output .= "
   <script type=\"text/javascript\">

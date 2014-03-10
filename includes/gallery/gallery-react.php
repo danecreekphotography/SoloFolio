@@ -25,7 +25,7 @@ add_action('wp_footer', 'sl_react');
 
 function sl_react() {
 	$output .= "<script type=\"text/javascript\">window.matchMedia=window.matchMedia||(function(e,f){var c,a=e.documentElement,b=a.firstElementChild||a.firstChild,d=e.createElement(\"body\"),g=e.createElement(\"div\");g.id=\"mq-test-1\";g.style.cssText=\"position:absolute;top:-100em\";d.appendChild(g);return function(h){g.innerHTML='&shy;<style media=\"'+h+'\"> #mq-test-1 { width: 42px; }</style>';a.insertBefore(d,b);c=g.offsetWidth==42;a.removeChild(d);return{matches:c,media:h}}})(document);</script>";
-	$output .= "<script type=\"text/javascript\" src=\"" . get_bloginfo('template_url') . "/includes/gallery/js/picturefill.js\"></script>";
+	$output .= "<script type=\"text/javascript\" src=\"" . get_template_directory_uri() . "/includes/gallery/js/picturefill.js\"></script>";
 
 	$output .= "
 	<script type=\"text/javascript\">

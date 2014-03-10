@@ -9,9 +9,6 @@ class solofolio_captions extends WP_Widget {
     extract( $args );
     global $wpdb;
 
-    if(!$size)
-      $size = 40;
-
     echo $before_widget;
     echo '<div class="solofolio-cyclereact-sidebar">';
       echo '<p class="solofolio-cyclereact-caption"></p>';

@@ -16,9 +16,6 @@ class solofolio_social_widget extends WP_Widget {
   $vimeo = apply_filters('widget_title', $instance['vimeo']);
   $linkedin = apply_filters('widget_title', $instance['linkedin']);
 
-  if(!$size)
-    $size = 40;
-
   echo $before_widget;
   echo "<div id=\"solofolio-social\">";
     if ($facebook != "") {echo "<a target=\"_blank\" href=\"" . $facebook . "\"><i class=\"fa fa-facebook\"></i></a>";}
@@ -51,27 +48,27 @@ class solofolio_social_widget extends WP_Widget {
     $vimeo = esc_attr($instance['vimeo']);
     $linkedin = esc_attr($instance['linkedin']); ?>
     <p>
-      <label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Facebook:'); ?></label>
+      <label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Facebook:', 'solofolio'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" type="text" value="<?php echo $facebook; ?>" />
     </p>
     <p>
-      <label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Twitter:'); ?></label>
+      <label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Twitter:', 'solofolio'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" type="text" value="<?php echo $twitter; ?>" />
     </p>
     <p>
-      <label for="<?php echo $this->get_field_id('instagram'); ?>"><?php _e('Instagram:'); ?></label>
+      <label for="<?php echo $this->get_field_id('instagram'); ?>"><?php _e('Instagram:', 'solofolio'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('Instagram'); ?>" name="<?php echo $this->get_field_name('instagram'); ?>" type="text" value="<?php echo $instagram; ?>" />
     </p>
     <p>
-      <label for="<?php echo $this->get_field_id('blink'); ?>"><?php _e('Blink:'); ?></label>
+      <label for="<?php echo $this->get_field_id('blink'); ?>"><?php _e('Blink:', 'solofolio'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('blink'); ?>" name="<?php echo $this->get_field_name('blink'); ?>" type="text" value="<?php echo $blink; ?>" />
     </p>
     <p>
-      <label for="<?php echo $this->get_field_id('vimeo'); ?>"><?php _e('Vimeo:'); ?></label>
+      <label for="<?php echo $this->get_field_id('vimeo'); ?>"><?php _e('Vimeo:', 'solofolio'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('Vimeo'); ?>" name="<?php echo $this->get_field_name('vimeo'); ?>" type="text" value="<?php echo $vimeo; ?>" />
     </p>
     <p>
-      <label for="<?php echo $this->get_field_id('linkedin'); ?>"><?php _e('LinkedIn:'); ?></label>
+      <label for="<?php echo $this->get_field_id('linkedin'); ?>"><?php _e('LinkedIn:', 'solofolio'); ?></label>
       <input class="widefat" id="<?php echo $this->get_field_id('linkedin'); ?>" name="<?php echo $this->get_field_name('linkedin'); ?>" type="text" value="<?php echo $linkedin; ?>" />
     </p>
     <?php

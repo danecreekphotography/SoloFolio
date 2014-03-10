@@ -2,9 +2,17 @@
 add_action( 'customize_save_after', 'solofolio_css_cache' );
 
 function solofolio_css_cache() {
+  if ( ! WP_Filesystem($creds) ) {
+    request_filesystem_credentials($url, '', true, false, null);
+    return;
+  }
+
+  WP_Filesystem();
+  global $wp_filesystem;
+
   $data = solofolio_css();
   $uploads = wp_upload_dir();
-  file_put_contents($uploads['basedir'] . '/solofolio.css', $data);
+  $wp_filesystem->put_contents($uploads['basedir'] . '/solofolio.css', $data);
 }
 
 // http://lab.clearpixel.com.au/2008/06/darken-or-lighten-colours-dynamically-using-php/
@@ -38,7 +46,15 @@ function colorBrightness($hex, $percent) {
 }
 
 function solofolio_css() {
-  $styles .= file_get_contents(get_bloginfo('template_url') . "/css/base.css");
+  if ( ! WP_Filesystem($creds) ) {
+    request_filesystem_credentials($url, '', true, false, null);
+    return;
+  }
+
+  WP_Filesystem();
+  global $wp_filesystem;
+
+  $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/base.css");
 
   $styles .= "
   #header {
@@ -170,20 +186,20 @@ function solofolio_css() {
   if (get_theme_mod('solofolio_gallery_cursor_color') == 'light') {
     $styles .= "
     .galleria-image-nav-left, .solofolio-cyclereact-nav-left {
-      cursor: url(\"" . get_bloginfo('template_url') . "/img/prev.light.cur\"), move;
+      cursor: url(\"" . get_template_directory_uri() . "/img/prev.light.cur\"), move;
 
     }
     .galleria-image-nav-right, .solofolio-cyclereact-nav-right {
-      cursor: url(\"" . get_bloginfo('template_url') . "/img/next.light.cur\"), move;
+      cursor: url(\"" . get_template_directory_uri() . "/img/next.light.cur\"), move;
       }";
   } else {
     $styles .= "
     .galleria-image-nav-left, .solofolio-cyclereact-nav-left {
-      cursor: url(\"" . get_bloginfo('template_url') . "/img/prev.dark.cur\"), move;
+      cursor: url(\"" . get_template_directory_uri() . "/img/prev.dark.cur\"), move;
     }
 
     .galleria-image-nav-right, .solofolio-cyclereact-nav-right {
-      cursor: url(\"" . get_bloginfo('template_url') . "/img/next.dark.cur\"), move;
+      cursor: url(\"" . get_template_directory_uri() . "/img/next.dark.cur\"), move;
     }";
   }
 
@@ -220,7 +236,7 @@ function solofolio_css() {
     }
   }";
 
-  $styles .= file_get_contents(get_bloginfo('template_url') . "/css/breakpoints.css");
+  $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/breakpoints.css");
 
   $styles = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $styles);
   $styles = str_replace(': ', ':', $styles);
