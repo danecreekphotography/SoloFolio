@@ -1,66 +1,52 @@
 <?php
-if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-	die ('Please do not load this page directly. Thanks!');
-if (!empty($post->post_password)) { // if there's a password
-	if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) {  // and it doesn't match the cookie
-		?>
-		<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
-		<?php return;
-	}
+if ( post_password_required() ) {
+	return;
 }
 ?>
 
-<?php if ($comments) : ?>
-	<ol class="commentlist">
-	<?php foreach ($comments as $comment) : ?>
-		<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
-			<h6><?php comment_author() ?></h6>
-			<span class="date"><?php comment_date('l, F jS Y') ?></span>
-			<?php if ($comment->comment_approved == '0') : ?>
-				Your comment is awaiting moderation.</em>
-			<?php endif; ?>
-			<?php comment_text() ?>
-		</li>
-	<?php endforeach; ?>
-	</ol>
+<div id="comments" class="comments-area">
 
- <?php else : ?>
-	<?php if ('open' == $post->comment_status) : ?>
-	 <?php else : ?>
-		<p class="nocomments">Comments are closed.</p>
+	<?php if ( have_comments() ) : ?>
+
+	<h2 class="comments-title">
+		<?php
+			printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'solofolio' ),
+				number_format_i18n( get_comments_number() ), get_the_title() );
+		?>
+	</h2>
+
+	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+	<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'solofolio' ); ?></h1>
+		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'solofolio' ) ); ?></div>
+		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'solofolio' ) ); ?></div>
+	</nav><!-- #comment-nav-above -->
+	<?php endif; // Check for comment navigation. ?>
+
+	<ol class="comment-list">
+		<?php
+			wp_list_comments( array(
+				'style'      => 'ol',
+				'short_ping' => true,
+				'avatar_size'=> 34,
+			) );
+		?>
+	</ol><!-- .comment-list -->
+
+	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+	<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'solofolio' ); ?></h1>
+		<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'solofolio' ) ); ?></div>
+		<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'solofolio' ) ); ?></div>
+	</nav><!-- #comment-nav-below -->
+	<?php endif; // Check for comment navigation. ?>
+
+	<?php if ( ! comments_open() ) : ?>
+	<p class="no-comments"><?php _e( 'Comments are closed.', 'solofolio' ); ?></p>
 	<?php endif; ?>
-<?php endif; ?>
 
-<?php if ('open' == $post->comment_status) : ?>
+	<?php endif; // have_comments() ?>
 
-	<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-		<p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>">logged in</a> to post a comment.</p>
+	<?php comment_form(); ?>
 
-	<?php else : ?>
-		<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-			<?php if ( $user_ID ) : ?>
-				<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="Log out of this account">Log out &raquo;</a></p>
-			<?php else : ?>
-				<p>
-					<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="30" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-					<label for="author">Name <small><?php if ($req) echo "(required)"; ?></small></label>
-				</p>
-				<p>
-					<input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="30" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-					<label for="email">Email <small><?php if ($req) echo "(required)"; ?></small></label>
-				</p>
-				<p>
-					<input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="30" tabindex="3" />
-					<label for="url">Website</label>
-				</p>
-			<?php endif; ?>
-
-			<p><textarea name="comment" id="comment" cols="35" rows="10" tabindex="4"></textarea></p>
-			<p>
-				<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
-				<input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
-			</p>
-			<?php do_action('comment_form', $post->ID); ?>
-		</form>
-	<?php endif; ?>
-<?php endif; ?>
+</div><!-- #comments -->

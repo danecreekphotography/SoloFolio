@@ -8,17 +8,20 @@
 		<?php endif; ?>
 
 		<?php while (have_posts()) : the_post(); ?>
-			<div class="entry">
+			<div class="entry" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="post-meta">
 					<?php if (get_theme_mod('solofolio_blog_showcat')) {?><span class="post-cat"><?php the_category(', ') ?></span><?php } ?>
 					<h2 class="post-title">
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 					</h2>
-					<span class="date"><?php the_time('Y-m-d') ?>
+					<span class="date">
+						<?php the_time('Y-m-d') ?>
 						<?php if (get_theme_mod('solofolio_blog_showauthor')) {?>by <?php the_author() ?><?php } ?>
+						<?php the_tags( '<span class="tag-links">', '', '</span>' ); ?>
 					</span>
 				</div>
 				<?php the_content('Continue reading <i class="icon-angle-right"></i>'); ?>
+				<?php wp_link_pages(); ?>
 				<div class="clear"></div>
 			</div>
 		<?php endwhile; ?>
@@ -43,4 +46,5 @@
 	<?php endif; ?>
 </div>
 
+<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
 <?php get_footer(); ?>

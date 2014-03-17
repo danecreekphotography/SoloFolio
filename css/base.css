@@ -1,3 +1,5 @@
+/* SOLOFOLIO - BASE CSS */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -40,6 +42,12 @@ table {
   border-spacing: 0;
 }
 
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Source Sans Pro', Helvetica, Verdana, Arial, Utkal, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -57,6 +65,14 @@ html, body {
 
 strong {
     font-weight: bold;
+}
+
+.sticky {
+  padding-bottom: 2em;
+}
+
+.gallery-caption, .bypostauthor {
+  font-size: 1em;
 }
 
 /* Floats */
@@ -470,13 +486,9 @@ input, textarea {
   text-transform: none;
 }
 
-#commentform label {
-  margin-left: 10px;
+#commentform label small {
+  font-size: .7em;
 }
-
-  #commentform label small {
-    font-size: .7em;
-  }
 
 .commentmetadata {
   font-weight: normal;
