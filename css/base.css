@@ -593,8 +593,16 @@ table tr {
 
 /* CycleReact gallery  */
 
-#solofolio-cyclereact-wrap {
-  position: relative;
+#solofolio-cyclereact-wrap,
+#solofolio-cyclereact-stage,
+#solofolio-cyclereact-images,
+.solofolio-cycelereact-slide,
+.solofolio-cyclereact-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 #solofolio-cyclereact-thumbs {
@@ -636,10 +644,6 @@ table tr {
         top: 0;
         bottom: 0;
       }
-
-#solofolio-cyclereact-stage {
-  position: relative;
-}
 
 #solofolio-cyclereact-bar {
   display: none;
