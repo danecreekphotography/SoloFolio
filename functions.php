@@ -14,6 +14,7 @@ add_image_size( 'about-image', 400, 600 );
 add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 add_filter( 'the_content', 'filter_ptags_on_images' );
 add_filter( 'jpeg_quality', 'solo_jpg_quality_callback' );
+add_filter( 'upload_mimes', 'solofolio_svg_upload' );
 
 add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
 add_action( 'wp_enqueue_scripts', 'register_solofolio_styles' );
@@ -22,9 +23,12 @@ add_action( 'init', 'solofolio_editor_styles' );
 if ( ! isset( $content_width ) ) $content_width = 900;
 
 function solofolio_editor_styles() {
+  add_editor_style( get_stylesheet_uri() );
+}
 
-    add_editor_style( get_stylesheet_uri() );
-
+function solofolio_svg_upload( $mimes ){
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
 }
 
 function register_solofolio_styles() {
