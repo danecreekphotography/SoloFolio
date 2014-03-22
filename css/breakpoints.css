@@ -23,11 +23,17 @@
   #header {
     height: auto;
     position: relative !important;
-    margin: 5px 0 5px 5px;
+    margin: 15px 0 0 0;
     top: 0;
     padding: 0;
     width: auto;
   }
+
+    #header #logo {
+      margin-left: 15px;
+      margin-right: 60px;
+      margin-bottom: 10px;
+    }
 
     #header-content {
       padding: 0 0 10px 0;
@@ -37,30 +43,17 @@
       display: none !important;
     }
 
-      #header #header-phone, #header #header-email, #header #header-location {
-        padding-right: 5px;
-        display: inline;
-      }
+    #header h3 {
+      margin: 0;
+      padding: 0;
+    }
 
-      #header div {
-        margin: 0;
-      }
-
-      #header h3 {
-        margin: 0;
-        padding: 0;
-      }
-
-    #sidebar-footer {
-      display: none;
+    #solofolio-social {
+      margin: 0;
     }
 
     .solofolio-cyclereact-sidebar {
       display: none !important;
-    }
-
-    #header #logo {
-      margin: 0;
     }
 
   #wrapper {
@@ -206,14 +199,6 @@
 
   #wrapper {
     overflow: scroll;
-  }
-
-  #header {
-    margin-left: 0;
-  }
-
-  #header #header-location {
-    display: none;
   }
 
   #content-parent {
