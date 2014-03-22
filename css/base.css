@@ -203,7 +203,7 @@ p {
     bottom: 20px;
     position: absolute;
     max-width: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     width: 100%;
   }
 
