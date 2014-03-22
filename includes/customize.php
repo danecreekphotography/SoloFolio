@@ -71,19 +71,19 @@ function solofolio_customize_register( $wp_customize )
 			'label' => 'Sidebar Width',
 			'settings' => 'solofolio_header_width',
 			'section' => 'solofolio_header_section',
-			'priority' => '30', // Default is 10.
+			'priority' => '30',
 		) );
 
-		$wp_customize->add_setting( 'solofolio_footer_text', array(
+		$wp_customize->add_setting( 'solofolio_copyright_text', array(
 			'transport'   => 'postMessage',
         ));
 
-		$wp_customize->add_control( 'solofolio_footer_text', array(
+		$wp_customize->add_control( 'solofolio_copyright_text', array(
 			'label' => 'Copyright Text',
-			'settings' => 'solofolio_footer_text',
+			'settings' => 'solofolio_copyright_text',
 			'section' => 'solofolio_header_section',
-			'type' => 'text', // Default is "text"
-			'priority' => '30', // Default is 10.
+			'type' => 'text',
+			'priority' => '30',
 		) );
 
 		$wp_customize->add_setting( 'solofolio_logo_width', array('default' => '200', 'transport'   => 'postMessage',) );
@@ -340,7 +340,7 @@ function solofolio_customize_register( $wp_customize )
 			'section'    => 'solofolio_gallery_section',
 			'settings'   => 'solofolio_gallery_default',
 			'type'       => 'select',
-			'priority' => '10', // Default is 10.
+			'priority' => '10',
 			'choices'    => array(
 				'cycle-react' => 'Dynamic',
 				'slideshow' => 'Slideshow',
@@ -355,7 +355,7 @@ function solofolio_customize_register( $wp_customize )
 			'section'    => 'solofolio_gallery_section',
 			'settings'   => 'solofolio_gallery_icon_color',
 			'type'       => 'select',
-			'priority' => '10', // Default is 10.
+			'priority' => '10',
 			'choices'    => array(
 				'light' => 'Light',
 				'dark' => 'Dark',
@@ -369,7 +369,7 @@ function solofolio_customize_register( $wp_customize )
 			'section'    => 'solofolio_gallery_section',
 			'settings'   => 'solofolio_gallery_cursor_color',
 			'type'       => 'select',
-			'priority' => '10', // Default is 10.
+			'priority' => '10',
 			'choices'    => array(
 				'dark' => 'Dark',
 				'light' => 'Light',
@@ -382,7 +382,7 @@ function solofolio_customize_register( $wp_customize )
 			'label' => 'Side scroll gallery padding',
 			'settings' => 'solofolio_gallery_sidescroll_padding',
 			'section' => 'solofolio_gallery_section',
-			'priority' => '20', // Default is 10.
+			'priority' => '20',
 		) );
 
 	 // Tracking & CSS
@@ -398,7 +398,7 @@ function solofolio_customize_register( $wp_customize )
 			'label' => 'Tracking code',
 			'settings' => 'solofolio_tracking',
 			'section' => 'solofolio_tracking_css',
-			'priority' => '', // Default is 10.
+			'priority' => '',
 		) ) );
 
 		$wp_customize->add_setting( 'solofolio_css' );
@@ -407,18 +407,18 @@ function solofolio_customize_register( $wp_customize )
 			'label' => 'Custom CSS',
 			'settings' => 'solofolio_css',
 			'section' => 'solofolio_tracking_css',
-			'priority' => '', // Default is 10.
+			'priority' => '',
 		) ) );
 }
 
 function solofolio_customizer_live_preview()
 {
 	wp_enqueue_script(
-		  'mytheme-themecustomizer',			//Give the script an ID
-		  get_template_directory_uri().'/js/theme-customizer.js',//Point to file
-		  array( 'jquery','customize-preview' ),	//Define dependencies
-		  '',						//Define a version (optional)
-		  true						//Put script in footer?
+		  'mytheme-themecustomizer',
+		  get_template_directory_uri().'/js/theme-customizer.js',
+		  array( 'jquery','customize-preview' ),
+		  '',
+		  true
 	);
 }
 add_action( 'customize_preview_init', 'solofolio_customizer_live_preview' );
