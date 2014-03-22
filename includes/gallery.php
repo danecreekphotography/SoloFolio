@@ -29,7 +29,6 @@ function solofolio_gallery_shortcode($attr) {
 		'columns'    => 3,
 		'fullscreen'    => '',
 		'height'    => '',
-		'height'    => '',
 		'icontag'    => 'dt',
 		'id'         => $post->ID,
 		'include'    => '',
@@ -53,7 +52,8 @@ function solofolio_gallery_shortcode($attr) {
     $attachment_ids = explode(",", $ids[1]);
 
 	$GLOBALS['solofolio_autoplay'] = $autoplay;
-	$GLOBALS['solofolio_transition'] = $transition;
+	$GLOBALS['solofolio_showthumbnails'] = $showthumbnails;
+	$GLOBALS['solofolio_showplay'] = $showplay;
 
 	$id = intval($id);
 	if ( 'RAND' == $order ) {

@@ -1,4 +1,4 @@
-/* 
+/*
 SoloFolio
 Galleria Theme - CSS
 */
@@ -138,7 +138,7 @@ Galleria Theme - CSS
 }
 
 .fullscreen .galleria-images {
-	margin: 10px 10px 0 10px;
+	margin: 0 10px 0 10px;
 }
 
 .fullscreen .galleria-stage {
@@ -187,7 +187,7 @@ Galleria Theme - CSS
 .galleria-image-nav-left,
 .galleria-image-nav-right {
 	height: 100%;
-	
+
 	position: absolute;
     z-index: 2;
     top: 0;
@@ -235,7 +235,7 @@ Galleria Theme - CSS
 .galleria-clear {
 	clear:both;
 	}
-	
+
 .galleria-controls {
 	display: block;
 	line-height: 30px;

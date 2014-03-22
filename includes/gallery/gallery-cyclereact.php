@@ -1,5 +1,4 @@
 <?php
-global $solofolio_autoplay;
 
 $output .="<div id=\"solofolio-cyclereact-wrap\">";
 
@@ -34,10 +33,12 @@ $output .="<div id=\"solofolio-cyclereact-images\"
 								data-cycle-manual-speed=\"300\"
 								data-cycle-caption=\".solofolio-cyclereact-caption\"
 								data-cycle-caption-template=\"{{cycleTitle}}\"";
-								if ($solofolio_autoplay == "true") {
-									$output .= "Autoplay";
+								if ( $autoplay == "true" ) {
+									if (isset( $speed )) {
+										$output .= "data-cycle-timeout=". $speed;
+									}
 								} else {
-									$output.= "data-cycle-timeout=0\n";
+									$output .= "data-cycle-timeout=0\n";
 								}
 $output .= ">\n\n";
 
