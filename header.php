@@ -103,7 +103,7 @@ SoloFolio v6.20140216 - github.com/joelhawksley/SoloFolio
 		</div>
 
 		<div id="sidebar-footer">
-			<p id="info-footer"><?php echo get_theme_mod( 'solofolio_footer_text' ); ?></p>
+			<p id="info-footer">&copy; <?php echo date("Y"); ?> <?php echo get_theme_mod( 'solofolio_copyright_text' ); ?></p>
 			<p id="solo-footer">Powered by <a title="The premier free WordPress theme for the creatively inclined." href="http://www.solofolio.net">SoloFolio</a></p>
 		</div>
 
