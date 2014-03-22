@@ -29,22 +29,6 @@
     width: auto;
   }
 
-    #logo {
-      padding: 5px 5px 5px 10px;
-    }
-
-    #logo-img {
-      display: none;
-    }
-
-    #logo #logo-noimg {
-      display: block;
-    }
-
-      #logo-noimg .description {
-        display: none;
-      }
-
     #header-content {
       padding: 0 0 10px 0;
     }

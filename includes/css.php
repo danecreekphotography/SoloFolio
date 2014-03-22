@@ -78,6 +78,10 @@ function solofolio_css() {
     font-size: " . get_theme_mod('solofolio_body_font_size') .";
   }
 
+  #logo-img {
+    width: " . get_theme_mod('solofolio_logo_width') . "px;
+  }
+
   #solofolio-cyclereact-thumbs .thumb {
     border: 10px solid ". get_theme_mod('solofolio_background_color') . ";
   }

@@ -406,12 +406,12 @@ h2.post-title {
 }
 
   #content-about p {
-    max-width: 600px;
+    max-width: 550px;
   }
 
   #content-about .attachment-about-image {
     float: left;
-    padding-right: 30px;
+    padding: 0 30px 20px 0;
   }
 
   #content-about-right {
