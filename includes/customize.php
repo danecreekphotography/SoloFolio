@@ -68,7 +68,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting( 'solofolio_header_width', array('default' => '200', 'transport'   => 'postMessage',) );
 
 		$wp_customize->add_control( 'solofolio_header_width', array(
-			'label' => 'Width',
+			'label' => 'Sidebar Width',
 			'settings' => 'solofolio_header_width',
 			'section' => 'solofolio_header_section',
 			'priority' => '30', // Default is 10.
@@ -83,25 +83,27 @@ function solofolio_customize_register( $wp_customize )
 			'settings' => 'solofolio_footer_text',
 			'section' => 'solofolio_header_section',
 			'type' => 'text', // Default is "text"
-			'choices' => '', // This is optional, depending on type's value.
 			'priority' => '30', // Default is 10.
 		) );
 
-		$wp_customize->add_setting( 'solofolio_logo_retina' );
+		$wp_customize->add_setting( 'solofolio_logo_width', array('default' => '200', 'transport'   => 'postMessage',) );
 
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'solofolio_logo_retina', array(
-			'label'    => __( 'Retina Logo (2x)', 'solofolio' ),
-			'section'  => 'solofolio_header_section',
-			'settings' => 'solofolio_logo_retina',
-		) ) );
+		$wp_customize->add_control( 'solofolio_logo_width', array(
+			'label' => 'Logo Width',
+			'settings' => 'solofolio_logo_width',
+			'section' => 'solofolio_header_section',
+			'priority' => '10', // Default is 10.
+		) );
 
 		$wp_customize->add_setting( 'solofolio_logo' );
 
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'solofolio_logo', array(
-			'label'    => __( 'Logo', 'solofolio' ),
-			'section'  => 'solofolio_header_section',
+		$wp_customize->add_control( 'solofolio_logo', array(
+			'label' => 'Logo URL',
 			'settings' => 'solofolio_logo',
-		) ) );
+			'section' => 'solofolio_header_section',
+			'type' => 'text', // Default is "text"
+			'priority' => '10', // Default is 10.
+		) );
 
 	// Design
 
