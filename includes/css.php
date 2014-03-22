@@ -216,7 +216,7 @@ function solofolio_css() {
 
   $styles .= "
   #wrapper {
-    left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 60) . "px;
+    left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 40) . "px;
     width: auto;
   }
 
