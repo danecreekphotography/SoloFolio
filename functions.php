@@ -13,7 +13,6 @@ add_image_size( 'about-image', 400, 600 );
 
 add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 add_filter( 'the_content', 'filter_ptags_on_images' );
-add_filter( 'jpeg_quality', 'solo_jpg_quality_callback' );
 add_filter( 'upload_mimes', 'custom_mtypes' );
 
 add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
@@ -58,11 +57,6 @@ function hide_admin_bar_from_front_end() {
 
 function filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-}
-
-// Force WP to make high-quality images
-function solo_jpg_quality_callback($arg) {
-  return (int)80;
 }
 
 // Add additional image size for large displays, change defaults for others.
