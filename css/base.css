@@ -690,17 +690,18 @@ table tr {
 }
 
   .solofolio-cyclereact-controls a {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
     display: inline-block;
     font-size: 22px;
     width: 40px;
     height: 40px;
     margin-right: 15px;
-    line-height: 40px;
+    line-height: 39px;
     text-align: center;
     text-decoration: none;
+  }
+
+  .solofolio-cyclereact-controls .next, .solofolio-cyclereact-controls .prev {
+    line-height: 37px;
   }
 
   .thumbs .fa-expand {
