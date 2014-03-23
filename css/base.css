@@ -504,6 +504,7 @@ div.aligncenter {
 
 .entry img {
   margin: 1em 0;
+  height: auto;
   width: 100%;
 }
 
