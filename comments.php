@@ -34,6 +34,8 @@ if ( post_password_required() ) {
 
 	<?php endif; // have_comments() ?>
 
-	<?php comment_form(array('comment_notes_after' => '')); ?>
+	<?php comment_form(array('title_reply' => 'Comment',
+													 'comment_notes_after' => '',
+													 'comment_notes_before' => '')); ?>
 
 </div><!-- #comments -->

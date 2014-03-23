@@ -490,8 +490,7 @@ input, textarea {
 }
 
 p.comment-form-comment label {
-  padding-bottom: .5em;
-  display: block;
+  display: none;
 }
 
 .commentmetadata {
