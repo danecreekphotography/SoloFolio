@@ -345,7 +345,7 @@ p {
 
 /* Blog Posts */
 .entry {
-  margin: 0 0 50px;
+  margin: 0 0 25px;
   overflow: hidden;
 }
 
@@ -435,7 +435,7 @@ input, textarea {
 }
 
 .comment {
-  padding-bottom: .5em;
+  padding-bottom: .75em;
 }
 
 #comments .date {
@@ -515,6 +515,10 @@ div.aligncenter {
   width: 100%;
 }
 
+  .entry img:first-child {
+    margin-top: 0;
+  }
+
   .entry .wp-caption img {
     margin: 0;
   }
@@ -544,12 +548,22 @@ div.aligncenter {
 
 .pagination-nav {
   margin: 0 auto;
-  padding: 0 0 10px;
+  padding-bottom: 1.5em;
 }
 
   .pagination-nav a {
     margin: 0;
-    padding: 15px 0;
+    padding: 1em 0;
+  }
+
+  .pagination-nav h4 {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: .9em;
+  }
+
+  .pagination-nav .right h4 {
+    text-align: right;
   }
 
 /* Social Media Widget */
