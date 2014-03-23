@@ -18,8 +18,8 @@ class solofolio_captions extends WP_Widget {
           echo '<i class="fa fa-expand"></i>';
         echo '</a>';
         echo '<span class="arrows">';
-          echo '<a class="prev" href="#"><i class="fa fa-chevron-left"></i></a>';
-          echo '<a class="next" href="#"><i class="fa fa-chevron-right"></i></a>';
+          echo '<a class="prev" href="#"><i class="fa fa-angle-left"></i></a>';
+          echo '<a class="next" href="#"><i class="fa fa-angle-right"></i></a>';
         echo '</span>';
       echo '</span>';
     echo '</div>';

@@ -8,13 +8,6 @@ if ( post_password_required() ) {
 
 	<?php if ( have_comments() ) : ?>
 
-	<h2 class="comments-title">
-		<?php
-			printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'solofolio' ),
-				number_format_i18n( get_comments_number() ), get_the_title() );
-		?>
-	</h2>
-
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 	<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
 		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'solofolio' ); ?></h1>
@@ -24,13 +17,7 @@ if ( post_password_required() ) {
 	<?php endif; // Check for comment navigation. ?>
 
 	<ol class="comment-list">
-		<?php
-			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
-				'avatar_size'=> 34,
-			) );
-		?>
+		<?php wp_list_comments('type=comment&callback=solofolio_comments'); ?>
 	</ol><!-- .comment-list -->
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
@@ -47,6 +34,8 @@ if ( post_password_required() ) {
 
 	<?php endif; // have_comments() ?>
 
-	<?php comment_form(); ?>
+	<?php comment_form(array('title_reply' => 'Comment',
+													 'comment_notes_after' => '',
+													 'comment_notes_before' => '')); ?>
 
 </div><!-- #comments -->

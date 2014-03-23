@@ -32,15 +32,15 @@ $output .= "</div>";
 
 $output .= "<div class=\"galleriabar\">";
 	$output .= "<div class=\"galleria-controls\">";
-		if ($shownav != "false"){$output.= "<a class=\"prev\" href=\"#\"> <i class=\"icon-angle-left\"></i> prev</a>";}
+		if ($shownav != "false"){$output.= "<a class=\"prev\" href=\"#\"> <i class=\"fa fa-angle-left\"></i> prev</a>";}
 		if ($showcounter != "false"){$output.= "<div class=\"counter\">
 			<span class=\"index\"></span> of
 			<span class=\"total\"></span>
 		</div>";}
-		if ($shownav != "false"){$output.= "<a class=\"next\" href=\"#\">next <i class=\"icon-angle-right\"></i></a>";}
-		if ($fullscreen != "false"){$output.= "<a class=\"fullscreen\" href=\"#\" title=\"Fullscreen\"><i class=\"icon-fullscreen\"></i></a>";}
-		if ($showplay != "false"){$output.= "<a class=\"play\" href=\"#\" title=\"Slideshow\"><i class=\"icon-play\"></i></a>";}
-		if ($showthumbnails != "false"){$output.= "<a class=\"toggle\" href=\"#\" title=\"Thumbnails\"><i class=\"icon-th-large\"></i></a>";}
+		if ($shownav != "false"){$output.= "<a class=\"next\" href=\"#\">next <i class=\"fa fa-angle-right\"></i></a>";}
+		if ($fullscreen != "false"){$output.= "<a class=\"fullscreen\" href=\"#\" title=\"Fullscreen\"><i class=\"fa fa-expand\"></i></a>";}
+		if ($showplay != "false"){$output.= "<a class=\"play\" href=\"#\" title=\"Slideshow\"><i class=\"fa fa-play\"></i></a>";}
+		if ($showthumbnails != "false"){$output.= "<a class=\"toggle\" href=\"#\" title=\"Thumbnails\"><i class=\"fa fa-th\"></i></a>";}
 	$output .= "</div>";
 	if ($captions != "false"){$output.= "<div class=\"galleria-info\"></div>";}
 $output .= "</div></div>";
@@ -49,8 +49,10 @@ add_action('wp_footer', 'solofolio_slideshow_footer');
 
 function solofolio_slideshow_footer() {
   global $solofolio_autoplay;
+  global $solofolio_showthumbnails;
+  global $solofolio_showplay;
 
-	$output .= "<link rel=\"stylesheet\" href=\"" . get_template_directory_uri() . "/includes/gallery/js/galleria.solofolio.css\" type=\"text/css\" media=\"screen\" />";
+	$output = "<link rel=\"stylesheet\" href=\"" . get_template_directory_uri() . "/includes/gallery/js/galleria.solofolio.css\" type=\"text/css\" media=\"screen\" />";
 
   $output .= "
   <script type=\"text/javascript\">
@@ -108,8 +110,8 @@ function solofolio_slideshow_footer() {
 	});
 	</script>
 	<style>";
-	if ($showthumbnails== "false"){$output.= ".galleria-thumblink {display:none}";};
-	if ($showplay== "false"){$output .= ".galleria-play {display:none}";};
+	if ($solofolio_showthumbnails == "false"){$output.= ".galleria-thumblink {display:none}";};
+	if ($solofolio_showplay == "false"){$output .= ".galleria-play {display:none}";};
 	$output.="</style>";
 
   echo $output;

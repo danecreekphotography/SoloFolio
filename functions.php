@@ -13,12 +13,12 @@ add_image_size( 'about-image', 400, 600 );
 
 add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 add_filter( 'the_content', 'filter_ptags_on_images' );
-add_filter( 'jpeg_quality', 'solo_jpg_quality_callback' );
-add_filter( 'upload_mimes', 'custom_mtypes' );
 
 add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
 add_action( 'wp_enqueue_scripts', 'register_solofolio_styles' );
 add_action( 'init', 'solofolio_editor_styles' );
+
+current_theme_supports( 'html5' );
 
 if ( ! isset( $content_width ) ) $content_width = 900;
 
@@ -26,11 +26,14 @@ function solofolio_editor_styles() {
   add_editor_style( get_stylesheet_uri() );
 }
 
-function custom_mtypes( $m ){
-  $m['svg'] = 'image/svg+xml';
-  $m['svgz'] = 'image/svg+xml';
-  return $m;
+function solofolio_mimes( $existing_mimes ) {
+  // add webm to the list of mime types
+  $existing_mimes['svg'] = 'image/svg+xml';
+
+  // return the array back to the function with our added mime type
+  return $existing_mimes;
 }
+add_filter( 'mime_types', 'solofolio_mimes' );
 
 function register_solofolio_styles() {
   $uploads = wp_upload_dir();
@@ -60,11 +63,6 @@ function filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 
-// Force WP to make high-quality images
-function solo_jpg_quality_callback($arg) {
-  return (int)80;
-}
-
 // Add additional image size for large displays, change defaults for others.
 function solofolio_set_image_sizes() {
 	add_image_size('xlarge',1800,1200, false);
@@ -75,6 +73,29 @@ function solofolio_set_image_sizes() {
 	update_option('large_size_w', 900);
 	update_option('large_size_h', 600);
 }
+
+function solofolio_comments($comment, $args, $depth) {
+   $GLOBALS['comment'] = $comment; ?>
+   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+     <div id="comment-<?php comment_ID(); ?>">
+        <div class="comment-author vcard">
+          <?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
+        </div>
+
+        <?php if ($comment->comment_approved == '0') : ?>
+           <em><?php _e('Your comment is awaiting moderation.') ?></em>
+           <br />
+        <?php endif; ?>
+
+        <div class="comment-meta commentmetadata">
+          <?php printf(__('%1$s'), get_comment_date('Y-m-d')) ?>
+          <?php edit_comment_link(__('(Edit)'),'  ','') ?>
+        </div>
+
+        <?php comment_text() ?>
+     </div>
+<?php
+        }
 
 // Remove image margins automatically added by WordPress.
 // From: http://wordpress.org/support/topic/10px-added-to-width-in-image-captions

@@ -13,7 +13,7 @@ SoloFolio v6.20140216 - github.com/joelhawksley/SoloFolio
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, minimal-ui" />
-	<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -79,6 +79,8 @@ SoloFolio v6.20140216 - github.com/joelhawksley/SoloFolio
 			<div id="header-location">
 				<?php echo get_theme_mod( 'solofolio_location', 'Athens, Ohio' ); ?>
 			</div>
+
+			<div class="clear"></div>
 		</div>
 
 		<div id="header-content">
@@ -100,11 +102,11 @@ SoloFolio v6.20140216 - github.com/joelhawksley/SoloFolio
 				<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Under Main Navigation on Blog") ) : ?>
 				<?php endif; ?>
 			<?php } ?>
-		</div>
 
-		<div id="sidebar-footer">
-			<p id="info-footer">&copy; <?php echo date("Y"); ?> <?php echo get_theme_mod( 'solofolio_copyright_text' ); ?></p>
-			<p id="solo-footer">Powered by <a title="The premier free WordPress theme for the creatively inclined." href="http://www.solofolio.net">SoloFolio</a></p>
+			<div id="sidebar-footer">
+				<p id="info-footer">&copy; <?php echo date("Y"); ?> <?php echo get_theme_mod( 'solofolio_copyright_text' ); ?></p>
+				<p id="solo-footer">Powered by <a title="The premier free WordPress theme for the creatively inclined." href="http://www.solofolio.com">SoloFolio</a></p>
+			</div>
 		</div>
 
 		<div class="clear"></div>

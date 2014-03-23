@@ -1,5 +1,4 @@
 <?php
-global $solofolio_autoplay;
 
 $output .="<div id=\"solofolio-cyclereact-wrap\">";
 
@@ -34,10 +33,12 @@ $output .="<div id=\"solofolio-cyclereact-images\"
 								data-cycle-manual-speed=\"300\"
 								data-cycle-caption=\".solofolio-cyclereact-caption\"
 								data-cycle-caption-template=\"{{cycleTitle}}\"";
-								if ($solofolio_autoplay == "true") {
-									$output .= "Autoplay";
+								if ( $autoplay == "true" ) {
+									if (isset( $speed )) {
+										$output .= "data-cycle-timeout=". $speed;
+									}
 								} else {
-									$output.= "data-cycle-timeout=0\n";
+									$output .= "data-cycle-timeout=0\n";
 								}
 $output .= ">\n\n";
 
@@ -57,7 +58,7 @@ foreach ($attachment_ids as $id) {
 		<div class=\"solofolio-cycelereact-slide\"
 				 data-cycle-title=\"" .  wptexturize($attachment->post_excerpt) . "\"
 				 data-cycle-hash=\"" .  $i . "\">
-			<div class=\"solofolio-cyclereact-fill\">
+			<div class=\"solofolio-cyclereact-fill picturefill-background\">
 				<div data-src=\"" . $link6[0] . "\"></div>
 				<div data-src=\"" . $link4[0] . "\" data-media=\"(min-width: 320px)\" style=\"max-width: 900px;\"></div>
 				<div data-src=\"" . $link5[0] . "\" data-media=\"(min-width: 920px)\" style=\"max-width: 1800px;\"></div>
@@ -87,17 +88,20 @@ $output .="<div id=\"solofolio-cyclereact-bar\">
 add_action('wp_footer', 'sl_cyclereact_js');
 
 function sl_cyclereact_js() {
-	$output .= "<script type=\"text/javascript\">window.matchMedia=window.matchMedia||(function(e,f){var c,a=e.documentElement,b=a.firstElementChild||a.firstChild,d=e.createElement(\"body\"),g=e.createElement(\"div\");g.id=\"mq-test-1\";g.style.cssText=\"position:absolute;top:-100em\";d.appendChild(g);return function(h){g.innerHTML='&shy;<style media=\"'+h+'\"> #mq-test-1 { width: 42px; }</style>';a.insertBefore(d,b);c=g.offsetWidth==42;a.removeChild(d);return{matches:c,media:h}}})(document);</script>";
-	$output .="<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/cyclereact.js\"></script>";
-	$output .="<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/picturefill.js\"></script>";
-	$output .="<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/jquery.cycle2.min.js\"></script>";
-	$output .="
+	$output = "<script type=\"text/javascript\">window.matchMedia=window.matchMedia||(function(e,f){var c,a=e.documentElement,b=a.firstElementChild||a.firstChild,d=e.createElement(\"body\"),g=e.createElement(\"div\");g.id=\"mq-test-1\";g.style.cssText=\"position:absolute;top:-100em\";d.appendChild(g);return function(h){g.innerHTML='&shy;<style media=\"'+h+'\"> #mq-test-1 { width: 42px; }</style>';a.insertBefore(d,b);c=g.offsetWidth==42;a.removeChild(d);return{matches:c,media:h}}})(document);</script>";
+	$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/cyclereact.js\"></script>";
+	$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/picturefill-background.js\"></script>";
+	$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/jquery.cycle2.min.js\"></script>";
+	$output .= "
 	<style type=\"text/css\">
 	#header #header-content .solofolio-cyclereact-sidebar {
 		display: block;
 	}
 	#wrapper img {
 		display: none;
+	}
+	#wrapper {
+		bottom: 20px;
 	}
 	</style>
 	";

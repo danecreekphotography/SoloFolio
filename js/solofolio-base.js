@@ -3,7 +3,7 @@ $(window).load(function(){
   $("p:has(img)").css('padding' , '0');
 
   /* Fallback support for older images that were not uploaded with the SoloFolio format filter */
-  $('img').each(function() {
+  $('.entry img').each(function() {
     // Get on screen image
     var screenImage = $(this);
 
@@ -19,12 +19,12 @@ $(window).load(function(){
     }
   });
 
-  $('img').each(function(){
+  $('.entry img').each(function(){
     $(this).removeAttr('width')
     $(this).removeAttr('height');
   });
 
-  $('img').retina();
+  $('.entry img').retina();
 
   $('#menu-icon').click(function(){
     $("#header-content").slideToggle();

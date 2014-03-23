@@ -203,7 +203,7 @@ p {
     bottom: 20px;
     position: absolute;
     max-width: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     width: 100%;
   }
 
@@ -345,7 +345,7 @@ p {
 
 /* Blog Posts */
 .entry {
-  margin: 0 0 50px;
+  margin: 0 0 25px;
   overflow: hidden;
 }
 
@@ -370,6 +370,7 @@ p {
 h2.post-title {
   font-size: 24px;
   font-weight: normal;
+  line-height: 24px;
   margin: 0;
   padding: 0;
 }
@@ -406,12 +407,12 @@ h2.post-title {
 }
 
   #content-about p {
-    max-width: 600px;
+    max-width: 550px;
   }
 
   #content-about .attachment-about-image {
     float: left;
-    padding-right: 30px;
+    padding: 0 30px 20px 0;
   }
 
   #content-about-right {
@@ -432,6 +433,10 @@ input, textarea {
 
 #comments {
   padding-bottom: 20px;
+}
+
+.comment {
+  padding-bottom: .75em;
 }
 
 #comments .date {
@@ -470,11 +475,6 @@ input, textarea {
   text-align: center;
 }
 
-.commentmetadata {
-  display: block;
-  margin: 0;
-}
-
 #commentform textarea {
   max-width: 600px;
   width: 100%;
@@ -490,8 +490,14 @@ input, textarea {
   font-size: .7em;
 }
 
+p.comment-form-comment label {
+  display: none;
+}
+
 .commentmetadata {
   font-weight: normal;
+  display: block;
+  margin: 0 0 .5em;
 }
 
 /* Images */
@@ -503,9 +509,16 @@ div.aligncenter {
 }
 
 .entry img {
+  display: block;
   margin: 1em 0;
+  height: auto;
+  max-width: 100%;
   width: 100%;
 }
+
+  .entry img:first-child {
+    margin-top: 0;
+  }
 
   .entry .wp-caption img {
     margin: 0;
@@ -534,14 +547,29 @@ div.aligncenter {
     max-width: 900px;
   }
 
+.entry .more-link {
+  display: block;
+  margin-top: 1em;
+}
+
 .pagination-nav {
   margin: 0 auto;
-  padding: 0 0 10px;
+  padding-bottom: 1.5em;
 }
 
   .pagination-nav a {
     margin: 0;
-    padding: 15px 0;
+    padding: 1em 0;
+  }
+
+  .pagination-nav h4 {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: .9em;
+  }
+
+  .pagination-nav .right h4 {
+    text-align: right;
   }
 
 /* Social Media Widget */
@@ -593,8 +621,16 @@ table tr {
 
 /* CycleReact gallery  */
 
-#solofolio-cyclereact-wrap {
-  position: relative;
+#solofolio-cyclereact-wrap,
+#solofolio-cyclereact-stage,
+#solofolio-cyclereact-images,
+.solofolio-cycelereact-slide,
+.solofolio-cyclereact-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 #solofolio-cyclereact-thumbs {
@@ -637,10 +673,6 @@ table tr {
         bottom: 0;
       }
 
-#solofolio-cyclereact-stage {
-  position: relative;
-}
-
 #solofolio-cyclereact-bar {
   display: none;
   bottom: 0;
@@ -658,17 +690,18 @@ table tr {
 }
 
   .solofolio-cyclereact-controls a {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
     display: inline-block;
     font-size: 22px;
     width: 40px;
     height: 40px;
     margin-right: 15px;
-    line-height: 40px;
+    line-height: 39px;
     text-align: center;
     text-decoration: none;
+  }
+
+  .solofolio-cyclereact-controls .next, .solofolio-cyclereact-controls .prev {
+    line-height: 37px;
   }
 
   .thumbs .fa-expand {
