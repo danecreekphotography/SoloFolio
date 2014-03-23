@@ -434,6 +434,10 @@ input, textarea {
   padding-bottom: 20px;
 }
 
+.comment {
+  padding-bottom: .5em;
+}
+
 #comments .date {
   display: block;
   font-size: 12px;
@@ -470,11 +474,6 @@ input, textarea {
   text-align: center;
 }
 
-.commentmetadata {
-  display: block;
-  margin: 0;
-}
-
 #commentform textarea {
   max-width: 600px;
   width: 100%;
@@ -490,8 +489,15 @@ input, textarea {
   font-size: .7em;
 }
 
+p.comment-form-comment label {
+  padding-bottom: .5em;
+  display: block;
+}
+
 .commentmetadata {
   font-weight: normal;
+  display: block;
+  margin: 0 0 .5em;
 }
 
 /* Images */
@@ -505,6 +511,7 @@ div.aligncenter {
 .entry img {
   margin: 1em 0;
   height: auto;
+  max-width: 100%;
   width: 100%;
 }
 

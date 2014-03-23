@@ -19,6 +19,8 @@ add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
 add_action( 'wp_enqueue_scripts', 'register_solofolio_styles' );
 add_action( 'init', 'solofolio_editor_styles' );
 
+current_theme_supports( 'html5' );
+
 if ( ! isset( $content_width ) ) $content_width = 900;
 
 function solofolio_editor_styles() {
@@ -69,6 +71,29 @@ function solofolio_set_image_sizes() {
 	update_option('large_size_w', 900);
 	update_option('large_size_h', 600);
 }
+
+function solofolio_comments($comment, $args, $depth) {
+   $GLOBALS['comment'] = $comment; ?>
+   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+     <div id="comment-<?php comment_ID(); ?>">
+        <div class="comment-author vcard">
+          <?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
+        </div>
+
+        <?php if ($comment->comment_approved == '0') : ?>
+           <em><?php _e('Your comment is awaiting moderation.') ?></em>
+           <br />
+        <?php endif; ?>
+
+        <div class="comment-meta commentmetadata">
+          <?php printf(__('%1$s'), get_comment_date('Y-m-d')) ?>
+          <?php edit_comment_link(__('(Edit)'),'  ','') ?>
+        </div>
+
+        <?php comment_text() ?>
+     </div>
+<?php
+        }
 
 // Remove image margins automatically added by WordPress.
 // From: http://wordpress.org/support/topic/10px-added-to-width-in-image-captions
