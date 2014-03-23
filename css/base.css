@@ -545,6 +545,11 @@ div.aligncenter {
     max-width: 900px;
   }
 
+.entry .more-link {
+  display: block;
+  margin-top: 1em;
+}
+
 .pagination-nav {
   margin: 0 auto;
   padding-bottom: 1.5em;
