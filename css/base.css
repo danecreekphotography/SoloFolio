@@ -611,10 +611,12 @@ table tr {
 }
 
 /* React gallery  */
+.sl-react {
+  margin: 0 auto;
+}
 .sl-react img {
   max-width: 100% !important;
 }
-
 .sl-react-caption {
   max-width: 600px;
 }
