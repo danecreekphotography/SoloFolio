@@ -121,7 +121,7 @@ function solofolio_gallery_shortcode($attr) {
 
 	$mobile = detect_mobile();
 
-	if ($mobile === true) { $type = "side-scroll";}
+	if ($mobile === true) { $type = "react";}
 	if ( is_home() || is_single()) { $type = "vert-scroll";}
 
 	switch ($type) {
