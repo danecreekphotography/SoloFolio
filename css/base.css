@@ -59,10 +59,6 @@ body {
   text-align: left;
 }
 
-html, body {
-  height: 100%;
-}
-
 strong {
     font-weight: bold;
 }
@@ -192,10 +188,11 @@ p {
   }
 
   #header #logo {
-    position: static;
-    bottom: 0px;
-    margin-bottom: 30px;
     width: auto;
+  }
+
+  #header-meta {
+    margin-bottom: 1em;
   }
 
   #header-content .solofolio-cyclereact-sidebar {
@@ -288,7 +285,7 @@ p {
 }
 
   #sidebar-footer p {
-    font-size: .8em;
+    font-size: .75em;
     line-height: 1.3em;
     margin: 0;
   }
@@ -591,16 +588,16 @@ div.aligncenter {
 /* Phone view menu */
 #menu-icon {
   width: 60px;
-  line-height: 50px;
+  line-height: 60px;
   font-size: 24px;
   border: 0;
   padding: 0 10px 0 0;
   position: absolute;
   right: 0;
   top: 0;
-  bottom: 0;
   cursor: pointer;
   text-align: center;
+  z-index: 10;
   display: none;
 }
 

@@ -23,17 +23,25 @@
   #header {
     height: auto;
     position: relative !important;
-    margin: 15px 0 0 0;
+    margin: 1em 0 0;
     top: 0;
     padding: 0;
     width: auto;
   }
 
-    #header #logo {
-      margin-left: 15px;
-      margin-right: 60px;
-      margin-bottom: 10px;
+    #header #logo div {
+      margin: 0 auto .25em;
     }
+
+    #header-meta {
+      text-align: center;
+      margin: 0 auto 1em;
+    }
+
+      #header-meta div {
+        display: inline-block;
+        padding: 0 10px;
+      }
 
     #header-content {
       padding: 0 0 10px 0;
@@ -68,7 +76,7 @@
   }
 
     #content-index, #content-single, #content-search {
-      padding: 10px 0 0;
+      padding: 0;
     }
 
     #content-parent {
@@ -79,15 +87,42 @@
       border-bottom: medium none;
       padding: 10px;
       margin-bottom: 0;
+      text-align: center;
     }
 
-    p, h1, h2, h4, h6, .commentlist .date, #wrapper li {
-      padding: 0 10px;
+    .entry .wp-caption img, .entry img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .entry .wp-caption-text {
+      margin: .25em auto auto auto;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .entry p {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+
+    .pagination-nav {
+      max-width: 600px;
+    }
+
+    p, h1, h2, h6, .comment-author, .comment-meta, .pagination-nav, .commentlist .date {
+      padding-left: 1em;
+      padding-right: 1em;
     }
 
       #comments .commentlist li {
         padding: 0;
       }
+
+    #reply-title {
+      padding-left: 16px;
+    }
 
     img.alignnone {
       width: 100%;
@@ -96,19 +131,20 @@
 
     #wrapper a img {
       border: none;
-      }
-
-    .pagination-nav a {
-      padding: 15px;
     }
+
+  #comments {
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+  }
 
   #sidebar-footer {
     position: relative;
     height: auto;
     bottom: auto;
     padding: 10px 8px;
-        font-size: 14px;
-        line-height: 18px;
+    line-height: 18px;
   }
 
   #wrapper #content-index {
@@ -138,15 +174,15 @@
     }
 
     #sidebar-footer p {
-        display: inline;
-        text-align: center;
-      }
+      margin: 0 auto;
+      text-align: center;
+    }
 
-      #header ul li {
+      #header-content  ul li {
         padding: 0;
       }
 
-        #header ul li a {
+        #header-content ul li a, #header-content h3 {
           display: block;
           font-size: 16px;
           padding: 9px 0;
@@ -201,6 +237,20 @@
     overflow: scroll;
   }
 
+  #header-meta div {
+    display: inline-block;
+    padding: 0 10px 0 0;
+  }
+
+  #header #logo div {
+    margin-left: 1em;
+  }
+
+  #header-meta {
+    text-align: left;
+    margin: 0 auto 1em 1em;
+  }
+
   #content-parent {
     padding-left: 0;
   }
@@ -212,6 +262,15 @@
 
   .entry img {
     max-width: 100%;
+  }
+
+  .pagination-nav .right {
+    clear: both;
+    float: left;
+  }
+
+  .pagination-nav .right h4 {
+    text-align: left;
   }
 
   .sl-sidescroll {
