@@ -40,10 +40,11 @@ SoloFolio v6.20140216 - github.com/joelhawksley/SoloFolio
 
 <div id="outerWrap">
 
+<a id='menu-icon'><i class="fa fa-bars"></i></a>
+
 <div id="header">
 
 	<div id="header-inner">
-		<a id='menu-icon'><i class="fa fa-bars"></i></a>
 
 		<div id="logo">
 			<div id="logo-img">
@@ -51,8 +52,7 @@ SoloFolio v6.20140216 - github.com/joelhawksley/SoloFolio
 					 title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
 					 rel="home">
 					 <img src="<?php echo get_theme_mod( 'solofolio_logo' ); ?>"
-					 			alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
-					 			data-retina="<?php echo get_theme_mod( 'solofolio_logo_retina' ); ?>" />
+					 			alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 				</a>
 			</div>
 
@@ -65,7 +65,9 @@ SoloFolio v6.20140216 - github.com/joelhawksley/SoloFolio
 					</a>
 				</h1>
 			</div>
+		</div>
 
+		<div id="header-meta">
 			<div id="header-phone">
 				<a href="tel:<?php echo get_theme_mod( 'solofolio_phone' ); ?>">
 					<?php echo get_theme_mod( 'solofolio_phone', '555-555-5555' ); ?>
@@ -79,9 +81,9 @@ SoloFolio v6.20140216 - github.com/joelhawksley/SoloFolio
 			<div id="header-location">
 				<?php echo get_theme_mod( 'solofolio_location', 'Athens, Ohio' ); ?>
 			</div>
-
-			<div class="clear"></div>
 		</div>
+
+		<div class="clear"></div>
 
 		<div id="header-content">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Main Navigation") ) : ?>
@@ -105,7 +107,7 @@ SoloFolio v6.20140216 - github.com/joelhawksley/SoloFolio
 
 			<div id="sidebar-footer">
 				<p id="info-footer">&copy; <?php echo date("Y"); ?> <?php echo get_theme_mod( 'solofolio_copyright_text' ); ?></p>
-				<p id="solo-footer">Powered by <a title="The premier free WordPress theme for the creatively inclined." href="http://www.solofolio.com">SoloFolio</a></p>
+				<p id="solo-footer">Powered by <a title="The premier free WordPress theme for the creatively inclined." href="http://solofol.io">SoloFolio</a></p>
 			</div>
 		</div>
 

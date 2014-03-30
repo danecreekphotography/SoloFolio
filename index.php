@@ -29,10 +29,10 @@
 		<?php if (is_single()) : ?>
 			<div class="pagination-nav">
 				<div class="left">
-					<?php previous_post_link('%link', '<h4>Previous</h4>%title'); ?>
+					<?php previous_post_link('%link', '<h4>Previous</h4> <span>%title</span>'); ?>
 				</div>
 				<div class="right">
-					<?php next_post_link('%link', '<h4>Next</h4> %title'); ?>
+					<?php next_post_link('%link', '<h4>Next</h4> <span>%title</span>'); ?>
 				</div>
 				<div class="clear"></div>
 			</div>

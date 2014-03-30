@@ -104,11 +104,13 @@ function solofolio_css() {
 
   #header-content li a {
     font-size: " . get_theme_mod('solofolio_navigation_font_size') . ";
+    line-height: " . get_theme_mod('solofolio_navigation_font_size') . ";
   }
 
   #header-content h3 {
     color: " . get_theme_mod('solofolio_navigation_header_color') . ";
     font-size: " . get_theme_mod('solofolio_navigation_header_font_size') . ";
+    line-height: " . get_theme_mod('solofolio_navigation_font_size') . ";
   }
 
   #header-content a:link, #header-content a:visited {
