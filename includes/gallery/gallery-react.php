@@ -9,16 +9,21 @@ foreach ($attachment_ids as $id) {
 
 	$helper = get_theme_mod( 'solofolio_header_width' ) + 900; // Calculates the break point dynamically
 
+	$caption = wptexturize($attachment->post_excerpt);
+
 	$output .= "
-	<div class=\"sl-react\" data-picture data-alt=\"" .  wptexturize($attachment->post_excerpt) . "\">
+	<div class=\"sl-react\" data-picture data-alt=\"" .  $caption . "\">
 		<div data-src=\"" . $link4[0] . "\"></div>
 		<div data-src=\"" . $link5[0] . "\"      data-media=\"(min-width: 800px) and (min-device-pixel-ratio: 2.0)\"></div>
 		<div data-src=\"" . $link5[0] . "\" data-media=\"(min-width: " . $helper . "px)\"></div>
 
 		<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-		<noscript><img src=\"" . $link4[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\"></noscript>
-	</div>
-	<p class=\"solofolio-caption sl-react-caption\">" .  wptexturize($attachment->post_excerpt) . "</p>";
+		<noscript><img src=\"" . $link4[0] . "\" alt=\"" .  $caption . "\"></noscript>
+	</div>";
+
+	if (!empty($caption)) {
+		$output .="<p class=\"solofolio-caption sl-react-caption\">" .  $caption . "</p>";
+	}
 } // End ForEach
 
 add_action('wp_footer', 'sl_react');
