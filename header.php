@@ -31,9 +31,6 @@ SoloFolio v6.20140330 - github.com/joelhawksley/SoloFolio
 		<?php echo get_theme_mod( 'solofolio_css' ) ?>
 	</style>
 	<?php } ?>
-
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.retina.min.js"></script>
-	<script type="text/javascript">$(window).load(function(){$("p:has(img)").css("margin","0");$("p:has(img)").css("padding","0");$("img").each(function(){var e=$(this);var t=new Image;t.src=e.attr("src");var n=t.width;var r=t.height;if(t.width>0){$(this).attr("style","max-width:"+n+"px")}});$("img").each(function(){$(this).removeAttr("width");$(this).removeAttr("height")});$("img").retina();$("#menu-icon").click(function(){$("#header-content").slideToggle();$(this).toggleClass("active")})})</script>
 </head>
 
 <body <?php body_class(); ?> id="<?php echo get_post_type( $post ); ?>">

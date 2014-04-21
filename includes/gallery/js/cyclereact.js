@@ -26,6 +26,12 @@ jQuery(window).load(function(){
   $('.solofolio-cyclereact-fill').each(function(i, elm) {
     $(elm).attr('data-picture', '');
   });
+
+  $('.picturefill-background').each(function(i, elm) {
+    url = $(this).data().image
+    $(elm).css('background-image', 'url(' + url + ')').fadeIn('slow');
+  });
+
   window.picturefill();
   setResponsive();
   $(".thumbs").click(function(){

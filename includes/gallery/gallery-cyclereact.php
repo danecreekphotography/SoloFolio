@@ -28,7 +28,6 @@ $output .="<div id=\"solofolio-cyclereact-images\"
 								data-cycle-slides=\".solofolio-cycelereact-slide\"
 								data-cycle-prev=\".prev\"
 								data-cycle-next=\".next\"
-								data-cycle-auto-height=0
 								data-cycle-fx=\"fade\"
 								data-cycle-log=\"false\"
 								data-cycle-manual-speed=\"300\"
@@ -97,9 +96,6 @@ function sl_cyclereact_js() {
 	<style type=\"text/css\">
 	#header #header-content .solofolio-cyclereact-sidebar {
 		display: block;
-	}
-	#wrapper img {
-		display: none;
 	}
 	#wrapper {
 		bottom: 20px;

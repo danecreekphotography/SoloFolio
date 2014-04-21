@@ -37,7 +37,7 @@ function sl_react() {
 	$(window).load(function(){
 		var setResponsive = function () {
 		  var pageHeight = $(window).height();
-		  var blockHeight = $(\".sl-react-caption\").outerHeight();
+		  var blockHeight = $(\".sl-react-caption\").outerHeight(true);
 		  $('.sl-react img').css('max-height', pageHeight - blockHeight - 40);
 		}
 		$(window).resize(setResponsive);
