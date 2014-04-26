@@ -15,8 +15,15 @@ add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 add_filter( 'the_content', 'filter_ptags_on_images' );
 
 add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
+add_action( 'after_setup_theme', 'solofolio_css_cache' );
 add_action( 'wp_enqueue_scripts', 'register_solofolio_styles' );
 add_action( 'init', 'solofolio_editor_styles' );
+add_filter( 'upload_mimes', 'solofolio_mime_types' );
+
+function solofolio_mime_types( $mimes ){
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
 
 current_theme_supports( 'html5' );
 
@@ -121,13 +128,13 @@ $fixImageMargins = new fixImageMargins();
 if(function_exists('register_sidebar')){
 
   register_sidebar(array('name' => 'Main Navigation',
-    'before_widget' => '<div>',
+    'before_widget' => '<div class="sidebar-widget">',
     'after_widget' => '</div>',
     'before_title' => '<h3>',
     'after_title' => '</h3>',
   ));
   register_sidebar(array('name' => 'Under Main Navigation on Blog',
-    'before_widget' => '<div>',
+    'before_widget' => '<div class="sidebar-widget blog-sidebar">',
     'after_widget' => '</div>',
     'before_title' => '<h3>',
     'after_title' => '</h3>',
