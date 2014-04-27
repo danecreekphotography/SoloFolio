@@ -15,7 +15,6 @@ add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 add_filter( 'the_content', 'filter_ptags_on_images' );
 
 add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
-add_action( 'after_setup_theme', 'solofolio_css_cache' );
 add_action( 'wp_enqueue_scripts', 'register_solofolio_styles' );
 add_action( 'init', 'solofolio_editor_styles' );
 add_filter( 'upload_mimes', 'solofolio_mime_types' );
