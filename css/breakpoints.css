@@ -33,6 +33,10 @@
       margin: 0 auto .25em;
     }
 
+    #header #logo #logo-noimg {
+      text-align: center;
+    }
+
     #header-meta {
       text-align: center;
       margin: 0 auto 1em;
@@ -244,6 +248,10 @@
 
   #header #logo div {
     margin-left: 1em;
+  }
+
+  #header #logo #logo-noimg {
+    text-align: left;
   }
 
   #header-meta {
