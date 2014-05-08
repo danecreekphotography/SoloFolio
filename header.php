@@ -44,24 +44,26 @@ SoloFolio v6.20140330 - github.com/joelhawksley/SoloFolio
 	<div id="header-inner">
 
 		<div id="logo">
-			<div id="logo-img">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-					 title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
-					 rel="home">
-					 <img src="<?php echo get_theme_mod( 'solofolio_logo' ); ?>"
-					 			alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-				</a>
-			</div>
-
-			<div id="logo-noimg">
-				<h1 class="site-title">
+			<?php if (get_theme_mod( 'solofolio_logo' ) != '') { ?>
+				<div id="logo-img">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 						 title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
 						 rel="home">
-						<?php bloginfo( 'name' ); ?>
+						 <img src="<?php echo get_theme_mod( 'solofolio_logo' ); ?>"
+						 			alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 					</a>
-				</h1>
-			</div>
+				</div>
+			<?php } else { ?>
+				<div id="logo-noimg">
+					<h1 class="site-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+							 title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
+							 rel="home">
+							<?php bloginfo( 'name' ); ?>
+						</a>
+					</h1>
+				</div>
+			<?php } ?>
 		</div>
 
 		<div id="header-meta">

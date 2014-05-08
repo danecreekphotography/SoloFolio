@@ -7,7 +7,7 @@ foreach ($attachment_ids as $id) {
 	$link3 = wp_get_attachment_image_src($id, 'thumbnail');
 	$link4 = wp_get_attachment_image_src($id, 'large');
 
-	$output .= "\n\n<div style=\"max-width:" . $link4[1] . "px; \">";
+	$output .= "\n\n<div class='vert-scroll' style=\"max-width:" . $link4[1] . "px; \">";
 	$output .= "<img src=\"" . $link4[0] . "\"
 									 data-retina=\"" . $link2 . "\"
 									 alt=\"open image\"
@@ -20,11 +20,4 @@ foreach ($attachment_ids as $id) {
 	}
 	$i += 1;
 }
-
-$output .="
-<style type=\"text/css\">
-#wrapper {
-	overflow: scroll;
-}
-</style>";
 ?>

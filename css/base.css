@@ -253,7 +253,6 @@ p {
     }
 
     #logo-noimg {
-      display: none;
       margin: 0;
     }
 
@@ -599,6 +598,12 @@ div.aligncenter {
   text-align: center;
   z-index: 10;
   display: none;
+}
+
+/* Vert scroll gallery */
+
+.vert-scroll img {
+  width: 100%;
 }
 
 /* Side scroll gallery */

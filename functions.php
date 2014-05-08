@@ -9,8 +9,6 @@ include_once("includes/css.php");             // Include CSS builder
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
 
-add_image_size( 'about-image', 400, 600 );
-
 add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 add_filter( 'the_content', 'filter_ptags_on_images' );
 

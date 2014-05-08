@@ -17,11 +17,11 @@
 					<span class="date">
 						<?php the_time('Y-m-d') ?>
 						<?php if (get_theme_mod('solofolio_blog_showauthor')) {?>by <?php the_author() ?><?php } ?>
-						<?php the_tags( '<span class="tag-links">', '', '</span>' ); ?>
 					</span>
 				</div>
 				<?php the_content('Continue reading <i class="icon-angle-right"></i>'); ?>
 				<?php wp_link_pages(); ?>
+				<?php the_tags( '<span class="tag-links">Tags: ', '', '</span>' ); ?>
 				<div class="clear"></div>
 			</div>
 		<?php endwhile; ?>
