@@ -27,7 +27,7 @@
 				</div>
 				<?php the_content('Continue reading <i class="icon-angle-right"></i>'); ?>
 				<?php wp_link_pages(); ?>
-				<?php the_tags( '<span class="tag-links">Tags: ', '', '</span>' ); ?>
+				<?php if (get_theme_mod('solofolio_blog_showtags')) { the_tags( '<span class="tag-links">Tags: ', ' ', '</span>' ); } ?>
 				<div class="clear"></div>
 			</div>
 		<?php endwhile; ?>

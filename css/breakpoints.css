@@ -104,6 +104,12 @@
       text-align: left;
     }
 
+    .tag-links {
+      text-align: left;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
     .entry p {
       margin-left: auto;
       margin-right: auto;

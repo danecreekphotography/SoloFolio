@@ -326,6 +326,15 @@ function solofolio_customize_register( $wp_customize )
 			'type'     => 'checkbox',
 		));
 
+		$wp_customize->add_setting( 'solofolio_blog_showtags' );
+
+		$wp_customize->add_control( 'solofolio_blog_showtags', array(
+			'settings' => 'solofolio_blog_showtags',
+			'label'    => __('Show tags', 'solofolio'),
+			'section'  => 'solofolio_blog_section',
+			'type'     => 'checkbox',
+		));
+
 	// Gallery
 	$wp_customize->add_section( 'solofolio_gallery_section' , array(
 		'title'       => __( 'Gallery', 'solofolio' ),

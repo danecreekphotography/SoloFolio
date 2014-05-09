@@ -381,6 +381,11 @@ h2.post-title {
     text-decoration: none;
   }
 
+.entry .tag-links {
+  max-width: 600px;
+  display: block;
+}
+
 #content-index, #content-single, #content-search {
     width: 100%;
 }
