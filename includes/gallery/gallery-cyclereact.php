@@ -78,12 +78,19 @@ $output .= "</div>";
 
 $output .= "</div>";
 
-$output .="<div id=\"solofolio-cyclereact-bar\">
-<p class=\"solofolio-cyclereact-caption\"></p>
-<div id=\"solofolio-cyclereact-controls\">
-			<p id=\"solofolio-cyclereact-caption\"></p>
-    	</div>
-    	</div>";
+$output .= '<div class="solofolio-cyclereact-sidebar">
+      <p class="solofolio-cyclereact-caption"></p>
+      <span class="solofolio-cyclereact-controls">
+        <a class="thumbs" href="#">
+          <i class="fa fa-th"></i>
+          <i class="fa fa-expand"></i>
+        </a>
+        <span class="arrows">
+          <a class="prev" href="#"><i class="fa fa-angle-left"></i></a>
+          <a class="next" href="#"><i class="fa fa-angle-right"></i></a>
+        </span>
+      </span>
+    	</div>';
 
 add_action('wp_footer', 'sl_cyclereact_js');
 
@@ -99,6 +106,7 @@ function sl_cyclereact_js() {
 	}
 	#wrapper {
 		bottom: 20px;
+		left: 20px;
 	}
 	</style>
 	";

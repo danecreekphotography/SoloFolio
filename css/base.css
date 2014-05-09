@@ -195,16 +195,16 @@ p {
     margin-bottom: 1em;
   }
 
-  #header-content .solofolio-cyclereact-sidebar {
-    display: none;
-    bottom: 20px;
+  .solofolio-cyclereact-sidebar {
+    bottom: 0;
     position: absolute;
     max-width: 200px;
     margin-bottom: 0;
     width: 100%;
+    z-index: 100;
   }
 
-    #header-content .solofolio-cyclereact-caption {
+    .solofolio-cyclereact-caption {
       padding-bottom: 15px;
       line-height: 1.4;
       font-size: .8em;
@@ -273,7 +273,7 @@ p {
   position: absolute;
   top: 20px;
   right: 20px;
-  left: 270px;
+  left: 20px;
 }
 
 /* Footer */
@@ -550,7 +550,7 @@ div.aligncenter {
 
 .pagination-nav {
   margin: 0 auto;
-  padding-bottom: 1.5em;
+  padding-bottom: 2em;
 }
 
   .pagination-nav a {
@@ -677,18 +677,6 @@ table tr {
         top: 0;
         bottom: 0;
       }
-
-#solofolio-cyclereact-bar {
-  display: none;
-  bottom: 0;
-  left: 0;
-  margin: 0;
-  padding-bottom: 15px;
-  position: absolute;
-  right: 20px;
-  text-align: center;
-  z-index: 7;
-}
 
 #solofolio-cyclereact-controls {
   text-align: center;

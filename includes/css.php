@@ -226,6 +226,10 @@ function solofolio_css() {
     width: auto;
   }
 
+  #solofolio-cyclereact-stage, #solofolio-cyclereact-thumbs {
+    left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 40) . "px;
+  }
+
   @media (min-width: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 900 + 50) . "px) {
     #wrapper {
       max-width: 100%;
