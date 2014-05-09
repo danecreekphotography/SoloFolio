@@ -61,16 +61,6 @@ function solofolio_css() {
     width: " . get_theme_mod( 'solofolio_header_width', '200') . "px;
   }\n";
 
-  if (get_theme_mod('solofolio_logo') == '') {
-    $styles .= "
-    #logo-noimg { display: block; }
-    #logo-img   { display: none; }\n";
-  } else {
-    $styles .= "
-    #logo-noimg { display: none; }
-    #logo-img   { display: block;}\n";
-  }
-
   $styles .= "
   body {
     background-color: ". get_theme_mod('solofolio_background_color') . ";
