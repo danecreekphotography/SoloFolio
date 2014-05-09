@@ -9,6 +9,12 @@
 
 		<?php while (have_posts()) : the_post(); ?>
 			<div class="entry" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<?php if ( has_post_thumbnail()) : ?>
+					<div class="wp-caption blog-featured-image">
+						<?php the_post_thumbnail('large'); ?>
+						<p class="wp-caption-text"><?php echo get_post(get_post_thumbnail_id())->post_excerpt ?></p>
+					</div>
+				<?php endif; ?>
 				<div class="post-meta">
 					<?php if (get_theme_mod('solofolio_blog_showcat')) {?><span class="post-cat"><?php the_category(', ') ?></span><?php } ?>
 					<h2 class="post-title">
