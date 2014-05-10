@@ -386,6 +386,10 @@ h2.post-title {
   display: block;
 }
 
+  .entry .tag-links a {
+    padding: 0 2px;
+  }
+
 #content-index, #content-single, #content-search {
     width: 100%;
 }
