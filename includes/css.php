@@ -208,15 +208,15 @@ function solofolio_css() {
 
   $styles .= "
   #wrapper {
-    left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 40) . "px;
+    left: " . (get_theme_mod( 'solofolio_header_width', '200' ) - 30) . "px;
     width: auto;
   }
 
   #solofolio-cyclereact-stage, #solofolio-cyclereact-thumbs {
-    left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 40) . "px;
+    left: " . (get_theme_mod( 'solofolio_header_width', '200' ) - 30) . "px;
   }
 
-  @media (min-width: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 900 + 50) . "px) {
+  @media (min-width: " . (get_theme_mod( 'solofolio_header_width', '200' ) + get_theme_mod( 'solofolio_entry_width', '900' ) + 20) . "px) {
     #wrapper {
       max-width: 100%;
       }
@@ -224,7 +224,7 @@ function solofolio_css() {
     #post #outerWrap {
       margin: 0 auto;
       position: relative;
-      max-width: " . (get_theme_mod( 'solofolio_header_width', '200' ) + get_theme_mod( 'solofolio_entry_width', '900' ) + 60) . "px;
+      max-width: " . (get_theme_mod( 'solofolio_header_width', '200' ) + get_theme_mod( 'solofolio_entry_width', '900' ) + 20) . "px;
     }
 
     #post #header {
