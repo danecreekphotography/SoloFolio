@@ -542,11 +542,8 @@ div.aligncenter {
   font-size: 13px;
   line-height: 1.4;
   padding-top: 2px;
+  max-width: 100%;
 }
-
-  .entry .wp-caption-text {
-    max-width: 900px;
-  }
 
 .entry .more-link {
   display: block;
@@ -606,6 +603,15 @@ div.aligncenter {
 }
 
 /* Vert scroll gallery */
+
+.vert-scroll {
+  margin: 0 auto 1.5em;
+}
+
+.vert-scroll .wp-caption-text {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .vert-scroll img {
   width: 100%;

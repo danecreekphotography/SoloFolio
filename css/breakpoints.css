@@ -120,11 +120,6 @@
       max-width: 600px;
     }
 
-    p, h1, h2, h6, .comment-author, .comment-meta, .pagination-nav, .commentlist .date {
-      padding-left: 1em;
-      padding-right: 1em;
-    }
-
       #comments .commentlist li {
         padding: 0;
       }
@@ -216,7 +211,9 @@
   }
 
     .post-meta, .wp-caption-text, .entry p {
-      padding: 0 15px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
   #wrapper {
@@ -232,7 +229,7 @@
   }
 }
 
-@media only screen and (max-width: 440px) {
+@media only screen and (max-width: 600px) {
 
   body#page {
     overflow: auto;
@@ -262,6 +259,11 @@
   #header-meta {
     text-align: left;
     margin: 0 auto 1em 1em;
+  }
+
+  p, h1, h2, h6, .comment-author, .comment-meta, .pagination-nav, .commentlist .date {
+    padding-left: 1em;
+    padding-right: 1em;
   }
 
   #content-parent {

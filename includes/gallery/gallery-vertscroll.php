@@ -13,11 +13,12 @@ foreach ($attachment_ids as $id) {
 									 alt=\"open image\"
 									 class=\"full\"
 									 id=\"" . $i . "\"/>";
-	$output .= "</div>";
 
 	if ($captions != "false"){
 		$output .= "<p class=\"wp-caption-text\">" .  wptexturize($attachment->post_excerpt) . "</p> ";
 	}
+
+	$output .= "</div>";
 	$i += 1;
 }
 ?>
