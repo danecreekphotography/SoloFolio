@@ -308,6 +308,14 @@ function solofolio_customize_register( $wp_customize )
 			'settings' => 'solofolio_blog_entry_byline_color',
 		)));
 
+		$wp_customize->add_setting( 'solofolio_entry_width', array('default' => '900', 'transport'   => 'postMessage',) );
+
+		$wp_customize->add_control( 'solofolio_entry_width', array(
+			'label' => 'Entry Width',
+			'settings' => 'solofolio_entry_width',
+			'section' => 'solofolio_blog_section',
+		) );
+
 		$wp_customize->add_setting( 'solofolio_blog_showauthor' );
 
 		$wp_customize->add_control( 'solofolio_blog_showauthor', array(

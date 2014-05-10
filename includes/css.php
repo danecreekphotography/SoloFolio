@@ -228,7 +228,7 @@ function solofolio_css() {
     #post #outerWrap {
       margin: 0 auto;
       position: relative;
-      max-width: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 920 + 40) . "px;
+      max-width: " . (get_theme_mod( 'solofolio_header_width', '200' ) + get_theme_mod( 'solofolio_entry_width', '900' ) + 60) . "px;
     }
 
     #post #header {

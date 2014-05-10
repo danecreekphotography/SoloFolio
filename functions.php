@@ -115,7 +115,7 @@ class fixImageMargins{
             ), $attr));
         if ( 1 > (int) $width || empty($caption) ) {return $content;}
         if ( $id ) $id = 'id="' . $id . '" ';
-    return '<div ' . $id . 'class="wp-caption ' . $align . '">' . $content . '<p class="wp-caption-text">' . $caption . '</p></div>';
+    return '<div ' . $id . 'class="wp-caption ' . $align . '" style="max-width: ' . $width . 'px">' . $content . '<p class="wp-caption-text">' . $caption . '</p></div>';
     }
 }
 $fixImageMargins = new fixImageMargins();

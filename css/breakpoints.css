@@ -93,7 +93,7 @@
       text-align: center;
     }
 
-    .entry .wp-caption img, .entry img {
+    .entry .wp-caption, .entry .wp-caption img, .entry img {
       margin-left: auto;
       margin-right: auto;
     }
@@ -107,7 +107,6 @@
     .tag-links {
       text-align: left;
       margin: 0 auto;
-      padding: 0 15px;
     }
 
     .entry p {
@@ -229,7 +228,7 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 620px) {
 
   body#page {
     overflow: auto;
@@ -261,7 +260,7 @@
     margin: 0 auto 1em 1em;
   }
 
-  p, h1, h2, h6, .comment-author, .comment-meta, .pagination-nav, .commentlist .date {
+  p, h1, h2, h6, .comment-author, .comment-meta, .pagination-nav, .commentlist .date, .tag-links {
     padding-left: 1em;
     padding-right: 1em;
   }
