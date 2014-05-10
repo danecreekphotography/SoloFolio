@@ -180,7 +180,7 @@ p {
   height: 100%;
   left: 0;
   margin: 0;
-  padding: 20px 40px 0 20px;
+  padding: 20px 20px 0 20px;
   position: fixed;
   top: 0;
   width: 200px;
@@ -201,7 +201,6 @@ p {
     max-width: 200px;
     margin-bottom: 0;
     width: 100%;
-    z-index: 100;
   }
 
     .solofolio-cyclereact-caption {
@@ -429,7 +428,6 @@ h2.post-title {
 /* Comments */
 
 input, textarea {
-  background-color: #333333;
   border: none;
   font-size: 12px;
   margin: 0;

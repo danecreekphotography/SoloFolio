@@ -76,10 +76,6 @@ function solofolio_css() {
     border: 10px solid ". get_theme_mod('solofolio_background_color') . ";
   }
 
-  #header {
-    background-color: " . get_theme_mod('solofolio_background_color') . ";
-  }
-
   .galleria-container .galleria-stage, .galleria-container .galleria-thumbnails-container {
     background-color: " . get_theme_mod('solofolio_background_color') . ";
   }
