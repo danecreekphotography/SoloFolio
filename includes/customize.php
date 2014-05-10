@@ -325,6 +325,15 @@ function solofolio_customize_register( $wp_customize )
 			'type'     => 'checkbox',
 		));
 
+		$wp_customize->add_setting( 'solofolio_blog_showdate', array('default' => 1));
+
+		$wp_customize->add_control( 'solofolio_blog_showdate', array(
+			'settings' => 'solofolio_blog_showdate',
+			'label'    => __('Show date', 'solofolio'),
+			'section'  => 'solofolio_blog_section',
+			'type'     => 'checkbox',
+		));
+
 		$wp_customize->add_setting( 'solofolio_blog_showcat' );
 
 		$wp_customize->add_control( 'solofolio_blog_showcat', array(
