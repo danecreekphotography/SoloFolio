@@ -408,21 +408,18 @@ h2.post-title {
   }
 
 #content-about {
+  max-width: 900px
 }
 
-  #content-about p {
-    max-width: 550px;
-  }
-
-  #content-about .attachment-about-image {
+  #content-about-image {
     float: left;
     padding: 0 30px 20px 0;
   }
 
-  #content-about-right {
+  #content-about-content {
     float: left;
+    max-width: 500px;
     display: block;
-    width: 470px;
   }
 
 /* Comments */

@@ -82,6 +82,22 @@
       padding: 0;
     }
 
+    #content-about {
+      max-width: 900px;
+    }
+
+      #content-about-image {
+        float: none;
+        padding: 0;
+        text-align: center;
+        margin-bottom: 1em;
+      }
+
+      #content-about-content {
+        float: none;
+        display: block;
+      }
+
     #content-parent {
       padding-left: 5px;
     }
@@ -93,7 +109,11 @@
       text-align: center;
     }
 
-    .entry .wp-caption, .entry .wp-caption img, .entry img {
+    .entry .wp-caption,
+    .entry .wp-caption img,
+    .entry img,
+    #content-about,
+    #content-about-content {
       margin-left: auto;
       margin-right: auto;
     }
