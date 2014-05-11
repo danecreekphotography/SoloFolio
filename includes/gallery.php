@@ -69,7 +69,7 @@ function solofolio_gallery_shortcode($attr) {
 
 	$selector = "solofolio";
 
-	if ($type == "") {$type = get_theme_mod('solofolio_gallery_default');}
+	if ($type == "") {$type = "cycle-react";}
 
 	function detect_mobile()
 	{

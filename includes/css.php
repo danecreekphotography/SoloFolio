@@ -166,13 +166,6 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_body_caption_color') . ";
   }
 
-  .sl-sidescroll-container {
-    padding-right: " . get_theme_mod('solofolio_gallery_sidescroll_padding') . "px;
-  }
-
-    .sl-sidescroll-container:last-child {
-      padding-right: 0;
-      }
   ";
 
   if (get_theme_mod('solofolio_gallery_cursor_color') == 'light') {
@@ -192,17 +185,6 @@ function solofolio_css() {
 
     .galleria-image-nav-right, .solofolio-cyclereact-nav-right {
       cursor: url(\"" . get_template_directory_uri() . "/img/next.dark.cur\"), move;
-    }";
-  }
-
-  if (get_theme_mod('solofolio_gallery_icon_color') == 'dark') {
-    $styles .= "
-    .galleria-controls .galleria-counter, .galleria-controls a {
-      color: #000000;
-    }
-
-    .galleria-thumbnails-container {
-      background-color: #ffffff;
     }";
   }
 
