@@ -3,23 +3,28 @@
 <?php get_header(); ?>
 
 <div id="content-parent">
-<?php
- $page_query = new WP_Query();
-  $all_pages = $page_query->query( array('post_type' => 'page') );
+  <div class="content">
+    <?php the_content(); ?>
+  </div>
 
-  $page_children = get_page_children( get_the_id(), $all_pages );
+  <ul class="children">
+    <?php
+      $children = get_pages( array( 'child_of' => $post->ID ) );
 
-  echo '<ul class="children">';
-  foreach ($page_children as $page) {
-    echo '<li>';
-    echo '<h3>' . $page->post_title . '</h3>';
-    echo '<a href="' . get_permalink($page->ID) . '">';
-      echo get_the_post_thumbnail( $page->ID, 'medium' );
-    echo '</a>';
-    echo '</li>';
-  }
-  echo '</ul>';
-?>
+      foreach( $children as $page ) {
+        $content = $page->post_content;
+      ?>
+        <li>
+          <a href="<?php echo get_page_link( $page->ID ); ?>">
+            <h3><?php echo $page->post_title; ?></h3>
+            <?php echo get_the_post_thumbnail( $page->ID, 'medium' ); ?>
+          </a>
+        </li>
+      <?php
+      }
+    ?>
+  </ul>
+
 </div>
 
 <?php get_footer(); ?>

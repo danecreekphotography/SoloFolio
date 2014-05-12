@@ -23,37 +23,53 @@
   #header {
     height: auto;
     position: relative !important;
-    margin: 1em 0 0;
     top: 0;
+    margin: 0;
     padding: 0;
     width: auto;
   }
 
-    #header #logo div {
-      margin: 0 auto .25em;
+    #header-inner {
+      padding: .75em 0;
     }
 
-    #header #logo #logo-noimg {
-      text-align: center;
+    #header #logo,
+    #header-content,
+    #header-content ul li {
+      float: none;
+    }
+
+    #header-content {
+      margin: 16px 0;
+    }
+
+    #header-content ul li {
+      float: none;
+    }
+
+    #header #logo div {
+      line-height: 1;
     }
 
     #header-meta {
-      text-align: center;
-      margin: 0 auto 1em;
+      margin-bottom: 0;
     }
 
-      #header-meta div {
-        display: inline-block;
-        padding: 0 10px;
+    #header-meta div {
+      display: inline-block;
+      float: none;
+      padding: 0 16px 0 0;
+    }
+
+    #header #logo {
+      max-width: none;
+      padding-left: 16px;
+      padding-right: 4em;
+    }
+
+      #header #logo #logo-noimg {
+        text-align: left;
       }
-
-    #header-content {
-      padding: 0 0 10px 0;
-    }
-
-    #header-content .solofolio-cyclereact-caption {
-      display: none !important;
-    }
 
     #header h3 {
       margin: 0;
@@ -64,22 +80,22 @@
       margin: 0;
     }
 
-    .solofolio-cyclereact-sidebar {
-      display: none !important;
+    #wrapper {
+      position: relative;
+      overflow: scroll;
+      margin: 0;
+      top: 0;
+      left: 0;
+      right: 0;
     }
-
-  #wrapper {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-  }
 
     #content-index, #content-single, #content-search {
       padding: 0;
+    }
+
+    #content-page {
+      max-width: 900px;
+      padding: 0 20px;
     }
 
     #content-about {
@@ -88,18 +104,22 @@
 
       #content-about-image {
         float: none;
+        width: 100%;
         padding: 0;
         text-align: center;
-        margin-bottom: 1em;
+        margin-bottom: 16px;
       }
 
       #content-about-content {
+        width: 100%;
+        max-width: 600px;
         float: none;
         display: block;
       }
 
-    #content-parent {
-      padding-left: 5px;
+    #content-parent .children li {
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
     .entry {
@@ -113,7 +133,8 @@
     .entry .wp-caption img,
     .entry img,
     #content-about,
-    #content-about-content {
+    #content-about-content,
+    #content-about-image {
       margin-left: auto;
       margin-right: auto;
     }
@@ -135,13 +156,9 @@
       text-align: left;
     }
 
-    .pagination-nav {
-      max-width: 600px;
+    #comments .commentlist li {
+      padding: 0;
     }
-
-      #comments .commentlist li {
-        padding: 0;
-      }
 
     #reply-title {
       padding-left: 16px;
@@ -164,6 +181,7 @@
 
   #sidebar-footer {
     position: relative;
+    display: block;
     height: auto;
     bottom: auto;
     padding: 10px 8px;
@@ -191,6 +209,14 @@
     left: auto;
     bottom: auto;
   }
+
+    #header h1 {
+      float: none;
+    }
+
+      #header h1 a {
+        line-height: 1;
+      }
 
     #header h3 {
       padding-top: 3px;
@@ -231,11 +257,13 @@
 
     .post-meta, .wp-caption-text, .entry p {
       max-width: 600px;
+      text-align: left;
       margin-left: auto;
       margin-right: auto;
     }
 
   #wrapper {
+    margin-top: 0;
     min-width: 320px;
   }
 
@@ -245,6 +273,7 @@
 
   #menu-icon {
     display: block;
+    z-index: 300;
   }
 }
 
@@ -258,53 +287,27 @@
     font-size: 14px;
   }
 
-  #wrapper {
-    overflow: scroll;
+  #content-page {
+    padding: 0;
   }
 
-  #header-meta div {
-    display: inline-block;
-    padding: 0 10px 0 0;
+  #content-parent .children li {
+    width: 49%;
   }
 
-  #header #logo div {
-    margin-left: 1em;
+  p, h1, h2, h6,
+  .comment-author,
+  .comment-meta,
+  .commentlist .date,
+  .tag-links,
+  .post-meta,
+  .pagination-nav {
+    padding-left: 16px;
+    padding-right: 16px;
   }
-
-  #header #logo #logo-noimg {
-    text-align: left;
-  }
-
-  #header-meta {
-    text-align: left;
-    margin: 0 auto 1em 1em;
-  }
-
-  p, h1, h2, h6, .comment-author, .comment-meta, .pagination-nav, .commentlist .date, .tag-links {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-
-  #content-parent {
-    padding-left: 0;
-  }
-
-    #content-parent .children li {
-      padding-left: 10px;
-      padding-right: 0;
-    }
 
   .entry img {
     max-width: 100%;
-  }
-
-  .pagination-nav .right {
-    clear: both;
-    float: left;
-  }
-
-  .pagination-nav .right h4 {
-    text-align: left;
   }
 
   .sl-sidescroll {

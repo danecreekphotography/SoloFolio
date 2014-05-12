@@ -13,7 +13,7 @@ var setResponsive = function () {
   }
   else {
     var barHeight = 0;
-    $('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - 40);
+    $('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - 60);
   }
   $('#solofolio-cyclereact-images img').css('max-width', wrapperWidth);
 }
@@ -38,13 +38,13 @@ jQuery(window).load(function(){
     $("#solofolio-cyclereact-thumbs").toggle();
     $(".solofolio-cyclereact-caption").toggle();
     $("#solofolio-cyclereact-stage").toggle();
-    $(".thumbs").toggleClass("show-full");
+    $(".thumbs").toggle();
     $(".arrows").toggle();
   });
   $(".thumb a").click(function(){
     $("#solofolio-cyclereact-thumbs").hide();
     $("#solofolio-cyclereact-stage, .arrows").show();
-    $(".thumbs").removeClass("show-full");
+    $(".thumbs").toggle();
   });
 });
 

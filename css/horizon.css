@@ -1,0 +1,175 @@
+#header {
+  left: 0;
+  line-height: 40px;
+  height: auto;
+  width: auto;
+  bottom: auto;
+  position: fixed;
+  padding: 0;
+  right: 0;
+  z-index: 200;
+}
+
+#header-inner {
+  padding: 0 20px;
+}
+
+#header #logo {
+  float: left;
+  margin: 0;
+  width: 100%;
+}
+
+#header-content div {
+  margin: 0;
+}
+
+#logo {
+  max-width: 600px;
+  float: left;
+}
+
+#header h1 {
+  float: left;
+}
+
+#header h1 a {
+  line-height: 40px;
+}
+
+#header-phone, #header-email, #header-location {
+  float: left;
+  padding: 0 10px;
+}
+
+#header-content {
+  float: right;
+}
+
+#header-content ul li {
+    float: left;
+    letter-spacing: 0;
+    display: block;
+    padding: 0 10px;
+}
+
+#wrapper {
+  top: 60px;
+}
+
+#sidebar-footer {
+  display: none;
+}
+
+.entry .post-meta {
+  margin: 0 auto .7em;
+  max-width: 600px;
+}
+
+.entry p {
+  text-align: left;
+}
+
+#content-page {
+  max-width: 900px;
+}
+
+#content-about-image {
+  float: left;
+  padding: 0 20px 20px 0;
+}
+
+.entry img,
+.entry .wp-caption img,
+.wp-caption,
+.entry p,
+#content-parent,
+#content-page {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.solofolio-cyclereact-sidebar {
+  right: 20px;
+  top: 0;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+  .solofolio-cyclereact-caption {
+    line-height: 1.4;
+    margin-top: 55px;
+  }
+
+  .solofolio-cyclereact-controls {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+    .solofolio-cyclereact-controls .arrows {
+      float: right;
+    }
+
+    .solofolio-cyclereact-controls a.next {
+      margin-right: 0;
+    }
+
+.solofolio-cyclereact-fill {
+  background-position: 50% top;
+}
+
+.more-link {
+}
+
+#comments {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.post-cat {
+  display: block;
+}
+
+.wp-caption {
+  text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+  text-align: left;
+}
+
+.solofolio-post-image-asset {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.entry .solofolio-image-caption {
+  text-align: left;
+}
+
+.galleria-wrap,
+#content-about {
+  margin: 0 auto;
+}
+
+.sl-react {
+    text-align: center;
+}
+
+.sl-react-caption {
+    margin: 0 auto;
+}
+
+
+@media only screen and (max-width: 480px) {
+
+.entry h2.post-title {
+  display: block;
+}
+
+#header h1 {
+    float: none;
+}
+
+}

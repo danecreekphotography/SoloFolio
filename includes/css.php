@@ -56,10 +56,11 @@ function solofolio_css() {
 
   $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/base.css");
 
-  $styles .= "
-  #header {
-    width: " . get_theme_mod( 'solofolio_header_width', '200') . "px;
-  }\n";
+  if (get_theme_mod('solofolio_layout_mode') == 'horizon') {
+    $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/horizon.css");
+  } elseif (get_theme_mod('solofolio_layout_mode') == 'heights') {
+    $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/heights.css");
+  }
 
   $styles .= "
   body {
@@ -73,7 +74,7 @@ function solofolio_css() {
   }
 
   #solofolio-cyclereact-thumbs .thumb {
-    border: 10px solid ". get_theme_mod('solofolio_background_color') . ";
+    border-color: ". get_theme_mod('solofolio_background_color') . ";
   }
 
   .galleria-container .galleria-stage, .galleria-container .galleria-thumbnails-container {
@@ -86,6 +87,10 @@ function solofolio_css() {
 
   a:hover, a:active {
     color: " . get_theme_mod('solofolio_body_link_color_hover') . ";
+  }
+
+  #header {
+    background-color: ". get_theme_mod('solofolio_header_background_color') . ";
   }
 
   #header-content li a {
@@ -123,7 +128,7 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_blog_entry_byline_color') . ";
   }
 
-  .wp-caption p.wp-caption-text, .solofolio-caption {
+  .wp-caption p.wp-caption-text, .solofolio-cyclereact-caption,  {
     color: " . get_theme_mod('solofolio_body_caption_color') . ";
   }
 
@@ -154,19 +159,32 @@ function solofolio_css() {
     background-color: " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
   }
 
+  .galleria-info {
+      color: " . get_theme_mod('solofolio_body_caption_color') . ";
+  }
+
   .solofolio-cyclereact-controls a {
     color: " . get_theme_mod('solofolio_body_font_color') . ";
-    border: 1px solid " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
-    background-color: " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
   }
-
-  /* Gallery Styles */
-
-  .galleria-info {
-    color: " . get_theme_mod('solofolio_body_caption_color') . ";
-  }
-
   ";
+
+  if (get_theme_mod('solofolio_layout_mode') == 'horizon') {
+    $styles .="
+      .solofolio-cyclereact-controls a {
+        border: 1px solid " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
+        background-color: " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
+      }";
+  } elseif (get_theme_mod('solofolio_layout_mode') == 'heights') {
+    $styles .="
+      #header {
+        width: " . get_theme_mod( 'solofolio_header_width', '200') . "px;
+      }
+
+      .solofolio-cyclereact-controls a {
+        border: 1px solid " . colorBrightness(get_theme_mod('solofolio_header_background_color'), -0.9) . ";
+        background-color: " . colorBrightness(get_theme_mod('solofolio_header_background_color'), -0.9) . ";
+      }";
+  }
 
   if (get_theme_mod('solofolio_gallery_cursor_color') == 'light') {
     $styles .= "
@@ -188,31 +206,41 @@ function solofolio_css() {
     }";
   }
 
-  $styles .= "
-  #wrapper {
-    left: " . (get_theme_mod( 'solofolio_header_width', '200' ) - 30) . "px;
-    width: auto;
+  if (get_theme_mod('solofolio_layout_mode') == 'horizon') {
+    $styles .= "
+      #solofolio-cyclereact-stage, #solofolio-cyclereact-thumbs {
+        right: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 40) . "px;
+      }";
+  } elseif (get_theme_mod('solofolio_layout_mode') == 'heights') {
+    $styles .= "
+      #solofolio-cyclereact-stage, #solofolio-cyclereact-thumbs {
+        left: " . get_theme_mod( 'solofolio_header_width', '200' ) . "px;
+      }";
   }
 
-  #solofolio-cyclereact-stage, #solofolio-cyclereact-thumbs {
-    left: " . (get_theme_mod( 'solofolio_header_width', '200' ) - 30) . "px;
-  }
-
-  @media (min-width: " . (get_theme_mod( 'solofolio_header_width', '200' ) + get_theme_mod( 'solofolio_entry_width', '900' ) + 20) . "px) {
-    #wrapper {
-      max-width: 100%;
+  if (get_theme_mod('solofolio_layout_mode') == 'heights') {
+    $styles .= "
+      #wrapper {
+        left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 20) . "px;
+        width: auto;
       }
 
-    #post #outerWrap {
-      margin: 0 auto;
-      position: relative;
-      max-width: " . (get_theme_mod( 'solofolio_header_width', '200' ) + get_theme_mod( 'solofolio_entry_width', '900' ) + 20) . "px;
-    }
+      @media (min-width: " . (get_theme_mod( 'solofolio_header_width', '200' ) + get_theme_mod( 'solofolio_entry_width', '900' ) + 20) . "px) {
+        #wrapper {
+          max-width: 100%;
+          }
 
-    #post #header {
-      left: auto;
-    }
-  }";
+        #post #outerWrap {
+          margin: 0 auto;
+          position: relative;
+          max-width: " . (get_theme_mod( 'solofolio_header_width', '200' ) + get_theme_mod( 'solofolio_entry_width', '900' ) + 20) . "px;
+        }
+
+        #post #header {
+          left: auto;
+        }
+      }";
+  }
 
   $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/breakpoints.css");
 

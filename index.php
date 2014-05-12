@@ -10,7 +10,8 @@
 		<?php while (have_posts()) : the_post(); ?>
 			<div class="entry" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php if ( has_post_thumbnail()) : ?>
-					<div class="wp-caption blog-featured-image">
+					<?php $pt = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); ?>
+					<div class="wp-caption blog-featured-image" style="max-width: <?php echo $pt[1];?>px">
 						<?php the_post_thumbnail('large'); ?>
 						<p class="wp-caption-text"><?php echo get_post(get_post_thumbnail_id())->post_excerpt ?></p>
 					</div>

@@ -9,8 +9,8 @@
     w.picturefillOptions = {
         selector: "picturefill-background",
         backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center center"
+        // backgroundPosition: "center center",
+        backgroundRepeat: "no-repeat"
     };
 
     /**
@@ -35,7 +35,7 @@
                 picturefills[i].dataset.image = matches.pop().getAttribute( "data-src" );
                 picturefills[i].style.backgroundSize = w.picturefillOptions.backgroundSize;
                 picturefills[i].style.backgroundRepeat = w.picturefillOptions.backgroundRepeat;
-                picturefills[i].style.backgroundPosition = w.picturefillOptions.backgroundPosition;
+                // picturefills[i].style.backgroundPosition = w.picturefillOptions.backgroundPosition;
             }
         }
     };

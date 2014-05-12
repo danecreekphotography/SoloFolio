@@ -43,46 +43,46 @@ SoloFolio v6.20140330 - github.com/joelhawksley/SoloFolio
 
 	<div id="header-inner">
 
-		<div id="logo">
-			<?php if (get_theme_mod( 'solofolio_logo' ) != '') { ?>
-				<div id="logo-img">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-						 title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
-						 rel="home">
-						 <img src="<?php echo get_theme_mod( 'solofolio_logo' ); ?>"
-						 			alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-					</a>
-				</div>
-			<?php } else { ?>
-				<div id="logo-noimg">
-					<h1 class="site-title">
+
+			<div id="logo">
+				<?php if (get_theme_mod( 'solofolio_logo' ) != '') { ?>
+					<div id="logo-img">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
 							 title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
 							 rel="home">
-							<?php bloginfo( 'name' ); ?>
+							 <img src="<?php echo get_theme_mod( 'solofolio_logo' ); ?>"
+							 			alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 						</a>
-					</h1>
+					</div>
+				<?php } else { ?>
+					<div id="logo-noimg">
+						<h1 class="site-title">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"
+								 title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
+								 rel="home">
+								<?php bloginfo( 'name' ); ?>
+							</a>
+						</h1>
+					</div>
+				<?php } ?>
+				<div id="header-meta">
+					<div id="header-phone">
+						<a href="tel:<?php echo get_theme_mod( 'solofolio_phone' ); ?>">
+							<?php echo get_theme_mod( 'solofolio_phone', '555-555-5555' ); ?>
+						</a>
+					</div>
+					<div id="header-email">
+						<a href="mailto:<?php echo get_theme_mod( 'solofolio_email' ); ?>">
+							<?php echo get_theme_mod( 'solofolio_email', 'john@johndoe.com' ); ?>
+						</a>
+					</div>
+					<div id="header-location">
+						<?php echo get_theme_mod( 'solofolio_location', 'Athens, Ohio' ); ?>
+					</div>
+					<div class="clear"></div>
 				</div>
-			<?php } ?>
-		</div>
-
-		<div id="header-meta">
-			<div id="header-phone">
-				<a href="tel:<?php echo get_theme_mod( 'solofolio_phone' ); ?>">
-					<?php echo get_theme_mod( 'solofolio_phone', '555-555-5555' ); ?>
-				</a>
+				<div class="clear"></div>
 			</div>
-			<div id="header-email">
-				<a href="mailto:<?php echo get_theme_mod( 'solofolio_email' ); ?>">
-					<?php echo get_theme_mod( 'solofolio_email', 'john@johndoe.com' ); ?>
-				</a>
-			</div>
-			<div id="header-location">
-				<?php echo get_theme_mod( 'solofolio_location', 'Athens, Ohio' ); ?>
-			</div>
-		</div>
-
-		<div class="clear"></div>
 
 		<div id="header-content">
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Main Navigation") ) : ?>
@@ -108,6 +108,8 @@ SoloFolio v6.20140330 - github.com/joelhawksley/SoloFolio
 				<p id="info-footer">&copy; <?php echo date("Y"); ?> <?php echo get_theme_mod( 'solofolio_copyright_text' ); ?></p>
 				<p id="solo-footer">Powered by <a title="The premier free WordPress theme for the creatively inclined." href="http://solofol.io">SoloFolio</a></p>
 			</div>
+
+			<div class="clear"></div>
 		</div>
 
 		<div class="clear"></div>

@@ -149,8 +149,8 @@ h3 {
 }
 
   #header-content h3 {
-    color: #FFFFFF;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: bold;
     padding: 0 0 4px;
     text-transform: uppercase;
   }
@@ -191,21 +191,19 @@ p {
     width: auto;
   }
 
-  #header-meta {
-    margin-bottom: 1em;
-  }
-
   .solofolio-cyclereact-sidebar {
     bottom: 0;
     position: absolute;
     max-width: 200px;
     margin-bottom: 0;
     width: 100%;
+    z-index: 100;
   }
 
     .solofolio-cyclereact-caption {
       padding-bottom: 15px;
       line-height: 1.4;
+      padding-right: 20px;
       font-size: .8em;
     }
 
@@ -267,10 +265,10 @@ p {
     }
 
 #wrapper {
-  padding: 0;
-  bottom: 0;
+  padding: 20px 0 0 0;
   position: absolute;
-  top: 20px;
+  bottom: 0;
+  top: 0;
   right: 20px;
   left: 20px;
 }
@@ -394,7 +392,8 @@ h2.post-title {
 }
 
 #content-parent {
-  padding-left: 20px;
+  max-width: 920px;
+  padding: 0 10px;
 }
 
   #content-parent .children h3 {
@@ -403,21 +402,34 @@ h2.post-title {
 
   #content-parent .children li {
     display: inline-block;
-    padding-right: 30px;
-    padding-bottom: 10px;
+    max-width: 300px;
+    width: 33%;
+    padding: 0 20px 10px 10px;
   }
+
+    #content-parent .children li img {
+      height: auto;
+      width: 100%;
+    }
 
 #content-about {
   max-width: 900px
 }
 
   #content-about-image {
-    float: left;
-    padding: 0 30px 20px 0;
+    width: 50%;
+    float: right;
+    padding: 0 0 20px 20px;
+  }
+
+  #content-about-image img {
+    width: 100%;
+    height: auto;
   }
 
   #content-about-content {
     float: left;
+    width: 50%;
     max-width: 500px;
     display: block;
   }
@@ -552,6 +564,7 @@ div.aligncenter {
 .pagination-nav {
   margin: 0 auto;
   padding-bottom: 2em;
+  max-width: 600px;
 }
 
   .pagination-nav a {
@@ -628,17 +641,25 @@ table tr {
 
 /* React gallery  */
 .sl-react {
+  margin-bottom: 1em;
+}
+.sl-react-img {
   text-align: center
 }
 .sl-react img {
   max-width: 100% !important;
+  height: auto;
 }
 .sl-react-caption {
   max-width: 600px;
   margin: 0 auto 1.5em;
+  text-align: left;
 }
 
 /* CycleReact gallery  */
+#solofolio-cyclereact-wrap {
+  overflow-x: scroll;
+}
 
 #solofolio-cyclereact-wrap,
 #solofolio-cyclereact-stage,
@@ -658,7 +679,7 @@ table tr {
   position: absolute;
   left: 0;
   bottom: 0;
-  top: -10px;
+  top: 0;
   right: 0;
   list-style-type: none;
 }
@@ -667,7 +688,9 @@ table tr {
     float: left;
     width: 25%;
     max-width: 300px;
-    border: 10px solid #fff;
+    border-right: 10px solid #fff;
+    border-left: 10px solid #fff;
+    border-bottom: 20px solid #fff;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
@@ -705,10 +728,6 @@ table tr {
     line-height: 39px;
     text-align: center;
     text-decoration: none;
-  }
-
-  .solofolio-cyclereact-controls .next, .solofolio-cyclereact-controls .prev {
-    line-height: 37px;
   }
 
   .thumbs .fa-expand {

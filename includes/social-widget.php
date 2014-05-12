@@ -20,7 +20,7 @@ class solofolio_social_widget extends WP_Widget {
   echo "<div id=\"solofolio-social\">";
     if ($facebook != "") {echo "<a target=\"_blank\" href=\"" . $facebook . "\"><i class=\"fa fa-facebook\"></i></a>";}
     if ($twitter != "") {echo "<a target=\"_blank\" href=\"" . $twitter . "\"><i class=\"fa fa-twitter\"></i></a>";}
-    if ($instagram != "") {echo "<a target=\"_blank\" href=\"" . $facebook . "\"><i class=\"fa fa-instagram\"></i></a>";}
+    if ($instagram != "") {echo "<a target=\"_blank\" href=\"" . $instagram . "\"><i class=\"fa fa-instagram\"></i></a>";}
     if ($blink != "") {echo "<a target=\"_blank\" href=\"" . $facebook . "\"><i class=\"fa fa-map-marker\"></i></a>";}
     if ($vimeo != "") {echo "<a target=\"_blank\" href=\"" . $vimeo . "\"><i class=\"fa fa-vimeo-square\"></i></a>";}
     if ($linkedin != "") {echo "<a target=\"_blank\" href=\"" . $linkedin . "\"><i class=\"fa fa-linkedin\"></i></a>";}

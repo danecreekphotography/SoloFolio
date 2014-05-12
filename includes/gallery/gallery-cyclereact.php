@@ -80,7 +80,7 @@ $output .= "</div>";
 
 $output .= '<div class="solofolio-cyclereact-sidebar">
       <p class="solofolio-cyclereact-caption"></p>
-      <span class="solofolio-cyclereact-controls">
+      <div class="solofolio-cyclereact-controls">
         <a class="thumbs" href="#">
           <i class="fa fa-th"></i>
           <i class="fa fa-expand"></i>
@@ -89,7 +89,7 @@ $output .= '<div class="solofolio-cyclereact-sidebar">
           <a class="prev" href="#"><i class="fa fa-angle-left"></i></a>
           <a class="next" href="#"><i class="fa fa-angle-right"></i></a>
         </span>
-      </span>
+      </div>
     	</div>';
 
 add_action('wp_footer', 'sl_cyclereact_js');
@@ -105,11 +105,25 @@ function sl_cyclereact_js() {
 		display: block;
 	}
 	#wrapper {
+		position: absolute;
 		bottom: 20px;
 		left: 20px;
 	}
 	</style>
 	";
+
+	if (get_theme_mod('solofolio_layout_mode') == 'heights') {
+		$output .= "
+			<style type=\"text/css\">
+			#header #header-content .solofolio-cyclereact-sidebar {
+				display: block;
+			}
+			#wrapper {
+				top: 20px;
+			}
+			</style>
+			";
+	}
 
   echo $output;
 }
