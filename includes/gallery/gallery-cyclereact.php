@@ -115,9 +115,6 @@ function sl_cyclereact_js() {
 	if (get_theme_mod('solofolio_layout_mode') == 'heights') {
 		$output .= "
 			<style type=\"text/css\">
-			#header #header-content .solofolio-cyclereact-sidebar {
-				display: block;
-			}
 			#wrapper {
 				top: 20px;
 			}
