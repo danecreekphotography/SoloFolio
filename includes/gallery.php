@@ -138,7 +138,7 @@ function solofolio_gallery_shortcode($attr) {
 			include("gallery/gallery-vertscroll.php");
 			break;
 		case "react":
-			include("gallery/gallery-react.php");
+			include("gallery/gallery-vertscroll.php");
 			break;
 		case "cycle-react":
 			include("gallery/gallery-cyclereact.php");

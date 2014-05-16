@@ -82,7 +82,7 @@
 
     #wrapper {
       position: relative;
-      overflow: scroll;
+      padding-top: 20px;
       margin: 0;
       top: 0;
       left: 0;
@@ -95,7 +95,7 @@
 
     #content-page {
       max-width: 900px;
-      padding: 0 20px;
+      padding: 0 16px;
     }
 
     #content-about {
