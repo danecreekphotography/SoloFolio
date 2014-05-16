@@ -192,6 +192,11 @@
     width: 100%;
   }
 
+  .pagination-nav {
+    margin: 0 auto;
+  }
+
+
   #content h1 {
     font-size: 22px;
     line-height: 30px;
@@ -261,6 +266,10 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+  .vert-scroll .wp-caption-text {
+    max-width: none;
+  }
 
   #wrapper {
     margin-top: 0;
