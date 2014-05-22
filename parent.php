@@ -4,7 +4,11 @@
 
 <div id="content-parent">
   <div class="content">
-    <?php the_content(); ?>
+    <?php if (have_posts()) : ?>
+      <?php while (have_posts()) : the_post(); ?>
+        <?php the_content('Read the rest of this entry &raquo;'); ?>
+      <?php endwhile; ?>
+    <?php endif; ?>
   </div>
 
   <ul class="children">

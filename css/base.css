@@ -391,6 +391,10 @@ h2.post-title {
   padding: 0 10px;
 }
 
+  #content-parent .content {
+    padding: 0 10px;
+  }
+
   #content-parent .children h3 {
     margin: 0;
   }
