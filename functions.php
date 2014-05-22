@@ -75,6 +75,13 @@ function solofolio_set_image_sizes() {
 	update_option('medium_size_h', 400);
 	update_option('large_size_w', 900);
 	update_option('large_size_h', 600);
+
+  # Disable thumbnail cropping
+  if(false === get_option("thumbnail_crop")) {
+    add_option("thumbnail_crop", "0"); }
+  else {
+    update_option("thumbnail_crop", "0");
+  }
 }
 
 function solofolio_comments($comment, $args, $depth) {
