@@ -263,7 +263,7 @@ p {
     }
 
 #wrapper {
-  padding: 0;
+  padding: 20px 0 0 0;
   position: absolute;
   bottom: 0;
   top: 0;
