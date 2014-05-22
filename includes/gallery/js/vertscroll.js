@@ -13,13 +13,14 @@ var setResponsive = function () {
       var barHeight = 0;
       $('.vert-scroll img').css('max-height', pageHeight - 60);
     }
+  } else {
+    $('.vert-scroll img').css('max-height', pageHeight);
   }
 
   $('.vert-scroll .wp-caption-text').each(function(i, elm) {
     width = $(this).parent().find('img').outerWidth();
     $(elm).css('max-width', width);
   });
-
 }
 
 jQuery(window).load(function(){
