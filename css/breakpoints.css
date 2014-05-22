@@ -40,7 +40,7 @@
     }
 
     #header-content {
-      margin: 16px 0;
+      margin: 20px 0;
     }
 
     #header-content ul li {
@@ -58,12 +58,12 @@
     #header-meta div {
       display: inline-block;
       float: none;
-      padding: 0 16px 0 0;
+      padding: 0 20px 0 0;
     }
 
     #header #logo {
       max-width: none;
-      padding-left: 16px;
+      padding-left: 20px;
       padding-right: 4em;
     }
 
@@ -95,7 +95,7 @@
 
     #content-page {
       max-width: 900px;
-      padding: 0 16px;
+      padding: 0 20px;
     }
 
     #content-about {
@@ -107,7 +107,7 @@
         width: 100%;
         padding: 0;
         text-align: center;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
       }
 
       #content-about-content {
@@ -161,7 +161,7 @@
     }
 
     #reply-title {
-      padding-left: 16px;
+      padding-left: 20px;
     }
 
     img.alignnone {
@@ -308,8 +308,8 @@
   .tag-links,
   .post-meta,
   .pagination-nav {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .entry img {
