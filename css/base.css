@@ -103,14 +103,12 @@ img {
 
 /* Links */
 a:link, a:visited {
-  color: #7a7a7a;
   font-weight: normal;
   text-decoration: none;
   outline: none !important;
 }
 
 a:hover, a:active {
-  color: #FFFFFF;
   outline: none !important;
 }
 
@@ -355,7 +353,6 @@ p {
   }
 
 .date, .post-cat, .meta-cat {
-  color: #CCCCCC;
   font-size: 14px;
   padding: 0;
 }
@@ -370,11 +367,9 @@ h2.post-title {
 
   h2.post-title a {
     border-bottom: none;
-    color: #FFFFFF;
   }
 
   h2.post-title a:hover {
-    color: #aaaaaa;
     text-decoration: none;
   }
 
