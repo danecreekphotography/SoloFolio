@@ -9,7 +9,7 @@
 
   <ul class="children">
     <?php
-      $children = get_pages( array( 'child_of' => $post->ID ) );
+      $children = get_pages( array( 'child_of' => $post->ID, 'sort_column'=>'menu_order') );
 
       foreach( $children as $page ) {
         $content = $page->post_content;
