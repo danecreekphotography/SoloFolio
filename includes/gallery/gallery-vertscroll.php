@@ -31,11 +31,19 @@ add_action('wp_footer', 'sl_vertscroll_js');
 
 function sl_vertscroll_js() {
 	$output = "<style>
+							#wrapper {
+								padding-top: 0;
+							}
+
 							#content-page {
 								max-width: none;
 							}
 
 							@media only screen and (max-width: 1024px) {
+								#wrapper {
+									padding-top: 20px;
+								}
+
 								#content-page {
 									margin-left: auto;
 									margin-right: auto;
