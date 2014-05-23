@@ -51,6 +51,16 @@ function solofolio_customize_register( $wp_customize )
 			'priority' => '30',
 		) );
 
+		$wp_customize->add_setting( 'solofolio_copyright_text', array('transport'   => 'postMessage',));
+
+		$wp_customize->add_control( 'solofolio_copyright_text', array(
+			'label' => 'Copyright Text',
+			'settings' => 'solofolio_copyright_text',
+			'section' => 'solofolio_header_section',
+			'type' => 'text',
+			'priority' => '30',
+		) );
+
 		$wp_customize->add_setting( 'solofolio_location', array(
 			'transport'   => 'postMessage',
 			'default'           => 'Athens, Ohio',
@@ -60,16 +70,6 @@ function solofolio_customize_register( $wp_customize )
 			'transport'   => 'postMessage',
 			'label' => 'Location',
 			'settings' => 'solofolio_location',
-			'section' => 'solofolio_header_section',
-			'type' => 'text',
-			'priority' => '30',
-		) );
-
-		$wp_customize->add_setting( 'solofolio_copyright_text', array('transport'   => 'postMessage',));
-
-		$wp_customize->add_control( 'solofolio_copyright_text', array(
-			'label' => 'Copyright Text',
-			'settings' => 'solofolio_copyright_text',
 			'section' => 'solofolio_header_section',
 			'type' => 'text',
 			'priority' => '30',
@@ -170,18 +170,6 @@ function solofolio_customize_register( $wp_customize )
 			'settings' => 'solofolio_body_font_color',
 		)));
 
-		$wp_customize->add_setting('solofolio_body_link_color', array(
-			'default'           => '#7a7a7a',
-			'sanitize_callback' => 'sanitize_hex_color',
-			'transport'   => 'postMessage',
-        ));
-
-		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_body_link_color', array(
-			'label'    => __('Link Color', 'solofolio'),
-			'section'  => 'solofolio_design_section',
-			'settings' => 'solofolio_body_link_color',
-		)));
-
 		$wp_customize->add_setting('solofolio_body_link_color_hover', array(
 			'default'           => '#000000',
 			'sanitize_callback' => 'sanitize_hex_color',
@@ -192,6 +180,18 @@ function solofolio_customize_register( $wp_customize )
 			'label'    => __('Link Color (Hover)', 'solofolio'),
 			'section'  => 'solofolio_design_section',
 			'settings' => 'solofolio_body_link_color_hover',
+		)));
+
+		$wp_customize->add_setting('solofolio_body_link_color', array(
+			'default'           => '#7a7a7a',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'   => 'postMessage',
+        ));
+
+		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_body_link_color', array(
+			'label'    => __('Link Color', 'solofolio'),
+			'section'  => 'solofolio_design_section',
+			'settings' => 'solofolio_body_link_color',
 		)));
 
 		$wp_customize->add_setting('solofolio_body_caption_color', array(

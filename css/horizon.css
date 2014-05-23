@@ -19,6 +19,10 @@
   margin: 0;
 }
 
+#logo-noimg {
+  display: inline;
+}
+
 #logo-img {
   vertical-align: -webkit-baseline-middle;
   display: inline-block;
@@ -29,11 +33,7 @@
 }
 
 #header h1 {
-  float: left;
-}
-
-#header h1 a {
-  line-height: 40px;
+  display: inline-block;
 }
 
 #header-meta {
@@ -50,9 +50,9 @@
 }
 
 #header-content ul li {
-    float: left;
+    display: inline-block;
+    line-height: 40px;
     letter-spacing: 0;
-    display: block;
     padding: 0 10px;
 }
 

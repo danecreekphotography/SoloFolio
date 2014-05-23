@@ -104,11 +104,11 @@ function solofolio_css() {
     line-height: " . get_theme_mod('solofolio_navigation_font_size') . ";
   }
 
-  #header-content a:link, #header-content a:visited {
+  #header-content ul a:link, #header-content ul a:visited {
     color: " . get_theme_mod('solofolio_navigation_link_color') . ";
   }
 
-  #header-content a:hover, #header-content a:active {
+  #header-content ul a:hover, #header-content ul a:active {
     color: " . get_theme_mod('solofolio_navigation_link_color_hover') . ";
   }
 
@@ -128,7 +128,7 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_blog_entry_byline_color') . ";
   }
 
-  .wp-caption p.wp-caption-text, .solofolio-cyclereact-caption,  {
+  .wp-caption .wp-caption-text, .solofolio-cyclereact-caption {
     color: " . get_theme_mod('solofolio_body_caption_color') . ";
   }
 
@@ -138,10 +138,6 @@ function solofolio_css() {
 
   .solofolio-cyclereact-controls a:hover i {
     color: " . get_theme_mod('solofolio_navigation_link_color_hover') . ";
-  }
-
-  #sidebar-footer p {
-    color: " . get_theme_mod('solofolio_navigation_link_color') . ";
   }
 
   /* Highlight current page item */

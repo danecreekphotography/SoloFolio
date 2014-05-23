@@ -274,7 +274,7 @@ p {
 /* Footer */
 
 #sidebar-footer {
-  position: relative
+  position: relative;
   z-index: 9;
 }
 
