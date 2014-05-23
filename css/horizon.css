@@ -17,16 +17,15 @@
 #header #logo {
   float: left;
   margin: 0;
-  width: 100%;
+}
+
+#logo-img {
+  vertical-align: -webkit-baseline-middle;
+  display: inline-block;
 }
 
 #header-content div {
   margin: 0;
-}
-
-#logo {
-  max-width: 600px;
-  float: left;
 }
 
 #header h1 {
@@ -37,8 +36,12 @@
   line-height: 40px;
 }
 
+#header-meta {
+  display: inline-block;
+}
+
 #header-phone, #header-email, #header-location {
-  float: left;
+  display: inline-block;
   padding: 0 10px;
 }
 

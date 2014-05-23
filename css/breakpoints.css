@@ -51,6 +51,11 @@
       line-height: 1;
     }
 
+    #header #logo-img {
+      display: block;
+      margin: 0 auto;
+    }
+
     #header-meta {
       margin-bottom: 0;
     }
