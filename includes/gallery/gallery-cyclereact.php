@@ -78,9 +78,13 @@ $output .= "</div>";
 
 $output .= "</div>";
 
-$output .= '<div class="solofolio-cyclereact-sidebar">
-      <p class="solofolio-cyclereact-caption"></p>
-      <div class="solofolio-cyclereact-controls">
+$output .= '<div class="solofolio-cyclereact-sidebar">';
+
+if ($captions != "false"){
+  $output .= '<p class="solofolio-cyclereact-caption"></p>';
+}
+
+$output .= '<div class="solofolio-cyclereact-controls">
         <a class="thumbs" href="#">
           <i class="fa fa-th"></i>
           <i class="fa fa-expand"></i>
@@ -91,6 +95,7 @@ $output .= '<div class="solofolio-cyclereact-sidebar">
         </span>
       </div>
     	</div>';
+
 
 add_action('wp_footer', 'sl_cyclereact_js');
 
