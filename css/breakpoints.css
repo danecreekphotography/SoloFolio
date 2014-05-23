@@ -67,10 +67,6 @@
       padding-right: 4em;
     }
 
-      #header #logo #logo-noimg {
-        text-align: left;
-      }
-
     #header h3 {
       margin: 0;
       padding: 0;
@@ -280,6 +276,16 @@
   #menu-icon {
     display: block;
     z-index: 300;
+  }
+}
+
+@media only screen and (min-width: 621px) and (max-width: 1024px) {
+  #header #logo {
+    text-align: center;
+  }
+
+  #header-meta div {
+    padding: 0 10px;
   }
 }
 
