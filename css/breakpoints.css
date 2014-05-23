@@ -233,7 +233,7 @@
         #header-content ul li a, #header-content h3 {
           display: block;
           font-size: 16px;
-          padding: 9px 0;
+          line-height: 2;
         }
 
       #header-content {
