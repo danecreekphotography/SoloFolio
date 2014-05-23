@@ -85,6 +85,10 @@
   max-width: 900px;
 }
 
+#content-about, #content-index {
+  padding-top: 10px;
+}
+
 #content-about-image {
   float: left;
   padding: 0 20px 20px 0;

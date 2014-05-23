@@ -553,6 +553,7 @@ div.aligncenter {
   line-height: 1.4;
   padding-top: 2px;
   max-width: 100%;
+  text-align: left;
 }
 
 .entry .more-link {
