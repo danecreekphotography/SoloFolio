@@ -112,16 +112,6 @@ function sl_cyclereact_js() {
 	</style>
 	";
 
-	if (get_theme_mod('solofolio_layout_mode') == 'heights') {
-		$output .= "
-			<style type=\"text/css\">
-			#wrapper {
-				top: 20px;
-			}
-			</style>
-			";
-	}
-
   echo $output;
 }
 

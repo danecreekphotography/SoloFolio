@@ -677,13 +677,17 @@ table tr {
   right: 0;
 }
 
+#solofolio-cyclereact-stage,
+#solofolio-cyclereact-thumbs {
+  top: 20px;
+}
+
 #solofolio-cyclereact-thumbs {
   display: none;
   z-index: 8;
   position: absolute;
   left: 0;
   bottom: 0;
-  top: 0;
   right: 0;
   list-style-type: none;
 }
