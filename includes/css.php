@@ -186,25 +186,14 @@ function solofolio_css() {
       }";
   }
 
-  if (get_theme_mod('solofolio_gallery_cursor_color') == 'light') {
-    $styles .= "
-    .galleria-image-nav-left, .solofolio-cyclereact-nav-left {
-      cursor: url(\"" . get_template_directory_uri() . "/img/prev.light.cur\"), move;
-
-    }
-    .galleria-image-nav-right, .solofolio-cyclereact-nav-right {
-      cursor: url(\"" . get_template_directory_uri() . "/img/next.light.cur\"), move;
-      }";
-  } else {
-    $styles .= "
-    .galleria-image-nav-left, .solofolio-cyclereact-nav-left {
-      cursor: url(\"" . get_template_directory_uri() . "/img/prev.dark.cur\"), move;
-    }
-
-    .galleria-image-nav-right, .solofolio-cyclereact-nav-right {
-      cursor: url(\"" . get_template_directory_uri() . "/img/next.dark.cur\"), move;
-    }";
+  $styles .= "
+  .galleria-image-nav-left, .solofolio-cyclereact-nav-left {
+    cursor: url(\"" . get_template_directory_uri() . "/img/prev.dark.cur\"), move;
   }
+
+  .galleria-image-nav-right, .solofolio-cyclereact-nav-right {
+    cursor: url(\"" . get_template_directory_uri() . "/img/next.dark.cur\"), move;
+  }";
 
   if (get_theme_mod('solofolio_layout_mode') == 'horizon') {
     $styles .= "

@@ -368,25 +368,6 @@ function solofolio_customize_register( $wp_customize )
 			'type'     => 'checkbox',
 		));
 
-	$wp_customize->add_section( 'solofolio_gallery_section' , array(
-		'title'       => __( 'Gallery', 'solofolio' ),
-		'priority'    => 100,
-	) );
-
-		$wp_customize->add_setting('solofolio_gallery_cursor_color', array('default' => 'dark'));
-
-		$wp_customize->add_control('solofolio_gallery_cursor_color', array(
-			'label'      => __('Cursor icon color', 'solofolio'),
-			'section'    => 'solofolio_gallery_section',
-			'settings'   => 'solofolio_gallery_cursor_color',
-			'type'       => 'select',
-			'priority' => '10',
-			'choices'    => array(
-				'dark' => 'Dark',
-				'light' => 'Light',
-			),
-		));
-
 	$wp_customize->add_section( 'solofolio_tracking_css' , array(
 		'title'       => __( 'Tracking & CSS', 'solofolio' ),
 		'priority'    => 200,
