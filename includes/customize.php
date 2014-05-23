@@ -87,7 +87,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting( 'solofolio_logo' );
 
 		$wp_customize->add_control( 'solofolio_logo', array(
-			'label' => 'Logo URL',
+			'label' => 'Logo Image URL',
 			'settings' => 'solofolio_logo',
 			'section' => 'solofolio_header_section',
 			'type' => 'text',
@@ -217,7 +217,7 @@ function solofolio_customize_register( $wp_customize )
         ));
 
 		$wp_customize->add_control( 'solofolio_navigation_font_size', array(
-			'label' => 'Text Size',
+			'label' => 'Link Size',
 			'settings' => 'solofolio_navigation_font_size',
 			'section' => 'solofolio_navigation_section',
 			'type' => 'text',
