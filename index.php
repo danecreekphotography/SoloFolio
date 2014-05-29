@@ -22,7 +22,7 @@
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 					</h2>
 					<span class="date">
-						<?php if (get_theme_mod('solofolio_blog_showdate')) {?><?php the_time('Y-m-d') ?><?php } ?>
+						<?php if (get_theme_mod('solofolio_blog_showdate')) { echo get_the_date(); } ?>
 						<?php if (get_theme_mod('solofolio_blog_showauthor')) {?>by <?php the_author() ?><?php } ?>
 					</span>
 				</div>
