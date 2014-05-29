@@ -666,8 +666,8 @@ table tr {
 .solofolio-cycelereact-slide,
 .solofolio-cyclereact-fill {
   position: absolute;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-x: visible;
+  overflow-y: visible;
   top: 0;
   bottom: 0;
   left: 0;
