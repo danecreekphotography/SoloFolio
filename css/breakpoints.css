@@ -75,8 +75,6 @@
 
     #header #logo {
       max-width: none;
-      padding-left: 20px;
-      padding-right: 4em;
     }
 
     #header h3 {
@@ -304,6 +302,11 @@
 
   body#page {
     overflow: auto;
+  }
+
+  #header #logo {
+    padding-left: 20px;
+    padding-right: 4em;
   }
 
   #header #logo-img {
