@@ -232,6 +232,7 @@ p {
     }
 
   #logo {
+    max-width: 700px;
   }
 
     #logo h1 {
@@ -361,7 +362,7 @@ h2.post-title {
   font-size: 24px;
   font-weight: normal;
   line-height: 1.2;
-  margin: 0;
+  margin: 0 0 5px 0;
   padding: 0;
 }
 
@@ -554,11 +555,6 @@ div.aligncenter {
   padding-top: 2px;
   max-width: 100%;
   text-align: left;
-}
-
-.entry .more-link {
-  display: block;
-  margin-top: 1em;
 }
 
 .pagination-nav {

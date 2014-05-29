@@ -1,179 +1,191 @@
-#header {
-  left: 0;
-  line-height: 40px;
-  height: auto;
-  width: auto;
-  bottom: auto;
-  position: fixed;
-  padding: 0;
-  right: 0;
-  z-index: 200;
-}
-
-#header-inner {
-  padding: 0 20px;
-}
-
-#header #logo {
-  float: left;
-  margin: 0;
-}
-
-#logo-noimg {
-  display: inline;
-}
-
-#logo-img {
-  vertical-align: -webkit-baseline-middle;
-  display: inline-block;
-}
-
-#header-content div {
-  margin: 0;
-}
-
-#header h1 {
-  display: inline-block;
-}
-
-#header-meta {
-  display: inline-block;
-}
-
-#header-phone, #header-email, #header-location {
-  display: inline-block;
-  padding: 0 10px;
-}
-
-#header-content {
-  float: right;
-}
-
-#header-content ul li {
-    display: inline-block;
+@media only screen and (min-width: 1025px) {
+  #header {
+    left: 0;
     line-height: 40px;
-    letter-spacing: 0;
-    padding: 0 10px;
-}
-
-.pagination-nav {
-  margin: 0 auto;
-}
-
-#wrapper {
-  top: 40px;
-}
-
-#header-content h3 {
-  display: none;
-}
-
-#sidebar-footer {
-  display: none;
-}
-
-.entry .post-meta {
-  margin: 0 auto .7em;
-  max-width: 600px;
-}
-
-.entry p {
-  text-align: left;
-}
-
-#content-page {
-  max-width: 900px;
-}
-
-#content-about, #content-index {
-  padding-top: 10px;
-}
-
-#content-about-image {
-  float: left;
-  padding: 0 20px 20px 0;
-}
-
-.entry img,
-.entry .wp-caption img,
-.wp-caption,
-.entry p,
-#content-parent,
-#content-page {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.solofolio-cyclereact-sidebar {
-  right: 20px;
-  top: 20px;
-  margin-bottom: 0;
-  width: 100%;
-}
-
-  .solofolio-cyclereact-caption {
-    line-height: 1.4;
-    margin-top: 55px;
+    height: auto;
+    width: auto;
+    bottom: auto;
+    position: fixed;
+    padding: 0;
+    right: 0;
+    z-index: 200;
   }
 
-  .solofolio-cyclereact-controls {
-    position: absolute;
-    top: 0;
+  #header-inner {
+    padding: 0 20px;
+  }
+
+  #header #logo {
+    float: left;
+    margin: 0;
+  }
+
+  #logo-noimg {
+    display: inline;
+  }
+
+  #logo-img {
+    vertical-align: -webkit-baseline-middle;
+    display: inline-block;
+  }
+
+  #header-content div {
+    margin: 0;
+  }
+
+  #header h1 {
+    display: inline-block;
+  }
+
+  #header-meta {
+    display: inline-block;
+  }
+
+  #header-phone, #header-email, #header-location {
+    display: inline-block;
+    padding: 0 10px;
+  }
+
+  #header-phone {
+    padding-left: 20px;
+  }
+
+  #header-content {
+    float: right;
+  }
+
+  #header-content ul li {
+      display: inline-block;
+      line-height: 40px;
+      letter-spacing: 0;
+      padding: 0 10px;
+  }
+
+  .pagination-nav {
+    margin: 0 auto;
+  }
+
+  #wrapper {
+    top: 40px;
+  }
+
+  #header-content h3 {
+    display: none;
+  }
+
+  #sidebar-footer {
+    display: none;
+  }
+
+  .entry .post-meta {
+    margin: 0 auto .7em;
+    max-width: 600px;
+  }
+
+  .entry p {
+    text-align: left;
+  }
+
+  #content-page {
+    max-width: 900px;
+  }
+
+  #content-about, #content-index {
+    padding-top: 10px;
+  }
+
+  #content-about-image {
+    float: left;
+    padding: 0 20px 20px 0;
+  }
+
+  .entry img,
+  .entry .wp-caption img,
+  .wp-caption,
+  .entry p,
+  #content-parent,
+  #content-page {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #solofolio-cyclereact-thumbs {
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .solofolio-cyclereact-sidebar {
+    right: 20px;
+    top: 20px;
+    margin-bottom: 0;
     width: 100%;
   }
 
-    .solofolio-cyclereact-controls .arrows {
-      float: right;
+    .solofolio-cyclereact-caption {
+      line-height: 1.4;
+      margin-top: 55px;
     }
 
-    .solofolio-cyclereact-controls a.next {
-      margin-right: 0;
+    .solofolio-cyclereact-controls {
+      position: absolute;
+      top: 0;
+      width: 100%;
     }
 
-.solofolio-cyclereact-fill {
-  background-position: 50% top;
-}
+      .solofolio-cyclereact-controls .arrows {
+        float: right;
+      }
 
-.more-link {
-}
+      .solofolio-cyclereact-controls a.next {
+        margin-right: 0;
+      }
 
-#comments {
-  max-width: 600px;
-  margin: 0 auto;
-}
+  .solofolio-cyclereact-fill {
+    background-position: 50% top;
+  }
 
-.post-cat {
-  display: block;
-}
+  .more-link {
+  }
 
-.wp-caption {
-  text-align: center;
-}
-
-.wp-caption .wp-caption-text {
-  text-align: left;
-}
-
-.solofolio-post-image-asset {
-  margin: 0 auto;
-  text-align: center;
-}
-
-.entry .solofolio-image-caption {
-  text-align: left;
-}
-
-.galleria-wrap,
-#content-about {
-  margin: 0 auto;
-}
-
-.sl-react {
-    text-align: center;
-}
-
-.sl-react-caption {
+  #comments {
+    max-width: 600px;
     margin: 0 auto;
+  }
+
+  .post-cat {
+    display: block;
+  }
+
+  .wp-caption {
+    text-align: center;
+  }
+
+  .wp-caption .wp-caption-text {
+    text-align: left;
+  }
+
+  .solofolio-post-image-asset {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .entry .solofolio-image-caption {
+    text-align: left;
+  }
+
+  .galleria-wrap,
+  #content-about {
+    margin: 0 auto;
+  }
+
+  .sl-react {
+      text-align: center;
+  }
+
+  .sl-react-caption {
+      margin: 0 auto;
+  }
 }
 
 

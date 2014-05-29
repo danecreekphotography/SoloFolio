@@ -81,7 +81,7 @@ function solofolio_css() {
     background-color: " . get_theme_mod('solofolio_background_color') . ";
   }
 
-  a:link, a:visited {
+  a:link, a:visited, #header-location {
     color: " . get_theme_mod('solofolio_body_link_color') . ";
   }
 
@@ -193,7 +193,7 @@ function solofolio_css() {
 
   if (get_theme_mod('solofolio_layout_mode') == 'horizon') {
     $styles .= "
-      #solofolio-cyclereact-stage, #solofolio-cyclereact-thumbs {
+      #solofolio-cyclereact-stage {
         right: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 40) . "px;
       }";
   } elseif (get_theme_mod('solofolio_layout_mode') == 'heights') {
