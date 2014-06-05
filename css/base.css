@@ -405,6 +405,7 @@ h2.post-title {
     max-width: 300px;
     width: 33%;
     padding: 0 20px 10px 10px;
+    vertical-align: top;
   }
 
     #content-parent .children li img {
