@@ -48,7 +48,6 @@ foreach ($attachment_ids as $id) {
 	$i++;
 
 	$link = wp_get_attachment_url($id);
-	$link2 = wp_get_attachment_url($id);
 	$link3 = wp_get_attachment_image_src($id, 'thumbnail');
 	$link4 = wp_get_attachment_image_src($id, 'large');
 	$link5 = wp_get_attachment_image_src($id, 'xlarge');
@@ -58,7 +57,8 @@ foreach ($attachment_ids as $id) {
 		<div class=\"solofolio-cycelereact-slide\"
 				 data-cycle-title=\"" .  wptexturize($attachment->post_excerpt) . "\"
 				 data-cycle-hash=\"" .  $i . "\">
-			<div class=\"solofolio-cyclereact-fill picturefill-background\">
+			<div class=\"solofolio-cyclereact-fill picturefill-background\"
+					 style=\"max-width: ". $link5[1] . "px;\">
 				<div data-src=\"" . $link6[0] . "\"></div>
 				<div data-src=\"" . $link4[0] . "\" data-media=\"(min-width: 320px)\" style=\"max-width: 900px;\"></div>
 				<div data-src=\"" . $link5[0] . "\" data-media=\"(min-width: 920px)\" style=\"max-width: 1800px;\"></div>

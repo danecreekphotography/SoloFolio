@@ -752,13 +752,9 @@ table tr {
   z-index: 2;
 }
 
-.solofolio-cycelereact-fill {
-    text-align: center;
-}
-
-.solofolio-cycelereact-fill img {
-  max-width: 100%;
-  width: auto;
+.solofolio-cyclereact-fill {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .solofolio-cyclereact-nav-left, .solofolio-cyclereact-nav-right {
