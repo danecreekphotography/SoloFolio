@@ -10,6 +10,8 @@ function solofolio_css_cache() {
   WP_Filesystem();
   global $wp_filesystem;
 
+  set_theme_mod( 'solofolio_css_version', time() );
+
   $data = solofolio_css();
   $uploads = wp_upload_dir();
   $wp_filesystem->put_contents($uploads['basedir'] . '/solofolio.css', $data);

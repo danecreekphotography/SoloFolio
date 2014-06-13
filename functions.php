@@ -40,7 +40,9 @@ add_filter( 'mime_types', 'solofolio_mimes' );
 
 function register_solofolio_styles() {
   $uploads = wp_upload_dir();
-  wp_register_style( 'solofolio', $uploads['baseurl'] . '/solofolio.css', 'style' );
+  $version = get_theme_mod('solofolio_css_version');
+
+  wp_register_style( 'solofolio', $uploads['baseurl'] . '/solofolio.css', 'style', $version );
   wp_enqueue_style( 'solofolio' );
 }
 
