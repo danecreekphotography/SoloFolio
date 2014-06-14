@@ -83,7 +83,7 @@ function solofolio_css() {
     background-color: " . get_theme_mod('solofolio_background_color') . ";
   }
 
-  a:link, a:visited, #header-location {
+  a:link, a:visited, #header-location, #sidebar-footer {
     color: " . get_theme_mod('solofolio_body_link_color') . ";
   }
 
