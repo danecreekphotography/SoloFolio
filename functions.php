@@ -7,6 +7,7 @@ include_once("includes/css.php");             // Include CSS builder
 
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
+add_theme_support( 'post-formats', array( 'aside', 'image' ) );
 
 add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 add_filter( 'the_content', 'filter_ptags_on_images' );
