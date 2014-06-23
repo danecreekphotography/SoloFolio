@@ -69,7 +69,7 @@
 
 	wp.customize( 'solofolio_body_link_color', function( value ) {
 		value.bind( function( newval ) {
-			$('a').css('color', newval );
+			$('#wrapper a').css('color', newval );
 		} );
 	} );
 
@@ -143,6 +143,7 @@
 
 	wp.customize( 'solofolio_body_caption_color', function( value ) {
 		value.bind( function( newval ) {
+			$('.solofolio-cyclereact-caption').css('color', newval );
 			$('.wp-caption .wp-caption-text').css('color', newval );
 		} );
 	} );
