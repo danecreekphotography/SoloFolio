@@ -96,6 +96,17 @@ $output .= '<div class="solofolio-cyclereact-controls">
       </div>
     	</div>';
 
+if ($thumbs == "true"){
+$output .= "
+<style type=\"text/css\">
+#solofolio-cyclereact-thumbs {
+	display: block;
+}
+.solofolio-cyclereact-sidebar, #solofolio-cyclereact-stage {
+	display: none;
+}
+</style>";
+}
 
 add_action('wp_footer', 'sl_cyclereact_js');
 

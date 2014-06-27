@@ -18,6 +18,16 @@ var setResponsive = function () {
   $('#solofolio-cyclereact-images img').css('max-width', wrapperWidth);
 }
 
+var showThumbs = function () {
+  $(".solofolio-cyclereact-sidebar, #solofolio-cyclereact-stage").hide();
+  $("#solofolio-cyclereact-thumbs").show();
+}
+
+var hideThumbs = function () {
+  $(".solofolio-cyclereact-sidebar, #solofolio-cyclereact-stage").show();
+  $("#solofolio-cyclereact-thumbs").hide();
+}
+
 jQuery(window).load(function(){
   $('#solofolio-cyclereact-thumbs img').load(function() {
     $(this).fadeIn('slow');
@@ -35,16 +45,10 @@ jQuery(window).load(function(){
   window.picturefill();
   setResponsive();
   $(".thumbs").click(function(){
-    $("#solofolio-cyclereact-thumbs").toggle();
-    $(".solofolio-cyclereact-caption").toggle();
-    $("#solofolio-cyclereact-stage").toggle();
-    $(".thumbs").toggle();
-    $(".arrows").toggle();
+    showThumbs();
   });
   $(".thumb a").click(function(){
-    $("#solofolio-cyclereact-thumbs").hide();
-    $("#solofolio-cyclereact-stage, .arrows").show();
-    $(".thumbs").toggle();
+    hideThumbs();
   });
 });
 
@@ -52,7 +56,7 @@ jQuery(window).resize(setResponsive);
 
 jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-after', function( event, opts ) {
   $("#solofolio-cyclereact-thumbs").hide();
-  $("#solofolio-cyclereact-stage, .arrows").show();
+  $("#solofolio-cyclereact-stage, .solofolio-cyclereact-sidebar").show();
   $(".thumbs").removeClass("show-full");
 });
 

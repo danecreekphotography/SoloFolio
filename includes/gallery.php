@@ -41,6 +41,7 @@ function solofolio_gallery_shortcode($attr) {
 		'showthumbnails'    => '',
 		'size'       => 'full-size',
 		'speed'    => '',
+		'thumbs'    => '',
 		'transition'    => '',
 		'type'    => '',
 		'width'    => '',
