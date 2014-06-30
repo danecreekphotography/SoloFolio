@@ -122,6 +122,8 @@ function solofolio_gallery_shortcode($attr) {
 
 	$mobile = detect_mobile();
 
+	if(preg_match('/(?i)msie [1-8]/',$_SERVER['HTTP_USER_AGENT'])) { $type = "vert-scroll"; }
+
 	if ($mobile === true) { $type = "vert-scroll";}
 	if ( is_home() || is_single()) { $type = "vert-scroll";}
 
