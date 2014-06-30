@@ -182,8 +182,9 @@ p {
   position: fixed;
   top: 0;
   width: 200px;
+  word-wrap: break-word;
   z-index: 5;
-  }
+}
 
   #header #logo {
     width: auto;
