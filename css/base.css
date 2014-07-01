@@ -110,6 +110,8 @@ a:link, a:visited {
 
 a:hover, a:active {
   outline: none !important;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
 }
 
 a img {
