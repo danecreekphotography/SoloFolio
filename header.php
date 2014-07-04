@@ -67,19 +67,25 @@ SoloFolio v6.20140330 - github.com/joelhawksley/SoloFolio
 					</div>
 				<?php } ?>
 				<div id="header-meta">
-					<div id="header-phone">
-						<a href="tel:<?php echo get_theme_mod( 'solofolio_phone' ); ?>">
-							<?php echo get_theme_mod( 'solofolio_phone', '555-555-5555' ); ?>
-						</a>
-					</div>
-					<div id="header-email">
-						<a href="mailto:<?php echo get_theme_mod( 'solofolio_email' ); ?>">
-							<?php echo get_theme_mod( 'solofolio_email', 'john@johndoe.com' ); ?>
-						</a>
-					</div>
-					<div id="header-location">
-						<?php echo get_theme_mod( 'solofolio_location', 'Athens, Ohio' ); ?>
-					</div>
+					<?php if (get_theme_mod( 'solofolio_phone' ) != '') { ?>
+						<div id="header-phone">
+							<a href="tel:<?php echo get_theme_mod( 'solofolio_phone' ); ?>">
+								<?php echo get_theme_mod( 'solofolio_phone', '555-555-5555' ); ?>
+							</a>
+						</div>
+					<?php } ?>
+					<?php if (get_theme_mod( 'solofolio_email' ) != '') { ?>
+						<div id="header-email">
+							<a href="mailto:<?php echo get_theme_mod( 'solofolio_email' ); ?>">
+								<?php echo get_theme_mod( 'solofolio_email', 'john@johndoe.com' ); ?>
+							</a>
+						</div>
+					<?php } ?>
+					<?php if (get_theme_mod( 'solofolio_location' ) != '') { ?>
+						<div id="header-location">
+							<?php echo get_theme_mod( 'solofolio_location', 'Athens, Ohio' ); ?>
+						</div>
+					<?php } ?>
 					<div class="clear"></div>
 				</div>
 				<div class="clear"></div>
