@@ -6,7 +6,7 @@
 
 SoloFolio is a WordPress theme built by and for photographers, providing everything you need to create a portfolio and blog.
 
-[Getting started? View our guide.](http://github.com/joelhawksley/SoloFolio/wiki)
+### [Just getting started? View our guide.](http://github.com/joelhawksley/SoloFolio/wiki)
 
 # Thanks
 
