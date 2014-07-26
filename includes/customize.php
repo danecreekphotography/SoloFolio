@@ -45,7 +45,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting( 'solofolio_header_width', array('default' => '200', 'transport'   => 'postMessage',) );
 
 		$wp_customize->add_control( 'solofolio_header_width', array(
-			'label' => 'Width',
+			'label' => 'Sidebar Width',
 			'settings' => 'solofolio_header_width',
 			'section' => 'solofolio_logo_section',
 			'priority' => '10',
