@@ -211,7 +211,15 @@ function solofolio_css() {
       }";
   }
 
-  if (get_theme_mod('solofolio_layout_mode') == 'heights') {
+  if (get_theme_mod('solofolio_layout_mode') == 'heights' && get_theme_mod('solofolio_blog_center_layout') != 1) {
+    $styles .= "
+      #wrapper {
+        left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 20) . "px;
+        width: auto;
+      }";
+  }
+
+  if (get_theme_mod('solofolio_layout_mode') == 'heights' && get_theme_mod('solofolio_blog_center_layout')) {
     $styles .= "
       #wrapper {
         left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 20) . "px;
