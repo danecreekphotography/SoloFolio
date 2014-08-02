@@ -390,6 +390,17 @@ function solofolio_customize_register( $wp_customize )
 		'priority'    => 200,
 	) );
 
+		$wp_customize->add_setting( 'solofolio_blog_center_layout', array(
+    	'default'    => '1'
+		));
+
+		$wp_customize->add_control( 'solofolio_blog_center_layout', array(
+			'settings' => 'solofolio_blog_center_layout',
+			'label'    => __('Center blog layout', 'solofolio'),
+			'section'  => 'solofolio_advanced_section',
+			'type'     => 'checkbox',
+		));
+
 		$wp_customize->add_setting('solofolio_layout_mode', array('default' => 'heights', 'transport'   => 'refresh'));
 
 		$wp_customize->add_control('solofolio_layout_mode', array(
@@ -397,7 +408,6 @@ function solofolio_customize_register( $wp_customize )
 			'section'    => 'solofolio_advanced_section',
 			'settings'   => 'solofolio_layout_mode',
 			'type'       => 'select',
-			'priority' => '5',
 			'choices'    => array(
 				'heights' => 'Heights',
 				'horizon' => 'Horizon (Experimental)',
