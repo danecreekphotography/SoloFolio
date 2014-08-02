@@ -15,6 +15,22 @@ function solofolio_customize_register( $wp_customize )
 		}
 	}
 
+	// Fonts
+	$available_fonts = array(
+		'Abel' => 'Abel',
+		'Arvo' => 'Arvo',
+		'Fenix' => 'Fenix',
+		'Judson' => 'Judson',
+		'Lora' => 'Lora',
+		'Lato' => 'Lato',
+		'Mako' => 'Mako',
+		'Maven+Pro' => 'Maven Pro',
+		'Ovo' => 'Ovo',
+		'Open+Sans' => 'Open Sans',
+		'Roboto' => 'Roboto',
+		'Source+Sans+Pro' => 'Source Sans Pro'
+		);
+
 	$wp_customize->remove_section( 'title_tagline' );
 	$wp_customize->remove_section( 'static_front_page' );
 
@@ -199,6 +215,24 @@ function solofolio_customize_register( $wp_customize )
 				'section'  => 'solofolio_colors_section',
 				'settings' => 'solofolio_blog_entry_byline_color',
 			)));
+
+	$wp_customize->add_section( 'solofolio_typography_section' , array(
+		'title'       => __( 'Typography', 'solofolio' ),
+		'priority'    => 15,
+	) );
+
+		$wp_customize->add_setting( 'solofolio_font_body', array(
+      'default'   => 'Source+Sans+Pro',
+      'transport'   => 'postMessage',
+    ) );
+
+	    $wp_customize->add_control( 'solofolio_font_body', array(
+	    	'label' => 'Body Font',
+				'settings' => 'solofolio_font_body',
+				'section' => 'solofolio_typography_section',
+				'type'    => 'select',
+				'choices'  => $available_fonts
+			));
 
 	$wp_customize->add_section( 'solofolio_font_sizes_section' , array(
 		'title'       => __( 'Font Sizes', 'solofolio' ),

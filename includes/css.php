@@ -56,6 +56,11 @@ function solofolio_css() {
   WP_Filesystem();
   global $wp_filesystem;
 
+  $styles .= "
+  @import url(http://fonts.googleapis.com/css?family=".get_theme_mod('solofolio_font_body').");
+  @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+  ";
+
   $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/base.css");
 
   if (get_theme_mod('solofolio_layout_mode') == 'horizon') {
@@ -69,6 +74,7 @@ function solofolio_css() {
     background-color: ". get_theme_mod('solofolio_background_color') . ";
     color: " . get_theme_mod('solofolio_body_font_color') . ";
     font-size: " . get_theme_mod('solofolio_body_font_size') .";
+    font-family: '" . str_replace("+"," ", get_theme_mod('solofolio_font_body')) . "';
   }
 
   #logo-img {
