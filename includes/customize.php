@@ -39,15 +39,6 @@ function solofolio_customize_register( $wp_customize )
 		'priority'    => 5,
 	) );
 
-		$wp_customize->add_setting( 'solofolio_logo_width', array('default' => '200', 'transport'   => 'postMessage',) );
-
-		$wp_customize->add_control( 'solofolio_logo_width', array(
-			'label' => 'Logo Width',
-			'settings' => 'solofolio_logo_width',
-			'section' => 'solofolio_logo_section',
-			'priority' => '10',
-		) );
-
 		$wp_customize->add_setting( 'solofolio_logo' );
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'solofolio_logo', array(
@@ -56,6 +47,15 @@ function solofolio_customize_register( $wp_customize )
 			'settings' => 'solofolio_logo',
 			'priority' => '10',
 		) ) );
+
+		$wp_customize->add_setting( 'solofolio_logo_width', array('default' => '200', 'transport'   => 'postMessage',) );
+
+		$wp_customize->add_control( 'solofolio_logo_width', array(
+			'label' => 'Width',
+			'settings' => 'solofolio_logo_width',
+			'section' => 'solofolio_logo_section',
+			'priority' => '10',
+		) );
 
 		$wp_customize->add_setting( 'solofolio_header_width', array('default' => '200', 'transport'   => 'postMessage',) );
 
