@@ -39,6 +39,11 @@ function solofolio_mimes( $existing_mimes ) {
 }
 add_filter( 'mime_types', 'solofolio_mimes' );
 
+function filter_ptags_on_images($content) {
+  return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
+}
+add_filter('the_content', 'filter_ptags_on_images');
+
 function register_solofolio_styles() {
   $uploads = wp_upload_dir();
   $version = get_theme_mod('solofolio_css_version');
@@ -63,10 +68,6 @@ function hide_admin_bar_from_front_end() {
     return true;
   }
   return false;
-}
-
-function filter_ptags_on_images($content){
-   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 
 // Add additional image size for large displays, change defaults for others.
