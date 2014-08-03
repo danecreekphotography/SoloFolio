@@ -50,13 +50,12 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_setting( 'solofolio_logo' );
 
-		$wp_customize->add_control( 'solofolio_logo', array(
-			'label' => 'Logo Image URL',
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'solofolio_logo', array(
+			'label'    => __( 'Logo', 'solofolio' ),
+			'section'  => 'solofolio_logo_section',
 			'settings' => 'solofolio_logo',
-			'section' => 'solofolio_logo_section',
-			'type' => 'text',
 			'priority' => '10',
-		) );
+		) ) );
 
 		$wp_customize->add_setting( 'solofolio_header_width', array('default' => '200', 'transport'   => 'postMessage',) );
 
