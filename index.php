@@ -21,7 +21,7 @@
 					<h2 class="post-title">
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 					</h2>
-					<span class="date">
+					<span class="post-date">
 						<?php if (get_theme_mod('solofolio_blog_showdate')) { echo get_the_date(); } ?>
 						<?php if (get_theme_mod('solofolio_blog_showauthor')) {?>by <?php the_author() ?><?php } ?>
 					</span>

@@ -132,7 +132,7 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_blog_entry_title_color_hover') . ";
   }
 
-  .date, .post-cat {
+  .post-date, .post-cat {
     color: " . get_theme_mod('solofolio_blog_entry_byline_color') . ";
   }
 
