@@ -286,6 +286,9 @@
     display: block;
     z-index: 300;
   }
+  .solofolio-cyclereact-fill {
+    background-position: 50% 50%;
+  }
 }
 
 @media only screen and (min-width: 621px) and (max-width: 1024px) {

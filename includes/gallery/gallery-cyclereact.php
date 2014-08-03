@@ -123,7 +123,19 @@ function sl_cyclereact_js() {
 	#wrapper {
 		position: absolute;
 		bottom: 20px;
-		left: 20px;
+	}
+	@media only screen and (min-width: 1025px) {
+		#wrapper {
+			left: 20px;
+		}
+	}
+	@media only screen and (max-width: 1024px) {
+		.solofolio-cyclereact-sidebar {
+			padding-right: 20px;
+		}
+		#wrapper {
+			right: 20px;
+		}
 	}
 	</style>
 	";
