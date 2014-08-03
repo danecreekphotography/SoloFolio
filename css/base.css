@@ -355,7 +355,7 @@ p {
     text-transform: uppercase;
   }
 
-.date, .post-cat, .meta-cat {
+.post-date, .post-cat, .meta-cat {
   font-size: 14px;
   padding: 0;
 }
