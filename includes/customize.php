@@ -66,6 +66,15 @@ function solofolio_customize_register( $wp_customize )
 			'priority' => '10',
 		) );
 
+		$wp_customize->add_setting( 'solofolio_favicon' );
+
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'solofolio_favicon', array(
+			'label'    => __( 'Favicon', 'solofolio' ),
+			'section'  => 'solofolio_logo_section',
+			'settings' => 'solofolio_favicon',
+			'priority' => '10',
+		) ) );
+
 	$wp_customize->add_section( 'solofolio_colors_section' , array(
 		'title'       => __( 'Colors', 'solofolio' ),
 		'priority'    => 10,

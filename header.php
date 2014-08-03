@@ -16,7 +16,11 @@ SoloFolio v6.20140330 - github.com/joelhawksley/SoloFolio
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<link rel='shortcut icon' type='image/x-icon' href='<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico' />
+	<?php if (get_theme_mod( 'solofolio_favicon' ) != '') { ?>
+		<link rel="icon" type="image/png" href="<?php echo get_theme_mod( 'solofolio_favicon' ); ?>"/>
+	<?php } else { ?>
+		<link rel='shortcut icon' type='image/x-icon' href='<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico' />
+	<?php } ?>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
