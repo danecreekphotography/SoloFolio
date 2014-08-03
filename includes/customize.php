@@ -426,6 +426,14 @@ function solofolio_customize_register( $wp_customize )
 			),
 		));
 
+		$wp_customize->add_setting( 'solofolio_layout_spacing', array('default' => '20', 'transport'   => 'postMessage',) );
+
+			$wp_customize->add_control( 'solofolio_layout_spacing', array(
+				'label' => 'Layout Spacing',
+				'settings' => 'solofolio_layout_spacing',
+				'section' => 'solofolio_advanced_section',
+			) );
+
 		$wp_customize->add_setting( 'solofolio_entry_width', array('default' => '900', 'transport'   => 'postMessage',) );
 
 			$wp_customize->add_control( 'solofolio_entry_width', array(

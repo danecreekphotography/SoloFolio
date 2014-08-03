@@ -201,20 +201,45 @@ function solofolio_css() {
 
   if (get_theme_mod('solofolio_layout_mode') == 'horizon') {
     $styles .= "
+      #wrapper {
+        bottom: 20px;
+        top: 65px;
+      }
       #solofolio-cyclereact-stage {
-        right: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 40) . "px;
-      }";
+        right: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 20) . "px;
+      }
+      @media (max-width: 1024px) {
+        #solofolio-cyclereact-stage, #solofolio-cyclereact-thumbs {
+          left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 20) . "px;
+        }
+      }
+      ";
   } elseif (get_theme_mod('solofolio_layout_mode') == 'heights') {
     $styles .= "
       #solofolio-cyclereact-stage, #solofolio-cyclereact-thumbs {
         left: " . get_theme_mod( 'solofolio_header_width', '200' ) . "px;
-      }";
+      }
+      @media (min-width: 1025px) {
+        #wrapper {
+          bottom: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+          left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+          right: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+          top: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+        }
+
+        #header-inner {
+          left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+          top: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+        }
+      }
+
+    ";
   }
 
   if (get_theme_mod('solofolio_layout_mode') == 'heights' && get_theme_mod('solofolio_blog_center_layout') != 1) {
     $styles .= "
       #wrapper {
-        left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 20) . "px;
+        left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + get_theme_mod( 'solofolio_layout_spacing', '20' )) . "px;
         width: auto;
       }";
   }
@@ -222,7 +247,7 @@ function solofolio_css() {
   if (get_theme_mod('solofolio_layout_mode') == 'heights' && get_theme_mod('solofolio_blog_center_layout')) {
     $styles .= "
       #wrapper {
-        left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 20) . "px;
+        left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + get_theme_mod( 'solofolio_layout_spacing', '20' )) . "px;
         width: auto;
       }
 

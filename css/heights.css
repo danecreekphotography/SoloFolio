@@ -6,4 +6,10 @@
   .solofolio-cyclereact-fill {
     background-position: 50% 50%;
   }
+
+  #header-inner {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
 }

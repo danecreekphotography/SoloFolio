@@ -180,7 +180,6 @@ p {
   height: 100%;
   left: 0;
   margin: 0;
-  padding: 20px 20px 0 20px;
   position: fixed;
   top: 0;
   width: 200px;
@@ -266,7 +265,6 @@ p {
     }
 
 #wrapper {
-  padding: 20px 0 0 0;
   position: absolute;
   bottom: 0;
   top: 0;
@@ -667,11 +665,6 @@ table tr {
   right: 0;
 }
 
-#solofolio-cyclereact-stage,
-#solofolio-cyclereact-thumbs {
-  top: 20px;
-}
-
 #solofolio-cyclereact-thumbs {
   display: none;
   z-index: 200;
@@ -679,6 +672,7 @@ table tr {
   left: 0;
   bottom: 0;
   right: 0;
+  top: 0;
   list-style-type: none;
 }
 

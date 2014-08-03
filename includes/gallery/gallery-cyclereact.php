@@ -121,20 +121,24 @@ function sl_cyclereact_js() {
 		display: block;
 	}
 	#wrapper {
+		padding: 0;
 		position: absolute;
-		bottom: 20px;
 	}
 	@media only screen and (min-width: 1025px) {
 		#wrapper {
-			left: 20px;
+			left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) ."px;
 		}
 	}
 	@media only screen and (max-width: 1024px) {
 		.solofolio-cyclereact-sidebar {
 			padding-right: 20px;
 		}
+		#solofolio-cyclereact-stage {
+			right: 0;
+		}
 		#wrapper {
 			right: 20px;
+			bottom: 20px;
 		}
 	}
 	</style>
