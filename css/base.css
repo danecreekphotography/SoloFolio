@@ -590,16 +590,6 @@ div.aligncenter {
   font-size: 16px;
 }
 
-/* Side scroll gallery */
-.sl-sidescroll-container {
-  padding: 0 20px 0 0;
-  position: relative;
-}
-
-  .sl-sidescroll-container:last-child {
-    padding-right: 0;
-  }
-
 /* Phone view menu */
 #menu-icon {
   width: 60px;

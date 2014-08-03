@@ -134,9 +134,6 @@ function solofolio_gallery_shortcode($attr) {
 		case "slideshow":
 			include("gallery/gallery-slideshow.php");
 			break;
-		case "side-scroll":
-			include("gallery/gallery-sidescroll.php");
-			break;
 		case "vert-scroll":
 			include("gallery/gallery-vertscroll.php");
 			break;
