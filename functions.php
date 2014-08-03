@@ -7,7 +7,6 @@ include_once("includes/css.php");             // Include CSS builder
 
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
-add_theme_support( 'post-formats', array( 'aside', 'image' ) );
 
 add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 add_filter( 'the_content', 'filter_ptags_on_images' );
@@ -98,15 +97,14 @@ function solofolio_comments($comment, $args, $depth) {
         </div>
 
         <?php if ($comment->comment_approved == '0') : ?>
-           <em><?php _e('Your comment is awaiting moderation.') ?></em>
+           <em><?php _e('Your comment is awaiting moderation.', 'solofolio') ?></em>
            <br />
         <?php endif; ?>
 
         <div class="comment-meta commentmetadata">
-          <?php printf(__('%1$s'), get_comment_date('Y-m-d')) ?>
-          <?php edit_comment_link(__('(Edit)'),'  ','') ?>
+          <?php printf(__('%1$s', 'solofolio'), get_comment_date('Y-m-d')) ?>
+          <?php edit_comment_link(__('(Edit)', 'solofolio'),'  ','') ?>
         </div>
-
         <?php comment_text() ?>
      </div>
 <?php
