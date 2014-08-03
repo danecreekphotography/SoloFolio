@@ -13,4 +13,5 @@ SoloFolio is a WordPress theme built by and for creatives, providing everything 
 SoloFolio would not exist without the hard work of the fine folks behind:
 * [WordPress](http://wordpress.org/)
 * [Cycle2](http://github.com/malsup/cycle2)
-* [Picturefill](github.com/scottjehl/picturefill)
+* [Picturefill](http://github.com/scottjehl/picturefill)
+* [FitVids.js](http://fitvidsjs.com/)
