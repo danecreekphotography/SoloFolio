@@ -7,6 +7,10 @@ var setResponsive = function () {
 
   var n = $("#header").css('right');
 
+  if ($(window).width() < 1025) {
+    $('#wrapper').css('top', headerHeight);
+  }
+
   if (n == '0px') {
     var barHeight = $("#solofolio-cyclereact-bar").outerHeight();
     $('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - headerHeight);
