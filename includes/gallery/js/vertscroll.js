@@ -2,6 +2,7 @@ var setResponsive = function () {
   var pageHeight = jQuery(window).height();
   var headerHeight = $("#header").outerHeight();
   var wrapperWidth = $("#wrapper").innerWidth();
+  var wrapperHeight = $("#wrapper").outerHeight();
 
   var n = $("#header").css('right');
 
@@ -10,8 +11,7 @@ var setResponsive = function () {
       $('.vert-scroll img').css('max-height', pageHeight - headerHeight - 40);
     }
     else {
-      var barHeight = 0;
-      $('.vert-scroll img').css('max-height', pageHeight - 60);
+      $('.vert-scroll img').css('max-height', wrapperHeight);
     }
   } else {
     $('.vert-scroll img').css('max-height', pageHeight);
