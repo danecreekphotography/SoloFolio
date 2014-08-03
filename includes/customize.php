@@ -82,6 +82,7 @@ function solofolio_customize_register( $wp_customize )
 				'label'    => __('Site Background', 'solofolio'),
 				'section'  => 'solofolio_colors_section',
 				'settings' => 'solofolio_background_color',
+				'priority' => '10',
 			)));
 
 		$wp_customize->add_setting('solofolio_header_background_color', array(
@@ -94,6 +95,7 @@ function solofolio_customize_register( $wp_customize )
 				'label'    => __('Menu Background', 'solofolio'),
 				'section'  => 'solofolio_colors_section',
 				'settings' => 'solofolio_header_background_color',
+				'priority' => '20',
 			)));
 
 		$wp_customize->add_setting('solofolio_body_font_color', array(
@@ -106,18 +108,7 @@ function solofolio_customize_register( $wp_customize )
 				'label'    => __('Site Text', 'solofolio'),
 				'section'  => 'solofolio_colors_section',
 				'settings' => 'solofolio_body_font_color',
-			)));
-
-		$wp_customize->add_setting('solofolio_body_link_color_hover', array(
-			'default'           => '#000000',
-			'sanitize_callback' => 'sanitize_hex_color',
-			'transport'   => 'postMessage',
-        ));
-
-			$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_body_link_color_hover', array(
-				'label'    => __('Link (Hover)', 'solofolio'),
-				'section'  => 'solofolio_colors_section',
-				'settings' => 'solofolio_body_link_color_hover',
+				'priority' => '30',
 			)));
 
 		$wp_customize->add_setting('solofolio_body_link_color', array(
@@ -130,6 +121,20 @@ function solofolio_customize_register( $wp_customize )
 				'label'    => __('Link', 'solofolio'),
 				'section'  => 'solofolio_colors_section',
 				'settings' => 'solofolio_body_link_color',
+				'priority' => '40',
+			)));
+
+		$wp_customize->add_setting('solofolio_body_link_color_hover', array(
+			'default'           => '#000000',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'   => 'postMessage',
+        ));
+
+			$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_body_link_color_hover', array(
+				'label'    => __('Link (Hover)', 'solofolio'),
+				'section'  => 'solofolio_colors_section',
+				'settings' => 'solofolio_body_link_color_hover',
+				'priority' => '50',
 			)));
 
 		$wp_customize->add_setting('solofolio_body_caption_color', array(
@@ -142,6 +147,7 @@ function solofolio_customize_register( $wp_customize )
 				'label'    => __('Caption Text', 'solofolio'),
 				'section'  => 'solofolio_colors_section',
 				'settings' => 'solofolio_body_caption_color',
+				'priority' => '60',
 			)));
 
 		$wp_customize->add_setting('solofolio_navigation_link_color', array(
@@ -154,6 +160,7 @@ function solofolio_customize_register( $wp_customize )
 				'label'    => __('Menu Link', 'solofolio'),
 				'section'  => 'solofolio_colors_section',
 				'settings' => 'solofolio_navigation_link_color',
+				'priority' => '70',
 			)));
 
 		$wp_customize->add_setting('solofolio_navigation_link_color_hover', array(
@@ -166,6 +173,7 @@ function solofolio_customize_register( $wp_customize )
 				'label'    => __('Menu Link (Hover)', 'solofolio'),
 				'section'  => 'solofolio_colors_section',
 				'settings' => 'solofolio_navigation_link_color_hover',
+				'priority' => '80',
 			)));
 
 		$wp_customize->add_setting('solofolio_navigation_header_color', array(
@@ -178,18 +186,7 @@ function solofolio_customize_register( $wp_customize )
 				'label'    => __('Menu Section Title', 'solofolio'),
 				'section'  => 'solofolio_colors_section',
 				'settings' => 'solofolio_navigation_header_color',
-			)));
-
-		$wp_customize->add_setting('solofolio_blog_entry_title_color_hover', array(
-			'default'           => '#AAAAAA',
-			'sanitize_callback' => 'sanitize_hex_color',
-			'transport'   => 'postMessage',
-        ));
-
-			$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_blog_entry_title_color_hover', array(
-				'label'    => __('Blog Post Title (Hover)', 'solofolio'),
-				'section'  => 'solofolio_colors_section',
-				'settings' => 'solofolio_blog_entry_title_color_hover',
+				'priority' => '90',
 			)));
 
 		$wp_customize->add_setting('solofolio_blog_entry_title_color', array(
@@ -202,6 +199,20 @@ function solofolio_customize_register( $wp_customize )
 				'label'    => __('Blog Post Title', 'solofolio'),
 				'section'  => 'solofolio_colors_section',
 				'settings' => 'solofolio_blog_entry_title_color',
+				'priority' => '100',
+			)));
+
+		$wp_customize->add_setting('solofolio_blog_entry_title_color_hover', array(
+			'default'           => '#AAAAAA',
+			'sanitize_callback' => 'sanitize_hex_color',
+			'transport'   => 'postMessage',
+        ));
+
+			$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_blog_entry_title_color_hover', array(
+				'label'    => __('Blog Post Title (Hover)', 'solofolio'),
+				'section'  => 'solofolio_colors_section',
+				'settings' => 'solofolio_blog_entry_title_color_hover',
+				'priority' => '110',
 			)));
 
 		$wp_customize->add_setting('solofolio_blog_entry_byline_color', array(
@@ -214,6 +225,7 @@ function solofolio_customize_register( $wp_customize )
 				'label'    => __('Blog Post Byline', 'solofolio'),
 				'section'  => 'solofolio_colors_section',
 				'settings' => 'solofolio_blog_entry_byline_color',
+				'priority' => '120',
 			)));
 
 	$wp_customize->add_section( 'solofolio_typography_section' , array(
@@ -227,7 +239,7 @@ function solofolio_customize_register( $wp_customize )
     ) );
 
 	    $wp_customize->add_control( 'solofolio_font_body', array(
-	    	'label' => 'Body Font',
+	    	'label' => 'Base Font',
 				'settings' => 'solofolio_font_body',
 				'section' => 'solofolio_typography_section',
 				'type'    => 'select',
@@ -245,7 +257,7 @@ function solofolio_customize_register( $wp_customize )
         ));
 
 			$wp_customize->add_control( 'solofolio_body_font_size', array(
-				'label' => 'Text',
+				'label' => 'Page Text',
 				'settings' => 'solofolio_body_font_size',
 				'section' => 'solofolio_font_sizes_section',
 				'type' => 'text',
@@ -257,7 +269,7 @@ function solofolio_customize_register( $wp_customize )
         ));
 
 			$wp_customize->add_control( 'solofolio_navigation_font_size', array(
-				'label' => 'Menu',
+				'label' => 'Menu Links',
 				'settings' => 'solofolio_navigation_font_size',
 				'section' => 'solofolio_font_sizes_section',
 				'type' => 'text',
@@ -281,7 +293,7 @@ function solofolio_customize_register( $wp_customize )
         ));
 
 			$wp_customize->add_control( 'solofolio_blog_entry_title_size', array(
-				'label' => 'Blog Title',
+				'label' => 'Blog Titles',
 				'settings' => 'solofolio_blog_entry_title_size',
 				'section' => 'solofolio_font_sizes_section',
 				'type' => 'text',
