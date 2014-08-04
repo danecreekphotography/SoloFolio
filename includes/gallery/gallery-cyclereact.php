@@ -74,9 +74,7 @@ $output .="<div class=\"solofolio-cyclereact-image-nav\">
 		<div class=\"solofolio-cyclereact-nav-left prev\"></div>
 	</div>";
 
-$output .= "</div>";
-
-$output .= "</div>";
+$output .= "</div></div>";
 
 $output .= '<div class="solofolio-cyclereact-sidebar">';
 
