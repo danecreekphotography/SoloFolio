@@ -85,10 +85,7 @@ if ($captions != "false"){
 }
 
 $output .= '<div class="solofolio-cyclereact-controls">
-        <a class="thumbs" href="#">
-          <i class="fa fa-th"></i>
-          <i class="fa fa-expand"></i>
-        </a>
+        <a class="thumbs" href="#"><i class="fa fa-th"></i></a>
         <span class="arrows">
           <a class="prev" href="#"><i class="fa fa-angle-left"></i></a>
           <a class="next" href="#"><i class="fa fa-angle-right"></i></a>
