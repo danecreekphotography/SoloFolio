@@ -4,7 +4,7 @@ $output .="<div id=\"solofolio-cyclereact-wrap\">";
 
 $output .="<ul id=\"solofolio-cyclereact-thumbs\">";
 
-$i = 0;
+$i = 1;
 foreach ($attachment_ids as $id) {
 	$attachment = get_post($id);
 	$i++;
@@ -31,6 +31,7 @@ $output .="<div id=\"solofolio-cyclereact-images\"
 								data-cycle-fx=\"fade\"
 								data-cycle-log=\"false\"
 								data-cycle-manual-speed=\"300\"
+								data-cycle-auto-height=false
 								data-cycle-caption=\".solofolio-cyclereact-caption\"
 								data-cycle-caption-template=\"{{cycleTitle}}\"";
 								if ( $autoplay == "true" ) {
@@ -42,7 +43,23 @@ $output .="<div id=\"solofolio-cyclereact-images\"
 								}
 $output .= ">\n\n";
 
+
+$galleryTitle = get_post_meta($post->ID, 'solofolio-gallery-title', true);
+$galleryText 	= get_post_meta($post->ID, 'solofolio-gallery-text', true);
+
 $i = 0;
+
+if ($galleryTitle || $galleryText) {
+	$i++;
+	$output .= "
+		<div class='solofolio-cycelereact-slide solofolio-cyclereact-title solofolio-gallery-title'
+				 data-cycle-title=''
+				 data-cycle-hash='" .  $i . "'>
+			<h2>" . $galleryTitle . "</h2>
+			<div>" . wpautop($galleryText) . "</div>
+		</div>";
+}
+
 foreach ($attachment_ids as $id) {
 	$attachment = get_post($id);
 	$i++;
@@ -54,7 +71,7 @@ foreach ($attachment_ids as $id) {
 	$link6 = wp_get_attachment_image_src($id, 'medium');
 
 	$output .= "
-		<div class=\"solofolio-cycelereact-slide\"
+		<div class=\"solofolio-cycelereact-slide solofolio-cyclereact-image\"
 				 data-cycle-title=\"" .  wptexturize($attachment->post_excerpt) . "\"
 				 data-cycle-hash=\"" .  $i . "\">
 			<div class=\"solofolio-cyclereact-fill picturefill-background\"
@@ -118,6 +135,7 @@ function sl_cyclereact_js() {
 	#wrapper {
 		padding: 0;
 		position: absolute;
+		overflow: hidden;
 	}
 	@media only screen and (min-width: 1025px) {
 		#wrapper {

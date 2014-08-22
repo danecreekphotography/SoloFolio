@@ -1,5 +1,18 @@
 <?php
 $i = 0;
+
+$galleryTitle = get_post_meta($post->ID, 'solofolio-gallery-title', true);
+$galleryText 	= get_post_meta($post->ID, 'solofolio-gallery-text', true);
+
+if ($galleryTitle || $galleryText) {
+	$i++;
+	$output .= "
+		<div class='solofolio-gallery-title solofolio-vertscroll-title'>
+			<h2>" . $galleryTitle . "</h2>
+			<div>" . wpautop($galleryText) . "</div>
+		</div>";
+}
+
 foreach ($attachment_ids as $id) {
 	$attachment = get_post($id);
 

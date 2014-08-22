@@ -110,10 +110,13 @@
   }
 
   #solofolio-cyclereact-thumbs {
-    max-width: 1200px;
-    position: relative;
-    margin: 0 auto;
+    text-align: center;
   }
+
+    #solofolio-cyclereact-thumbs .thumb {
+      display: inline-block;
+      float: none;
+    }
 
   .solofolio-cyclereact-sidebar {
     right: 0;
