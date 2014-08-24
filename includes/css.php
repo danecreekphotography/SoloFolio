@@ -56,14 +56,14 @@ function solofolio_css() {
   WP_Filesystem();
   global $wp_filesystem;
 
-  $layout_spacing = get_theme_mod('solofolio_layout_spacing', '20');
-  $header_width = get_theme_mod('solofolio_header_width', '200');
-  $entry_width = get_theme_mod('solofolio_entry_width', '900');
-  $is_heights = get_theme_mod('solofolio_layout_mode') == 'heights';
-  $is_horizon = get_theme_mod('solofolio_layout_mode') == 'horizon';
-  $center_blog = get_theme_mod('solofolio_blog_center_layout');
-  $background_color = get_theme_mod('solofolio_background_color');
-  $header_background_color = get_theme_mod('solofolio_header_background_color');
+  $layout_spacing           = get_theme_mod('solofolio_layout_spacing', '20');
+  $header_width             = get_theme_mod('solofolio_header_width', '200');
+  $entry_width              = get_theme_mod('solofolio_entry_width', '900');
+  $is_heights               = get_theme_mod('solofolio_layout_mode') == 'heights';
+  $is_horizon               = get_theme_mod('solofolio_layout_mode') == 'horizon';
+  $center_blog              = get_theme_mod('solofolio_blog_center_layout');
+  $background_color         = get_theme_mod('solofolio_background_color');
+  $header_background_color  = get_theme_mod('solofolio_header_background_color');
 
   $styles .= "
   @import url(http://fonts.googleapis.com/css?family=".get_theme_mod('solofolio_font_body').");
