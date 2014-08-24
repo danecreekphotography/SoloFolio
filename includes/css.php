@@ -69,6 +69,8 @@ function solofolio_css() {
     $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/heights.css");
   }
 
+  $layout_spacing = get_theme_mod( 'solofolio_layout_spacing', '20' );
+
   $styles .= "
   body {
     background-color: ". get_theme_mod('solofolio_background_color') . ";
@@ -202,31 +204,31 @@ function solofolio_css() {
   if (get_theme_mod('solofolio_layout_mode') == 'horizon') {
     $styles .= "
       #wrapper {
-        bottom: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
-        top: " . (get_theme_mod( 'solofolio_layout_spacing', '20' ) + 45) . "px;
-        right: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+        bottom: " . $layout_spacing . "px;
+        top: " . ($layout_spacing + 45) . "px;
+        right: " . $layout_spacing . "px;
       }
       #solofolio-cyclereact-stage {
         right: " . (get_theme_mod( 'solofolio_header_width', '200' ) + 20) . "px;
       }
       #solofolio-cyclereact-thumbs {
         top: 45px;
-        padding-top: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
-        padding-right: " . (get_theme_mod( 'solofolio_layout_spacing', '20' ) - 20) . "px;
-        padding-bottom: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+        padding-top: " . $layout_spacing . "px;
+        padding-right: " . ($layout_spacing - 20) . "px;
+        padding-bottom: " . $layout_spacing . "px;
       }
       .solofolio-cyclereact-title {
-        padding-top: " . (get_theme_mod( 'solofolio_layout_spacing', '20' ) + 45) . "px;
-        padding-right: " . (get_theme_mod( 'solofolio_layout_spacing', '20' ) - 20) . "px;
-        padding-bottom: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+        padding-top: " . ($layout_spacing + 45) . "px;
+        padding-right: " . ($layout_spacing - 20) . "px;
+        padding-bottom: " . $layout_spacing . "px;
       }
       #header-inner {
-        padding-left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
-        padding-right: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+        padding-left: " . $layout_spacing . "px;
+        padding-right: " . $layout_spacing . "px;
       }
       .solofolio-cyclereact-sidebar {
-        top: " . (get_theme_mod( 'solofolio_layout_spacing', '20' ) + 45) . "px;
-        right: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+        top: " . ($layout_spacing + 45) . "px;
+        right: " . $layout_spacing . "px;
       }
       @media (max-width: 1024px) {
         #solofolio-cyclereact-stage, #solofolio-cyclereact-thumbs {
@@ -241,25 +243,25 @@ function solofolio_css() {
       }
       @media (min-width: 1025px) {
         #wrapper {
-          bottom: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
-          left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
-          right: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
-          top: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+          bottom: " . $layout_spacing . "px;
+          left: " . $layout_spacing . "px;
+          right: " . $layout_spacing . "px;
+          top: " . $layout_spacing . "px;
         }
 
         .solofolio-cyclereact-sidebar {
-          bottom: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+          bottom: " . $layout_spacing . "px;
         }
 
         #solofolio-cyclereact-thumbs, .solofolio-cyclereact-title {
-          padding-top: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
-          padding-right: " . (get_theme_mod( 'solofolio_layout_spacing', '20' ) - 20) . "px;
-          padding-bottom: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+          padding-top: " . $layout_spacing . "px;
+          padding-right: " . ($layout_spacing - 20) . "px;
+          padding-bottom: " . $layout_spacing . "px;
         }
 
         #header-inner {
-          left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
-          top: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+          left: " . $layout_spacing . "px;
+          top: " . $layout_spacing . "px;
         }
       }
 
@@ -269,7 +271,7 @@ function solofolio_css() {
   if (get_theme_mod('solofolio_layout_mode') == 'heights' && get_theme_mod('solofolio_blog_center_layout') != 1) {
     $styles .= "
       #wrapper {
-        left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + get_theme_mod( 'solofolio_layout_spacing', '20' )) . "px;
+        left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + $layout_spacing) . "px;
         width: auto;
       }";
   }
@@ -277,7 +279,7 @@ function solofolio_css() {
   if (get_theme_mod('solofolio_layout_mode') == 'heights' && get_theme_mod('solofolio_blog_center_layout')) {
     $styles .= "
       #wrapper {
-        left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + get_theme_mod( 'solofolio_layout_spacing', '20' )) . "px;
+        left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + $layout_spacing) . "px;
         width: auto;
       }
 
