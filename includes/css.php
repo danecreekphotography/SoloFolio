@@ -60,6 +60,7 @@ function solofolio_css() {
   $is_heights = get_theme_mod('solofolio_layout_mode') == 'heights';
   $is_horizon = get_theme_mod('solofolio_layout_mode') == 'horizon';
   $background_color = get_theme_mod('solofolio_background_color');
+  $header_background_color = get_theme_mod('solofolio_header_background_color');
 
   $styles .= "
   @import url(http://fonts.googleapis.com/css?family=".get_theme_mod('solofolio_font_body').");
@@ -103,7 +104,7 @@ function solofolio_css() {
   }
 
   #header {
-    background-color: ". get_theme_mod('solofolio_header_background_color') . ";
+    background-color: ". $header_background_color . ";
   }
 
   #header-content li a {
@@ -190,8 +191,8 @@ function solofolio_css() {
       }
 
       .solofolio-cyclereact-controls a {
-        border: 1px solid " . colorBrightness(get_theme_mod('solofolio_header_background_color'), -0.9) . ";
-        background-color: " . colorBrightness(get_theme_mod('solofolio_header_background_color'), -0.9) . ";
+        border: 1px solid " . colorBrightness($header_background_color, -0.9) . ";
+        background-color: " . colorBrightness($header_background_color, -0.9) . ";
       }";
   }
 
