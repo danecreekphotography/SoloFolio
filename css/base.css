@@ -623,29 +623,6 @@ div.aligncenter {
   max-width: 100%;
 }
 
-/* Side scroll gallery */
-
-table tr {
-  vertical-align: top;
-}
-
-/* React gallery  */
-.sl-react {
-  margin-bottom: 1em;
-}
-.sl-react-img {
-  text-align: center
-}
-.sl-react img {
-  max-width: 100% !important;
-  height: auto;
-}
-.sl-react-caption {
-  max-width: 600px;
-  margin: 0 auto 1.5em;
-  text-align: left;
-}
-
 /* CycleReact gallery  */
 #solofolio-cyclereact-wrap {
   overflow-x: scroll;
