@@ -56,7 +56,7 @@ function solofolio_css() {
   WP_Filesystem();
   global $wp_filesystem;
 
-  $layout_spacing = get_theme_mod( 'solofolio_layout_spacing', '20' );
+  $layout_spacing = get_theme_mod('solofolio_layout_spacing', '20');
   $header_width = get_theme_mod('solofolio_header_width', '200');
   $entry_width = get_theme_mod('solofolio_entry_width', '900');
   $is_heights = get_theme_mod('solofolio_layout_mode') == 'heights';
