@@ -59,6 +59,7 @@ function solofolio_css() {
   $layout_spacing = get_theme_mod( 'solofolio_layout_spacing', '20' );
   $is_heights = get_theme_mod('solofolio_layout_mode') == 'heights';
   $is_horizon = get_theme_mod('solofolio_layout_mode') == 'horizon';
+  $background_color = get_theme_mod('solofolio_background_color');
 
   $styles .= "
   @import url(http://fonts.googleapis.com/css?family=".get_theme_mod('solofolio_font_body').");
@@ -75,7 +76,7 @@ function solofolio_css() {
 
   $styles .= "
   body {
-    background-color: ". get_theme_mod('solofolio_background_color') . ";
+    background-color: ". $background_color . ";
     color: " . get_theme_mod('solofolio_body_font_color') . ";
     font-size: " . get_theme_mod('solofolio_body_font_size') .";
     font-family: '" . str_replace("+"," ", get_theme_mod('solofolio_font_body')) . "';
@@ -86,11 +87,11 @@ function solofolio_css() {
   }
 
   #solofolio-cyclereact-thumbs .thumb {
-    border-color: ". get_theme_mod('solofolio_background_color') . ";
+    border-color: ". $background_color . ";
   }
 
   .galleria-container .galleria-stage, .galleria-container .galleria-thumbnails-container {
-    background-color: " . get_theme_mod('solofolio_background_color') . ";
+    background-color: " . $background_color . ";
   }
 
   a:link, a:visited, #header-location, #sidebar-footer {
@@ -164,7 +165,7 @@ function solofolio_css() {
 
   input, textarea {
     color: " . get_theme_mod('solofolio_body_link_color') . ";
-    background-color: " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
+    background-color: " . colorBrightness($background_color, -0.9) . ";
   }
 
   .galleria-info {
@@ -179,8 +180,8 @@ function solofolio_css() {
   if ($is_horizon) {
     $styles .="
       .solofolio-cyclereact-controls a {
-        border: 1px solid " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
-        background-color: " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
+        border: 1px solid " . colorBrightness($background_color, -0.9) . ";
+        background-color: " . colorBrightness($background_color, -0.9) . ";
       }";
   } elseif ($is_heights) {
     $styles .="
