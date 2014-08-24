@@ -56,6 +56,10 @@ function solofolio_css() {
   WP_Filesystem();
   global $wp_filesystem;
 
+  $layout_spacing = get_theme_mod( 'solofolio_layout_spacing', '20' );
+  $is_heights = get_theme_mod('solofolio_layout_mode') == 'heights';
+  $is_horizon = get_theme_mod('solofolio_layout_mode') == 'horizon';
+
   $styles .= "
   @import url(http://fonts.googleapis.com/css?family=".get_theme_mod('solofolio_font_body').");
   @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
@@ -63,13 +67,11 @@ function solofolio_css() {
 
   $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/base.css");
 
-  if (get_theme_mod('solofolio_layout_mode') == 'horizon') {
+  if ($is_horizon) {
     $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/horizon.css");
-  } elseif (get_theme_mod('solofolio_layout_mode') == 'heights') {
+  } elseif ($is_heights) {
     $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/heights.css");
   }
-
-  $layout_spacing = get_theme_mod( 'solofolio_layout_spacing', '20' );
 
   $styles .= "
   body {
@@ -174,13 +176,13 @@ function solofolio_css() {
   }
   ";
 
-  if (get_theme_mod('solofolio_layout_mode') == 'horizon') {
+  if ($is_horizon) {
     $styles .="
       .solofolio-cyclereact-controls a {
         border: 1px solid " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
         background-color: " . colorBrightness(get_theme_mod('solofolio_background_color'), -0.9) . ";
       }";
-  } elseif (get_theme_mod('solofolio_layout_mode') == 'heights') {
+  } elseif ($is_heights) {
     $styles .="
       #header {
         width: " . get_theme_mod( 'solofolio_header_width', '200') . "px;
@@ -201,7 +203,7 @@ function solofolio_css() {
     cursor: url(\"" . get_template_directory_uri() . "/img/next.dark.cur\"), move;
   }";
 
-  if (get_theme_mod('solofolio_layout_mode') == 'horizon') {
+  if ($is_horizon) {
     $styles .= "
       #wrapper {
         bottom: " . $layout_spacing . "px;
@@ -236,7 +238,7 @@ function solofolio_css() {
         }
       }
       ";
-  } elseif (get_theme_mod('solofolio_layout_mode') == 'heights') {
+  } elseif ($is_heights) {
     $styles .= "
       #solofolio-cyclereact-stage, #solofolio-cyclereact-thumbs, .solofolio-cyclereact-title {
         left: " . get_theme_mod( 'solofolio_header_width', '200' ) . "px !important;
@@ -268,7 +270,7 @@ function solofolio_css() {
     ";
   }
 
-  if (get_theme_mod('solofolio_layout_mode') == 'heights' && get_theme_mod('solofolio_blog_center_layout') != 1) {
+  if ($is_heights && get_theme_mod('solofolio_blog_center_layout') != 1) {
     $styles .= "
       #wrapper {
         left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + $layout_spacing) . "px;
@@ -276,7 +278,7 @@ function solofolio_css() {
       }";
   }
 
-  if (get_theme_mod('solofolio_layout_mode') == 'heights' && get_theme_mod('solofolio_blog_center_layout')) {
+  if ($is_heights && get_theme_mod('solofolio_blog_center_layout')) {
     $styles .= "
       #wrapper {
         left: " . (get_theme_mod( 'solofolio_header_width', '200' ) + $layout_spacing) . "px;
