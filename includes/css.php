@@ -220,6 +220,10 @@ function solofolio_css() {
         padding-right: " . (get_theme_mod( 'solofolio_layout_spacing', '20' ) - 20) . "px;
         padding-bottom: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
       }
+      #header-inner {
+        padding-left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+        padding-right: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;
+      }
       .solofolio-cyclereact-sidebar {
         top: " . (get_theme_mod( 'solofolio_layout_spacing', '20' ) + 45) . "px;
         right: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) . "px;

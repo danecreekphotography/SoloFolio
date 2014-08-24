@@ -1,14 +1,15 @@
 @media only screen and (min-width: 1025px) {
   #header {
     left: 0;
-    line-height: 40px;
-    height: auto;
+    line-height: 45px;
+    height: 45px;
     width: auto;
     bottom: auto;
     position: fixed;
     padding: 0;
     right: 0;
     z-index: 300;
+    vertical-align: middle;
   }
 
   #header-inner {
@@ -55,10 +56,15 @@
   }
 
   #header-content ul li {
-      display: inline-block;
-      line-height: 45px;
-      letter-spacing: 0;
-      padding: 0 10px;
+    display: inline-block;
+    line-height: 45px;
+    letter-spacing: 0;
+    padding: 0 10px;
+    vertical-align: top;
+  }
+
+  #header-content ul li:last-child {
+    padding-right: 0;
   }
 
   .pagination-nav {
