@@ -4,7 +4,14 @@ $output .="<div id=\"solofolio-cyclereact-wrap\">";
 
 $output .="<ul id=\"solofolio-cyclereact-thumbs\">";
 
-$i = 1;
+$galleryTitle = get_post_meta($post->ID, 'solofolio-gallery-title', true);
+$galleryText 	= get_post_meta($post->ID, 'solofolio-gallery-text', true);
+
+$i = 0;
+if ($galleryTitle || $galleryText) {
+	$i++;
+}
+
 foreach ($attachment_ids as $id) {
 	$attachment = get_post($id);
 	$i++;
@@ -42,10 +49,6 @@ $output .="<div id=\"solofolio-cyclereact-images\"
 									$output .= "data-cycle-timeout=0\n";
 								}
 $output .= ">\n\n";
-
-
-$galleryTitle = get_post_meta($post->ID, 'solofolio-gallery-title', true);
-$galleryText 	= get_post_meta($post->ID, 'solofolio-gallery-text', true);
 
 $i = 0;
 
