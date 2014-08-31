@@ -498,7 +498,7 @@ div.aligncenter {
   max-width: 900px;
   margin-bottom: 0;
 }
-.vert-scroll img { max-width: 100% }
+.vert-scroll img { max-width: 100%; width: auto; margin-bottom: 0; }
 /* CycleReact gallery  */
 #solofolio-cyclereact-wrap { overflow-x: scroll }
 #solofolio-cyclereact-wrap,
