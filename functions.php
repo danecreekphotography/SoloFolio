@@ -16,6 +16,8 @@ add_action( 'wp_enqueue_scripts', 'register_solofolio_styles' );
 add_action( 'init', 'solofolio_editor_styles' );
 add_filter( 'upload_mimes', 'solofolio_mime_types' );
 
+update_option('image_default_link_type','none');
+
 function solofolio_mime_types( $mimes ){
   $mimes['svg'] = 'image/svg+xml';
   return $mimes;
