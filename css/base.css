@@ -585,6 +585,9 @@ div.aligncenter {
   text-align: center;
   margin: 0 auto;
 }
+.solofolio-cyclereact-fill {
+-webkit-backface-visibility: hidden;
+}
 .solofolio-cyclereact-nav-left,
 .solofolio-cyclereact-nav-right {
   height: 100%;
