@@ -441,6 +441,19 @@ function solofolio_customize_register( $wp_customize )
 			),
 		));
 
+		$wp_customize->add_setting('solofolio_gallery_controls', array('default' => 'buttons', 'transport'   => 'refresh'));
+
+		$wp_customize->add_control('solofolio_gallery_controls', array(
+			'label'      => __('Gallery Controls', 'solofolio'),
+			'section'    => 'solofolio_advanced_section',
+			'settings'   => 'solofolio_gallery_controls',
+			'type'       => 'select',
+			'choices'    => array(
+				'buttons' => 'Buttons',
+				'text' => 'Text',
+			),
+		));
+
 		$wp_customize->add_setting( 'solofolio_entry_width', array('default' => '900', 'transport'   => 'postMessage',) );
 
 			$wp_customize->add_control( 'solofolio_entry_width', array(

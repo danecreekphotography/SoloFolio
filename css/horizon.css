@@ -131,10 +131,24 @@
     width: 100%;
   }
 
+  .solofolio-cyclereact-sidebar.text li {
+    margin-top: 0;
+    margin-bottom: .5rem;
+  }
+
+  .solofolio-cyclereact-sidebar.buttons a {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
     .solofolio-cyclereact-caption {
       line-height: 1.4;
       margin-top: 55px;
     }
+
+      .solofolio-cyclereact-sidebar.text .solofolio-cyclereact-caption {
+        margin-top: 2rem;
+      }
 
     .solofolio-cyclereact-controls {
       position: absolute;
