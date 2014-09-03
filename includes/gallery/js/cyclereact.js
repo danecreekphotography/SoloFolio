@@ -69,6 +69,10 @@ jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-before', function( event, op
   setResponsive();
 });
 
+jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-update-view', function( event, opts ) {
+  $(".solofolio-cyclereact-count").html((opts.currSlide + 1) + " / " + opts.slideCount);
+});
+
 jQuery(document.documentElement).keyup(function (e) {
   if (e.keyCode == 37) { jQuery('#solofolio-cyclereact-images').cycle('prev') }
   if (e.keyCode == 38) { jQuery('.thumbs').trigger('click') }

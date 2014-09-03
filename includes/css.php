@@ -149,11 +149,11 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_body_caption_color') . ";
   }
 
-  .solofolio-cyclereact-controls i {
+  .solofolio-cyclereact-controls a {
     color: " . get_theme_mod('solofolio_navigation_link_color') . ";
   }
 
-  .solofolio-cyclereact-controls a:hover i {
+  .solofolio-cyclereact-controls a:hover {
     color: " . get_theme_mod('solofolio_navigation_link_color_hover') . ";
   }
 
@@ -175,15 +175,11 @@ function solofolio_css() {
   .galleria-info {
       color: " . get_theme_mod('solofolio_body_caption_color') . ";
   }
-
-  .solofolio-cyclereact-controls a {
-    color: " . get_theme_mod('solofolio_body_font_color') . ";
-  }
   ";
 
   if ($is_horizon) {
     $styles .="
-      .solofolio-cyclereact-controls a {
+      .solofolio-cyclereact-sidebar.buttons a {
         border: 1px solid " . colorBrightness($background_color, -0.9) . ";
         background-color: " . colorBrightness($background_color, -0.9) . ";
       }";
@@ -193,7 +189,7 @@ function solofolio_css() {
         width: " . $header_width . "px;
       }
 
-      .solofolio-cyclereact-controls a {
+      .solofolio-cyclereact-sidebar.buttons a {
         border: 1px solid " . colorBrightness($header_background_color, -0.9) . ";
         background-color: " . colorBrightness($header_background_color, -0.9) . ";
       }";

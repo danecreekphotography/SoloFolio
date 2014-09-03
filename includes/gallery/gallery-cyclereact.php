@@ -96,13 +96,22 @@ $output .="<div class=\"solofolio-cyclereact-image-nav\">
 
 $output .= "</div></div>";
 
-$output .= '<div class="solofolio-cyclereact-sidebar">';
+$output .= "<div class='solofolio-cyclereact-sidebar " . get_theme_mod( 'solofolio_gallery_controls', 'buttons') . "'>";
 
 if ($captions != "false"){
   $output .= '<p class="solofolio-cyclereact-caption"></p>';
 }
 
-$output .= '<div class="solofolio-cyclereact-controls">
+if (get_theme_mod( 'solofolio_gallery_controls', 'buttons') == 'text') {
+	$output .= '<ul class="solofolio-cyclereact-controls">
+        <li><a class="thumbs" href="#">thumbs</a></li>
+        <li><a class="prev" href="#">prev</a></li>
+        <li><a class="next" href="#">next</a></li>
+        <li><span class="solofolio-cyclereact-count"></span></li>
+      </ul>
+    	</div>';
+} else {
+	$output .= '<div class="solofolio-cyclereact-controls">
         <a class="thumbs" href="#"><i class="fa fa-th"></i></a>
         <span class="arrows">
           <a class="prev" href="#"><i class="fa fa-angle-left"></i></a>
@@ -110,6 +119,7 @@ $output .= '<div class="solofolio-cyclereact-controls">
         </span>
       </div>
     	</div>';
+}
 
 if ($thumbs == "true"){
 $output .= "
