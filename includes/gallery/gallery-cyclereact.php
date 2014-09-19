@@ -104,7 +104,7 @@ if ($captions != "false"){
 
 if (get_theme_mod( 'solofolio_gallery_controls', 'buttons') == 'text') {
 	$output .= '<ul class="solofolio-cyclereact-controls">
-        <li><a class="thumbs" href="#">thumbs</a></li>
+        <li><a class="thumbs" href="#" data-cycle-cmd="pause">thumbs</a></li>
         <li><a class="prev" href="#">prev</a></li>
         <li><a class="next" href="#">next</a></li>
         <li><span class="solofolio-cyclereact-count"></span></li>
@@ -112,7 +112,7 @@ if (get_theme_mod( 'solofolio_gallery_controls', 'buttons') == 'text') {
     	</div>';
 } else {
 	$output .= '<div class="solofolio-cyclereact-controls">
-        <a class="thumbs" href="#"><i class="fa fa-th"></i></a>
+        <a class="thumbs" href="#" data-cycle-cmd="pause"><i class="fa fa-th"></i></a>
         <span class="arrows">
           <a class="prev" href="#"><i class="fa fa-angle-left"></i></a>
           <a class="next" href="#"><i class="fa fa-angle-right"></i></a>
