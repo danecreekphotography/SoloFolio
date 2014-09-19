@@ -1,3 +1,9 @@
+/*global jQuery */
+/*!
+* SoloFolio base JS
+*
+* By Joel Hawksley, included with SoloFolio Theme
+*/
 $(window).load(function(){
   $("p:has(img)").css('margin' , '0').css('padding' , '0');
 
