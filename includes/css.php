@@ -1,20 +1,11 @@
 <?php
+require_once(ABSPATH . 'wp-admin/includes/file.php');
+add_action( 'after_switch_theme', 'solofolio_css_cache' );
 add_action( 'customize_save_after', 'solofolio_css_cache' );
 
 function solofolio_css_cache() {
-  if ( ! WP_Filesystem($creds) ) {
-    request_filesystem_credentials($url, '', true, false, null);
-    return;
-  }
-
-  WP_Filesystem();
-  global $wp_filesystem;
-
   set_theme_mod( 'solofolio_css_version', time() );
-
-  $data = solofolio_css();
-  $uploads = wp_upload_dir();
-  $wp_filesystem->put_contents($uploads['basedir'] . '/solofolio.css', $data);
+  solofolio_css();
 }
 
 // http://lab.clearpixel.com.au/2008/06/darken-or-lighten-colours-dynamically-using-php/
@@ -48,11 +39,6 @@ function colorBrightness($hex, $percent) {
 }
 
 function solofolio_css() {
-  if ( ! WP_Filesystem($creds) ) {
-    request_filesystem_credentials($url, '', true, false, null);
-    return;
-  }
-
   WP_Filesystem();
   global $wp_filesystem;
 
@@ -65,7 +51,7 @@ function solofolio_css() {
   $background_color         = get_theme_mod('solofolio_background_color');
   $header_background_color  = get_theme_mod('solofolio_header_background_color');
 
-  $styles .= "
+  $styles = "
   @import url(http://fonts.googleapis.com/css?family=".get_theme_mod('solofolio_font_body').");
   @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
   ";
@@ -309,7 +295,8 @@ function solofolio_css() {
   $styles = str_replace(': ', ':', $styles);
   $styles = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $styles);
 
-  return $styles;
+  $uploads = wp_upload_dir();
+  $wp_filesystem->put_contents($uploads['basedir'] . '/solofolio.css', $styles);
 }
 
 ?>
