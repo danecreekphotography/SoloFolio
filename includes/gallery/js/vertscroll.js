@@ -11,7 +11,7 @@ var setResponsive = function () {
       $('.vert-scroll img').css('max-height', pageHeight - headerHeight - 40);
     }
     else {
-      $('.vert-scroll img').css('max-height', wrapperHeight);
+      $('.vert-scroll img').css('max-height', pageHeight - 40);
     }
   } else {
     $('.vert-scroll img').css('max-height', pageHeight);
