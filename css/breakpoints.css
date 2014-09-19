@@ -344,6 +344,18 @@
     padding-right: 20px;
   }
 
+  .pagination-nav .right, .pagination-nav .left {
+    float: none;
+  }
+
+  .pagination-nav .left {
+    margin-bottom: 1rem;
+  }
+
+  .pagination-nav .right h4 {
+    text-align: left;
+  }
+
   .entry img {
     max-width: 100%;
   }
