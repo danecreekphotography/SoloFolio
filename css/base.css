@@ -289,24 +289,6 @@ p {
 #header h1 a:visited { background-color: transparent }
 #header h1 a:hover,
 #header h1 a:active { background-color: transparent }
-.description { display: block }
-h1.blog-title { display: inline }
-h1.blog-title a {
-  font-size: 36px;
-  border-bottom: none;
-}
-h1.blog-title a:hover {
-  text-decoration: none;
-  background: transparent;
-}
-.tagline {
-  font-weight: normal;
-  font-size: 18px;
-  text-align: right;
-  margin-left: 3px;
-  padding: 0;
-  display: inline;
-}
 /* Blog Posts */
 .entry {
   margin: 0 0 25px;
