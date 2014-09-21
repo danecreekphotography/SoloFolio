@@ -324,13 +324,13 @@ h2.post-title a:hover { text-decoration: none }
   max-width: 920px;
   padding: 0 10px;
 }
-#content-parent .content { padding: 0 10px }
+#content-parent .content { padding: 0 1rem}
 #content-parent .children h3 { margin: 0 }
 #content-parent .children li {
   display: inline-block;
   max-width: 300px;
   width: 33%;
-  padding: 0 20px 10px 10px;
+  padding: 0 1rem 1rem 1rem;
   vertical-align: top;
 }
 #content-parent .children li img {
@@ -341,7 +341,7 @@ h2.post-title a:hover { text-decoration: none }
 #content-about-image {
   width: 50%;
   float: right;
-  padding: 0 0 20px 20px;
+  padding: 0 0 1rem 1rem;
 }
 #content-about-image img {
   width: 100%;
@@ -359,9 +359,9 @@ textarea {
   border: none;
   font-size: 12px;
   margin: 0;
-  padding: 10px 15px;
+  padding: .75rem 1rem;
 }
-#comments { padding-bottom: 20px }
+#comments { padding-bottom: 1rem }
 .comment { padding-bottom: .75em }
 #comments .date {
   display: block;
