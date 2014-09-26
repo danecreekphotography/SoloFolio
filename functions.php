@@ -12,11 +12,28 @@ add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 add_filter( 'the_content', 'filter_ptags_on_images' );
 
 add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
-add_action( 'wp_enqueue_scripts', 'register_solofolio_styles' );
 add_action( 'init', 'solofolio_editor_styles' );
+add_action( 'wp_head', 'solofolio_css_cache', 199 );
+add_action( 'customize_preview_init', 'solofolio_css_cache_reset' );
+add_action( 'after_switch_theme', 'solofolio_css_cache_reset' );
+add_action( 'customize_save_after', 'solofolio_css_cache_reset' );
 add_filter( 'upload_mimes', 'solofolio_mime_types' );
 
 update_option('image_default_link_type','none');
+
+function solofolio_css_cache() {
+  $data = get_transient( 'solofolio_css' );
+  if ( $data === false ) {
+    $data = solofolio_css();
+    set_transient( 'solofolio_css', $data, 3600 * 24 );
+  }
+  echo $data;
+}
+
+function solofolio_css_cache_reset() {
+  delete_transient( 'solofolio_css' );
+  solofolio_css_cache();
+}
 
 function solofolio_mime_types( $mimes ){
   $mimes['svg'] = 'image/svg+xml';
@@ -45,14 +62,6 @@ function filter_ptags_on_images($content) {
   return preg_replace('/<p>\s*(<iframe .*>*.<\/iframe>)\s*<\/p>/iU', '\1', $content);
 }
 add_filter('the_content', 'filter_ptags_on_images');
-
-function register_solofolio_styles() {
-  $uploads = wp_upload_dir();
-  $version = get_theme_mod('solofolio_css_version');
-
-  wp_register_style( 'solofolio', $uploads['baseurl'] . '/solofolio.css', 'style', $version );
-  wp_enqueue_style( 'solofolio' );
-}
 
 // Use jQuery Google API
 function modify_jquery() {
