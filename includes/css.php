@@ -30,6 +30,9 @@ function colorBrightness($hex, $percent) {
 }
 
 function solofolio_css() {
+  WP_Filesystem();
+  global $wp_filesystem;
+
   $layout_spacing           = get_theme_mod('solofolio_layout_spacing', '20');
   $header_width             = get_theme_mod('solofolio_header_width', '200');
   $entry_width              = get_theme_mod('solofolio_entry_width', '900');
@@ -39,19 +42,19 @@ function solofolio_css() {
   $background_color         = get_theme_mod('solofolio_background_color');
   $header_background_color  = get_theme_mod('solofolio_header_background_color');
 
-  $styles = "<style type=\"text/css\">";
+  $styles = "<style>";
 
   $styles .= "
   @import url(http://fonts.googleapis.com/css?family=".get_theme_mod('solofolio_font_body').");
   @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
   ";
 
-  $styles .= file_get_contents(get_template_directory_uri() . "/css/base.css");
+  $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/base.css");
 
   if ($is_horizon) {
-    $styles .= file_get_contents(get_template_directory_uri() . "/css/horizon.css");
+    $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/horizon.css");
   } elseif ($is_heights) {
-    $styles .= file_get_contents(get_template_directory_uri() . "/css/heights.css");
+    $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/heights.css");
   }
 
   $styles .= "
@@ -279,9 +282,9 @@ function solofolio_css() {
       }";
   }
 
-  $styles .= file_get_contents(get_template_directory_uri() . "/css/breakpoints.css");
+  $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/breakpoints.css");
 
-  $styles .= "</style>";
+  $styles .= "</style>"; 
 
   $styles = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $styles);
   $styles = str_replace(': ', ':', $styles);
