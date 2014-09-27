@@ -1,4 +1,6 @@
 <?php
+require_once(ABSPATH . 'wp-admin/includes/file.php');
+
 // http://lab.clearpixel.com.au/2008/06/darken-or-lighten-colours-dynamically-using-php/
 function colorBrightness($hex, $percent) {
   $hash = '';
