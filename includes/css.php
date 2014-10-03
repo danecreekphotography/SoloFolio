@@ -66,6 +66,14 @@ function solofolio_css() {
     width: " . get_theme_mod('solofolio_logo_width') . "px;
   }
 
+  #logo h1 a {
+     color: " . get_theme_mod('solofolio_logo_color') . ";
+  }
+
+  #logo h1 a:hover {
+     color: " . get_theme_mod('solofolio_logo_color_hover') . ";
+  }
+
   #solofolio-cyclereact-thumbs .thumb {
     border-color: ". $background_color . ";
   }

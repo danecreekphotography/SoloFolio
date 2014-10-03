@@ -61,6 +61,12 @@
 		} );
 	} );
 
+	wp.customize( 'solofolio_logo_color', function( value ) {
+		value.bind( function( newval ) {
+			jQuery('#logo h1 a').css('color', newval );
+		} );
+	} );
+
 	wp.customize( 'solofolio_body_font_color', function( value ) {
 		value.bind( function( newval ) {
 			jQuery('body').css('color', newval );
