@@ -20,8 +20,6 @@ function solofolio_customize_register( $wp_customize )
 		'Abel' => 'Abel',
 		'Arvo' => 'Arvo',
 		'Fenix' => 'Fenix',
-		'Judson' => 'Judson',
-		'Lora' => 'Lora',
 		'Lato' => 'Lato',
 		'Mako' => 'Mako',
 		'Maven+Pro' => 'Maven Pro',
