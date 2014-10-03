@@ -119,26 +119,6 @@ function solofolio_comments($comment, $args, $depth) {
 <?php
         }
 
-// Remove image margins automatically added by WordPress.
-// From: http://wordpress.org/support/topic/10px-added-to-width-in-image-captions
-class fixImageMargins{
-    public function __construct(){
-        add_filter('img_caption_shortcode', array(&$this, 'fixme'), 10, 3);
-    }
-    public function fixme($x=null, $attr, $content){
-        extract(shortcode_atts(array(
-                'id'    => '',
-                'align'    => 'alignnone',
-                'width'    => '',
-                'caption' => ''
-            ), $attr));
-        if ( 1 > (int) $width || empty($caption) ) {return $content;}
-        if ( $id ) $id = 'id="' . $id . '" ';
-    return '<div ' . $id . 'class="wp-caption ' . $align . '" style="max-width: ' . $width . 'px">' . $content . '<p class="wp-caption-text">' . $caption . '</p></div>';
-    }
-}
-$fixImageMargins = new fixImageMargins();
-
 // Register theme widget areas
 if(function_exists('register_sidebar')){
 
