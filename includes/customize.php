@@ -467,7 +467,7 @@ function solofolio_customize_register( $wp_customize )
 			),
 		));
 
-		$wp_customize->add_setting('solofolio_gallery_controls', array('default' => 'buttons', 'transport'   => 'refresh'));
+		$wp_customize->add_setting('solofolio_gallery_controls', array('default' => 'text', 'transport'   => 'refresh'));
 
 		$wp_customize->add_control('solofolio_gallery_controls', array(
 			'label'      => __('Gallery Controls', 'solofolio'),
