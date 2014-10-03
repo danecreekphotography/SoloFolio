@@ -62,6 +62,12 @@ function filter_ptags_on_images($content) {
 }
 add_filter('the_content', 'filter_ptags_on_images');
 
+function solofolio_load_fonts() {
+  wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=' . get_theme_mod('solofolio_font_body', 'Source+Sans+Pro'));
+  wp_enqueue_style( 'googleFonts');
+}
+add_action('wp_print_styles', 'solofolio_load_fonts');
+
 function solofolio_footer_scripts() {
   wp_enqueue_script('jquery-retina', get_template_directory_uri().'/js/jquery.retina.min.js', array('jquery'), null, true);
   wp_enqueue_script('jquery-fitvids', get_template_directory_uri().'/js/jquery.fitvids.min.js', array('jquery'), null, true);

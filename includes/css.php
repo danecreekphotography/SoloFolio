@@ -46,10 +46,7 @@ function solofolio_css() {
 
   $styles = "<style>";
 
-  $styles .= "
-  @import url(http://fonts.googleapis.com/css?family=".get_theme_mod('solofolio_font_body').");
-  @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-  ";
+  $styles .= "@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);";
 
   $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/base.css");
 
@@ -286,7 +283,7 @@ function solofolio_css() {
 
   $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/breakpoints.css");
 
-  $styles .= "</style>"; 
+  $styles .= "</style>";
 
   $styles = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $styles);
   $styles = str_replace(': ', ':', $styles);
