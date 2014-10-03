@@ -8,8 +8,6 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<?php if (get_theme_mod( 'solofolio_favicon' ) != '') { ?>
 		<link rel="icon" type="image/png" href="<?php echo get_theme_mod( 'solofolio_favicon' ); ?>"/>
-	<?php } else { ?>
-		<link rel='shortcut icon' type='image/x-icon' href='<?php echo get_stylesheet_directory_uri(); ?>/img/favicon.ico' />
 	<?php } ?>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
