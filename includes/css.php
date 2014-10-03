@@ -46,8 +46,6 @@ function solofolio_css() {
 
   $styles = "<style>";
 
-  $styles .= "@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);";
-
   $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/base.css");
 
   if ($is_horizon) {

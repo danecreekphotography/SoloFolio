@@ -63,6 +63,7 @@ function filter_ptags_on_images($content) {
 add_filter('the_content', 'filter_ptags_on_images');
 
 function solofolio_load_fonts() {
+  wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3' );
   wp_register_style('googleFonts', '//fonts.googleapis.com/css?family=' . get_theme_mod('solofolio_font_body', 'Source+Sans+Pro'));
   wp_enqueue_style( 'googleFonts');
 }
