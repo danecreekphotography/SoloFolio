@@ -75,9 +75,21 @@ function filter_ptags_on_images($content) {
 }
 add_filter('the_content', 'filter_ptags_on_images');
 
+function solofolio_fonts_list() {
+  $fonts = [ get_theme_mod('solofolio_font_body', 'Source+Sans+Pro'),
+             get_theme_mod('solofolio_font_logo', 'Source+Sans+Pro')
+           ];
+
+  return $fonts;
+}
+
 function solofolio_load_fonts() {
+  $i = 1;
+  foreach(array_unique(solofolio_fonts_list()) as $font) {
+    wp_enqueue_style('solofolio-font-' . $i, '//fonts.googleapis.com/css?family=' . $font);
+    $i++;
+  }
   wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3' );
-  wp_enqueue_style('solofolio-font-body', '//fonts.googleapis.com/css?family=' . get_theme_mod('solofolio_font_body', 'Source+Sans+Pro'));
 }
 add_action('wp_print_styles', 'solofolio_load_fonts');
 

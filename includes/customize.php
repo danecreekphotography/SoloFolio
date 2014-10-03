@@ -256,6 +256,19 @@ function solofolio_customize_register( $wp_customize )
 		'priority'    => 15,
 	) );
 
+		$wp_customize->add_setting( 'solofolio_font_logo', array(
+      'default'   => 'Source+Sans+Pro',
+      'transport'   => 'postMessage',
+    ) );
+
+	    $wp_customize->add_control( 'solofolio_font_logo', array(
+	    	'label' => 'Logo',
+				'settings' => 'solofolio_font_logo',
+				'section' => 'solofolio_typography_section',
+				'type'    => 'select',
+				'choices'  => $available_fonts
+			));
+
 		$wp_customize->add_setting( 'solofolio_font_body', array(
       'default'   => 'Source+Sans+Pro',
       'transport'   => 'postMessage',

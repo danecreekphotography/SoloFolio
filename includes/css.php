@@ -67,7 +67,8 @@ function solofolio_css() {
   }
 
   #logo h1 a {
-     color: " . get_theme_mod('solofolio_logo_color') . ";
+    font-family: '" . str_replace("+"," ", get_theme_mod('solofolio_font_logo')) . "';
+    color: " . get_theme_mod('solofolio_logo_color') . ";
   }
 
   #logo h1 a:hover {
