@@ -437,7 +437,7 @@ function solofolio_customize_register( $wp_customize )
 			'type'       => 'select',
 			'choices'    => array(
 				'heights' => 'Heights',
-				'horizon' => 'Horizon (Experimental)',
+				'horizon' => 'Horizon',
 			),
 		));
 
