@@ -7,17 +7,6 @@ include_once("includes/css.php");             // Include CSS builder
 
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
-
-add_filter( 'the_content', 'filter_ptags_on_images' );
-
-add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
-add_action( 'init', 'solofolio_editor_styles' );
-add_action( 'wp_head', 'solofolio_css_cache', 199 );
-add_action( 'customize_preview_init', 'solofolio_css_cache_reset' );
-add_action( 'after_switch_theme', 'solofolio_css_cache_reset' );
-add_action( 'customize_save_after', 'solofolio_css_cache_reset' );
-add_filter( 'upload_mimes', 'solofolio_mime_types' );
-
 update_option('image_default_link_type','none');
 
 # Adapted from http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
@@ -51,24 +40,25 @@ function solofolio_css_cache() {
   }
   echo $data;
 }
+add_action( 'wp_head', 'solofolio_css_cache', 199 );
 
 function solofolio_css_cache_reset() {
   delete_transient( 'solofolio_css' );
   solofolio_css_cache();
 }
+add_action( 'customize_preview_init', 'solofolio_css_cache_reset' );
+add_action( 'customize_save_after', 'solofolio_css_cache_reset' );
+add_action( 'after_switch_theme', 'solofolio_css_cache_reset' );
 
 function solofolio_mime_types( $mimes ){
   $mimes['svg'] = 'image/svg+xml';
   return $mimes;
 }
+add_filter( 'upload_mimes', 'solofolio_mime_types' );
 
 current_theme_supports( 'html5' );
 
 if ( ! isset( $content_width ) ) $content_width = 900;
-
-function solofolio_editor_styles() {
-  add_editor_style( get_stylesheet_uri() );
-}
 
 function solofolio_mimes( $existing_mimes ) {
   // add webm to the list of mime types
@@ -115,6 +105,7 @@ function solofolio_set_image_sizes() {
     update_option("thumbnail_crop", "0");
   }
 }
+add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
 
 function solofolio_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
