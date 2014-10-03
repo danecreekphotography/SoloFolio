@@ -1,57 +1,57 @@
 var setResponsive = function () {
   var pageHeight = jQuery(window).height();
-  var headerHeight = $("#header").outerHeight();
-  var wrapperWidth = $("#wrapper").innerWidth();
-  var imgHeight = $(".cycle-slide-active div img").outerHeight();
-  var imgWidth = $(".cycle-slide-active div img").outerWidth();
+  var headerHeight = jQuery("#header").outerHeight();
+  var wrapperWidth = jQuery("#wrapper").innerWidth();
+  var imgHeight = jQuery(".cycle-slide-active div img").outerHeight();
+  var imgWidth = jQuery(".cycle-slide-active div img").outerWidth();
 
-  var n = $("#header").css('right');
+  var n = jQuery("#header").css('right');
 
-  if ($(window).width() < 1025) {
-    $('#wrapper').css('top', headerHeight);
+  if (jQuery(window).width() < 1025) {
+    jQuery('#wrapper').css('top', headerHeight);
   }
 
   if (n == '0px') {
-    var barHeight = $("#solofolio-cyclereact-bar").outerHeight();
-    $('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - headerHeight);
+    var barHeight = jQuery("#solofolio-cyclereact-bar").outerHeight();
+    jQuery('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - headerHeight);
   }
   else {
     var barHeight = 0;
-    $('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - 60);
+    jQuery('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - 60);
   }
-  $('#solofolio-cyclereact-images img').css('max-width', wrapperWidth);
+  jQuery('#solofolio-cyclereact-images img').css('max-width', wrapperWidth);
 }
 
 var showThumbs = function () {
-  $(".solofolio-cyclereact-sidebar, #solofolio-cyclereact-stage").hide();
-  $("#solofolio-cyclereact-thumbs").show();
+  jQuery(".solofolio-cyclereact-sidebar, #solofolio-cyclereact-stage").hide();
+  jQuery("#solofolio-cyclereact-thumbs").show();
 }
 
 var hideThumbs = function () {
-  $(".solofolio-cyclereact-sidebar, #solofolio-cyclereact-stage").show();
-  $("#solofolio-cyclereact-thumbs").hide();
+  jQuery(".solofolio-cyclereact-sidebar, #solofolio-cyclereact-stage").show();
+  jQuery("#solofolio-cyclereact-thumbs").hide();
 }
 
 jQuery(window).load(function(){
-  $('#solofolio-cyclereact-thumbs img').load(function() {
-    $(this).fadeIn('slow');
-    $('.solofolio-cyclereact-fill img').fadeIn('slow');
+  jQuery('#solofolio-cyclereact-thumbs img').load(function() {
+    jQuery(this).fadeIn('slow');
+    jQuery('.solofolio-cyclereact-fill img').fadeIn('slow');
   });
-  $('.solofolio-cyclereact-fill').each(function(i, elm) {
-    $(elm).attr('data-picture', '');
+  jQuery('.solofolio-cyclereact-fill').each(function(i, elm) {
+    jQuery(elm).attr('data-picture', '');
   });
 
-  $('.picturefill-background').each(function(i, elm) {
-    url = $(this).data().image
-    $(elm).css('background-image', 'url(' + url + ')').fadeIn('slow');
+  jQuery('.picturefill-background').each(function(i, elm) {
+    url = jQuery(this).data().image
+    jQuery(elm).css('background-image', 'url(' + url + ')').fadeIn('slow');
   });
 
   window.picturefill();
   setResponsive();
-  $(".thumbs").click(function(){
+  jQuery(".thumbs").click(function(){
     showThumbs();
   });
-  $(".thumb a").click(function(){
+  jQuery(".thumb a").click(function(){
     hideThumbs();
   });
 });
@@ -59,9 +59,9 @@ jQuery(window).load(function(){
 jQuery(window).resize(setResponsive);
 
 jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-after', function( event, opts ) {
-  $("#solofolio-cyclereact-thumbs").hide();
-  $("#solofolio-cyclereact-stage, .solofolio-cyclereact-sidebar").show();
-  $(".thumbs").removeClass("show-full");
+  jQuery("#solofolio-cyclereact-thumbs").hide();
+  jQuery("#solofolio-cyclereact-stage, .solofolio-cyclereact-sidebar").show();
+  jQuery(".thumbs").removeClass("show-full");
 });
 
 jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-before', function( event, opts ) {
@@ -70,7 +70,7 @@ jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-before', function( event, op
 });
 
 jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-update-view', function( event, opts ) {
-  $(".solofolio-cyclereact-count").html((opts.currSlide + 1) + " / " + opts.slideCount);
+  jQuery(".solofolio-cyclereact-count").html((opts.currSlide + 1) + " / " + opts.slideCount);
 });
 
 jQuery(document.documentElement).keyup(function (e) {

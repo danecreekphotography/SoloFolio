@@ -69,7 +69,7 @@ function solofolio_slideshow_footer() {
 	Galleria.ready(function() {
 		var gallery = this, data;
 		this.addElement('exit').appendChild('container','exit');
-		var btn = this.$('exit').hide().text('Close').click(function(e) {
+		var btn = this.jQuery('exit').hide().text('Close').click(function(e) {
 			gallery.exitFullscreen();
 		});
 		this.bind('fullscreen_enter', function() {
@@ -78,35 +78,35 @@ function solofolio_slideshow_footer() {
 		this.bind('fullscreen_exit', function() {
 			btn.hide();
 		});
-		$('.prev').click(function() {
+		jQuery('.prev').click(function() {
 			gallery.prev();
 		});
-		$('.next').click(function() {
+		jQuery('.next').click(function() {
 			gallery.next();
 		});
-		$('.fullscreen').click(function() {
+		jQuery('.fullscreen').click(function() {
 			gallery.toggleFullscreen();
 		});
-		$('.play').click(function() {
+		jQuery('.play').click(function() {
 			gallery.playToggle();
-			$('.play').toggleClass(\"playing\");
+			jQuery('.play').toggleClass(\"playing\");
 		});
-		$('.toggle').click(function() {
-			gallery.$('thumblink').click();
+		jQuery('.toggle').click(function() {
+			gallery.jQuery('thumblink').click();
 		});
 		this.bind('image', function(e) {
 			data = e.galleriaData;
-			$('.galleria-info').html('<div class=\"galleria-info-description\">'+data.description+'</div>' );
+			jQuery('.galleria-info').html('<div class=\"galleria-info-description\">'+data.description+'</div>' );
 		});
 		this.bind('image', function(e) {
 			data = e.index;
-			$('.index').html(data + 1);
+			jQuery('.index').html(data + 1);
 		});
 		this.bind('image', function(e) {
 			data = e.index;
-			$('.index').html(data + 1);
+			jQuery('.index').html(data + 1);
 		});
-		$('.total').append(this.getDataLength());
+		jQuery('.total').append(this.getDataLength());
 	});
 	</script>
 	<style>";

@@ -62,16 +62,6 @@ function filter_ptags_on_images($content) {
 }
 add_filter('the_content', 'filter_ptags_on_images');
 
-// Use jQuery Google API
-function modify_jquery() {
-  if (!is_admin()) {
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', false, '2.0.3' );
-    wp_enqueue_script( 'jquery' );
-  }
-}
-add_action('init', 'modify_jquery');
-
 function solofolio_footer_scripts() {
   wp_enqueue_script('jquery-retina', get_template_directory_uri().'/js/jquery.retina.min.js', array('jquery'), null, true);
   wp_enqueue_script('jquery-fitvids', get_template_directory_uri().'/js/jquery.fitvids.min.js', array('jquery'), null, true);

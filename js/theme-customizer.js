@@ -9,142 +9,142 @@
 	// Update the site title in real time...
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( newval ) {
-			$( '#site-title a' ).html( newval );
+			jQuery( '#site-title a' ).html( newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_body_font_size', function( value ) {
 		value.bind( function( newval ) {
-			$( 'body' ).css('font-size', newval );
+			jQuery( 'body' ).css('font-size', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_phone', function( value ) {
 		value.bind( function( newval ) {
-			$( '#header-phone a' ).html( newval );
+			jQuery( '#header-phone a' ).html( newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_location', function( value ) {
 		value.bind( function( newval ) {
-			$( '#header-location' ).html( newval );
+			jQuery( '#header-location' ).html( newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_email', function( value ) {
 		value.bind( function( newval ) {
-			$( '#header-email a' ).html( newval );
+			jQuery( '#header-email a' ).html( newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_copyright_text', function( value ) {
 		value.bind( function( newval ) {
-			$( '#info-footer' ).html( "&copy; 2014 " + newval );
+			jQuery( '#info-footer' ).html( "&copy; 2014 " + newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_background_color', function( value ) {
 		value.bind( function( newval ) {
-			$('body').css('background-color', newval );
+			jQuery('body').css('background-color', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_header_background_color', function( value ) {
 		value.bind( function( newval ) {
-			$('#header').css('background-color', newval );
+			jQuery('#header').css('background-color', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_body_font_size', function( value ) {
 		value.bind( function( newval ) {
-			$('body').css('font-size', newval );
+			jQuery('body').css('font-size', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_body_font_color', function( value ) {
 		value.bind( function( newval ) {
-			$('body').css('color', newval );
+			jQuery('body').css('color', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_body_link_color', function( value ) {
 		value.bind( function( newval ) {
-			$('#wrapper a').css('color', newval );
+			jQuery('#wrapper a').css('color', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_body_link_color_hover', function( value ) {
 		value.bind( function( newval ) {
-			$('a:hover').css('color', newval );
+			jQuery('a:hover').css('color', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_header_width', function( value ) {
 		value.bind( function( newval ) {
-			$('#header').css('width', newval );
-			$('#wrapper').css('left', newval + 20);
+			jQuery('#header').css('width', newval );
+			jQuery('#wrapper').css('left', newval + 20);
 		} );
 	} );
 
 	wp.customize( 'solofolio_logo_width', function( value ) {
 		value.bind( function( newval ) {
-			$('#logo-img').css('width', newval );
+			jQuery('#logo-img').css('width', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_navigation_font_size', function( value ) {
 		value.bind( function( newval ) {
-			$('#header-content ul a').css('font-size', newval );
+			jQuery('#header-content ul a').css('font-size', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_navigation_link_color', function( value ) {
 		value.bind( function( newval ) {
-			$('#header-content ul a').css('color', newval );
+			jQuery('#header-content ul a').css('color', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_navigation_link_color_hover', function( value ) {
 		value.bind( function( newval ) {
-			$('#header-content a:hover').css('color', newval );
-			$('.current_page_item a').css('color', newval );
+			jQuery('#header-content a:hover').css('color', newval );
+			jQuery('.current_page_item a').css('color', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_navigation_header_font_size', function( value ) {
 		value.bind( function( newval ) {
-			$('#header-content h3').css('font-size', newval );
+			jQuery('#header-content h3').css('font-size', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_navigation_header_color', function( value ) {
 		value.bind( function( newval ) {
-			$('#header-content h3').css('color', newval );
+			jQuery('#header-content h3').css('color', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_blog_entry_title_size', function( value ) {
 		value.bind( function( newval ) {
-			$('h2.post-title').css('font-size', newval );
+			jQuery('h2.post-title').css('font-size', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_blog_entry_title_color', function( value ) {
 		value.bind( function( newval ) {
-			$('h2.post-title a').css('color', newval );
+			jQuery('h2.post-title a').css('color', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_blog_entry_byline_color', function( value ) {
 		value.bind( function( newval ) {
-			$('.date').css('color', newval );
+			jQuery('.date').css('color', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_body_caption_color', function( value ) {
 		value.bind( function( newval ) {
-			$('.solofolio-cyclereact-caption').css('color', newval );
-			$('.wp-caption .wp-caption-text').css('color', newval );
+			jQuery('.solofolio-cyclereact-caption').css('color', newval );
+			jQuery('.wp-caption .wp-caption-text').css('color', newval );
 		} );
 	} );
 
