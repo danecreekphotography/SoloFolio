@@ -12,7 +12,7 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
-	<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
+	<title><?php wp_title('|', true, 'right'); ?></title>
 	<?php wp_head(); ?>
 	<?php if (get_theme_mod( 'solofolio_css' ) != '') { ?>
 	<style type="text/css">
