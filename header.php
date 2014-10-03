@@ -88,7 +88,6 @@
 			<?php } ?>
 			<div id="sidebar-footer">
 				<p id="info-footer">&copy; <?php echo date("Y"); ?> <?php echo get_theme_mod( 'solofolio_copyright_text' ); ?></p>
-				<p id="solo-footer">Powered by <a title="The premier free WordPress theme for the creatively inclined." href="http://solofol.io">SoloFolio</a></p>
 			</div>
 			<div class="clear"></div>
 		</div>
