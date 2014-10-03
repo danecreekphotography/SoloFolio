@@ -608,7 +608,10 @@ div.aligncenter {
 #outerWrap { min-height: 100% }
 #content-index,
 #content-single { width: 100% }
-#content-index .entry .wp-caption { width: 100% }
+#content-index .entry .wp-caption {
+  max-width: 100%;
+  width: 100%
+}
 #content-page p img {
   height: auto;
   width: 100%;

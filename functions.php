@@ -8,7 +8,6 @@ include_once("includes/css.php");             // Include CSS builder
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
 
-add_filter( 'show_admin_bar', 'hide_admin_bar_from_front_end' );
 add_filter( 'the_content', 'filter_ptags_on_images' );
 
 add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
@@ -79,14 +78,6 @@ function solofolio_footer_scripts() {
   wp_enqueue_script('solofolio-base', get_template_directory_uri().'/js/solofolio-base.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'solofolio_footer_scripts');
-
-// Disable Admin Bar from frontend - More trouble than it's worth
-function hide_admin_bar_from_front_end() {
-  if (is_blog_admin()) {
-    return true;
-  }
-  return false;
-}
 
 // Add additional image size for large displays, change defaults for others.
 function solofolio_set_image_sizes() {
