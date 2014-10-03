@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<!--
-  _____  ____  _      ____  ______ ____  _      _____ ____
- / ____|/ __ \| |    / __ \|  ____/ __ \| |    |_   _/ __ \
-| (___ | |  | | |   | |  | | |__ | |  | | |      | || |  | |
- \___ \| |  | | |   | |  | |  __|| |  | | |      | || |  | |
- ____) | |__| | |___| |__| | |   | |__| | |____ _| || |__| |
-|_____/ \____/|______\____/|_|    \____/|______|_____\____/
-SoloFolio v6.20140927 - http://solofol.io
--->
+<!-- Powered by SoloFolio v6.20140927 - http://solofol.io -->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
