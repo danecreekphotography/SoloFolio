@@ -443,7 +443,7 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_control( 'solofolio_blog_center_layout', array(
 			'settings' => 'solofolio_blog_center_layout',
-			'label'    => __('Center blog layout', 'solofolio'),
+			'label'    => __('Center-align blog', 'solofolio'),
 			'section'  => 'solofolio_options_section',
 			'type'     => 'checkbox',
       'priority' => 50,
