@@ -414,7 +414,6 @@ div.aligncenter {
   margin: 1em 0;
   height: auto;
   max-width: 100%;
-  width: 100%;
 }
 .entry img:first-child { margin-top: 0 }
 .entry .wp-caption img { margin: 0 }

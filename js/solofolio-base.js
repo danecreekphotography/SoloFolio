@@ -9,13 +9,6 @@ jQuery(window).load(function(){
 
   jQuery("#wrapper").fitVids();
 
-  jQuery('.entry img').each(function(){
-    var width = jQuery(this).attr('width');
-    jQuery(this).attr('style', 'max-width:' + width + 'px');
-
-    jQuery(this).removeAttr('width').removeAttr('height');
-  });
-
   jQuery('#menu-icon').click(function(){
     jQuery("#header-content").slideToggle();
     jQuery(this).toggleClass("active");
