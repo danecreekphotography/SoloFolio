@@ -404,6 +404,7 @@ function solofolio_customize_register( $wp_customize )
 			'label'    => __('Show author', 'solofolio'),
 			'section'  => 'solofolio_options_section',
 			'type'     => 'checkbox',
+      'priority' => 10,
 		));
 
 		$wp_customize->add_setting( 'solofolio_blog_showdate', array('default' => 1));
@@ -413,6 +414,7 @@ function solofolio_customize_register( $wp_customize )
 			'label'    => __('Show date', 'solofolio'),
 			'section'  => 'solofolio_options_section',
 			'type'     => 'checkbox',
+      'priority' => 20,
 		));
 
 		$wp_customize->add_setting( 'solofolio_blog_showcat' );
@@ -422,6 +424,7 @@ function solofolio_customize_register( $wp_customize )
 			'label'    => __('Show category', 'solofolio'),
 			'section'  => 'solofolio_options_section',
 			'type'     => 'checkbox',
+      'priority' => 30,
 		));
 
 		$wp_customize->add_setting( 'solofolio_blog_showtags' );
@@ -431,15 +434,8 @@ function solofolio_customize_register( $wp_customize )
 			'label'    => __('Show tags', 'solofolio'),
 			'section'  => 'solofolio_options_section',
 			'type'     => 'checkbox',
+      'priority' => 40,
 		));
-
-		$wp_customize->add_setting( 'solofolio_header_width', array('default' => '200', 'transport'   => 'postMessage',) );
-
-		$wp_customize->add_control( 'solofolio_header_width', array(
-			'label' => 'Sidebar Width',
-			'settings' => 'solofolio_header_width',
-			'section' => 'solofolio_options_section',
-		) );
 
 		$wp_customize->add_setting( 'solofolio_blog_center_layout', array(
     	'default'    => '1'
@@ -450,6 +446,7 @@ function solofolio_customize_register( $wp_customize )
 			'label'    => __('Center blog layout', 'solofolio'),
 			'section'  => 'solofolio_options_section',
 			'type'     => 'checkbox',
+      'priority' => 50,
 		));
 
 		$wp_customize->add_setting( 'solofolio_show_attribution', array(
@@ -461,6 +458,7 @@ function solofolio_customize_register( $wp_customize )
 			'label'    => __('Show link to SoloFolio', 'solofolio'),
 			'section'  => 'solofolio_options_section',
 			'type'     => 'checkbox',
+      'priority' => 60,
 		));
 
 		$wp_customize->add_setting( 'solofolio_layout_spacing', array('default' => '40', 'transport'   => 'postMessage',) );
@@ -469,7 +467,17 @@ function solofolio_customize_register( $wp_customize )
 			'label' => 'Layout Spacing',
 			'settings' => 'solofolio_layout_spacing',
 			'section' => 'solofolio_options_section',
+      'priority' => 70,
 		) );
+
+    $wp_customize->add_setting( 'solofolio_header_width', array('default' => '200', 'transport'   => 'postMessage',) );
+
+    $wp_customize->add_control( 'solofolio_header_width', array(
+      'label' => 'Sidebar Width',
+      'settings' => 'solofolio_header_width',
+      'section' => 'solofolio_options_section',
+      'priority' => 80,
+    ) );
 
 	$wp_customize->add_section( 'solofolio_advanced_section' , array(
 		'title'       => __( 'Advanced', 'solofolio' ),
