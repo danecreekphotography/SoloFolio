@@ -32,7 +32,7 @@ foreach ($attachment_ids as $id) {
 								<img srcset='" . $link4[0] . "' alt='" .  wptexturize($attachment->post_excerpt) . "'>
 							</picture>";
 
-	if ($captions != "false"){
+	if ($captions != "false" && !empty(wptexturize($attachment->post_excerpt))) {
 		$output .= "<p class=\"wp-caption-text\">" .  wptexturize($attachment->post_excerpt) . "</p> ";
 	}
 
