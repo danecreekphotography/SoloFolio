@@ -160,6 +160,10 @@ function solofolio_css() {
   .galleria-info {
       color: " . get_theme_mod('solofolio_body_caption_color') . ";
   }
+
+  .pagination-nav {
+    max-width: " . $entry_width . "px;
+  }
   ";
 
   if ($is_horizon) {
