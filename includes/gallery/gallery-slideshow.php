@@ -21,9 +21,15 @@ $output .= "<div class=\"galleria-wrap\"><div class=\"galleria galleria-containe
 		$link3 = wp_get_attachment_image_src($id, 'thumbnail');
 		$link4 = wp_get_attachment_image_src($id, 'large');
 
+		if (!empty(wptexturize($attachment->post_excerpt))) {
+			$caption = wptexturize($attachment->post_excerpt);
+		} else {
+			$caption = wptexturize($attachment->post_content);
+		}
+
 		$output .= "
 		<a href=\"" . $link4[0] . "\" rel=\"" . $link2 . "\">
-			<img  class=\"full\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\" src=\"". $link3[0] . "\"/>
+			<img  class=\"full\" alt=\"" .  $caption . "\" src=\"". $link3[0] . "\"/>
 		</a>";
 
 		$i++;

@@ -21,6 +21,12 @@ foreach ($attachment_ids as $id) {
 	$link4 = wp_get_attachment_image_src($id, 'large');
 	$link5 = wp_get_attachment_image_src($id, 'xlarge');
 
+	if (!empty(wptexturize($attachment->post_excerpt))) {
+		$caption = wptexturize($attachment->post_excerpt);
+	} else {
+		$caption = wptexturize($attachment->post_content);
+	}
+
 	$output .= "\n\n<div class='vert-scroll' style=\"max-width:" . $link5[1] . "px; \">";
 
 	$output .= "<picture id='" . $i . "'>
@@ -29,11 +35,11 @@ foreach ($attachment_ids as $id) {
 								<source srcset='" . $link5[0] . "' media='(min-width: 850px)'>
 								<source srcset='" . $link4[0] . "' media='(min-width: 300px)'>
 								<!--[if IE 9]></video><![endif]-->
-								<img srcset='" . $link4[0] . "' alt='" .  wptexturize($attachment->post_excerpt) . "'>
+								<img srcset='" . $link4[0] . "' alt='" . $caption . "'>
 							</picture>";
 
-	if ($captions != "false" && !empty(wptexturize($attachment->post_excerpt))) {
-		$output .= "<p class=\"wp-caption-text\">" .  wptexturize($attachment->post_excerpt) . "</p> ";
+	if ($captions != "false" && !empty($caption)) {
+		$output .= "<p class=\"wp-caption-text\">" .  $caption . "</p> ";
 	}
 
 	$output .= "</div>";

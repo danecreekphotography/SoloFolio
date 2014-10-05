@@ -19,9 +19,15 @@ foreach ($attachment_ids as $id) {
 	$thumb = wp_get_attachment_image_src($id, 'thumbnail');
 	$medium = wp_get_attachment_image_src($id, 'medium');
 
+	if (!empty(wptexturize($attachment->post_excerpt))) {
+		$caption = wptexturize($attachment->post_excerpt);
+	} else {
+		$caption = wptexturize($attachment->post_content);
+	}
+
 	$output .= "<li class=\"thumb\">
 								<a href=\"#" . $i . "\">
-									<img src=\"" . $thumb[0] . "\" data-retina=\"" . $medium[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\">
+									<img src=\"" . $thumb[0] . "\" data-retina=\"" . $medium[0] . "\" alt=\"" .  $caption . "\">
 								</a>
 							</li>";
 }
@@ -73,16 +79,22 @@ foreach ($attachment_ids as $id) {
 	$link5 = wp_get_attachment_image_src($id, 'xlarge');
 	$link6 = wp_get_attachment_image_src($id, 'medium');
 
+	if (!empty(wptexturize($attachment->post_excerpt))) {
+		$caption = wptexturize($attachment->post_excerpt);
+	} else {
+		$caption = wptexturize($attachment->post_content);
+	}
+
 	$output .= "
 		<div class=\"solofolio-cycelereact-slide solofolio-cyclereact-image\"
-				 data-cycle-title=\"" .  wptexturize($attachment->post_excerpt) . "\"
+				 data-cycle-title=\"" .  $caption . "\"
 				 data-cycle-hash=\"" .  $i . "\">
 			<div class=\"solofolio-cyclereact-fill picturefill-background\"
 					 style=\"max-width: ". $link5[1] . "px;\">
 				<div data-src=\"" . $link6[0] . "\"></div>
 				<div data-src=\"" . $link4[0] . "\" data-media=\"(min-width: 320px)\" style=\"max-width: 900px;\"></div>
 				<div data-src=\"" . $link5[0] . "\" data-media=\"(min-width: 920px)\" style=\"max-width: 1800px;\"></div>
-				<noscript><img src=\"" . $link6[0] . "\" alt=\"" .  wptexturize($attachment->post_excerpt) . "\"></noscript>
+				<noscript><img src=\"" . $link6[0] . "\" alt=\"" .  $caption . "\"></noscript>
 			</div>
 		</div>";
 }
