@@ -452,6 +452,17 @@ function solofolio_customize_register( $wp_customize )
 			'type'     => 'checkbox',
 		));
 
+		$wp_customize->add_setting( 'solofolio_show_attribution', array(
+    	'default'    => '1'
+		));
+
+		$wp_customize->add_control( 'solofolio_show_attribution', array(
+			'settings' => 'solofolio_show_attribution',
+			'label'    => __('Show link to SoloFolio', 'solofolio'),
+			'section'  => 'solofolio_options_section',
+			'type'     => 'checkbox',
+		));
+
 		$wp_customize->add_setting( 'solofolio_layout_spacing', array('default' => '40', 'transport'   => 'postMessage',) );
 
 		$wp_customize->add_control( 'solofolio_layout_spacing', array(
