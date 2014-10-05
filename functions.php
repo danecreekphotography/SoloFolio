@@ -120,26 +120,26 @@ function solofolio_set_image_sizes() {
 add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
 
 function solofolio_comments($comment, $args, $depth) {
-   $GLOBALS['comment'] = $comment; ?>
-   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-     <div id="comment-<?php comment_ID(); ?>">
-        <div class="comment-author vcard">
-          <?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
-        </div>
+  $GLOBALS['comment'] = $comment; ?>
+  <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+   <div id="comment-<?php comment_ID(); ?>">
+      <div class="comment-author vcard">
+        <?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
+      </div>
 
-        <?php if ($comment->comment_approved == '0') : ?>
-           <em><?php _e('Your comment is awaiting moderation.', 'solofolio') ?></em>
-           <br />
-        <?php endif; ?>
+      <?php if ($comment->comment_approved == '0') : ?>
+         <em><?php _e('Your comment is awaiting moderation.', 'solofolio') ?></em>
+         <br />
+      <?php endif; ?>
 
-        <div class="comment-meta commentmetadata">
-          <?php printf(__('%1$s', 'solofolio'), get_comment_date('Y-m-d')) ?>
-          <?php edit_comment_link(__('(Edit)', 'solofolio'),'  ','') ?>
-        </div>
-        <?php comment_text() ?>
-     </div>
-<?php
-        }
+      <div class="comment-meta commentmetadata">
+        <?php printf(__('%1$s', 'solofolio'), get_comment_date('Y-m-d')) ?>
+        <?php edit_comment_link(__('(Edit)', 'solofolio'),'  ','') ?>
+      </div>
+      <?php comment_text() ?>
+   </div>
+  <?php
+}
 
 // Register theme widget areas
 if(function_exists('register_sidebar')){
