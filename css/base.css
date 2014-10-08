@@ -355,6 +355,7 @@ h2.post-title a:hover { text-decoration: none }
 }
 /* Forms */
 input, textarea {
+  background-color: transparent;
   border-radius: 2px;
   margin: 0;
   padding: .5rem;
@@ -412,7 +413,7 @@ p.comment-form-comment label { display: none }
   max-width: 100%;
 }
 #comments p.form-submit input {
-  background-color: inherit;
+  background-color: transparent;
   float: right;
   width: auto;
 }
