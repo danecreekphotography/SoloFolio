@@ -9,6 +9,11 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
 update_option('image_default_link_type','none');
 
+function fix_output_buffer() {
+  ob_start();
+}
+add_action('init', 'fix_output_buffer');
+
 # Adapted from http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
 function solofolio_wp_title( $title, $sep ) {
   global $paged, $page;
