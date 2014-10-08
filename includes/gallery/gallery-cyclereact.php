@@ -147,42 +147,44 @@ $output .= "
 
 add_action('wp_footer', 'sl_cyclereact_js');
 
-function sl_cyclereact_js() {
-	$output = "<script type=\"text/javascript\">window.matchMedia=window.matchMedia||(function(e,f){var c,a=e.documentElement,b=a.firstElementChild||a.firstChild,d=e.createElement(\"body\"),g=e.createElement(\"div\");g.id=\"mq-test-1\";g.style.cssText=\"position:absolute;top:-100em\";d.appendChild(g);return function(h){g.innerHTML='&shy;<style media=\"'+h+'\"> #mq-test-1 { width: 42px; }</style>';a.insertBefore(d,b);c=g.offsetWidth==42;a.removeChild(d);return{matches:c,media:h}}})(document);</script>";
-	$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/cyclereact.js\"></script>";
-	$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/picturefill-background.js\"></script>";
-	$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/jquery.cycle2.min.js\"></script>";
-	$output .= "
-	<style type=\"text/css\">
-	#header #header-content .solofolio-cyclereact-sidebar {
-		display: block;
-	}
-	#wrapper {
-		padding: 0;
-		position: absolute;
-		overflow: hidden;
-	}
-	@media only screen and (min-width: 1025px) {
-		#wrapper {
-			left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) ."px;
-		}
-	}
-	@media only screen and (max-width: 1024px) {
-		.solofolio-cyclereact-sidebar {
-			padding-right: 20px;
-		}
-		#solofolio-cyclereact-stage {
-			right: 0;
+if (!function_exists('sl_cyclereact_js')) {
+	function sl_cyclereact_js() {
+		$output = "<script type=\"text/javascript\">window.matchMedia=window.matchMedia||(function(e,f){var c,a=e.documentElement,b=a.firstElementChild||a.firstChild,d=e.createElement(\"body\"),g=e.createElement(\"div\");g.id=\"mq-test-1\";g.style.cssText=\"position:absolute;top:-100em\";d.appendChild(g);return function(h){g.innerHTML='&shy;<style media=\"'+h+'\"> #mq-test-1 { width: 42px; }</style>';a.insertBefore(d,b);c=g.offsetWidth==42;a.removeChild(d);return{matches:c,media:h}}})(document);</script>";
+		$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/cyclereact.js\"></script>";
+		$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/picturefill-background.js\"></script>";
+		$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/jquery.cycle2.min.js\"></script>";
+		$output .= "
+		<style type=\"text/css\">
+		#header #header-content .solofolio-cyclereact-sidebar {
+			display: block;
 		}
 		#wrapper {
-			right: 20px;
-			bottom: 20px;
+			padding: 0;
+			position: absolute;
+			overflow: hidden;
 		}
-	}
-	</style>
-	";
+		@media only screen and (min-width: 1025px) {
+			#wrapper {
+				left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) ."px;
+			}
+		}
+		@media only screen and (max-width: 1024px) {
+			.solofolio-cyclereact-sidebar {
+				padding-right: 20px;
+			}
+			#solofolio-cyclereact-stage {
+				right: 0;
+			}
+			#wrapper {
+				right: 20px;
+				bottom: 20px;
+			}
+		}
+		</style>
+		";
 
-  echo $output;
+	  echo $output;
+	}
 }
 
 ?>

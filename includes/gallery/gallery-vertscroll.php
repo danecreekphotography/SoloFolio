@@ -48,26 +48,28 @@ foreach ($attachment_ids as $id) {
 
 add_action('wp_footer', 'sl_vertscroll_js');
 
-function sl_vertscroll_js() {
-	$output = "<style>
-							#content-page {
-								max-width: none;
-							}
-
-							@media only screen and (max-width: 1024px) {
+if (!function_exists('sl_vertscroll_js')) {
+	function sl_vertscroll_js() {
+		$output = "<style>
 								#content-page {
-									margin-left: auto;
-									margin-right: auto;
+									max-width: none;
 								}
-							}
-						</style>
-						";
+
+								@media only screen and (max-width: 1024px) {
+									#content-page {
+										margin-left: auto;
+										margin-right: auto;
+									}
+								}
+							</style>
+							";
 
 
-	$output .= "<script> document.createElement('picture');</script>";
-	$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/picturefill.js\" async></script>";
-	$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/vertscroll.js\"></script>";
+		$output .= "<script> document.createElement('picture');</script>";
+		$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/picturefill.js\" async></script>";
+		$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/vertscroll.js\"></script>";
 
-  echo $output;
+	  echo $output;
+	}
 }
 ?>
