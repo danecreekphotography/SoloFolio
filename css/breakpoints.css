@@ -349,15 +349,15 @@
     padding-right: 1rem;
   }
 
-  .pagination-nav .right, .pagination-nav .left {
+  .single-post .pagination-nav .right, .single-post .pagination-nav .left {
     float: none;
   }
 
-  .pagination-nav .left {
+  .single-post .pagination-nav .left {
     margin-bottom: 1rem;
   }
 
-  .pagination-nav .right h4 {
+  .single-post .pagination-nav .right h4 {
     text-align: left;
   }
 
