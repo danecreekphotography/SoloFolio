@@ -64,19 +64,11 @@ function solofolio_mime_types( $mimes ){
   return $mimes;
 }
 add_filter( 'upload_mimes', 'solofolio_mime_types' );
+add_filter( 'mime_types', 'solofolio_mime_types' );
 
 current_theme_supports( 'html5' );
 
 if ( ! isset( $content_width ) ) $content_width = 900;
-
-function solofolio_mimes( $existing_mimes ) {
-  // add webm to the list of mime types
-  $existing_mimes['svg'] = 'image/svg+xml';
-
-  // return the array back to the function with our added mime type
-  return $existing_mimes;
-}
-add_filter( 'mime_types', 'solofolio_mimes' );
 
 function filter_ptags_on_images($content) {
   $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
