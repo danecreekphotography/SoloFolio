@@ -121,24 +121,49 @@ add_action( 'after_setup_theme', 'solofolio_set_image_sizes' );
 function solofolio_comments($comment, $args, $depth) {
   $GLOBALS['comment'] = $comment; ?>
   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-   <div id="comment-<?php comment_ID(); ?>">
-      <div class="comment-author vcard">
-        <?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
-      </div>
-
+   <div id="comment-<?php comment_ID(); ?>" class="grid">
       <?php if ($comment->comment_approved == '0') : ?>
          <em><?php _e('Your comment is awaiting moderation.', 'solofolio') ?></em>
          <br />
       <?php endif; ?>
 
-      <div class="comment-meta commentmetadata">
-        <?php printf(__('%1$s', 'solofolio'), get_comment_date('Y-m-d')) ?>
+      <div class="comment-meta commentmetadata col-1-3">
+        <div class="comment-author vcard">
+          <?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
+        </div>
+        <?php printf(__('%1$s', 'solofolio'), get_comment_date('M. j, Y')) ?>
         <?php edit_comment_link(__('(Edit)', 'solofolio'),'  ','') ?>
       </div>
-      <?php comment_text() ?>
+
+      <div class="col-2-3">
+        <?php comment_text() ?>
+      </div>
    </div>
   <?php
 }
+
+// Group comment form inputs into two columns
+function solofolio_comment_form_top_action() {
+  if (!is_user_logged_in()) {
+    echo '<div class="grid"><div class="col-1-3">';
+  }
+}
+add_action('comment_form_top', 'solofolio_comment_form_top_action');
+
+function solofolio_comment_form_after_fields_action() {
+  if (!is_user_logged_in()) {
+    echo '</div><div class="col-2-3">';
+  }
+}
+add_action('comment_form_after_fields', 'solofolio_comment_form_after_fields_action');
+
+function solofolio_comment_form_field_comment_filter($comment_field = '') {
+  if (!is_user_logged_in()) {
+    $comment_field .= '</div></div>';
+  }
+  return $comment_field;
+}
+add_filter('comment_form_field_comment', 'solofolio_comment_form_field_comment_filter');
 
 // Remove image margins automatically added by WordPress.
 // From: http://wordpress.org/support/topic/10px-added-to-width-in-image-captions

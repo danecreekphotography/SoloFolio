@@ -187,17 +187,18 @@ Galleria Theme - CSS
 .galleria-image-nav-left,
 .galleria-image-nav-right {
 	height: 100%;
-
 	position: absolute;
     z-index: 2;
     top: 0;
 }
 
 .galleria-image-nav-left {
+    cursor: w-resize;
 	left: 0;
 	width: 50%;
 }
 .galleria-image-nav-right {
+    cursor: e-resize;
 	right: 0;
 	width: 50%;
 }

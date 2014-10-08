@@ -35,7 +35,8 @@ if ( post_password_required() ) {
 	<?php endif; // have_comments() ?>
 
 	<?php comment_form(array('title_reply' => 'Leave a reply',
+													 'label_submit' => 'Post comment',
 													 'comment_notes_after' => '',
 													 'comment_notes_before' => '')); ?>
-
+	<div class="clear"></div>
 </div><!-- #comments -->
