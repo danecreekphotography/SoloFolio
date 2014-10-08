@@ -87,7 +87,7 @@
 				<?php endif; ?>
 			<?php } ?>
 			<div id="sidebar-footer">
-				<?php if (!empty(get_theme_mod( 'solofolio_copyright_text' ))) { ?>
+				<?php $text = get_theme_mod( 'solofolio_copyright_text' ); if (!empty($text)) { ?>
 					<p id="info-footer">&copy; <?php echo date("Y"); ?> <?php echo get_theme_mod( 'solofolio_copyright_text' ); ?></p>
 				<?php } ?>
 				<?php if (get_theme_mod('solofolio_show_attribution', true)) { ?>

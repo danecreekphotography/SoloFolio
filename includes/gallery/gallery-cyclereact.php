@@ -19,7 +19,7 @@ foreach ($attachment_ids as $id) {
 	$thumb = wp_get_attachment_image_src($id, 'thumbnail');
 	$medium = wp_get_attachment_image_src($id, 'medium');
 
-	if (!empty(wptexturize($attachment->post_excerpt))) {
+	if (!empty($attachment->post_excerpt)) {
 		$caption = wptexturize($attachment->post_excerpt);
 	} else {
 		$caption = wptexturize($attachment->post_content);
@@ -79,7 +79,7 @@ foreach ($attachment_ids as $id) {
 	$link5 = wp_get_attachment_image_src($id, 'xlarge');
 	$link6 = wp_get_attachment_image_src($id, 'medium');
 
-	if (!empty(wptexturize($attachment->post_excerpt))) {
+	if (!empty($attachment->post_excerpt)) {
 		$caption = wptexturize($attachment->post_excerpt);
 	} else {
 		$caption = wptexturize($attachment->post_content);

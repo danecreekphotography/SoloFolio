@@ -21,7 +21,7 @@ foreach ($attachment_ids as $id) {
 	$link4 = wp_get_attachment_image_src($id, 'large');
 	$link5 = wp_get_attachment_image_src($id, 'xlarge');
 
-	if (!empty(wptexturize($attachment->post_excerpt))) {
+	if (!empty($attachment->post_excerpt)) {
 		$caption = wptexturize($attachment->post_excerpt);
 	} else {
 		$caption = wptexturize($attachment->post_content);
