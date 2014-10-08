@@ -27,12 +27,9 @@ function solofolio_css() {
   $styles .= "
   body {
     background-color: ". $background_color . ";
+    color: " . get_theme_mod('solofolio_body_font_color') . ";
     font-size: " . get_theme_mod('solofolio_body_font_size') .";
     font-family: '" . str_replace("+"," ", get_theme_mod('solofolio_font_body')) . "';
-  }
-
-  body * {
-    color: " . get_theme_mod('solofolio_body_font_color') . ";
   }
 
   #logo-img {
@@ -133,6 +130,7 @@ function solofolio_css() {
 
   input, textarea {
     border: 1px solid " . get_theme_mod('solofolio_navigation_link_color') . ";
+    color: " . get_theme_mod('solofolio_body_font_color') . ";
   }
 
   .galleria-info {
