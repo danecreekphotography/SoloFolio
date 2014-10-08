@@ -1,36 +1,6 @@
 <?php
 require_once(ABSPATH . 'wp-admin/includes/file.php');
 
-// http://lab.clearpixel.com.au/2008/06/darken-or-lighten-colours-dynamically-using-php/
-function colorBrightness($hex, $percent) {
-  $hash = '';
-  if (stristr($hex,'#')) {
-    $hex = str_replace('#','',$hex);
-    $hash = '#';
-  }
-  $rgb = array(hexdec(substr($hex,0,2)), hexdec(substr($hex,2,2)), hexdec(substr($hex,4,2)));
-  for ($i=0; $i<3; $i++) {
-    if ($percent > 0) {
-      $rgb[$i] = round($rgb[$i] * $percent) + round(255 * (1-$percent));
-    } else {
-      $positivePercent = $percent - ($percent*2);
-      $rgb[$i] = round($rgb[$i] * $positivePercent) + round(0 * (1-$positivePercent));
-    }
-    if ($rgb[$i] > 255) {
-      $rgb[$i] = 255;
-    }
-  }
-  $hex = '';
-  for($i=0; $i < 3; $i++) {
-    $hexDigit = dechex($rgb[$i]);
-    if(strlen($hexDigit) == 1) {
-    $hexDigit = "0" . $hexDigit;
-    }
-    $hex .= $hexDigit;
-  }
-  return $hash.$hex;
-}
-
 function solofolio_css() {
   WP_Filesystem();
   global $wp_filesystem;
@@ -148,20 +118,25 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_navigation_link_color_hover') . ";
     }
 
+  .solofolio-cyclereact-sidebar.buttons a:hover,
+  input:focus,
+  textarea:focus {
+    border-color: " . get_theme_mod('solofolio_navigation_link_color_hover') . ";
+  }
+
   #footer ul li a:hover {
     color: " . get_theme_mod('solofolio_body_link_color_hover') . ";
   }
 
   input, textarea {
-    color: " . get_theme_mod('solofolio_body_link_color') . ";
-    background-color: " . colorBrightness($background_color, -0.9) . ";
+    border: 1px solid " . get_theme_mod('solofolio_navigation_link_color') . ";
   }
 
   .galleria-info {
       color: " . get_theme_mod('solofolio_body_caption_color') . ";
   }
 
-  .pagination-nav {
+  .pagination-nav, #comments {
     max-width: " . $entry_width . "px;
   }
   ";
@@ -169,8 +144,7 @@ function solofolio_css() {
   if ($is_horizon) {
     $styles .="
       .solofolio-cyclereact-sidebar.buttons a {
-        border: 1px solid " . colorBrightness($background_color, -0.9) . ";
-        background-color: " . colorBrightness($background_color, -0.9) . ";
+        border: 1px solid " . get_theme_mod('solofolio_navigation_link_color') . ";
       }";
   } elseif ($is_heights) {
     $styles .="
@@ -179,19 +153,9 @@ function solofolio_css() {
       }
 
       .solofolio-cyclereact-sidebar.buttons a {
-        border: 1px solid " . colorBrightness($header_background_color, -0.9) . ";
-        background-color: " . colorBrightness($header_background_color, -0.9) . ";
+        border: 1px solid " . get_theme_mod('solofolio_navigation_link_color') . ";
       }";
   }
-
-  $styles .= "
-  .galleria-image-nav-left, .solofolio-cyclereact-nav-left {
-    cursor: url(\"" . get_template_directory_uri() . "/img/prev.dark.cur\"), move;
-  }
-
-  .galleria-image-nav-right, .solofolio-cyclereact-nav-right {
-    cursor: url(\"" . get_template_directory_uri() . "/img/next.dark.cur\"), move;
-  }";
 
   if ($is_horizon) {
     $styles .= "

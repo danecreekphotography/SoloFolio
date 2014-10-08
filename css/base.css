@@ -353,17 +353,18 @@ h2.post-title a:hover { text-decoration: none }
   max-width: 500px;
   display: block;
 }
-/* Comments */
-input,
-textarea {
-  border: none;
-  font-size: 12px;
+/* Forms */
+input, textarea {
+  border-radius: 2px;
   margin: 0;
-  padding: .75rem 1rem;
+  padding: .5rem;
 }
+input:focus, textarea:focus {
+  outline: none;
+}
+/* Comments */
 #respond label {
-  width: 80px;
-  display: inline-block;
+  display: block;
 }
 #comments { padding-bottom: 1rem }
 .comment { padding-bottom: .75em }
@@ -384,14 +385,15 @@ textarea {
   padding: 0;
 }
 .commentlist p { margin: 5px 5px 10px 0 }
-#commentform p { margin: 10px 0 0 0 }
+#commentform p { max-width: 100%; }
 .nocomments {
   margin: 0;
   padding: 0;
   text-align: center;
 }
-#commentform textarea {
-  max-width: 600px;
+#commentform textarea, #commentform input {
+  font-size: 12px;
+  margin: 0;
   width: 100%;
 }
 .commentlist p {
@@ -405,6 +407,17 @@ p.comment-form-comment label { display: none }
   font-weight: normal;
   display: block;
   margin: 0 0 .5em;
+}
+#comments p.form-submit {
+  max-width: 100%;
+}
+#comments p.form-submit input {
+  background-color: inherit;
+  float: right;
+  width: auto;
+}
+#comments #comment {
+  height: 225px;
 }
 /* Images */
 .aligncenter,
@@ -551,13 +564,14 @@ div.aligncenter {
   bottom: 0;
 }
 .solofolio-cyclereact-sidebar.buttons a {
+  border-radius: 2px;
   display: inline-block;
   font-size: 22px;
   width: 40px;
   height: 40px;
   margin-top: 15px;
   margin-right: 15px;
-  line-height: 39px;
+  line-height: 40px;
   text-align: center;
   text-decoration: none;
 }
@@ -587,10 +601,12 @@ div.aligncenter {
   z-index: 500;
 }
 .solofolio-cyclereact-nav-left {
+  cursor: w-resize;
   left: 0;
   width: 50%;
 }
 .solofolio-cyclereact-nav-right {
+  cursor: e-resize;
   right: 0;
   width: 50%;
 }
@@ -617,4 +633,35 @@ div.aligncenter {
 #content-page p img {
   height: auto;
   width: 100%;
+}
+/* Grid */
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+}
+.grid [class*='col-']:last-of-type {
+  padding-right: 0;
+}
+.col-2-3 {
+  width: 66.66%;
+}
+.col-1-3 {
+  width: 33.33%;
+}
+.col-1-2 {
+  width: 50%;
+}
+.col-1-4 {
+  width: 25%;
+}
+.col-1-8 {
+  width: 12.5%;
+}
+.module {
+  padding: 20px;
 }

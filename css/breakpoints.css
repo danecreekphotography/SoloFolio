@@ -190,7 +190,6 @@
     }
 
   #comments {
-    max-width: 600px;
     display: block;
     margin: 0 auto;
   }
@@ -302,6 +301,12 @@
 
 @media only screen and (max-width: 620px) {
 
+  [class*='col-'] {
+    float: none;
+    padding-right: 0;
+    width: 100%;
+  }
+
   body#page {
     overflow: auto;
   }
@@ -334,7 +339,6 @@
   }
 
   p, h1, h2, h6,
-  .comment-author,
   .comment-meta,
   #comments #reply-title,
   .commentlist .date,
