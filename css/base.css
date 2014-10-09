@@ -314,7 +314,6 @@ h2.post-title a { border-bottom: none }
 h2.post-title a:hover { text-decoration: none }
 .entry .tag-links {
   max-width: 600px;
-  display: block;
 }
 .entry .tag-links a { padding: 0 2px }
 #content-index,
