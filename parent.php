@@ -20,8 +20,8 @@
       ?>
         <li>
           <a href="<?php echo get_page_link( $page->ID ); ?>">
-            <h3><?php echo $page->post_title; ?></h3>
             <?php echo get_the_post_thumbnail( $page->ID, 'medium' ); ?>
+            <h3><?php echo $page->post_title; ?></h3>
           </a>
         </li>
       <?php
