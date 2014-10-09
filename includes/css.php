@@ -170,9 +170,7 @@ function solofolio_css() {
       }
       #solofolio-cyclereact-thumbs {
         top: 45px;
-        padding-top: " . $layout_spacing . "px;
-        padding-right: " . ($layout_spacing - 20) . "px;
-        padding-bottom: " . $layout_spacing . "px;
+        padding: " . $layout_spacing . "px;
       }
       .solofolio-cyclereact-title {
         padding-top: " . ($layout_spacing + 45) . "px;
@@ -211,9 +209,7 @@ function solofolio_css() {
         }
 
         #solofolio-cyclereact-thumbs, .solofolio-cyclereact-title {
-          padding-top: " . $layout_spacing . "px;
-          padding-right: " . ($layout_spacing - 20) . "px;
-          padding-bottom: " . $layout_spacing . "px;
+          padding: " . $layout_spacing . "px;
         }
 
         #header-inner {
