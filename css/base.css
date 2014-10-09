@@ -322,14 +322,13 @@ h2.post-title a:hover { text-decoration: none }
 #content-search { width: 100% }
 #content-parent {
   max-width: 920px;
-  padding: 0 10px;
 }
-#content-parent .content { padding: 0 1rem}
+#content-parent .content { padding: 0 1rem }
 #content-parent .children h3 { margin: 0 }
 #content-parent .children li {
   display: inline-block;
   max-width: 300px;
-  width: 33%;
+  width: 32.8%;
   padding: 0 1rem 1rem 1rem;
   vertical-align: top;
 }
@@ -539,9 +538,9 @@ div.aligncenter {
   float: left;
   width: 25%;
   max-width: 300px;
-  border-right: 10px solid #fff;
-  border-left: 10px solid #fff;
-  border-bottom: 20px solid #fff;
+  border-right: 1rem solid #fff;
+  border-left: 1rem solid #fff;
+  border-bottom: 1rem solid #fff;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }

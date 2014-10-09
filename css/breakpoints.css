@@ -122,9 +122,13 @@
         display: block;
       }
 
+    #content-parent .children {
+      padding-left: 1rem;
+    }
+
     #content-parent .children li {
-      padding-left: 10px;
-      padding-right: 10px;
+      padding-left: 0;
+      padding-right: 1rem;
     }
 
     .entry {
@@ -330,7 +334,6 @@
   }
 
   #content-parent .content {
-    margin: 0 -10px;
     padding: 0;
   }
 
