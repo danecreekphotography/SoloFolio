@@ -13,4 +13,8 @@ jQuery(window).load(function(){
     jQuery("#header-content").slideToggle();
     jQuery(this).toggleClass("active");
   });
+
+  jQuery('.solofolio-custom-menu h3').click(function(e){
+    jQuery(e.target).parent().find('ul').toggle();
+  });
 });

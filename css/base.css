@@ -663,3 +663,6 @@ div.aligncenter {
 .module {
   padding: 20px;
 }
+/* Custom menu widget */
+.solofolio-custom-menu h3 { cursor: pointer; }
+.solofolio-custom-menu ul { display: none; }
