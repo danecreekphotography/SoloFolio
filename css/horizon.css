@@ -109,10 +109,16 @@
   .entry .wp-caption img,
   .wp-caption,
   .entry p,
+  .tag-links,
   #content-parent,
   #content-page {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  #comments,
+  .pagination-nav {
+    max-width: 600px;
   }
 
   #solofolio-cyclereact-thumbs {
@@ -172,7 +178,6 @@
   }
 
   #comments {
-    max-width: 600px;
     margin: 0 auto;
   }
 
