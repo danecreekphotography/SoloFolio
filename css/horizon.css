@@ -162,14 +162,6 @@
       width: 100%;
     }
 
-      .solofolio-cyclereact-controls .arrows {
-        float: right;
-      }
-
-      .solofolio-cyclereact-controls a.next {
-        margin-right: 0;
-      }
-
   .solofolio-cyclereact-fill {
     background-position: 50% top;
   }
