@@ -15,8 +15,9 @@ function solofolio_css() {
   $background_color         = get_theme_mod('solofolio_background_color');
   $header_background_color  = get_theme_mod('solofolio_header_background_color');
 
+  $styles = "<!-- Powered by SoloFolio v" . constant('SOLOFOLIO_VERSION') . " - http://solofol.io - ";
   $datestamp = date(' Y-m-d H:i:s');
-  $styles = "<!-- Generated: " . $datestamp . " -->\n";
+  $styles .= "CSS generated at: " . $datestamp . " -->";
 
   $styles .= "<style>";
 
