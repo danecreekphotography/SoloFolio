@@ -1,9 +1,10 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "6.0.6");
+define("SOLOFOLIO_VERSION",     "6.0.7");
 
 include_once("includes/gallery.php");         // Include gallery shortcode replacement
 include_once("includes/social-widget.php");   // Include social media widget
+include_once("includes/menu-widget.php");     // Include custom menu widget
 include_once("includes/customize.php");       // Include WP_customize structure
 include_once("includes/css.php");             // Include CSS builder
 
