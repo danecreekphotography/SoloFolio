@@ -31,7 +31,8 @@
   }
 
   #header-content div {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   #header h1 {
@@ -45,6 +46,15 @@
   #header-phone, #header-email, #header-location {
     display: inline-block;
     padding: 0 10px;
+  }
+
+  .sidebar-widget {
+    display: inline-block;
+    margin-left: 1rem;
+  }
+
+  .sidebar-widget:first-child {
+    margin: 0;
   }
 
   #header-phone {
