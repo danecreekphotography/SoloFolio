@@ -510,6 +510,14 @@ function solofolio_customize_register( $wp_customize )
 			),
 		));
 
+		$wp_customize->add_setting( 'solofolio_gallery_controls_size', array('default' => '40', 'transport'   => 'refresh',) );
+
+			$wp_customize->add_control( 'solofolio_gallery_controls_size', array(
+				'label' => 'Gallery buttons size',
+				'settings' => 'solofolio_gallery_controls_size',
+				'section' => 'solofolio_advanced_section',
+			) );
+
 		$wp_customize->add_setting( 'solofolio_entry_width', array('default' => '900', 'transport'   => 'postMessage',) );
 
 			$wp_customize->add_control( 'solofolio_entry_width', array(

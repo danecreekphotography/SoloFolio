@@ -8,6 +8,7 @@ function solofolio_css() {
   $layout_spacing           = get_theme_mod('solofolio_layout_spacing', '20');
   $header_width             = get_theme_mod('solofolio_header_width', '200');
   $entry_width              = get_theme_mod('solofolio_entry_width', '900');
+  $button_size              = get_theme_mod('solofolio_gallery_controls_size', '40');
   $is_heights               = get_theme_mod('solofolio_layout_mode') == 'heights';
   $is_horizon               = get_theme_mod('solofolio_layout_mode') == 'horizon';
   $center_blog              = get_theme_mod('solofolio_blog_center_layout');
@@ -137,8 +138,15 @@ function solofolio_css() {
       color: " . get_theme_mod('solofolio_body_caption_color') . ";
   }
 
-  .pagination-nav, #comments {
+  .single-post .pagination-nav, #comments {
     max-width: " . $entry_width . "px;
+  }
+
+  .solofolio-cyclereact-sidebar.buttons a {
+    height: " . $button_size . "px;
+    font-size: " . ($button_size * .55) . "px;
+    line-height: " . $button_size . "px;
+    width: " . $button_size . "px;
   }
   ";
 
