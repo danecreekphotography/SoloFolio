@@ -43,7 +43,7 @@ $output .="<div id=\"solofolio-cyclereact-images\"
 								data-cycle-next=\".next\"
 								data-cycle-fx=\"fade\"
 								data-cycle-log=\"false\"
-								data-cycle-manual-speed=\"300\"
+								data-cycle-manual-speed=\"500\"
 								data-cycle-auto-height=false
 								data-cycle-caption=\".solofolio-cyclereact-caption\"
 								data-cycle-caption-template=\"{{cycleTitle}}\"";

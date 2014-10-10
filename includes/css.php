@@ -54,7 +54,9 @@ function solofolio_css() {
     border-color: ". $background_color . ";
   }
 
-  .galleria-container .galleria-stage, .galleria-container .galleria-thumbnails-container {
+  .galleria-container .galleria-stage,
+  .galleria-container .galleria-thumbnails-container,
+  .solofolio-cyclereact-title {
     background-color: " . $background_color . ";
   }
 
