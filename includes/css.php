@@ -15,7 +15,10 @@ function solofolio_css() {
   $background_color         = get_theme_mod('solofolio_background_color');
   $header_background_color  = get_theme_mod('solofolio_header_background_color');
 
-  $styles = "<style>";
+  $datestamp = date(' Y-m-d H:i:s');
+  $styles = "<!-- Generated: " . $datestamp . " -->\n";
+
+  $styles .= "<style>";
 
   $styles .= $wp_filesystem->get_contents(get_template_directory_uri() . "/css/base.css");
 
