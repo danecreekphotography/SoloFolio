@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<!-- Powered by SoloFolio v6.0.5 - http://solofol.io -->
+<!-- Powered by SoloFolio v6.0.6 - http://solofol.io -->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
