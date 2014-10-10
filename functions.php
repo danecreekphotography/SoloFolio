@@ -16,6 +16,11 @@ function fix_output_buffer() {
 }
 add_action('init', 'fix_output_buffer');
 
+function solofolio_remove_smileys($bool) {
+  return false;
+}
+add_filter('option_use_smilies', 'solofolio_remove_smileys', 99, 1);
+
 # Adapted from http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
 function solofolio_wp_title( $title, $sep ) {
   global $paged, $page;
