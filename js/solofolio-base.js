@@ -15,6 +15,14 @@ jQuery(window).load(function(){
   });
 
   jQuery('.solofolio-custom-menu h3').click(function(e){
-    jQuery(e.target).parent().find('ul').toggle();
+    var $target = jQuery(e.target).parent().find('ul');
+
+    if ($target.hasClass('visible')) {
+      $target.removeClass('visible').hide();
+    } else {
+      jQuery('.solofolio-custom-menu ul').removeClass('visible').hide();
+      $target.toggle().addClass('visible');
+    }
   });
 });
+

@@ -193,7 +193,6 @@ h3 {
 #header-content h3 {
   font-size: 16px;
   font-weight: bold;
-  padding: 0 0 4px;
   text-transform: uppercase;
 }
 h4 { font-size: 16px }
@@ -240,7 +239,7 @@ p {
   display: inline-block;
   line-height: 1.6;
 }
-#header-content div { margin-bottom: 15px }
+.sidebar-widget, #sidebar-footer { margin-top: 15px }
 #logo a img {
   border: none;
   font-weight: normal;

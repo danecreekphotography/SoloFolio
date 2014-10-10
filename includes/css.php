@@ -80,7 +80,6 @@ function solofolio_css() {
   #header-content h3 {
     color: " . get_theme_mod('solofolio_navigation_header_color') . ";
     font-size: " . get_theme_mod('solofolio_navigation_header_font_size') . ";
-    line-height: " . get_theme_mod('solofolio_navigation_font_size') . ";
   }
 
   #header-content ul a:link, #header-content ul a:visited {
@@ -178,6 +177,10 @@ function solofolio_css() {
         bottom: " . $layout_spacing . "px;
         top: " . ($layout_spacing + 45) . "px;
         right: " . $layout_spacing . "px;
+      }
+      #header-content h3 {
+        color: " . get_theme_mod('solofolio_navigation_header_color') . ";
+        line-height: " . get_theme_mod('solofolio_navigation_header_font_size') . ";
       }
       #solofolio-cyclereact-stage {
         right: " . ($header_width + 20) . "px;
