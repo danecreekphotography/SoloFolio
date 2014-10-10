@@ -10,7 +10,7 @@ jQuery(window).load(function(){
   jQuery("#wrapper").fitVids();
 
   jQuery('#menu-icon').click(function(){
-    jQuery("#header-content").slideToggle();
+    jQuery("#header-content").toggle();
     jQuery(this).toggleClass("active");
   });
 
