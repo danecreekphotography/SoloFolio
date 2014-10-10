@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "6.0.5");
+define("SOLOFOLIO_VERSION",     "6.0.6");
 
 include_once("includes/gallery.php");         // Include gallery shortcode replacement
 include_once("includes/social-widget.php");   // Include social media widget
@@ -42,10 +42,10 @@ add_filter( 'wp_title', 'solofolio_wp_title', 10, 2 );
 function solofolio_css_cache() {
   $data = get_transient( 'solofolio_css' );
   $version = get_transient( 'solofolio_version' );
-  if ( $data === false || (get_transient( 'solofolio_version' ) != constant('SOLOFOLIO_VERSION')) ) {
+  if ( $data === false || ($version != constant('SOLOFOLIO_VERSION')) ) {
     $data = solofolio_css();
-    set_transient( 'solofolio_css', $data, 3600 * 24 );
-    get_transient( 'solofolio_version', constant('SOLOFOLIO_VERSION'), 3600 * 24 );
+    set_transient( 'solofolio_css', $data);
+    set_transient( 'solofolio_version', constant('SOLOFOLIO_VERSION'));
   }
   echo $data;
 }
