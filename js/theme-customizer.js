@@ -37,12 +37,6 @@
 		} );
 	} );
 
-	wp.customize( 'solofolio_copyright_text', function( value ) {
-		value.bind( function( newval ) {
-			jQuery( '#info-footer' ).html( "&copy; 2014 " + newval );
-		} );
-	} );
-
 	wp.customize( 'solofolio_background_color', function( value ) {
 		value.bind( function( newval ) {
 			jQuery('body').css('background-color', newval );

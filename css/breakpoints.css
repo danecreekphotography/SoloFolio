@@ -198,13 +198,22 @@
     margin: 0 auto;
   }
 
-  #sidebar-footer {
+  .footer {
     position: relative;
     display: block;
     height: auto;
     bottom: auto;
-    padding: 10px 8px;
+    padding: 1rem;
     line-height: 1.2;
+    left: auto;
+    right: auto;
+  }
+
+  .footer .copyright-label {
+    display: none;
+  }
+  .footer .copyright-hidden {
+    display: block;
   }
 
   #wrapper #content-index {
@@ -241,11 +250,6 @@
 
     #header h3 {
       padding-top: 3px;
-    }
-
-    #sidebar-footer p {
-      margin: 0 auto;
-      text-align: center;
     }
 
       #header-content  ul li {
