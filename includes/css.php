@@ -56,11 +56,12 @@ function solofolio_css() {
 
   .galleria-container .galleria-stage,
   .galleria-container .galleria-thumbnails-container,
-  .solofolio-cyclereact-title {
+  .solofolio-cyclereact-title,
+  .footer {
     background-color: " . $background_color . ";
   }
 
-  a:link, a:visited, #header-location, #sidebar-footer {
+  a:link, a:visited, #header-location {
     color: " . get_theme_mod('solofolio_body_link_color') . ";
   }
 
@@ -128,10 +129,6 @@ function solofolio_css() {
   input:focus,
   textarea:focus {
     border-color: " . get_theme_mod('solofolio_navigation_link_color_hover') . ";
-  }
-
-  #footer ul li a:hover {
-    color: " . get_theme_mod('solofolio_body_link_color_hover') . ";
   }
 
   input, textarea {

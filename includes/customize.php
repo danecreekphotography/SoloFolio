@@ -368,7 +368,7 @@ function solofolio_customize_register( $wp_customize )
 				'priority' => '30',
 			) );
 
-		$wp_customize->add_setting( 'solofolio_copyright_text', array('transport'   => 'postMessage',));
+		$wp_customize->add_setting( 'solofolio_copyright_text', array('transport'   => 'refresh',));
 
 			$wp_customize->add_control( 'solofolio_copyright_text', array(
 				'label' => 'Copyright Text',
@@ -450,7 +450,8 @@ function solofolio_customize_register( $wp_customize )
 		));
 
 		$wp_customize->add_setting( 'solofolio_show_attribution', array(
-    	'default'    => '1'
+    	'default'    => '1',
+    	'transport'   => 'refresh',
 		));
 
 		$wp_customize->add_control( 'solofolio_show_attribution', array(

@@ -89,10 +89,6 @@
     display: none;
   }
 
-  #sidebar-footer {
-    display: none;
-  }
-
   .entry .post-meta {
     margin: 0 auto .7em;
     max-width: 600px;
@@ -207,6 +203,10 @@
   .galleria-wrap,
   #content-about {
     margin: 0 auto;
+  }
+
+  .footer {
+    left: auto;
   }
 }
 

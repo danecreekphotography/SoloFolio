@@ -239,7 +239,7 @@ p {
   display: inline-block;
   line-height: 1.6;
 }
-.sidebar-widget, #sidebar-footer { margin-top: 15px }
+.sidebar-widget { margin-top: 15px }
 #logo a img {
   border: none;
   font-weight: normal;
@@ -267,16 +267,30 @@ p {
   left: 20px;
 }
 /* Footer */
-#sidebar-footer {
-  position: relative;
-  z-index: 9;
+.footer {
+  border-top-left-radius: 2px;
+  bottom: 0;
+  font-size: .7rem;
+  right: 0;
+  line-height: 1;
+  opacity: .5;
+  padding: 8px;
+  position: fixed;
+  z-index: 1000;
 }
-#sidebar-footer p {
-  font-size: .75em;
-  line-height: 1.3em;
-  margin: 0;
+.footer a { text-decoration: underline }
+.copyright-hidden {
+  display: none;
 }
-#sidebar-footer a { text-decoration: underline }
+.footer:hover {
+  opacity: 1;
+}
+.footer:hover .copyright-label {
+  display: none;
+}
+.footer:hover .copyright-hidden {
+  display: block;
+}
 /* Header */
 #header h1 {
   font-weight: bold;
