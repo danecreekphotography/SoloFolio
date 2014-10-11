@@ -145,6 +145,9 @@ function solofolio_gallery_shortcode($attr) {
 		case "cycle-react":
 			include("gallery/gallery-cyclereact.php");
 			break;
+		case "gallery":
+			include("gallery/gallery-solofolio.php");
+			break;
 	}
 
 	return $output;

@@ -127,48 +127,57 @@
     max-width: 600px;
   }
 
-  #solofolio-cyclereact-thumbs {
+  #solofolio-cyclereact-thumbs,
+  #solofolio-gallery-thumbs {
     text-align: center;
   }
 
-    #solofolio-cyclereact-thumbs .thumb {
+    #solofolio-cyclereact-thumbs .thumb,
+    #solofolio-gallery-thumbs .thumb {
       display: inline-block;
       float: none;
     }
 
-  .solofolio-cyclereact-sidebar {
+  .solofolio-cyclereact-sidebar,
+  .solofolio-gallery-sidebar {
     right: 0;
     top: 0;
     margin-bottom: 0;
     width: 100%;
   }
 
-  .solofolio-cyclereact-sidebar.text li {
+  .solofolio-cyclereact-sidebar.text li,
+  .solofolio-gallery-sidebar.text li {
     margin-top: 0;
     margin-bottom: .5rem;
   }
 
-  .solofolio-cyclereact-sidebar.buttons a {
+  .solofolio-cyclereact-sidebar.buttons a,
+  .solofolio-gallery-sidebar.buttons a, {
     margin-top: 0;
     margin-bottom: 15px;
   }
 
-    .solofolio-cyclereact-caption {
+    .solofolio-cyclereact-caption,
+    .solofolio-gallery-caption {
       line-height: 1.4;
       margin-top: 55px;
     }
 
-      .solofolio-cyclereact-sidebar.text .solofolio-cyclereact-caption {
+      .solofolio-cyclereact-sidebar.text .solofolio-cyclereact-caption,
+      .solofolio-gallery-sidebar.text .solofolio-gallery-caption {
         margin-top: 2rem;
       }
 
-    .solofolio-cyclereact-controls {
+    .solofolio-cyclereact-controls,
+    .solofolio-gallery-controls {
       position: absolute;
       top: 0;
       width: 100%;
     }
 
-  .solofolio-cyclereact-fill {
+  .solofolio-cyclereact-fill,
+  .solofolio-gallery-fill {
     background-position: 50% top;
   }
 

@@ -292,7 +292,8 @@
     display: block;
     z-index: 300;
   }
-  .solofolio-cyclereact-fill {
+  .solofolio-cyclereact-fill,
+  .solofolio-gallery-fill {
     background-position: 50% 50%;
   }
 }

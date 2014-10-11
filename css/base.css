@@ -217,18 +217,6 @@ p {
   z-index: 5;
 }
 #header #logo { width: auto }
-.solofolio-cyclereact-sidebar {
-  bottom: 0;
-  position: fixed;
-  max-width: 200px;
-  margin-bottom: 0;
-  width: 100%;
-  z-index: 100;
-}
-.solofolio-cyclereact-caption {
-  line-height: 1.4;
-  font-size: .8em;
-}
 #header-content ul li {
   font-size: 12px;
   font-weight: normal;
@@ -507,6 +495,18 @@ div.aligncenter {
 }
 .vert-scroll img { max-width: 100%; width: auto; margin-bottom: 0; }
 /* CycleReact gallery  */
+.solofolio-cyclereact-sidebar {
+  bottom: 0;
+  position: fixed;
+  max-width: 200px;
+  margin-bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+.solofolio-cyclereact-caption {
+  line-height: 1.4;
+  font-size: .8em;
+}
 #solofolio-cyclereact-wrap { overflow-x: scroll }
 #solofolio-cyclereact-wrap,
 #solofolio-cyclereact-stage,

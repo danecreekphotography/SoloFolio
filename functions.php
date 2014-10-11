@@ -47,7 +47,8 @@ add_filter( 'wp_title', 'solofolio_wp_title', 10, 2 );
 
 function solofolio_css_cache() {
   $data = get_transient( 'solofolio_css' );
-  $version = get_transient( 'solofolio_version' );
+  // $version = get_transient( 'solofolio_version' );
+  $version = "nochache";
   if ( $data === false || ($version != constant('SOLOFOLIO_VERSION')) ) {
     $data = solofolio_css();
     set_transient( 'solofolio_css', $data);
