@@ -527,6 +527,14 @@ function solofolio_customize_register( $wp_customize )
 				'section' => 'solofolio_advanced_section',
 			) );
 
+		$wp_customize->add_setting( 'solofolio_entry_text_width', array('default' => '600', 'transport'   => 'refresh',) );
+
+			$wp_customize->add_control( 'solofolio_entry_text_width', array(
+				'label' => 'Blog Entry Text Width',
+				'settings' => 'solofolio_entry_text_width',
+				'section' => 'solofolio_advanced_section',
+			) );
+
 	$wp_customize->add_section( 'solofolio_tracking_css' , array(
 		'title'       => __( 'Tracking & CSS', 'solofolio' ),
 		'priority'    => 150,
