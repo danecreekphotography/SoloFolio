@@ -461,7 +461,7 @@ function solofolio_customize_register( $wp_customize )
       'priority' => 60,
 		));
 
-		$wp_customize->add_setting( 'solofolio_layout_spacing', array('default' => '40', 'transport'   => 'postMessage',) );
+		$wp_customize->add_setting( 'solofolio_layout_spacing', array('default' => '40', 'transport'   => 'refresh',) );
 
 		$wp_customize->add_control( 'solofolio_layout_spacing', array(
 			'label' => 'Layout Spacing',
