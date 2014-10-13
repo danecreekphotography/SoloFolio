@@ -492,6 +492,7 @@ function solofolio_customize_register( $wp_customize )
 			'section'    => 'solofolio_advanced_section',
 			'settings'   => 'solofolio_layout_mode',
 			'type'       => 'select',
+			'priority' 	 => 5,
 			'choices'    => array(
 				'heights' => 'Heights',
 				'horizon' => 'Horizon',
@@ -505,9 +506,24 @@ function solofolio_customize_register( $wp_customize )
 			'section'    => 'solofolio_advanced_section',
 			'settings'   => 'solofolio_gallery_controls',
 			'type'       => 'select',
+			'priority' 	 => 10,
 			'choices'    => array(
 				'buttons' => 'Buttons',
 				'text' => 'Text',
+			),
+		));
+
+		$wp_customize->add_setting('solofolio_gallery_transition', array('default' => 'fade', 'transport'   => 'refresh'));
+
+		$wp_customize->add_control('solofolio_gallery_transition', array(
+			'label'      => __('Gallery Transition', 'solofolio'),
+			'section'    => 'solofolio_advanced_section',
+			'settings'   => 'solofolio_gallery_transition',
+			'type'       => 'select',
+			'priority' 	 => 10,
+			'choices'    => array(
+				'fade' => 'Fade',
+				'none' => 'None',
 			),
 		));
 

@@ -6,6 +6,7 @@ $output .="<ul id=\"solofolio-cyclereact-thumbs\">";
 
 $galleryTitle = get_post_meta($post->ID, 'solofolio-gallery-title', true);
 $galleryText 	= get_post_meta($post->ID, 'solofolio-gallery-text', true);
+$galleryTransition = get_theme_mod( 'solofolio_gallery_transition', 'fade');
 
 $i = 0;
 if ($galleryTitle || $galleryText) {
@@ -41,7 +42,7 @@ $output .="<div id=\"solofolio-cyclereact-images\"
 								data-cycle-slides=\".solofolio-cycelereact-slide\"
 								data-cycle-prev=\".prev\"
 								data-cycle-next=\".next\"
-								data-cycle-fx=\"fade\"
+								data-cycle-fx=\"" . $galleryTransition . "\"
 								data-cycle-log=\"false\"
 								data-cycle-manual-speed=\"500\"
 								data-cycle-auto-height=false
