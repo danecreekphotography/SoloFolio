@@ -47,10 +47,8 @@ $output .="<div id=\"solofolio-cyclereact-images\"
 								data-cycle-auto-height=false
 								data-cycle-caption=\".solofolio-cyclereact-caption\"
 								data-cycle-caption-template=\"{{cycleTitle}}\"";
-								if ( $autoplay == "true" ) {
-									if (isset( $speed )) {
-										$output .= "data-cycle-timeout=". $speed;
-									}
+								if ( $autoplay == "true" && isset( $speed )) {
+									$output .= "data-cycle-timeout=". $speed;
 								} else {
 									$output .= "data-cycle-timeout=0\n";
 								}
