@@ -61,7 +61,6 @@ jQuery(window).resize(setResponsive);
 jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-after', function( event, opts ) {
   jQuery("#solofolio-cyclereact-thumbs").hide();
   jQuery("#solofolio-cyclereact-stage, .solofolio-cyclereact-sidebar").show();
-  jQuery(".thumbs").removeClass("show-full");
 });
 
 jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-before', function( event, opts ) {
