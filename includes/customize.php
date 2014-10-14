@@ -522,7 +522,8 @@ function solofolio_customize_register( $wp_customize )
 			'type'       => 'select',
 			'priority' 	 => 10,
 			'choices'    => array(
-				'fade' => 'Fade',
+				'fade' => 'Crossfade',
+				'fadeOutIn' => 'Fade Out/In',
 				'none' => 'None',
 			),
 		));

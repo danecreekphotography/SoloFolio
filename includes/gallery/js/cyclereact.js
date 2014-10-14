@@ -78,3 +78,25 @@ jQuery(document.documentElement).keyup(function (e) {
   if (e.keyCode == 38) { jQuery('.thumbs').trigger('click') }
   if (e.keyCode == 39) { jQuery('#solofolio-cyclereact-images').cycle('next') }
 });
+
+jQuery.fn.cycle.transitions.fadeOutIn = {
+  transition: function( slideOpts, currEl, nextEl, fwd, callback ) {
+    var opts = slideOpts,
+        curr = jQuery(currEl),
+        next = jQuery(nextEl),
+        speed = opts.speed / 2;
+
+    next.css({
+        'display': 'none',
+        'visibility': 'visible',
+        'opacity': 1,
+    });
+
+
+    curr.fadeOut(500,function(){
+      next.fadeIn(500, function(){
+        callback();
+      });
+    });
+  }
+}
