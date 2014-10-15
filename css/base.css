@@ -529,6 +529,15 @@ div.aligncenter {
   top: 0;
   z-index: 3;
 }
+.solofolio-cyclereact-title-wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.solofolio-cyclereact-title-content {
+  display: table-cell;
+  vertical-align: middle;
+}
 .solofolio-gallery-title { text-align: center }
 .solofolio-gallery-title p {
   text-align: left;

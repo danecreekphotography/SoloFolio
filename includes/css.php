@@ -185,7 +185,7 @@ function solofolio_css() {
         color: " . get_theme_mod('solofolio_navigation_header_color') . ";
         line-height: " . get_theme_mod('solofolio_navigation_header_font_size') . ";
       }
-      #solofolio-cyclereact-stage {
+      #solofolio-cyclereact-stage, .solofolio-cyclereact-title {
         right: " . ($header_width + 20) . "px;
       }
       #solofolio-cyclereact-thumbs {

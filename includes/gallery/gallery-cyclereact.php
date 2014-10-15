@@ -63,8 +63,12 @@ if ($galleryTitle || $galleryText) {
 		<div class='solofolio-cycelereact-slide solofolio-cyclereact-title solofolio-gallery-title'
 				 data-cycle-title=''
 				 data-cycle-hash='" .  $i . "'>
-			<h2>" . $galleryTitle . "</h2>
-			<div>" . wpautop($galleryText) . "</div>
+			<div class='solofolio-cyclereact-title-wrapper'>
+			<div class='solofolio-cyclereact-title-content'>
+				<h2>" . $galleryTitle . "</h2>
+				" . wpautop($galleryText) . "
+			</div>
+			</div>
 		</div>";
 }
 
