@@ -471,7 +471,7 @@ function solofolio_customize_register( $wp_customize )
       'priority' => 70,
 		) );
 
-    $wp_customize->add_setting( 'solofolio_header_width', array('default' => '200', 'transport'   => 'postMessage',) );
+    $wp_customize->add_setting( 'solofolio_header_width', array('default' => '200', 'transport'   => 'refresh',) );
 
     $wp_customize->add_control( 'solofolio_header_width', array(
       'label' => 'Sidebar Width',

@@ -79,13 +79,6 @@
 		} );
 	} );
 
-	wp.customize( 'solofolio_header_width', function( value ) {
-		value.bind( function( newval ) {
-			jQuery('#header').css('width', newval );
-			jQuery('#wrapper').css('left', newval + 20);
-		} );
-	} );
-
 	wp.customize( 'solofolio_logo_width', function( value ) {
 		value.bind( function( newval ) {
 			jQuery('#logo-img').css('width', newval );

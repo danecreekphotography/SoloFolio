@@ -145,6 +145,10 @@ function solofolio_css() {
     max-width: " . $entry_width . "px;
   }
 
+  .solofolio-cyclereact-sidebar {
+    max-width: " . ($header_width - ($layout_spacing * 2)) . "px;
+  }
+
   .solofolio-cyclereact-sidebar.buttons a {
     height: " . $button_size . "px;
     font-size: " . ($button_size * .55) . "px;
@@ -213,6 +217,9 @@ function solofolio_css() {
       ";
   } elseif ($is_heights) {
     $styles .= "
+      #header-meta {
+        max-width: " . ($header_width - ($layout_spacing * 2)) . "px;
+      }
       #solofolio-cyclereact-stage, #solofolio-cyclereact-thumbs, .solofolio-cyclereact-title {
         left: " . $header_width . "px !important;
       }
