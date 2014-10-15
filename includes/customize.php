@@ -528,7 +528,7 @@ function solofolio_customize_register( $wp_customize )
 			),
 		));
 
-		$wp_customize->add_setting( 'solofolio_gallery_controls_size', array('default' => '40', 'transport'   => 'refresh',) );
+		$wp_customize->add_setting( 'solofolio_gallery_controls_size', array('default' => '30', 'transport'   => 'refresh',) );
 
 			$wp_customize->add_control( 'solofolio_gallery_controls_size', array(
 				'label' => 'Gallery buttons size',
