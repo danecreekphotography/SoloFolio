@@ -193,7 +193,7 @@ function solofolio_css() {
         right: " . ($header_width + 20) . "px;
       }
       #solofolio-cyclereact-thumbs {
-        top: 45px;
+        top: 35px;
         padding: " . $layout_spacing . "px;
       }
       .solofolio-cyclereact-title {
@@ -237,6 +237,10 @@ function solofolio_css() {
 
         #solofolio-cyclereact-thumbs, .solofolio-cyclereact-title {
           padding: " . $layout_spacing . "px;
+        }
+
+        #solofolio-cyclereact-thumbs {
+          padding-top: " . ($layout_spacing - 10) . "px;
         }
 
         #header-inner {
