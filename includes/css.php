@@ -9,7 +9,7 @@ function solofolio_css() {
   $header_width             = get_theme_mod('solofolio_header_width', '200');
   $entry_width              = get_theme_mod('solofolio_entry_width', '900');
   $entry_text_width         = get_theme_mod('solofolio_entry_text_width', '600');
-  $button_size              = get_theme_mod('solofolio_gallery_controls_size', '40');
+  $button_size              = get_theme_mod('solofolio_gallery_controls_size', '30');
   $is_heights               = get_theme_mod('solofolio_layout_mode') == 'heights';
   $is_horizon               = get_theme_mod('solofolio_layout_mode') == 'horizon';
   $center_blog              = get_theme_mod('solofolio_blog_center_layout');

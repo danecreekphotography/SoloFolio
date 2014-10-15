@@ -232,7 +232,6 @@ p {
 #header-content ul li {
   font-size: 12px;
   font-weight: normal;
-  letter-spacing: 1px;
   list-style-type: none;
 }
 #header-content ul li a {
@@ -469,7 +468,6 @@ div.aligncenter {
 }
 .pagination-nav h4 {
   text-transform: uppercase;
-  letter-spacing: .1em;
   font-size: .9em;
 }
 .pagination-nav .right h4 { text-align: right }
