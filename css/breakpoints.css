@@ -271,10 +271,6 @@
     position: fixed;
   }
 
-  .galleria-info {
-    padding: 7px 10px 0;
-  }
-
   .vert-scroll .wp-caption-text {
     max-width: none;
   }
@@ -393,9 +389,4 @@
   .sl-sidescroll-container p {
     line-height: 1.2;
   }
-
-  .galleria-thumblink, .galleria-fullscreen {
-    display: none;
-  }
-
 }

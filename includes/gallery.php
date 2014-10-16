@@ -70,8 +70,6 @@ function solofolio_gallery_shortcode($attr) {
 
 	$selector = "solofolio";
 
-	if ($type == "") {$type = "cycle-react";}
-
 	if (!function_exists('detect_mobile')) {
 		function detect_mobile()
 		{
@@ -130,12 +128,6 @@ function solofolio_gallery_shortcode($attr) {
 	if ( is_home() || is_single()) { $type = "vert-scroll";}
 
 	switch ($type) {
-		case "":
-			include("gallery/gallery-cyclereact.php");
-			break;
-		case "slideshow":
-			include("gallery/gallery-slideshow.php");
-			break;
 		case "vert-scroll":
 			include("gallery/gallery-vertscroll.php");
 			break;
@@ -143,6 +135,9 @@ function solofolio_gallery_shortcode($attr) {
 			include("gallery/gallery-vertscroll.php");
 			break;
 		case "cycle-react":
+			include("gallery/gallery-cyclereact.php");
+			break;
+		default:
 			include("gallery/gallery-cyclereact.php");
 			break;
 	}
