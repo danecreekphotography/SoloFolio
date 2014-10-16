@@ -140,7 +140,8 @@ function solofolio_css() {
   }
 
   .solofolio-cyclereact-sidebar {
-    max-width: " . ($header_width - ($layout_spacing * 2)) . "px;
+    max-width: " . ($header_width - $layout_spacing) . "px;
+    padding-right: " . $layout_spacing . "px;
   }
 
   .solofolio-cyclereact-sidebar.buttons a {
@@ -227,6 +228,7 @@ function solofolio_css() {
 
         .solofolio-cyclereact-sidebar {
           bottom: " . $layout_spacing . "px;
+          background-color: ". $header_background_color . ";
         }
 
         #solofolio-cyclereact-thumbs, .solofolio-cyclereact-title {
@@ -240,6 +242,7 @@ function solofolio_css() {
         #header-inner {
           left: " . $layout_spacing . "px;
           top: " . $layout_spacing . "px;
+          bottom: " . $layout_spacing . "px;
         }
       }
 
