@@ -181,6 +181,9 @@ function solofolio_css() {
         top: " . ($layout_spacing + 45) . "px;
         right: " . $layout_spacing . "px;
       }
+      .admin-bar#page #wrapper {
+        top: " . ($layout_spacing + 77) . "px;
+      }
       #header-content h3 {
         color: " . get_theme_mod('solofolio_navigation_header_color') . ";
         line-height: " . get_theme_mod('solofolio_navigation_header_font_size') . ";
@@ -215,6 +218,9 @@ function solofolio_css() {
     $styles .= "
       #header-meta {
         max-width: " . ($header_width - ($layout_spacing * 2)) . "px;
+      }
+      .admin-bar#page #wrapper {
+        top: " . ($layout_spacing + 32) . "px;
       }
       #solofolio-cyclereact-stage, #solofolio-cyclereact-thumbs, .solofolio-cyclereact-title {
         left: " . $header_width . "px !important;
