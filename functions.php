@@ -90,7 +90,7 @@ function solofolio_load_fonts() {
     wp_enqueue_style('solofolio-font-' . $i, '//fonts.googleapis.com/css?family=' . $font);
     $i++;
   }
-  wp_enqueue_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3' );
+  wp_enqueue_style( 'font-awesome',  get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.2.0' );
 }
 add_action('wp_print_styles', 'solofolio_load_fonts');
 

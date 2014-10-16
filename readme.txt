@@ -34,3 +34,8 @@ Picturefill-Background
 By M6Web
 http://github.com/M6Web/picturefill-background
 License: MIT
+
+Font Awesome
+By Dave Gandy
+http://fortawesome.github.io/
+License: MIT
