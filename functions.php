@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "6.0.12");
+define("SOLOFOLIO_VERSION",     "6.0.13");
 
 include_once("includes/gallery.php");         // Include gallery shortcode replacement
 include_once("includes/social-widget.php");   // Include social media widget
