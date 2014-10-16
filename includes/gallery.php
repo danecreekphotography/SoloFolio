@@ -1,19 +1,11 @@
 <?php
 
-// Deactivate WordPress gallery, activate custom gallery
-remove_shortcode('gallery', 'gallery_shortcode');
-add_shortcode('gallery', 'solofolio_gallery_shortcode');
-
-function solofolio_gallery_shortcode($attr) {
+add_filter( 'post_gallery', 'solofolio_gallery_shortcode', 10, 2 );
+function solofolio_gallery_shortcode($output, $attr) {
 	global $post, $wp_locale;
 
 	static $instance = 0;
 	$instance++;
-
-	// Allow plugins/themes to override the default gallery template.
-	$output = apply_filters('post_gallery', '', $attr);
-	if ( $output != '' )
-		return $output;
 
 	// We're trusting author input, so let's at least make sure it looks like a valid orderby statement
 	if ( isset( $attr['orderby'] ) ) {
