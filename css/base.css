@@ -636,9 +636,6 @@ div.aligncenter {
   margin: 0 auto;
   text-align: left;
 }
-/* Slideshow gallery */
-.galleria-wrap { max-width: 900px }
-.galleria-stage { background-color: inherit }
 /* Blog post image wrapper */
 /* Centering */
 #outerWrap { min-height: 100% }

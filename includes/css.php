@@ -55,8 +55,6 @@ function solofolio_css() {
     border-color: ". $background_color . ";
   }
 
-  .galleria-container .galleria-stage,
-  .galleria-container .galleria-thumbnails-container,
   .solofolio-cyclereact-title,
   .footer {
     background-color: " . $background_color . ";
@@ -135,10 +133,6 @@ function solofolio_css() {
   input, textarea {
     border: 1px solid " . get_theme_mod('solofolio_navigation_link_color') . ";
     color: " . get_theme_mod('solofolio_body_font_color') . ";
-  }
-
-  .galleria-info {
-      color: " . get_theme_mod('solofolio_body_caption_color') . ";
   }
 
   .single-post .pagination-nav, #comments, .entry .tag-links {

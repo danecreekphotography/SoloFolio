@@ -25,11 +25,6 @@ By Tyler Craft
 http://github.com/tylercraft/jQuery-Retina
 License: MIT/GPL
 
-Galleria/Galleria History
-By AINO
-http://github.com/aino/galleria
-License: MIT
-
 Picturefill
 By Scott Jehl
 http://scottjehl.github.io/picturefill
