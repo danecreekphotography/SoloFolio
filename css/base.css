@@ -239,6 +239,7 @@ p {
   line-height: 1.6;
 }
 .sidebar-widget { margin-top: 15px }
+.sidebar-search { font-size: 13px; }
 #logo a img {
   border: none;
   font-weight: normal;
@@ -364,13 +365,13 @@ h2.post-title a:hover { text-decoration: none }
   display: block;
 }
 /* Forms */
-input, textarea {
+input, textarea, button {
   background-color: transparent;
   border-radius: 2px;
   margin: 0;
   padding: .5rem;
 }
-input:focus, textarea:focus {
+input:focus, textarea:focus, button:focus {
   outline: none;
 }
 /* Comments */

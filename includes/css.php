@@ -126,11 +126,12 @@ function solofolio_css() {
 
   .solofolio-cyclereact-sidebar.buttons a:hover,
   input:focus,
-  textarea:focus {
+  textarea:focus,
+  button:focus {
     border-color: " . get_theme_mod('solofolio_navigation_link_color_hover') . ";
   }
 
-  input, textarea {
+  input, textarea, button {
     border: 1px solid " . get_theme_mod('solofolio_navigation_link_color') . ";
     color: " . get_theme_mod('solofolio_body_font_color') . ";
   }
