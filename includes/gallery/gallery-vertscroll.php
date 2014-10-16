@@ -66,10 +66,10 @@ if (!function_exists('sl_vertscroll_js')) {
 
 
 		$output .= "<script> document.createElement('picture');</script>";
-		$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/picturefill.js\" async></script>";
-		$output .= "<script src=\"" . get_template_directory_uri() . "/includes/gallery/js/vertscroll.js\"></script>";
-
 	  echo $output;
 	}
 }
+
+wp_enqueue_script('picturefill', get_template_directory_uri().'/includes/gallery/js/picturefill.js', array(), null, true );
+wp_enqueue_script('solofolio-vertscroll', get_template_directory_uri().'/includes/gallery/js/vertscroll.js', array(), null, true );
 ?>
