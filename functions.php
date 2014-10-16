@@ -39,7 +39,7 @@ function solofolio_wp_title( $title, $sep ) {
 
   // Add a page number if necessary.
   if ( $paged >= 2 || $page >= 2 )
-    $title = "$title $sep " . sprintf( __( 'Page %s', 'twentytwelve' ), max( $paged, $page ) );
+    $title = "$title $sep " . sprintf( __( 'Page %s', 'solofolio' ), max( $paged, $page ) );
 
   return $title;
 }
@@ -71,8 +71,6 @@ function solofolio_mime_types( $mimes ){
 }
 add_filter( 'upload_mimes', 'solofolio_mime_types' );
 add_filter( 'mime_types', 'solofolio_mime_types' );
-
-current_theme_supports( 'html5' );
 
 if ( ! isset( $content_width ) ) $content_width = 900;
 
