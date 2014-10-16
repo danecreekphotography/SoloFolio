@@ -553,14 +553,14 @@ function solofolio_customize_register( $wp_customize )
 			) );
 
 	$wp_customize->add_section( 'solofolio_tracking_css' , array(
-		'title'       => __( 'Tracking & CSS', 'solofolio' ),
+		'title'       => __( 'Custom HTML & CSS', 'solofolio' ),
 		'priority'    => 150,
 	));
 
 		$wp_customize->add_setting( 'solofolio_tracking' );
 
 		$wp_customize->add_control( new Customizer_Textarea_Control( $wp_customize, 'solofolio_tracking', array(
-			'label' => 'Tracking code',
+			'label' => 'Footer HTML',
 			'settings' => 'solofolio_tracking',
 			'section' => 'solofolio_tracking_css',
 			'priority' => '',
