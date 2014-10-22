@@ -37,7 +37,9 @@ function solofolio_customize_register( $wp_customize )
 		'priority'    => 5,
 	) );
 
-		$wp_customize->add_setting( 'solofolio_logo' );
+		$wp_customize->add_setting( 'solofolio_logo', array(
+      'sanitize_callback' => 'solofolio_sanitize_url',
+    ) );
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'solofolio_logo', array(
 			'label'    => __( 'Logo', 'solofolio' ),
@@ -46,7 +48,11 @@ function solofolio_customize_register( $wp_customize )
 			'priority' => '10',
 		) ) );
 
-		$wp_customize->add_setting( 'solofolio_logo_width', array('default' => '200', 'transport'   => 'postMessage',) );
+		$wp_customize->add_setting( 'solofolio_logo_width', array(
+			'default' => '200',
+			'transport'   => 'postMessage',
+			'sanitize_callback' => 'solofolio_sanitize_number',
+		) );
 
 		$wp_customize->add_control( 'solofolio_logo_width', array(
 			'label' => 'Width',
@@ -55,7 +61,9 @@ function solofolio_customize_register( $wp_customize )
 			'priority' => '10',
 		) );
 
-		$wp_customize->add_setting( 'solofolio_favicon' );
+		$wp_customize->add_setting( 'solofolio_favicon', array(
+      'sanitize_callback' => 'solofolio_sanitize_url',
+    ) );
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'solofolio_favicon', array(
 			'label'    => __( 'Favicon', 'solofolio' ),
@@ -259,6 +267,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting( 'solofolio_font_logo', array(
       'default'   => 'Source+Sans+Pro',
       'transport'   => 'postMessage',
+      'sanitize_callback' => 'solofolio_sanitize_email',
     ) );
 
 	    $wp_customize->add_control( 'solofolio_font_logo', array(
@@ -272,6 +281,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting( 'solofolio_font_body', array(
       'default'   => 'Source+Sans+Pro',
       'transport'   => 'postMessage',
+      'sanitize_callback' => 'solofolio_sanitize_email',
     ) );
 
 	    $wp_customize->add_control( 'solofolio_font_body', array(
@@ -288,8 +298,9 @@ function solofolio_customize_register( $wp_customize )
 	) );
 
 		$wp_customize->add_setting( 'solofolio_body_font_size', array(
-			'default' => '16px',
+			'default' => '16',
 			'transport'   => 'postMessage',
+			'sanitize_callback' => 'solofolio_sanitize_number',
         ));
 
 			$wp_customize->add_control( 'solofolio_body_font_size', array(
@@ -300,8 +311,9 @@ function solofolio_customize_register( $wp_customize )
 			) );
 
 		$wp_customize->add_setting( 'solofolio_navigation_font_size', array(
-			'default' => '14px',
+			'default' => '14',
 			'transport'   => 'postMessage',
+			'sanitize_callback' => 'solofolio_sanitize_number',
         ));
 
 			$wp_customize->add_control( 'solofolio_navigation_font_size', array(
@@ -312,8 +324,9 @@ function solofolio_customize_register( $wp_customize )
 			) );
 
 		$wp_customize->add_setting( 'solofolio_navigation_header_font_size', array(
-			'default' => '14px',
+			'default' => '14',
 			'transport'   => 'postMessage',
+			'sanitize_callback' => 'solofolio_sanitize_number',
         ));
 
 			$wp_customize->add_control( 'solofolio_navigation_header_font_size', array(
@@ -324,9 +337,10 @@ function solofolio_customize_register( $wp_customize )
 			) );
 
 		$wp_customize->add_setting( 'solofolio_blog_entry_title_size', array(
-			'default' => '24px',
+			'default' => '24',
 			'transport'   => 'postMessage',
-        ));
+			'sanitize_callback' => 'solofolio_sanitize_number',
+      ));
 
 			$wp_customize->add_control( 'solofolio_blog_entry_title_size', array(
 				'label' => 'Blog Titles',
@@ -343,6 +357,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting( 'solofolio_phone', array(
 			'transport'   => 'postMessage',
 			'default'           => '555-555-5555',
+			'sanitize_callback' => 'solofolio_sanitize_html',
       ));
 
 			$wp_customize->add_control( 'solofolio_phone', array(
@@ -357,7 +372,8 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting( 'solofolio_email', array(
 			'transport'   => 'postMessage',
 			'default'           => 'john@johndoe.com',
-        ));
+			'sanitize_callback' => 'solofolio_sanitize_email',
+      ));
 
 			$wp_customize->add_control( 'solofolio_email', array(
 				'transport'   => 'postMessage',
@@ -368,7 +384,10 @@ function solofolio_customize_register( $wp_customize )
 				'priority' => '30',
 			) );
 
-		$wp_customize->add_setting( 'solofolio_copyright_text', array('transport'   => 'refresh',));
+		$wp_customize->add_setting( 'solofolio_copyright_text', array(
+			'transport'   => 'refresh',
+			'sanitize_callback' => 'solofolio_sanitize_html',
+		));
 
 			$wp_customize->add_control( 'solofolio_copyright_text', array(
 				'label' => 'Copyright Text',
@@ -381,7 +400,8 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting( 'solofolio_location', array(
 			'transport'   => 'postMessage',
 			'default'           => 'Athens, Ohio',
-        ));
+			'sanitize_callback' => 'solofolio_sanitize_html',
+    ) );
 
 			$wp_customize->add_control( 'solofolio_location', array(
 				'transport'   => 'postMessage',
@@ -397,7 +417,9 @@ function solofolio_customize_register( $wp_customize )
 		'priority'    => 90,
 	) );
 
-		$wp_customize->add_setting( 'solofolio_blog_showauthor' );
+		$wp_customize->add_setting( 'solofolio_blog_showauthor', array(
+			'sanitize_callback' => 'solofolio_sanitize_boolean',
+    ) );
 
 		$wp_customize->add_control( 'solofolio_blog_showauthor', array(
 			'settings' => 'solofolio_blog_showauthor',
@@ -407,7 +429,10 @@ function solofolio_customize_register( $wp_customize )
       'priority' => 10,
 		));
 
-		$wp_customize->add_setting( 'solofolio_blog_showdate', array('default' => 1));
+		$wp_customize->add_setting( 'solofolio_blog_showdate', array(
+			'default' => 1,
+			'sanitize_callback' => 'solofolio_sanitize_boolean',
+		) );
 
 		$wp_customize->add_control( 'solofolio_blog_showdate', array(
 			'settings' => 'solofolio_blog_showdate',
@@ -417,7 +442,9 @@ function solofolio_customize_register( $wp_customize )
       'priority' => 20,
 		));
 
-		$wp_customize->add_setting( 'solofolio_blog_showcat' );
+		$wp_customize->add_setting( 'solofolio_blog_showcat', array(
+			'sanitize_callback' => 'solofolio_sanitize_boolean',
+    ) );
 
 		$wp_customize->add_control( 'solofolio_blog_showcat', array(
 			'settings' => 'solofolio_blog_showcat',
@@ -427,7 +454,9 @@ function solofolio_customize_register( $wp_customize )
       'priority' => 30,
 		));
 
-		$wp_customize->add_setting( 'solofolio_blog_showtags' );
+		$wp_customize->add_setting( 'solofolio_blog_showtags', array(
+			'sanitize_callback' => 'solofolio_sanitize_boolean',
+    ) );
 
 		$wp_customize->add_control( 'solofolio_blog_showtags', array(
 			'settings' => 'solofolio_blog_showtags',
@@ -438,7 +467,8 @@ function solofolio_customize_register( $wp_customize )
 		));
 
 		$wp_customize->add_setting( 'solofolio_blog_center_layout', array(
-    	'default'    => '1'
+    	'default'    => '1',
+    	'sanitize_callback' => 'solofolio_sanitize_boolean',
 		));
 
 		$wp_customize->add_control( 'solofolio_blog_center_layout', array(
@@ -451,6 +481,7 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_setting( 'solofolio_show_attribution', array(
     	'default'    => '1',
+    	'sanitize_callback' => 'solofolio_sanitize_boolean',
     	'transport'   => 'refresh',
 		));
 
@@ -462,7 +493,11 @@ function solofolio_customize_register( $wp_customize )
       'priority' => 60,
 		));
 
-		$wp_customize->add_setting( 'solofolio_layout_spacing', array('default' => '40', 'transport'   => 'refresh',) );
+		$wp_customize->add_setting( 'solofolio_layout_spacing', array(
+			'default' => '40',
+			'transport'   => 'refresh',
+			'sanitize_callback' => 'solofolio_sanitize_number',
+		) );
 
 		$wp_customize->add_control( 'solofolio_layout_spacing', array(
 			'label' => 'Layout Spacing',
@@ -471,7 +506,11 @@ function solofolio_customize_register( $wp_customize )
       'priority' => 70,
 		) );
 
-    $wp_customize->add_setting( 'solofolio_header_width', array('default' => '200', 'transport'   => 'refresh',) );
+    $wp_customize->add_setting( 'solofolio_header_width', array(
+    	'default' => '200',
+    	'transport'   => 'refresh',
+    	'sanitize_callback' => 'solofolio_sanitize_number',
+    ) );
 
     $wp_customize->add_control( 'solofolio_header_width', array(
       'label' => 'Sidebar Width',
@@ -485,7 +524,11 @@ function solofolio_customize_register( $wp_customize )
 		'priority'    => 200,
 	) );
 
-		$wp_customize->add_setting('solofolio_layout_mode', array('default' => 'heights', 'transport'   => 'refresh'));
+		$wp_customize->add_setting('solofolio_layout_mode', array(
+			'default' => 'heights',
+			'transport'   => 'refresh',
+			'sanitize_callback' => 'solofolio_sanitize_email',
+		) );
 
 		$wp_customize->add_control('solofolio_layout_mode', array(
 			'label'      => __('Layout', 'solofolio'),
@@ -499,7 +542,11 @@ function solofolio_customize_register( $wp_customize )
 			),
 		));
 
-		$wp_customize->add_setting('solofolio_gallery_controls', array('default' => 'text', 'transport'   => 'refresh'));
+		$wp_customize->add_setting('solofolio_gallery_controls', array(
+			'default' => 'text',
+			'transport'   => 'refresh',
+			'sanitize_callback' => 'solofolio_sanitize_email',
+		) );
 
 		$wp_customize->add_control('solofolio_gallery_controls', array(
 			'label'      => __('Gallery Controls', 'solofolio'),
@@ -513,7 +560,11 @@ function solofolio_customize_register( $wp_customize )
 			),
 		));
 
-		$wp_customize->add_setting('solofolio_gallery_transition', array('default' => 'fade', 'transport'   => 'refresh'));
+		$wp_customize->add_setting('solofolio_gallery_transition', array(
+			'default' => 'fade',
+			'transport'   => 'refresh',
+			'sanitize_callback' => 'solofolio_sanitize_email',
+		) );
 
 		$wp_customize->add_control('solofolio_gallery_transition', array(
 			'label'      => __('Gallery Transition', 'solofolio'),
@@ -528,7 +579,11 @@ function solofolio_customize_register( $wp_customize )
 			),
 		));
 
-		$wp_customize->add_setting( 'solofolio_gallery_controls_size', array('default' => '30', 'transport'   => 'refresh',) );
+		$wp_customize->add_setting( 'solofolio_gallery_controls_size', array(
+			'default' => '30',
+			'transport'   => 'refresh',
+			'sanitize_callback' => 'solofolio_sanitize_number',
+		) );
 
 			$wp_customize->add_control( 'solofolio_gallery_controls_size', array(
 				'label' => 'Gallery buttons size',
@@ -536,7 +591,11 @@ function solofolio_customize_register( $wp_customize )
 				'section' => 'solofolio_advanced_section',
 			) );
 
-		$wp_customize->add_setting( 'solofolio_entry_width', array('default' => '900', 'transport'   => 'postMessage',) );
+		$wp_customize->add_setting( 'solofolio_entry_width', array(
+			'default' => '900',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'solofolio_sanitize_number',
+		) );
 
 			$wp_customize->add_control( 'solofolio_entry_width', array(
 				'label' => 'Blog Entry Width',
@@ -544,7 +603,11 @@ function solofolio_customize_register( $wp_customize )
 				'section' => 'solofolio_advanced_section',
 			) );
 
-		$wp_customize->add_setting( 'solofolio_entry_text_width', array('default' => '600', 'transport'   => 'refresh',) );
+		$wp_customize->add_setting( 'solofolio_entry_text_width', array(
+			'default' => '600',
+			'transport' => 'refresh',
+			'sanitize_callback' => 'solofolio_sanitize_number',
+		) );
 
 			$wp_customize->add_control( 'solofolio_entry_text_width', array(
 				'label' => 'Blog Entry Text Width',
@@ -557,7 +620,9 @@ function solofolio_customize_register( $wp_customize )
 		'priority'    => 150,
 	));
 
-		$wp_customize->add_setting( 'solofolio_tracking' );
+		$wp_customize->add_setting( 'solofolio_tracking', array(
+			'sanitize_callback' => 'solofolio_sanitize_html',
+		) );
 
 		$wp_customize->add_control( new Customizer_Textarea_Control( $wp_customize, 'solofolio_tracking', array(
 			'label' => 'Footer HTML',
@@ -566,7 +631,9 @@ function solofolio_customize_register( $wp_customize )
 			'priority' => '',
 		) ) );
 
-		$wp_customize->add_setting( 'solofolio_css' );
+		$wp_customize->add_setting( 'solofolio_css', array(
+			'sanitize_callback' => 'solofolio_sanitize_html',
+		) );
 
 		$wp_customize->add_control( new Customizer_Textarea_Control( $wp_customize, 'solofolio_css', array(
 			'label' => 'Custom CSS',
@@ -587,4 +654,25 @@ function solofolio_customizer_live_preview()
 	);
 }
 add_action( 'customize_preview_init', 'solofolio_customizer_live_preview' );
+
+function solofolio_sanitize_url( $value ) {
+  return filter_var($value, FILTER_SANITIZE_URL);
+}
+
+function solofolio_sanitize_number ( $value ) {
+	return intval($value);
+}
+
+function solofolio_sanitize_email( $value ) {
+  return filter_var($value, FILTER_SANITIZE_EMAIL);
+}
+
+function solofolio_sanitize_boolean( $value ) {
+  return filter_var($value, FILTER_VALIDATE_BOOLEAN);
+}
+
+function solofolio_sanitize_html( $value ) {
+  return ($value);
+}
+
 ?>
