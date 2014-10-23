@@ -222,6 +222,9 @@ function solofolio_css() {
       .admin-bar#page #wrapper {
         top: " . ($layout_spacing + 32) . "px;
       }
+      .admin-bar#page #solofolio-cyclereact-thumbs {
+        padding-top: " . ($layout_spacing + 22) . "px;
+      }
       #solofolio-cyclereact-stage, #solofolio-cyclereact-thumbs, .solofolio-cyclereact-title {
         left: " . $header_width . "px !important;
       }
