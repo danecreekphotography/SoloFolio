@@ -512,7 +512,7 @@ function solofolio_customize_register( $wp_customize )
 		) );
 
     $wp_customize->add_setting( 'solofolio_header_width', array(
-    	'default' => '200',
+    	'default' => '280',
     	'transport'   => 'refresh',
     	'sanitize_callback' => 'solofolio_sanitize_number',
     ) );

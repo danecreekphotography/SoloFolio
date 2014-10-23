@@ -6,7 +6,7 @@ function solofolio_css() {
   global $wp_filesystem;
 
   $layout_spacing           = get_theme_mod('solofolio_layout_spacing', '20');
-  $header_width             = get_theme_mod('solofolio_header_width', '200');
+  $header_width             = get_theme_mod('solofolio_header_width', '280');
   $entry_width              = get_theme_mod('solofolio_entry_width', '900');
   $entry_text_width         = get_theme_mod('solofolio_entry_text_width', '600');
   $button_size              = get_theme_mod('solofolio_gallery_controls_size', '30');
