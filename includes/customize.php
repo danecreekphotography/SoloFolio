@@ -50,7 +50,7 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_setting( 'solofolio_logo_width', array(
 			'default' => '200',
-			'transport'   => 'postMessage',
+			'transport'   => 'refresh',
 			'sanitize_callback' => 'solofolio_sanitize_number',
 		) );
 
@@ -120,7 +120,7 @@ function solofolio_customize_register( $wp_customize )
 			'default'           => '#7a7a7a',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'   => 'refresh',
-        ));
+    ));
 
 			$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_logo_color_hover', array(
 				'label'    => __('Logo (Hover)', 'solofolio'),
@@ -158,7 +158,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting('solofolio_body_link_color_hover', array(
 			'default'           => '#000000',
 			'sanitize_callback' => 'sanitize_hex_color',
-			'transport'   => 'postMessage',
+			'transport'   => 'refresh',
         ));
 
 			$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_body_link_color_hover', array(
@@ -197,8 +197,8 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting('solofolio_navigation_link_color_hover', array(
 			'default'           => '#000000',
 			'sanitize_callback' => 'sanitize_hex_color',
-			'transport'   => 'postMessage',
-        ));
+			'transport'   => 'refresh',
+    ));
 
 			$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_navigation_link_color_hover', array(
 				'label'    => __('Menu Link (Hover)', 'solofolio'),
@@ -236,8 +236,8 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting('solofolio_blog_entry_title_color_hover', array(
 			'default'           => '#AAAAAA',
 			'sanitize_callback' => 'sanitize_hex_color',
-			'transport'   => 'postMessage',
-        ));
+			'transport'   => 'refresh',
+    ));
 
 			$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_blog_entry_title_color_hover', array(
 				'label'    => __('Blog Post Title (Hover)', 'solofolio'),
@@ -266,7 +266,7 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_setting( 'solofolio_font_logo', array(
       'default'   => 'Source+Sans+Pro',
-      'transport'   => 'postMessage',
+      'transport'   => 'refresh',
       'sanitize_callback' => 'solofolio_sanitize_email',
     ) );
 
@@ -280,7 +280,7 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_setting( 'solofolio_font_body', array(
       'default'   => 'Source+Sans+Pro',
-      'transport'   => 'postMessage',
+      'transport'   => 'refresh',
       'sanitize_callback' => 'solofolio_sanitize_email',
     ) );
 
@@ -419,6 +419,7 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_setting( 'solofolio_blog_showauthor', array(
 			'sanitize_callback' => 'solofolio_sanitize_boolean',
+			'transport'   => 'refresh',
     ) );
 
 		$wp_customize->add_control( 'solofolio_blog_showauthor', array(
@@ -432,6 +433,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting( 'solofolio_blog_showdate', array(
 			'default' => 1,
 			'sanitize_callback' => 'solofolio_sanitize_boolean',
+			'transport'   => 'refresh',
 		) );
 
 		$wp_customize->add_control( 'solofolio_blog_showdate', array(
@@ -444,6 +446,7 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_setting( 'solofolio_blog_showcat', array(
 			'sanitize_callback' => 'solofolio_sanitize_boolean',
+			'transport'   => 'refresh',
     ) );
 
 		$wp_customize->add_control( 'solofolio_blog_showcat', array(
@@ -456,6 +459,7 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_setting( 'solofolio_blog_showtags', array(
 			'sanitize_callback' => 'solofolio_sanitize_boolean',
+			'transport'   => 'refresh',
     ) );
 
 		$wp_customize->add_control( 'solofolio_blog_showtags', array(
@@ -469,6 +473,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting( 'solofolio_blog_center_layout', array(
     	'default'    => '1',
     	'sanitize_callback' => 'solofolio_sanitize_boolean',
+    	'transport'   => 'refresh',
 		));
 
 		$wp_customize->add_control( 'solofolio_blog_center_layout', array(
@@ -605,7 +610,7 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_setting( 'solofolio_entry_text_width', array(
 			'default' => '600',
-			'transport' => 'refresh',
+			'transport'   => 'refresh',
 			'sanitize_callback' => 'solofolio_sanitize_number',
 		) );
 
@@ -633,6 +638,7 @@ function solofolio_customize_register( $wp_customize )
 
 		$wp_customize->add_setting( 'solofolio_css', array(
 			'sanitize_callback' => 'solofolio_sanitize_html',
+			'transport'   => 'refresh',
 		) );
 
 		$wp_customize->add_control( new Customizer_Textarea_Control( $wp_customize, 'solofolio_css', array(
