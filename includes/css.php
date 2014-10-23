@@ -6,7 +6,7 @@ function solofolio_css() {
   global $wp_filesystem;
 
   $layout_spacing           = get_theme_mod('solofolio_layout_spacing', '20');
-  $header_width             = get_theme_mod('solofolio_header_width', '200');
+  $header_width             = get_theme_mod('solofolio_header_width', '280');
   $entry_width              = get_theme_mod('solofolio_entry_width', '900');
   $entry_text_width         = get_theme_mod('solofolio_entry_text_width', '600');
   $button_size              = get_theme_mod('solofolio_gallery_controls_size', '30');
@@ -34,7 +34,7 @@ function solofolio_css() {
   body {
     background-color: ". $background_color . ";
     color: " . get_theme_mod('solofolio_body_font_color') . ";
-    font-size: " . get_theme_mod('solofolio_body_font_size') .";
+    font-size: " . get_theme_mod('solofolio_body_font_size') ."px;
     font-family: '" . str_replace("+"," ", get_theme_mod('solofolio_font_body')) . "';
   }
 
@@ -73,13 +73,13 @@ function solofolio_css() {
   }
 
   #header-content li a {
-    font-size: " . get_theme_mod('solofolio_navigation_font_size') . ";
-    line-height: " . get_theme_mod('solofolio_navigation_font_size') . ";
+    font-size: " . get_theme_mod('solofolio_navigation_font_size') . "px;
+    line-height: " . get_theme_mod('solofolio_navigation_font_size') . "px;
   }
 
   #header-content h3 {
     color: " . get_theme_mod('solofolio_navigation_header_color') . ";
-    font-size: " . get_theme_mod('solofolio_navigation_header_font_size') . ";
+    font-size: " . get_theme_mod('solofolio_navigation_header_font_size') . "px;
   }
 
   #header-content ul a:link, #header-content ul a:visited {
@@ -91,7 +91,7 @@ function solofolio_css() {
   }
 
   h2.post-title {
-    font-size: " . get_theme_mod('solofolio_blog_entry_title_size') . ";
+    font-size: " . get_theme_mod('solofolio_blog_entry_title_size') . "px;
   }
 
   h2.post-title, h2.post-title a {
@@ -186,7 +186,7 @@ function solofolio_css() {
       }
       #header-content h3 {
         color: " . get_theme_mod('solofolio_navigation_header_color') . ";
-        line-height: " . get_theme_mod('solofolio_navigation_header_font_size') . ";
+        line-height: " . get_theme_mod('solofolio_navigation_header_font_size') . "px;
       }
       #solofolio-cyclereact-stage, .solofolio-cyclereact-title {
         right: " . ($header_width + 20) . "px;
