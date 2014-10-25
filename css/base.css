@@ -101,15 +101,6 @@ nav,
 section { display: block }
 ol,
 ul { list-style: none }
-blockquote,
-q { quotes: none }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -131,6 +122,38 @@ body {
   padding: 0;
   text-align: left;
 }
+dd, dt, li, p {
+  line-height: 1.5em;
+}
+p, table {
+  margin: 1rem 0;
+}
+dd {
+  margin-bottom: 1em;
+}
+th { font-weight: bold; }
+th { background-color: rgba(125,125,125,.2); }
+td, th { padding: .5rem 1rem .5rem 1rem; border: 1px solid rgba(125,125,125,.2); }
+dt {
+  font-weight: bold;
+  margin-top: .5rem;
+}
+li {
+  list-style-type: square;
+  list-style-position: inside;
+}
+ul ul, ol ol { margin-left: 1rem;}
+ol li { list-style-type: decimal; }
+code, pre, tt, var { background-color: rgba(125,125,125,.2); }
+pre { padding: .5rem; word-wrap: break-word;}
+em, cite { font-style: italic; }
+sup, sub { font-size: .7em; }
+sup { vertical-align: super; }
+sub { vertical-align: sub; }
+acronym { text-transform: uppercase; }
+acronym, abbr { border-bottom: .1em dotted; }
+blockquote p { padding: 1em; border-left: 8px solid rgba(125,125,125,.2); }
+blockquote cite { display: block; margin-top: 1em; }
 strong { font-weight: bold }
 .sticky { padding-bottom: 2em }
 .gallery-caption,
@@ -176,7 +199,7 @@ h4,
 h5,
 h6 {
   font-weight: normal;
-  margin: 10px 0 0 0;
+  margin-bottom: 1rem;
   padding: 0;
 }
 h1 { font-size: 42px }
@@ -187,20 +210,19 @@ h2 {
 }
 h3 {
   font-size: 18px;
-  margin: 5px 0 0;
   padding: 0;
 }
 #header-content h3 {
   font-size: 16px;
+  line-height: 1.5em;
   font-weight: bold;
   text-transform: uppercase;
+  margin: 0;
 }
 h4 { font-size: 16px }
 h5 { font-size: 14px }
 h6 { font-size: 12px }
 p {
-  line-height: 1.5;
-  margin: 0 0 1em;
   padding: 0;
   max-width: 600px;
 }
@@ -456,7 +478,8 @@ div.aligncenter {
 .wp-caption-text {
   font-size: 13px;
   line-height: 1.4;
-  padding-top: 2px;
+  padding-top: .2em;
+  margin-top: 0;
   max-width: 100%;
   text-align: left;
 }
