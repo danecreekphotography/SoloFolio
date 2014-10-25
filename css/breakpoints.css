@@ -30,8 +30,12 @@
     width: auto;
   }
 
+    #header-meta {
+      max-width: inherit;
+    }
+
     #header-inner {
-      padding: .75em 0;
+      padding: 1rem 0;
     }
 
     #header #logo,
@@ -53,9 +57,7 @@
       line-height: 1;
     }
 
-      #header h1 {
-        line-height: 1.2;
-      }
+      #header h1 { line-height: 1 }
 
     #header #logo-img {
       display: block;
@@ -133,8 +135,6 @@
 
     .entry {
       border-bottom: medium none;
-      padding: 10px;
-      margin-bottom: 0;
       text-align: center;
     }
 
@@ -180,7 +180,7 @@
       text-align: left;
     }
 
-    #comments .commentlist li {
+    .comments .commentlist li {
       padding: 0;
     }
 
@@ -193,7 +193,7 @@
       border: none;
     }
 
-  #comments {
+  .comments {
     display: block;
     margin: 0 auto;
   }
@@ -203,8 +203,7 @@
     display: block;
     height: auto;
     bottom: auto;
-    padding: 1rem;
-    line-height: 1.2;
+    padding: .5rem 0;
     left: auto;
     right: auto;
   }
@@ -214,6 +213,7 @@
   }
   .footer .copyright-hidden {
     display: block;
+    text-align: center;
   }
 
   #wrapper #content-index {
@@ -223,6 +223,8 @@
   .pagination-nav {
     margin: 0 auto;
   }
+
+  .pagination-nav h4 { padding: 0; }
 
   #content h1 {
     font-size: 22px;
@@ -316,7 +318,7 @@
   }
 
   #header #logo {
-    padding-left: 20px;
+    padding-left: 1rem;
     padding-right: 100px;
   }
 
@@ -341,9 +343,8 @@
     width: 49%;
   }
 
-  p, h1, h2, h6,
-  .comment-meta,
-  #comments #reply-title,
+  p, h1, h2, h3, h4, h5, h6,
+  .comments #reply-title,
   .commentlist .date,
   .tag-links,
   .post-meta,

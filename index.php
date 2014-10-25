@@ -36,14 +36,16 @@
 		<?php if (is_single()) : ?>
 			<div class="pagination-nav">
 				<div class="left">
-					<?php previous_post_link('%link', '<h4>Previous</h4> <span>%title</span>'); ?>
+					<h4>Previous</h4>
+					<?php previous_post_link('%link', '<span>%title</span>'); ?>
 				</div>
 				<div class="right">
-					<?php next_post_link('%link', '<h4>Next</h4> <span>%title</span>'); ?>
+					<h4>Next</h4>
+					<?php next_post_link('%link', '<span>%title</span>'); ?>
 				</div>
 				<div class="clear"></div>
 			</div>
-			<div id="comments">
+			<div class="comments">
 				<?php comments_template(); ?>
 			</div>
 		<?php else : ?>
