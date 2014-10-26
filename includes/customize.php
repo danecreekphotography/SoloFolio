@@ -310,6 +310,19 @@ function solofolio_customize_register( $wp_customize )
 				'type' => 'text',
 			) );
 
+		$wp_customize->add_setting( 'solofolio_header_meta_font_size', array(
+			'default' => '14',
+			'transport'   => 'postMessage',
+			'sanitize_callback' => 'solofolio_sanitize_number',
+        ));
+
+			$wp_customize->add_control( 'solofolio_header_meta_font_size', array(
+				'label' => 'Contact info',
+				'settings' => 'solofolio_header_meta_font_size',
+				'section' => 'solofolio_font_sizes_section',
+				'type' => 'text',
+			) );
+
 		$wp_customize->add_setting( 'solofolio_navigation_font_size', array(
 			'default' => '14',
 			'transport'   => 'postMessage',

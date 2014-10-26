@@ -72,6 +72,10 @@ function solofolio_css() {
     background-color: ". $header_background_color . ";
   }
 
+  #header-meta {
+    font-size: " . get_theme_mod('solofolio_header_meta_font_size') . "px;
+  }
+
   #header-content li a {
     font-size: " . get_theme_mod('solofolio_navigation_font_size') . "px;
     line-height: " . get_theme_mod('solofolio_navigation_font_size') . "px;

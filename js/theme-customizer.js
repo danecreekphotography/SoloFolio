@@ -67,6 +67,12 @@
 		} );
 	} );
 
+	wp.customize( 'solofolio_header_meta_font_size', function( value ) {
+		value.bind( function( newval ) {
+			jQuery('#header-meta div').css('font-size', newval );
+		} );
+	} );
+
 	wp.customize( 'solofolio_navigation_link_color', function( value ) {
 		value.bind( function( newval ) {
 			jQuery('#header-content ul a').css('color', newval );
