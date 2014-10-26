@@ -298,7 +298,7 @@ function solofolio_customize_register( $wp_customize )
 	) );
 
 		$wp_customize->add_setting( 'solofolio_body_font_size', array(
-			'default' => '16',
+			'default' => '14',
 			'transport'   => 'postMessage',
 			'sanitize_callback' => 'solofolio_sanitize_number',
         ));
