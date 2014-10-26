@@ -80,7 +80,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting('solofolio_background_color', array(
 			'default'           => '#FFFFFF',
 			'sanitize_callback' => 'sanitize_hex_color',
-			'transport'   => 'postMessage',
+			'transport'   => 'refresh',
         ));
 
 			$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_background_color', array(
@@ -93,7 +93,7 @@ function solofolio_customize_register( $wp_customize )
 		$wp_customize->add_setting('solofolio_header_background_color', array(
 			'default'           => '#FFFFFF',
 			'sanitize_callback' => 'sanitize_hex_color',
-			'transport'   => 'postMessage',
+			'transport'   => 'refresh',
         ));
 
 			$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_header_background_color', array(

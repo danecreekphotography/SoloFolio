@@ -37,18 +37,6 @@
 		} );
 	} );
 
-	wp.customize( 'solofolio_background_color', function( value ) {
-		value.bind( function( newval ) {
-			jQuery('body').css('background-color', newval );
-		} );
-	} );
-
-	wp.customize( 'solofolio_header_background_color', function( value ) {
-		value.bind( function( newval ) {
-			jQuery('#header').css('background-color', newval );
-		} );
-	} );
-
 	wp.customize( 'solofolio_body_font_size', function( value ) {
 		value.bind( function( newval ) {
 			jQuery('body').css('font-size', newval );
