@@ -410,7 +410,7 @@ input:focus, textarea:focus, button:focus {
 .comments h4, .comments h4 a {
   font-weight: bold;
   line-height: 1;
-  margin-bottom: 0;
+  margin-bottom: .25rem;
 }
 .comments h6 {
   font-weight: normal;
