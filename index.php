@@ -35,14 +35,18 @@
 
 		<?php if (is_single()) : ?>
 			<div class="pagination-nav">
+				<?php if (!empty(get_previous_post())) { ?>
 				<div class="left">
 					<h4>Previous</h4>
 					<?php previous_post_link('%link', '<span>%title</span>'); ?>
 				</div>
+				<?php } ?>
+				<?php if (!empty(get_next_post())) { ?>
 				<div class="right">
 					<h4>Next</h4>
 					<?php next_post_link('%link', '<span>%title</span>'); ?>
 				</div>
+				<?php } ?>
 				<div class="clear"></div>
 			</div>
 			<div class="comments">
