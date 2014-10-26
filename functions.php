@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "6.0.14");
+define("SOLOFOLIO_VERSION",     "6.0.15");
 
 include_once("includes/gallery.php");         // Include gallery shortcode replacement
 include_once("includes/social-widget.php");   // Include social media widget
@@ -128,10 +128,8 @@ function solofolio_comments($comment, $args, $depth) {
       <?php endif; ?>
 
       <div class="comment-meta commentmetadata col-1-3">
-        <div class="comment-author vcard">
-          <?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
-        </div>
-        <?php printf(__('%1$s', 'solofolio'), get_comment_date('M. j, Y')) ?>
+        <h4 class="comment-author vcard"><?php printf(__('%s'), get_comment_author_link()) ?></h4>
+        <h6><?php printf(__('%1$s', 'solofolio'), get_comment_date('M. j, Y')) ?></h6>
         <?php edit_comment_link(__('(Edit)', 'solofolio'),'  ','') ?>
       </div>
 
@@ -180,7 +178,12 @@ class fixImageMargins{
         ), $attr));
     if ( 1 > (int) $width || empty($caption) ) {return $content;}
     if ( $id ) $id = 'id="' . $id . '" ';
-  return '<div ' . $id . 'class="wp-caption ' . $align . '" style="max-width: ' . $width . 'px">' . $content . '<p class="wp-caption-text">' . $caption . '</p></div>';
+    $output = '<div ' . $id . 'class="wp-caption ' . $align . '" style="max-width: ' . $width . 'px">' . $content;
+    if (!empty($caption)) {
+      $output .= '<p class="wp-caption-text">' . $caption . '</p>';
+    }
+    $output .= '</div>';
+  return $output;
   }
 }
 $fixImageMargins = new fixImageMargins();

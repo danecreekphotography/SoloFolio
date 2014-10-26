@@ -39,4 +39,4 @@ if ( post_password_required() ) {
 													 'comment_notes_after' => '',
 													 'comment_notes_before' => '')); ?>
 	<div class="clear"></div>
-</div><!-- #comments -->
+</div>

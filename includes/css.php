@@ -136,7 +136,7 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_body_font_color') . ";
   }
 
-  .single-post .pagination-nav, #comments, .entry .tag-links {
+  .single-post .pagination-nav, .comments {
     max-width: " . $entry_width . "px;
   }
 
@@ -153,7 +153,9 @@ function solofolio_css() {
   }
 
   .entry .post-meta,
-  .entry p {
+  .entry p,
+  .entry .tag-links,
+  .pagination-nav {
     max-width: " . $entry_text_width . "px;
   }
   ";
