@@ -215,7 +215,7 @@ h3 { font-size: 18px }
   margin: 0;
 }
 #header-content ul { margin: 0; }
-h4 { font-size: 16px }
+h4 { font-size: 1rem; }
 h5 { font-size: 14px }
 h6 { font-size: 12px }
 p {
@@ -329,20 +329,15 @@ p:first-child {
   overflow: hidden;
 }
 .post-meta { margin-bottom: 1em }
-.meta-cat { margin: 0 0 0 1em }
-.post-cat { text-transform: uppercase }
+.post-cat { display: block; }
 .post-date,
 .post-cat,
-.meta-cat {
-  font-size: 14px;
-  padding: 0;
+h2.post-title {
+  font-weight: normal;
+  margin-bottom: .25rem;
 }
 h2.post-title {
   font-size: 24px;
-  font-weight: normal;
-  line-height: 1.2;
-  margin: 0 0 5px 0;
-  padding: 0;
 }
 h2.post-title a { border-bottom: none }
 h2.post-title a:hover { text-decoration: none }
