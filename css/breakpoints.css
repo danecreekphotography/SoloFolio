@@ -154,6 +154,7 @@
     .entry {
       padding-left: 0;
       padding-right: 0;
+      margin-bottom: 1rem;
     }
 
     .post-meta, .entry p {
@@ -203,7 +204,8 @@
     display: block;
     height: auto;
     bottom: auto;
-    padding: .5rem 0;
+    opacity: 1;
+    padding: .5rem 0 1rem 1rem;
     left: auto;
     right: auto;
   }
@@ -213,7 +215,7 @@
   }
   .footer .copyright-hidden {
     display: block;
-    text-align: center;
+    text-align: left;
   }
 
   #wrapper #content-index {
@@ -261,7 +263,7 @@
         #header-content ul li a, #header-content h3 {
           display: block;
           font-size: 16px;
-          line-height: 2;
+          line-height: 48px;
         }
 
       #header-content {
@@ -347,11 +349,12 @@
   .comments #reply-title,
   .commentlist .date,
   .tag-links,
-  .post-meta,
   .pagination-nav {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  .children h3 { padding: 0 }
 
   .single-post .pagination-nav .right, .single-post .pagination-nav .left {
     float: none;

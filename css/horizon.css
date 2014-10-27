@@ -107,7 +107,7 @@
 
   #content-about-image {
     float: left;
-    padding: 0 20px 20px 0;
+    padding: 0 2rem 2rem 0;
   }
 
   .entry img,
@@ -171,15 +171,8 @@
     background-position: 50% top;
   }
 
-  .more-link {
-  }
-
   .comments {
     margin: 0 auto;
-  }
-
-  .post-cat {
-    display: block;
   }
 
   .wp-caption {

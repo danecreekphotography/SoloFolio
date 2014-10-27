@@ -31,10 +31,12 @@ function solofolio_css() {
   }
 
   $styles .= "
+  html {
+    font-size: " . get_theme_mod('solofolio_body_font_size') ."px;
+  }
   body {
     background-color: ". $background_color . ";
     color: " . get_theme_mod('solofolio_body_font_color') . ";
-    font-size: " . get_theme_mod('solofolio_body_font_size') ."px;
     font-family: '" . str_replace("+"," ", get_theme_mod('solofolio_font_body')) . "';
   }
 
@@ -64,7 +66,7 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_body_link_color') . ";
   }
 
-  a:hover, a:active {
+  a:hover, a:active, #content-parent .children li:hover a h3 {
     color: " . get_theme_mod('solofolio_body_link_color_hover') . ";
   }
 
@@ -86,7 +88,7 @@ function solofolio_css() {
     font-size: " . get_theme_mod('solofolio_navigation_header_font_size') . "px;
   }
 
-  #header-content ul a:link, #header-content ul a:visited {
+  #header-content ul a:link, #header-content ul a:visited, #menu-icon {
     color: " . get_theme_mod('solofolio_navigation_link_color') . ";
   }
 
@@ -106,7 +108,7 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_blog_entry_title_color_hover') . ";
   }
 
-  .post-date, .post-cat {
+  .post-byline {
     color: " . get_theme_mod('solofolio_blog_entry_byline_color') . ";
   }
 
@@ -140,13 +142,20 @@ function solofolio_css() {
     color: " . get_theme_mod('solofolio_body_font_color') . ";
   }
 
-  .single-post .pagination-nav, .comments {
+  .comments {
     max-width: " . $entry_width . "px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: " . get_theme_mod('solofolio_blog_entry_title_color') . ";
+  }
+
+  .comments h6 {
+    color: " . get_theme_mod('solofolio_blog_entry_byline_color') . ";
   }
 
   .solofolio-cyclereact-sidebar {
     max-width: " . ($header_width - $layout_spacing) . "px;
-    padding-right: " . $layout_spacing . "px;
   }
 
   .solofolio-cyclereact-sidebar.buttons a {
@@ -159,7 +168,8 @@ function solofolio_css() {
   .entry .post-meta,
   .entry p,
   .entry .tag-links,
-  .pagination-nav {
+  .pagination-nav,
+  .comments {
     max-width: " . $entry_text_width . "px;
   }
   ";
@@ -173,6 +183,10 @@ function solofolio_css() {
     $styles .="
       #header {
         width: " . $header_width . "px;
+      }
+
+      .solofolio-cyclereact-sidebar {
+        padding-right: " . $layout_spacing . "px;
       }
 
       .solofolio-cyclereact-sidebar.buttons a {
