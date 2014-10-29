@@ -165,6 +165,14 @@ function solofolio_css() {
     width: " . $button_size . "px;
   }
 
+  .solofolio-cyclereact-sidebar.buttons .fa {
+    line-height: " . $button_size . "px;
+  }
+
+  .solofolio-cyclereact-caption {
+    padding-top: " . ($button_size + 20) . "px;
+  }
+
   .entry .post-meta,
   .entry p,
   .entry .tag-links,

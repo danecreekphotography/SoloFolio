@@ -72,6 +72,10 @@
     vertical-align: top;
   }
 
+  #header-content ul li a {
+    line-height: 45px;
+  }
+
   #header-content ul li:last-child {
     padding-right: 0;
   }
