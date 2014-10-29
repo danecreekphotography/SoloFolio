@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "6.0.16");
+define("SOLOFOLIO_VERSION",     "7.0.0");
 
 include_once("includes/gallery.php");         // Include gallery shortcode replacement
 include_once("includes/social-widget.php");   // Include social media widget
@@ -127,15 +127,13 @@ function solofolio_comments($comment, $args, $depth) {
          <br />
       <?php endif; ?>
 
-      <div class="comment-meta commentmetadata col-1-3">
+      <div class="comment-meta commentmetadata">
         <h4 class="comment-author vcard"><?php printf(__('%s'), get_comment_author_link()) ?></h4>
         <h6><?php printf(__('%1$s', 'solofolio'), get_comment_date('M. j, Y')) ?></h6>
         <?php edit_comment_link(__('(Edit)', 'solofolio'),'  ','') ?>
       </div>
 
-      <div class="col-2-3">
-        <?php comment_text() ?>
-      </div>
+      <div class="comment-text"><?php comment_text() ?></div>
    </div>
   <?php
 }

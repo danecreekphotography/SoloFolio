@@ -17,36 +17,40 @@
 					</div>
 				<?php endif; ?>
 				<div class="post-meta">
-					<?php if (get_theme_mod('solofolio_blog_showcat')) {?><span class="post-cat"><?php the_category(', ') ?></span><?php } ?>
 					<h2 class="post-title">
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 					</h2>
-					<span class="post-date">
+					<h4 class="post-byline">
 						<?php if (get_theme_mod('solofolio_blog_showdate')) { echo get_the_date(); } ?>
 						<?php if (get_theme_mod('solofolio_blog_showauthor')) {?>by <?php the_author() ?><?php } ?>
-					</span>
+						<?php if (get_theme_mod('solofolio_blog_showcat')) {?>in <?php the_category(', ') ?><?php } ?>
+					</h4>
 				</div>
-				<?php the_content('Continue reading <i class="icon-angle-right"></i>'); ?>
+				<?php the_content('Continue reading &raquo;'); ?>
 				<?php wp_link_pages(); ?>
-				<?php if (get_theme_mod('solofolio_blog_showtags')) { the_tags( '<div class="tag-links">Tags: ', ' ', '</div>' ); } ?>
+				<?php if (get_theme_mod('solofolio_blog_showtags')) { the_tags( '<div class="tag-links">Tags: ', ', ', '</div>' ); } ?>
 				<div class="clear"></div>
 			</div>
 		<?php endwhile; ?>
 
 		<?php if (is_single()) : ?>
 			<div class="pagination-nav">
-				<?php if (!empty(get_previous_post())) { ?>
 				<div class="left">
+					<?php
+					$prev_post = get_adjacent_post(false, '', true);
+
+					if(!empty($prev_post)) { ?>
 					<h4>Previous</h4>
-					<?php previous_post_link('%link', '<span>%title</span>'); ?>
+					<?php previous_post_link('%link', '%title'); } ?>
 				</div>
-				<?php } ?>
-				<?php if (!empty(get_next_post())) { ?>
 				<div class="right">
+					<?php
+					$next_post = get_adjacent_post(false, '', false);
+
+					if(!empty($next_post)) { ?>
 					<h4>Next</h4>
-					<?php next_post_link('%link', '<span>%title</span>'); ?>
+					<?php next_post_link('%link', '%title'); } ?>
 				</div>
-				<?php } ?>
 				<div class="clear"></div>
 			</div>
 			<div class="comments">
@@ -54,8 +58,8 @@
 			</div>
 		<?php else : ?>
 			<div class="pagination-nav">
-				<div class="left"><?php next_posts_link('<i class="fa fa-angle-left"></i> Previous') ?></div>
-				<div class="right"><?php previous_posts_link('Next <i class="fa fa-angle-right"></i>') ?></div>
+				<div class="left"><?php next_posts_link('&laquo; Previous') ?></div>
+				<div class="right"><?php previous_posts_link('Next &raquo;') ?></div>
 				<div class="clear"></div>
 			</div>
 		<?php endif; ?>

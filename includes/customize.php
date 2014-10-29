@@ -227,7 +227,7 @@ function solofolio_customize_register( $wp_customize )
         ));
 
 			$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'solofolio_blog_entry_title_color', array(
-				'label'    => __('Blog Post Title', 'solofolio'),
+				'label'    => __('Titles', 'solofolio'),
 				'section'  => 'solofolio_colors_section',
 				'settings' => 'solofolio_blog_entry_title_color',
 				'priority' => '100',
@@ -265,7 +265,7 @@ function solofolio_customize_register( $wp_customize )
 	) );
 
 		$wp_customize->add_setting( 'solofolio_font_logo', array(
-      'default'   => 'Source+Sans+Pro',
+      'default'   => 'Roboto',
       'transport'   => 'refresh',
       'sanitize_callback' => 'solofolio_sanitize_email',
     ) );
@@ -279,7 +279,7 @@ function solofolio_customize_register( $wp_customize )
 			));
 
 		$wp_customize->add_setting( 'solofolio_font_body', array(
-      'default'   => 'Source+Sans+Pro',
+      'default'   => 'Roboto',
       'transport'   => 'refresh',
       'sanitize_callback' => 'solofolio_sanitize_email',
     ) );
@@ -298,7 +298,7 @@ function solofolio_customize_register( $wp_customize )
 	) );
 
 		$wp_customize->add_setting( 'solofolio_body_font_size', array(
-			'default' => '16',
+			'default' => '14',
 			'transport'   => 'postMessage',
 			'sanitize_callback' => 'solofolio_sanitize_number',
         ));
@@ -306,6 +306,19 @@ function solofolio_customize_register( $wp_customize )
 			$wp_customize->add_control( 'solofolio_body_font_size', array(
 				'label' => 'Page Text',
 				'settings' => 'solofolio_body_font_size',
+				'section' => 'solofolio_font_sizes_section',
+				'type' => 'text',
+			) );
+
+		$wp_customize->add_setting( 'solofolio_header_meta_font_size', array(
+			'default' => '14',
+			'transport'   => 'postMessage',
+			'sanitize_callback' => 'solofolio_sanitize_number',
+        ));
+
+			$wp_customize->add_control( 'solofolio_header_meta_font_size', array(
+				'label' => 'Contact info',
+				'settings' => 'solofolio_header_meta_font_size',
 				'section' => 'solofolio_font_sizes_section',
 				'type' => 'text',
 			) );
