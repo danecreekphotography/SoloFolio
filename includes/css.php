@@ -307,7 +307,7 @@ function solofolio_css() {
           max-width: 100%;
           }
 
-        #post #outerWrap {
+        #post #outer-wrap {
           margin: 0 auto;
           position: relative;
           max-width: " . ($header_width + $entry_width + 20) . "px;

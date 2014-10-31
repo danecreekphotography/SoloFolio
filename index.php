@@ -58,8 +58,8 @@
 			</div>
 		<?php else : ?>
 			<div class="pagination-nav">
-				<div class="left"><?php next_posts_link('&laquo; Previous') ?></div>
-				<div class="right"><?php previous_posts_link('Next &raquo;') ?></div>
+				<div class="left"><?php next_posts_link('&lsaquo; Previous') ?></div>
+				<div class="right"><?php previous_posts_link('Next &rsaquo;') ?></div>
 				<div class="clear"></div>
 			</div>
 		<?php endif; ?>
