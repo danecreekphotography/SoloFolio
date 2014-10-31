@@ -26,7 +26,7 @@
 						<?php if (get_theme_mod('solofolio_blog_showcat')) {?>in <?php the_category(', ') ?><?php } ?>
 					</h4>
 				</div>
-				<?php the_content('Continue reading &raquo;'); ?>
+				<?php the_content('Continue reading &rsaquo;'); ?>
 				<?php wp_link_pages(); ?>
 				<?php if (get_theme_mod('solofolio_blog_showtags')) { the_tags( '<div class="tag-links">Tags: ', ', ', '</div>' ); } ?>
 				<div class="clear"></div>

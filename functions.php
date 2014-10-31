@@ -1,12 +1,12 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.2");
+define("SOLOFOLIO_VERSION",     "7.0.3");
 
-include_once("includes/gallery.php");         // Include gallery shortcode replacement
-include_once("includes/social-widget.php");   // Include social media widget
-include_once("includes/menu-widget.php");     // Include custom menu widget
-include_once("includes/customize.php");       // Include WP_customize structure
-include_once("includes/css.php");             // Include CSS builder
+include_once("includes/gallery.php");         // Gallery shortcode replacement
+include_once("includes/social-widget.php");   // Social media widget
+include_once("includes/menu-widget.php");     // Custom menu widget
+include_once("includes/customize.php");       // Customizer configuration
+include_once("includes/css.php");             // CSS constructor
 
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );

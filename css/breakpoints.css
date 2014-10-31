@@ -52,7 +52,7 @@
       float: none;
     }
 
-    #logo-noimg {
+    #logo-text {
       display: block;
       line-height: 1;
     }
@@ -205,7 +205,7 @@
     height: auto;
     bottom: auto;
     opacity: 1;
-    padding: .5rem 0 1rem 1rem;
+    padding: 1rem;
     left: auto;
     right: auto;
   }
