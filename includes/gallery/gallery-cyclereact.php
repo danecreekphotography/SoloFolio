@@ -2,7 +2,7 @@
 
 $output .="<div id=\"solofolio-cyclereact-wrap\">";
 
-$output .="<ul id=\"solofolio-cyclereact-thumbs\">";
+$output .="<ul class=\"solofolio-cyclereact-thumbs\">";
 
 $galleryTitle = get_post_meta($post->ID, 'solofolio-gallery-title', true);
 $galleryText 	= get_post_meta($post->ID, 'solofolio-gallery-text', true);
@@ -139,7 +139,7 @@ if (get_theme_mod( 'solofolio_gallery_controls', 'buttons') == 'text') {
 if ($thumbs == "true"){
 $output .= "
 <style type=\"text/css\">
-#solofolio-cyclereact-thumbs {
+.solofolio-cyclereact-thumbs {
 	display: block;
 }
 .solofolio-cyclereact-sidebar, #solofolio-cyclereact-stage {
@@ -155,16 +155,16 @@ if (!function_exists('sl_cyclereact_js')) {
 		$output = "<script type=\"text/javascript\">window.matchMedia=window.matchMedia||(function(e,f){var c,a=e.documentElement,b=a.firstElementChild||a.firstChild,d=e.createElement(\"body\"),g=e.createElement(\"div\");g.id=\"mq-test-1\";g.style.cssText=\"position:absolute;top:-100em\";d.appendChild(g);return function(h){g.innerHTML='&shy;<style media=\"'+h+'\"> #mq-test-1 { width: 42px; }</style>';a.insertBefore(d,b);c=g.offsetWidth==42;a.removeChild(d);return{matches:c,media:h}}})(document);</script>";
 		$output .= "
 		<style type=\"text/css\">
-		#header #header-content .solofolio-cyclereact-sidebar {
+		.header .header-content .solofolio-cyclereact-sidebar {
 			display: block;
 		}
-		#wrapper {
+		.wrapper {
 			padding: 0;
 			position: absolute;
 			overflow: hidden;
 		}
 		@media only screen and (min-width: 1025px) {
-			#wrapper {
+			.wrapper {
 				left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) ."px;
 			}
 		}
@@ -175,7 +175,7 @@ if (!function_exists('sl_cyclereact_js')) {
 			#solofolio-cyclereact-stage {
 				right: 0;
 			}
-			#wrapper {
+			.wrapper {
 				right: 20px;
 				bottom: 20px;
 			}

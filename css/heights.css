@@ -1,17 +1,13 @@
 @media only screen and (min-width: 1025px) {
-  #header-meta {
-    margin-bottom: 1em;
-  }
-
-  .solofolio-cyclereact-fill {
-    background-position: 50% 50%;
-  }
-
-  #header-inner {
+  .header-meta { margin-bottom: 1em }
+  .solofolio-cyclereact-fill { background-position: 50% 50% }
+  .header { height: 100% }
+  .header-inner {
     position: absolute;
     top: 20px;
     left: 20px;
     bottom: 20px;
     overflow-y: auto;
   }
+  .header-content ul li a { line-height: 1.6 }
 }

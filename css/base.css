@@ -1,84 +1,4 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+* {
   margin: 0;
   padding: 0;
   border: 0;
@@ -146,12 +66,6 @@ img { border: none }
 /* Floats */
 .left { float: left }
 .right { float: right }
-.clear {
-  clear: both;
-  height: 0;
-  margin: 0 !important;
-  padding: 0;
-}
 .entry .alignleft { margin-right: 1rem; }
 .entry .alignright { margin-left: 1rem; }
 /* Images */
@@ -194,86 +108,68 @@ h3 { font-size: 1.28rem }
 h4 { font-size: 1rem }
 h5 { font-size: .85rem }
 h6 { font-size: .78rem }
-#header-content h3 {
+.header-content h3 {
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   margin: 0;
 }
-#header-content ul { margin: 0; }
+.header-content ul { margin: 0; }
 p {
   padding: 0;
   max-width: 600px;
 }
 p:first-child { margin-top: 0 }
-#header {
-  bottom: 40px;
-  height: 100%;
-  left: 0;
-  margin: 0;
-  position: fixed;
-  top: 0;
-  width: 200px;
-  word-wrap: break-word;
-  z-index: 5;
-}
-#header h1 {
+.site-title {
   font-weight: bold;
   line-height: 1;
   margin: 0;
   padding: 0;
 }
-#header h1 a:link,
-#header h1 a:visited { background-color: transparent }
-#header h1 a:hover,
-#header h1 a:active { background-color: transparent }
-#header a { font-weight: normal }
-#header #logo { width: auto }
-#header-content ul li {
+.site-title a:link,
+.site-title a:visited { background-color: transparent }
+.site-title a:hover,
+.site-title a:active { background-color: transparent }
+.header a { font-weight: normal }
+.logo { width: auto }
+.header-content ul li {
   font-size: 12px;
   font-weight: normal;
   list-style-type: none;
 }
-#header-content ul li a {
-  display: inline-block;
-  line-height: 1.6;
-}
 .sidebar-widget { margin-top: 15px }
-.sidebar-search { font-size: 13px; }
-#logo a img {
+form { font-size: .9rem }
+input,
+button {
+  height: 2rem;
+  vertical-align: top;
+}
+.form-submit input,
+.searchform button {
+  cursor: pointer;
+  line-height: 1;
+}
+.searchform button {
+  margin-left: .25rem;
+  width: 2rem;
+}
+.logo a img {
   border: none;
   font-weight: normal;
   text-decoration: none;
-  width: 100%;
 }
-#logo a img:hover { border: none }
-#logo { max-width: 700px }
-#logo h1 { font-size: 24px }
-#logo h1 a { font-weight: bold }
-#wrapper {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  right: 20px;
-  left: 20px;
-}
+.logo a img:hover { border: none }
+.site-title { font-size: 24px }
+.site-title a { font-weight: bold }
 .footer {
   border-top-left-radius: 2px;
-  bottom: 0;
   font-size: .78rem;
   line-height: 1;
-  opacity: .5;
-  padding: 4px 8px;
-  position: fixed;
-  right: 0;
-  z-index: 1000;
 }
 .footer:hover { opacity: 1 }
-.copyright-hidden { display: none }
 .footer:hover .copyright-label { display: none }
 .footer:hover .copyright-hidden { display: block }
-.entry { margin-bottom: 3rem; }
 .post-meta { margin-bottom: 1em }
 .post-byline { font-weight: normal }
 h2.post-title {
@@ -283,35 +179,19 @@ h2.post-title {
 h2.post-title a { font-weight: normal; }
 .entry .tag-links { max-width: 600px }
 .entry .tag-links a { padding: 0 2px }
-#content-index,
-#content-single,
-#content-search { width: 100% }
-#content-parent { max-width: 920px }
-#content-parent .content { padding: 0 1rem }
-#content-parent .children { margin-top: 0 }
-#content-parent .children h3 { margin: 0 }
-#content-parent .children li {
-  display: inline-block;
-  max-width: 300px;
-  width: 32.8%;
-  padding: 0 1rem 2rem 1rem;
-  vertical-align: top;
-}
-#content-parent .children li img {
-  height: auto;
-  width: 100%;
-}
-#content-about { max-width: 900px }
-#content-about-image {
+.content-index,
+.content-search { width: 100% }
+.content-about { max-width: 900px }
+.content-about-image {
   width: 50%;
   float: right;
   padding: 0 0 2rem 2rem;
 }
-#content-about-image img {
+.content-about-image img {
   width: 100%;
   height: auto;
 }
-#content-about-content {
+.content-about-content {
   float: left;
   width: 50%;
   max-width: 500px;
@@ -377,25 +257,28 @@ input:focus, textarea:focus, button:focus { outline: none }
   margin-top: 0;
   max-width: 100%;
 }
+.content-parent { max-width: 920px }
+.content-parent .content { padding: 0 1rem }
+.content-parent .children { margin-top: 0 }
+.content-parent .children h3 { margin: 0 }
+.content-parent .children li {
+  display: inline-block;
+  max-width: 300px;
+  width: 32.8%;
+  padding: 0 1rem 2rem 1rem;
+  vertical-align: top;
+}
+.content-parent .children li img {
+  height: auto;
+  width: 100%;
+}
 .pagination-nav { padding-bottom: 2em }
 .pagination-nav a { margin: 1em 0 }
 .pagination-nav h4 { margin-bottom: .25rem }
 .pagination-nav .right h4 { text-align: right }
 #solofolio-social a { padding: 10px }
 #solofolio-social a:first-child { padding-left: 0 }
-#menu-icon {
-  width: 80px;
-  line-height: 60px;
-  font-size: 24px;
-  border: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  cursor: pointer;
-  text-align: center;
-  z-index: 10;
-  display: none;
-}
+.solofolio-vert-scroll-gallery { margin-bottom: 2rem }
 .vert-scroll { margin: 1rem auto 0; }
 .vert-scroll:first-child { margin-top: 0; }
 .vert-scroll:last-child { margin-bottom: 0; }
@@ -410,150 +293,15 @@ input:focus, textarea:focus, button:focus { outline: none }
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 0;
   width: auto;
 }
-/* CycleReact gallery  */
-#solofolio-cyclereact-wrap,
-#solofolio-cyclereact-stage,
-#solofolio-cyclereact-images,
-.solofolio-cycelereact-slide,
-.solofolio-cyclereact-fill {
-  position: absolute;
-  overflow-x: visible;
-  overflow-y: visible;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.solofolio-cyclereact-title {
-  position: fixed !important;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  z-index: 3;
-}
-.solofolio-cyclereact-title-wrapper {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-.solofolio-cyclereact-title-content {
-  display: table-cell;
-  vertical-align: middle;
-}
-.solofolio-gallery-title h2 { text-align: center }
-.solofolio-gallery-title p { margin: 0 auto 1em }
-#solofolio-cyclereact-thumbs {
-  display: none;
-  z-index: 200;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  margin: 0;
-  list-style-type: none;
-  overflow-y: auto;
-}
-#solofolio-cyclereact-thumbs .thumb {
-  float: left;
-  width: 25%;
-  max-width: 300px;
-  border-right: 5px solid #fff;
-  border-left: 5px solid #fff;
-  border-top: 10px solid #fff;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  list-style-type: none;
-}
-#solofolio-cyclereact-thumbs .thumb a {
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  height: 0;
-  padding-top: 66%;
-}
-#solofolio-cyclereact-thumbs .thumb a:hover { opacity: .7 }
-#solofolio-cyclereact-thumbs .thumb img {
-  max-width: 100%;
-  max-height: 100%;
-  margin: auto;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
-ul.solofolio-cyclereact-controls { margin: 0; line-height: 1;}
-.solofolio-cyclereact-controls a { font-weight: normal }
-.solofolio-cyclereact-sidebar.buttons a {
-  border-radius: 2px;
-  display: inline-block;
-  font-size: 22px;
-  width: 40px;
-  height: 40px;
-  margin-top: 15px;
-  margin-right: 15px;
-  line-height: 40px;
-  text-align: center;
-  text-decoration: none;
-}
-.solofolio-cyclereact-sidebar.text li {
-  display: inline-block;
-  font-size: .9rem;
-  line-height: 1;
-  margin-right: .5rem;
-  margin-top: .5rem;
-}
-.solofolio-cyclereact-image { z-index: 2 }
-.solofolio-cyclereact-fill {
-  text-align: center;
-  margin: 0 auto;
-}
-.solofolio-cyclereact-fill {
--webkit-backface-visibility: hidden;
-}
-.solofolio-cyclereact-nav-left,
-.solofolio-cyclereact-nav-right {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 500;
-}
-.solofolio-cyclereact-nav-left {
-  cursor: w-resize;
-  left: 0;
-  width: 50%;
-}
-.solofolio-cyclereact-nav-right {
-  cursor: e-resize;
-  right: 0;
-  width: 50%;
-}
-.solofolio-cycelereact-slide { right: 0 }
-.solofolio-cyclereact-caption {
-  margin: 0 auto;
-  text-align: left;
-  line-height: 1.4;
-  font-size: .8em;
-}
-.solofolio-cyclereact-sidebar {
-  bottom: 0;
-  position: fixed;
-  max-width: 200px;
-  margin-bottom: 0;
-  width: 100%;
-  z-index: 100;
-}
+.solofolio-cyclereact-thumbs { display: none }
 /* Centering */
-#outer-wrap { min-height: 100% }
-#content-index, #content-single { width: 100% }
-#content-index .entry .wp-caption { max-width: 100% }
-#content-page p img {
+.outer-wrap { min-height: 100% }
+.content-index, { width: 100% }
+.content-index .entry .wp-caption { max-width: 100% }
+.content-page p img {
   height: auto;
   width: 100%;
 }
@@ -580,6 +328,11 @@ ul.solofolio-cyclereact-controls { margin: 0; line-height: 1;}
 .solofolio-custom-menu h3 { cursor: pointer }
 .solofolio-custom-menu ul { display: none }
 /* Fix WP admin bar overlap */
-.admin-bar #header { top: 32px }
+.admin-bar .header { top: 32px }
 /* Helpers */
 .no-margin { margin: 0 }
+.pagination-nav:after {
+  clear: both;
+  content: "";
+  display: table;
+}
