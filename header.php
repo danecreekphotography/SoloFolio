@@ -20,7 +20,7 @@
 	<?php } ?>
 </head>
 <body <?php body_class(); ?> id="<?php echo get_post_type( $post ); ?>">
-<div id="outerWrap">
+<div id="outer-wrap">
 <a id='menu-icon'><i class="fa fa-bars"></i></a>
 <div id="header">
 	<div id="header-inner">
