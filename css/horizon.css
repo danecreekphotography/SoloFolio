@@ -13,9 +13,10 @@
     display: table-cell;
     padding: 0 1.5rem 0 40px;
   }
+  .logo-text a { vertical-align: text-top }
   .logo-img img { display: block }
-  .header-inner { display: table-row; }
-  .header-meta { display: table-cell; }
+  .header-inner { display: table-row }
+  .header-meta { display: table-cell }
   .header-meta div {
     display: inline-block;
     padding: 0 .5rem;

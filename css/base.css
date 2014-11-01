@@ -132,7 +132,10 @@ p:first-child { margin-top: 0 }
 .site-title a:hover,
 .site-title a:active { background-color: transparent }
 .header a { font-weight: normal }
-.logo { width: auto }
+.logo {
+  line-height: 1;
+  width: auto;
+}
 .header-content ul li {
   font-size: 12px;
   font-weight: normal;
@@ -250,12 +253,12 @@ input:focus, textarea:focus, button:focus { outline: none }
 .alignright { float: right }
 .wp-caption { margin-bottom: 1rem }
 .caption,
-.wp-caption-text {
+.wp-caption .wp-caption-text, .vert-scroll .wp-caption-text {
   font-size: .9rem;
   line-height: 1.4;
   padding-top: .2rem;
   margin-top: 0;
-  max-width: 100%;
+  max-width: inherit;
 }
 .content-parent { max-width: 920px }
 .content-parent .content { padding: 0 1rem }

@@ -104,7 +104,7 @@ function solofolio_customize_register( $wp_customize )
 			)));
 
 		$wp_customize->add_setting('solofolio_logo_color', array(
-			'default'           => '#000000',
+			'default'           => '#333333',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'   => 'postMessage',
         ));
@@ -117,7 +117,7 @@ function solofolio_customize_register( $wp_customize )
 			)));
 
 		$wp_customize->add_setting('solofolio_logo_color_hover', array(
-			'default'           => '#7a7a7a',
+			'default'           => '#999999',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'   => 'refresh',
     ));
@@ -130,7 +130,7 @@ function solofolio_customize_register( $wp_customize )
 			)));
 
 		$wp_customize->add_setting('solofolio_body_font_color', array(
-			'default'           => '#AAAAAA',
+			'default'           => '#333333',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'   => 'postMessage',
         ));
@@ -143,7 +143,7 @@ function solofolio_customize_register( $wp_customize )
 			)));
 
 		$wp_customize->add_setting('solofolio_body_link_color', array(
-			'default'           => '#7a7a7a',
+			'default'           => '#333333',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'   => 'postMessage',
         ));
@@ -156,7 +156,7 @@ function solofolio_customize_register( $wp_customize )
 			)));
 
 		$wp_customize->add_setting('solofolio_body_link_color_hover', array(
-			'default'           => '#000000',
+			'default'           => '#999999',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'   => 'refresh',
         ));
@@ -169,7 +169,7 @@ function solofolio_customize_register( $wp_customize )
 			)));
 
 		$wp_customize->add_setting('solofolio_body_caption_color', array(
-			'default'           => '#AAAAAA',
+			'default'           => '#999999',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'   => 'postMessage',
         ));
@@ -182,7 +182,7 @@ function solofolio_customize_register( $wp_customize )
 			)));
 
 		$wp_customize->add_setting('solofolio_navigation_link_color', array(
-			'default'           => '#7a7a7a',
+			'default'           => '#333333',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'   => 'postMessage',
         ));
@@ -195,7 +195,7 @@ function solofolio_customize_register( $wp_customize )
 			)));
 
 		$wp_customize->add_setting('solofolio_navigation_link_color_hover', array(
-			'default'           => '#000000',
+			'default'           => '#999999',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'   => 'refresh',
     ));
@@ -208,7 +208,7 @@ function solofolio_customize_register( $wp_customize )
 			)));
 
 		$wp_customize->add_setting('solofolio_navigation_header_color', array(
-			'default'           => '#000000',
+			'default'           => '#333333',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'   => 'postMessage',
         ));
@@ -221,7 +221,7 @@ function solofolio_customize_register( $wp_customize )
 			)));
 
 		$wp_customize->add_setting('solofolio_blog_entry_title_color', array(
-			'default'           => '#000000',
+			'default'           => '#333333',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'   => 'postMessage',
         ));
@@ -234,7 +234,7 @@ function solofolio_customize_register( $wp_customize )
 			)));
 
 		$wp_customize->add_setting('solofolio_blog_entry_title_color_hover', array(
-			'default'           => '#AAAAAA',
+			'default'           => '#999999',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'   => 'refresh',
     ));
@@ -247,7 +247,7 @@ function solofolio_customize_register( $wp_customize )
 			)));
 
 		$wp_customize->add_setting('solofolio_blog_entry_byline_color', array(
-			'default'           => '#7a7a7a',
+			'default'           => '#999999',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'   => 'postMessage',
         ));
