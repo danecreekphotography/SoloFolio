@@ -1,11 +1,11 @@
 var setResponsive = function () {
   var pageHeight = jQuery(window).height();
-  var headerHeight = jQuery("#header").outerHeight();
-  var wrapperWidth = jQuery("#wrapper").innerWidth();
-  var wrapperHeight = jQuery("#wrapper").outerHeight();
-  var pageSpacing = parseInt(jQuery('#wrapper').css('right'), 10);
+  var headerHeight = jQuery(".header").outerHeight();
+  var wrapperWidth = jQuery(".wrapper").innerWidth();
+  var wrapperHeight = jQuery(".wrapper").outerHeight();
+  var pageSpacing = parseInt(jQuery('.wrapper').css('right'), 10);
 
-  var n = jQuery("#header").css('right');
+  var n = jQuery(".header").css('right');
 
   if (wrapperWidth > 600) {
     if (n == '0px') {
@@ -29,3 +29,5 @@ jQuery(window).load(function(){
 });
 
 jQuery(window).resize(setResponsive);
+
+document.createElement('picture');

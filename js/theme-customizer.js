@@ -21,19 +21,19 @@
 
 	wp.customize( 'solofolio_phone', function( value ) {
 		value.bind( function( newval ) {
-			jQuery( '#header-phone a' ).html( newval );
+			jQuery( '.header-phone a' ).html( newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_location', function( value ) {
 		value.bind( function( newval ) {
-			jQuery( '#header-location' ).html( newval );
+			jQuery( '.header-location' ).html( newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_email', function( value ) {
 		value.bind( function( newval ) {
-			jQuery( '#header-email a' ).html( newval );
+			jQuery( '.header-email a' ).html( newval );
 		} );
 	} );
 
@@ -45,7 +45,7 @@
 
 	wp.customize( 'solofolio_logo_color', function( value ) {
 		value.bind( function( newval ) {
-			jQuery('#logo h1 a').css('color', newval );
+			jQuery('.site-title a').css('color', newval );
 		} );
 	} );
 
@@ -57,37 +57,37 @@
 
 	wp.customize( 'solofolio_body_link_color', function( value ) {
 		value.bind( function( newval ) {
-			jQuery('#wrapper a').css('color', newval );
+			jQuery('.wrapper a').css('color', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_navigation_font_size', function( value ) {
 		value.bind( function( newval ) {
-			jQuery('#header-content ul a').css('font-size', newval );
+			jQuery('.header-content ul a').css('font-size', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_header_meta_font_size', function( value ) {
 		value.bind( function( newval ) {
-			jQuery('#header-meta div').css('font-size', newval );
+			jQuery('.header-meta div').css('font-size', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_navigation_link_color', function( value ) {
 		value.bind( function( newval ) {
-			jQuery('#header-content ul a').css('color', newval );
+			jQuery('.header-content ul a').css('color', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_navigation_header_font_size', function( value ) {
 		value.bind( function( newval ) {
-			jQuery('#header-content h3').css('font-size', newval );
+			jQuery('.header-content h3').css('font-size', newval );
 		} );
 	} );
 
 	wp.customize( 'solofolio_navigation_header_color', function( value ) {
 		value.bind( function( newval ) {
-			jQuery('#header-content h3').css('color', newval );
+			jQuery('.header-content h3').css('color', newval );
 		} );
 	} );
 

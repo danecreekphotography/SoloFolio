@@ -1,6 +1,8 @@
 <?php
 $i = 0;
 
+$output = "<div class='solofolio-vert-scroll-gallery'>";
+
 $galleryTitle = get_post_meta($post->ID, 'solofolio-gallery-title', true);
 $galleryText 	= get_post_meta($post->ID, 'solofolio-gallery-text', true);
 
@@ -44,21 +46,22 @@ foreach ($attachment_ids as $id) {
 	$i += 1;
 }
 
+$output .= "</div>";
+
 add_action('wp_footer', 'sl_vertscroll_js');
 
 if (!function_exists('sl_vertscroll_js')) {
 	function sl_vertscroll_js() {
 		$output = "<style>
-				#content-page { max-width: none }
+				.content-page { max-width: none }
 
 				@media only screen and (max-width: 1024px) {
-					#content-page {
+					.content-page {
 						margin-left: auto;
 						margin-right: auto;
 					}
 				}
-			</style>
-		<script> document.createElement('picture');</script>";
+			</style>";
 
 	  echo $output;
 	}

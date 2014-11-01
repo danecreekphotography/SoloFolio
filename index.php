@@ -1,12 +1,8 @@
 <?php get_header(); ?>
 
-<div id="content-index">
+<div class="content-index">
 	<?php if (have_posts()) : ?>
-
-		<?php if (is_search()) : ?>
-			<h2>Search Results</h2>
-		<?php endif; ?>
-
+		<?php if (is_search()) { ?><h2>Search Results</h2><?php } ?>
 		<?php while (have_posts()) : the_post(); ?>
 			<div class="entry" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php if ( has_post_thumbnail()) : ?>
@@ -29,10 +25,8 @@
 				<?php the_content('Continue reading &rsaquo;'); ?>
 				<?php wp_link_pages(); ?>
 				<?php if (get_theme_mod('solofolio_blog_showtags')) { the_tags( '<div class="tag-links">Tags: ', ', ', '</div>' ); } ?>
-				<div class="clear"></div>
 			</div>
 		<?php endwhile; ?>
-
 		<?php if (is_single()) : ?>
 			<div class="pagination-nav">
 				<div class="left">
@@ -51,7 +45,6 @@
 					<h4>Next</h4>
 					<?php next_post_link('%link', '%title'); } ?>
 				</div>
-				<div class="clear"></div>
 			</div>
 			<div class="comments">
 				<?php comments_template(); ?>
@@ -60,12 +53,9 @@
 			<div class="pagination-nav">
 				<div class="left"><?php next_posts_link('&lsaquo; Previous') ?></div>
 				<div class="right"><?php previous_posts_link('Next &rsaquo;') ?></div>
-				<div class="clear"></div>
 			</div>
 		<?php endif; ?>
-
 	<?php endif; ?>
 </div>
 
-<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
 <?php get_footer(); ?>
