@@ -89,7 +89,10 @@ a img {
   text-decoration: none;
 }
 a:hover img { text-decoration: none }
-.more-link { display: block }
+.more-link {
+  display: block;
+  margin: 1rem 0;
+}
 /* Typography */
 h1,
 h2,
