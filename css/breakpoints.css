@@ -259,7 +259,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .entry { margin-bottom: 1rem }
+  .entry { margin-bottom: 2rem }
   .post-meta, .entry p {
     max-width: 600px;
   }
