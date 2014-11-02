@@ -120,7 +120,6 @@ function solofolio_css() {
     width: " . $button_size . "px;
   }
   .solofolio-cyclereact-sidebar.buttons .fa { line-height: " . $button_size . "px }
-  .solofolio-cyclereact-caption { padding-top: " . ($button_size + 20) . "px }
   .entry .post-meta,
   .entry p,
   .entry .tag-links,
@@ -182,6 +181,7 @@ function solofolio_css() {
       .solofolio-cyclereact-thumbs,
       .solofolio-cyclereact-title { padding: " . $layout_spacing . "px }
       .solofolio-cyclereact-thumbs { padding-top: " . ($layout_spacing - 10) . "px }
+      .solofolio-cyclereact-caption { padding-top: " . ($button_size + 20) . "px }
       .header-inner {
         left: " . $layout_spacing . "px;
         top: " . $layout_spacing . "px;
