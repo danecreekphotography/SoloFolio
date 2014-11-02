@@ -188,6 +188,12 @@ function solofolio_css() {
         bottom: " . $layout_spacing . "px;
       }
     }";
+    if ($header_background_color == $background_color) {
+      $styles .= "
+      #solofolio-cyclereact-stage,
+      .solofolio-cyclereact-thumbs,
+      .solofolio-cyclereact-title { left: " . ($header_width - $layout_spacing) . "px !important }";
+    }
     if (!$center_blog) {
       $styles .= "
       .wrapper {
