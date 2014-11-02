@@ -281,7 +281,7 @@ input:focus, textarea:focus, button:focus { outline: none }
 .pagination-nav .right h4 { text-align: right }
 #solofolio-social a { padding: 10px }
 #solofolio-social a:first-child { padding-left: 0 }
-.solofolio-vert-scroll-gallery { margin-bottom: 2rem }
+.solofolio-vert-scroll-gallery { margin-bottom: 1rem }
 .vert-scroll { margin: 1rem auto 0; }
 .vert-scroll:first-child { margin-top: 0; }
 .vert-scroll:last-child { margin-bottom: 0; }
