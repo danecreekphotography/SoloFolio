@@ -181,7 +181,6 @@ function solofolio_css() {
       .solofolio-cyclereact-thumbs,
       .solofolio-cyclereact-title { padding: " . $layout_spacing . "px }
       .solofolio-cyclereact-thumbs { padding-top: " . ($layout_spacing - 10) . "px }
-      .solofolio-cyclereact-caption { padding-top: " . ($button_size + 20) . "px }
       .header-inner {
         left: " . $layout_spacing . "px;
         top: " . $layout_spacing . "px;
