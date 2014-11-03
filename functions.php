@@ -202,4 +202,8 @@ if(function_exists('register_sidebar')){
     'after_title' => '</h3>',
   ));
 }
+
+if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+  wp_enqueue_script( 'comment-reply' );
+}
 ?>
