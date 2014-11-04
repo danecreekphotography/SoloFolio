@@ -1,6 +1,6 @@
 <?php
 
-$output .="<div id=\"solofolio-cyclereact-wrap\">";
+$output .="<div class=\"solofolio-cyclereact-wrap\">";
 
 $output .="<ul class=\"solofolio-cyclereact-thumbs\">";
 
@@ -35,10 +35,9 @@ foreach ($attachment_ids as $id) {
 
 $output .="</ul>";
 
-$output .="<div id=\"solofolio-cyclereact-stage\">";
+$output .="<div class=\"solofolio-cyclereact-stage\">";
 
-$output .="<div id=\"solofolio-cyclereact-images\"
-								class=\"cycle-slideshow manual\"
+$output .="<div class=\"solofolio-cyclereact-gallery cycle-slideshow manual\"
 								data-cycle-slides=\".solofolio-cycelereact-slide\"
 								data-cycle-prev=\".prev\"
 								data-cycle-next=\".next\"
@@ -142,7 +141,7 @@ $output .= "
 .solofolio-cyclereact-thumbs {
 	display: block;
 }
-.solofolio-cyclereact-sidebar, #solofolio-cyclereact-stage {
+.solofolio-cyclereact-sidebar, .solofolio-cyclereact-stage {
 	display: none;
 }
 </style>";
@@ -172,7 +171,7 @@ if (!function_exists('sl_cyclereact_js')) {
 			.solofolio-cyclereact-sidebar {
 				padding-right: 20px;
 			}
-			#solofolio-cyclereact-stage {
+			.solofolio-cyclereact-stage {
 				right: 0;
 			}
 			.wrapper {

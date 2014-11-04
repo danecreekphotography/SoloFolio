@@ -30,11 +30,7 @@
   }
   .copyright-hidden { display: none }
   /* CycleReact gallery  */
-  #solofolio-cyclereact-wrap,
-  #solofolio-cyclereact-stage,
-  #solofolio-cyclereact-images,
-  .solofolio-cycelereact-slide,
-  .solofolio-cyclereact-fill {
+  .solofolio-cyclereact-wrap {
     position: absolute;
     overflow-x: visible;
     overflow-y: visible;
@@ -42,6 +38,38 @@
     bottom: 0;
     left: 0;
     right: 0;
+  }
+  .solofolio-cyclereact-stage {
+    position: absolute;
+    overflow-x: visible;
+    overflow-y: visible;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .solofolio-cyclereact-gallery {
+    position: absolute;
+    overflow-x: visible;
+    overflow-y: visible;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .solofolio-cycelereact-slide {
+    position: absolute;
+    overflow-x: visible;
+    overflow-y: visible;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .solofolio-cyclereact-fill {
+    height: 100%;
+    position: relative;
+    width: 100%;
   }
   .solofolio-cyclereact-title {
     position: fixed !important;
