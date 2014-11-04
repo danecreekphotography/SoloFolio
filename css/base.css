@@ -143,6 +143,7 @@ p:first-child { margin-top: 0 }
   font-size: 12px;
   font-weight: normal;
   list-style-type: none;
+  list-style-position: initial;
 }
 .sidebar-widget { margin-top: 15px }
 form { font-size: .9rem }
