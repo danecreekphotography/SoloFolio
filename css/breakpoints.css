@@ -30,9 +30,9 @@
   }
   .copyright-hidden { display: none }
   /* CycleReact gallery  */
-  #solofolio-cyclereact-wrap,
-  #solofolio-cyclereact-stage,
-  #solofolio-cyclereact-images,
+  .solofolio-cyclereact-wrap,
+  .solofolio-cyclereact-stage,
+  .solofolio-cyclereact-gallery,
   .solofolio-cycelereact-slide,
   .solofolio-cyclereact-fill {
     position: absolute;

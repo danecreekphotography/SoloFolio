@@ -13,22 +13,22 @@ var setResponsive = function () {
 
   if (n == '0px') {
     var barHeight = jQuery("#solofolio-cyclereact-bar").outerHeight();
-    jQuery('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - headerHeight);
+    jQuery('.solofolio-cyclereact-gallery img').css('max-height', pageHeight - barHeight - headerHeight);
   }
   else {
     var barHeight = 0;
-    jQuery('#solofolio-cyclereact-images img').css('max-height', pageHeight - barHeight - 60);
+    jQuery('.solofolio-cyclereact-gallery img').css('max-height', pageHeight - barHeight - 60);
   }
-  jQuery('#solofolio-cyclereact-images img').css('max-width', wrapperWidth);
+  jQuery('.solofolio-cyclereact-gallery img').css('max-width', wrapperWidth);
 }
 
 var showThumbs = function () {
-  jQuery(".solofolio-cyclereact-sidebar, #solofolio-cyclereact-stage").hide();
+  jQuery(".solofolio-cyclereact-sidebar, .solofolio-cyclereact-stage").hide();
   jQuery(".solofolio-cyclereact-thumbs").show();
 }
 
 var hideThumbs = function () {
-  jQuery(".solofolio-cyclereact-sidebar, #solofolio-cyclereact-stage").show();
+  jQuery(".solofolio-cyclereact-sidebar, .solofolio-cyclereact-stage").show();
   jQuery(".solofolio-cyclereact-thumbs").hide();
 }
 
@@ -58,24 +58,24 @@ jQuery(window).load(function(){
 
 jQuery(window).resize(setResponsive);
 
-jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-after', function( event, opts ) {
+jQuery( '.solofolio-cyclereact-gallery' ).on( 'cycle-after', function( event, opts ) {
   jQuery(".solofolio-cyclereact-thumbs").hide();
-  jQuery("#solofolio-cyclereact-stage, .solofolio-cyclereact-sidebar").show();
+  jQuery(".solofolio-cyclereact-stage, .solofolio-cyclereact-sidebar").show();
 });
 
-jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-before', function( event, opts ) {
+jQuery( '.solofolio-cyclereact-gallery' ).on( 'cycle-before', function( event, opts ) {
   window.picturefill();
   setResponsive();
 });
 
-jQuery( '#solofolio-cyclereact-images' ).on( 'cycle-update-view', function( event, opts ) {
+jQuery( '.solofolio-cyclereact-gallery' ).on( 'cycle-update-view', function( event, opts ) {
   jQuery(".solofolio-cyclereact-count").html((opts.currSlide + 1) + " / " + opts.slideCount);
 });
 
 jQuery(document.documentElement).keyup(function (e) {
-  if (e.keyCode == 37) { jQuery('#solofolio-cyclereact-images').cycle('prev') }
+  if (e.keyCode == 37) { jQuery('.solofolio-cyclereact-gallery').cycle('prev') }
   if (e.keyCode == 38) { jQuery('.thumbs').trigger('click') }
-  if (e.keyCode == 39) { jQuery('#solofolio-cyclereact-images').cycle('next') }
+  if (e.keyCode == 39) { jQuery('.solofolio-cyclereact-gallery').cycle('next') }
 });
 
 jQuery.fn.cycle.transitions.fadeOutIn = {

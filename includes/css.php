@@ -149,7 +149,7 @@ function solofolio_css() {
         top: " . ($layout_spacing + 45) . "px;
         right: " . $layout_spacing . "px;
       }
-      #solofolio-cyclereact-stage,
+      .solofolio-cyclereact-stage,
       .solofolio-cyclereact-title { right: " . ($header_width + 20) . "px }
       .solofolio-cyclereact-thumbs {
         top: 35px;
@@ -171,7 +171,7 @@ function solofolio_css() {
       .header-meta { max-width: " . ($header_width - ($layout_spacing * 2)) . "px }
       .admin-bar.page .wrapper { top: " . ($layout_spacing + 32) . "px}
       .admin-bar.page .solofolio-cyclereact-thumbs { padding-top: " . ($layout_spacing + 22) . "px }
-      #solofolio-cyclereact-stage,
+      .solofolio-cyclereact-stage,
       .solofolio-cyclereact-thumbs,
       .solofolio-cyclereact-title { left: " . $header_width . "px !important }
       .solofolio-cyclereact-sidebar {
@@ -189,7 +189,7 @@ function solofolio_css() {
     }";
     if ($header_background_color == $background_color) {
       $styles .= "
-      #solofolio-cyclereact-stage,
+      .solofolio-cyclereact-stage,
       .solofolio-cyclereact-thumbs,
       .solofolio-cyclereact-title { left: " . ($header_width - $layout_spacing) . "px !important }";
     }
