@@ -25,6 +25,8 @@ function solofolio_gallery_shortcode($output, $attr) {
 	if ( wp_is_mobile() ||
 			 is_home() ||
 			 is_single() ||
+			 is_page_template( 'about.php' ) ||
+			 is_page_template( 'parent.php' ) ||
 			 is_page_template( 'story.php' ) ||
 			 preg_match('/(?i)msie [1-8]/',$_SERVER['HTTP_USER_AGENT'])
 		 ) {
@@ -33,13 +35,8 @@ function solofolio_gallery_shortcode($output, $attr) {
 
 	switch ($type) {
 		case "vert-scroll":
-			include("gallery/gallery-vertscroll.php");
-			break;
 		case "react":
 			include("gallery/gallery-vertscroll.php");
-			break;
-		case "cycle-react":
-			include("gallery/gallery-cyclereact.php");
 			break;
 		default:
 			include("gallery/gallery-cyclereact.php");
