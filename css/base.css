@@ -343,3 +343,8 @@ input:focus, textarea:focus, button:focus { outline: none }
   content: "";
   display: table;
 }
+/* Story template */
+.menu-btn { display: none }
+.page-template-story-php .wrapper h1,
+.page-template-story-php .wrapper h3 { text-align: center }
+.page-template-story-php p { margin: 2rem 0 }
