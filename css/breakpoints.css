@@ -279,6 +279,7 @@
   .content-about-content,
   .content-about-image,
   .post-meta,
+  .page-template-story-php p,
   .entry p,
   .tag-links,
   .comments,
@@ -328,7 +329,6 @@
     padding-left: 1rem;
     padding-right: 100px;
   }
-  .wrapper h1 { font-size: 14px }
   .header-content { text-align: center }
   .content-page,
   .content-index,

@@ -81,7 +81,7 @@ function solofolio_css() {
   }
   .header-content ul a:link,
   .header-content ul a:visited,
-  .menu-icon { color: " . $navigation_link_color . " }
+  .menu-icon, .menu-btn { color: " . $navigation_link_color . " }
   .header-content ul a:hover,
   .header-content ul a:active { color: " . $navigation_link_color_hover . " }
   h2.post-title { font-size: " . $blog_entry_title_size . "px }
@@ -185,6 +185,18 @@ function solofolio_css() {
         left: " . $layout_spacing . "px;
         top: " . $layout_spacing . "px;
         bottom: " . $layout_spacing . "px;
+      }
+      .page-template-story-php .pushy { width: " . $header_width . "px }
+      .page-template-story-php .pushy-left {
+        -webkit-transform: translate3d(-" . $header_width . "px,0,0);
+        -moz-transform: translate3d(-" . $header_width . "px,0,0);
+        -ms-transform: translate3d(-" . $header_width . "px,0,0);
+        -o-transform: translate3d(-" . $header_width . "px,0,0);
+        transform: translate3d(-" . $header_width . "px,0,0);
+      }
+      .page-template-story-php .vert-scroll {
+        padding-left: " . $layout_spacing . "px;
+        padding-right: " . $layout_spacing . "px;
       }
     }";
     if ($header_background_color == $background_color) {
