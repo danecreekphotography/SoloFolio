@@ -20,7 +20,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div class="outer-wrap">
-<div class="header">
+<div class="header pushy pushy-left">
 	<div class="header-inner">
 		<a class='menu-icon'><i class="fa fa-bars"></i></a>
 		<?php if (get_theme_mod( 'solofolio_logo' ) != '') { ?>
@@ -68,4 +68,6 @@
 		</div>
 	</div>
 </div>
+<div class="site-overlay"></div>
+<a class='menu-btn'><i class="fa fa-bars"></i> menu</a>
 <div class="wrapper">
