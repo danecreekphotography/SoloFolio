@@ -97,6 +97,7 @@ function solofolio_css() {
   button:focus,
   .form-submit input:hover,
   .form-submit input:focus { color: " . $navigation_link_color_hover . "}
+  .header .header-content .current-page-ancestor a,
   .header .header-content .current_page_item a,
   .header .header-content .current_page_parent a { color: " . $navigation_link_color_hover . "; }
   .solofolio-cyclereact-sidebar.buttons a:hover,
