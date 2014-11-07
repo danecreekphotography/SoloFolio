@@ -119,6 +119,20 @@ function solofolio_css() {
     line-height: " . $button_size . "px;
     width: " . $button_size . "px;
   }
+  .solofolio-cyclereact-nav-left {
+    cursor: url('" . $base_url  . "/css/cursor-left-32.png'), auto;
+    cursor: -webkit-image-set(
+      url('" . $base_url  . "/css/cursor-left-32.png') 1x,
+      url('" . $base_url  . "/css/cursor-left-64.png') 2x
+    ), auto;
+  }
+  .solofolio-cyclereact-nav-right {
+    cursor: url('" . $base_url  . "/css/cursor-right-32.png'), auto;
+    cursor: -webkit-image-set(
+      url('" . $base_url  . "/css/cursor-right-32.png') 1x,
+      url('" . $base_url  . "/css/cursor-right-64.png') 2x
+    ), auto;
+  }
   .solofolio-cyclereact-sidebar.buttons .fa { line-height: " . $button_size . "px }
   .entry .post-meta,
   .entry p,
