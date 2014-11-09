@@ -12,16 +12,6 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
 update_option('image_default_link_type','none');
 
-function fix_output_buffer() {
-  ob_start();
-}
-add_action('init', 'fix_output_buffer');
-
-function solofolio_remove_smileys($bool) {
-  return false;
-}
-add_filter('option_use_smilies', 'solofolio_remove_smileys', 99, 1);
-
 # Adapted from http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
 function solofolio_wp_title( $title, $sep ) {
   global $paged, $page;
@@ -65,14 +55,7 @@ add_action( 'customize_preview_init', 'solofolio_css_cache_reset' );
 add_action( 'customize_save_after', 'solofolio_css_cache_reset' );
 add_action( 'after_switch_theme', 'solofolio_css_cache_reset' );
 
-function solofolio_mime_types( $mimes ){
-  $mimes['svg'] = 'image/svg+xml';
-  return $mimes;
-}
-add_filter( 'upload_mimes', 'solofolio_mime_types' );
-add_filter( 'mime_types', 'solofolio_mime_types' );
-
-if ( ! isset( $content_width ) ) $content_width = 900;
+if ( !isset( $content_width ) ) $content_width = 900;
 
 function filter_ptags_on_images($content) {
   $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
