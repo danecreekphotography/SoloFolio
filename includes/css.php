@@ -36,9 +36,7 @@ function solofolio_css() {
   $navigation_link_color_hover    = get_theme_mod('solofolio_navigation_link_color_hover',    '#333333');
   $base_url                       = get_template_directory_uri();
 
-  $styles = "<!-- Powered by SoloFolio v" . constant('SOLOFOLIO_VERSION') . " - http://solofol.io -
-             CSS generated at: " . date(' Y-m-d H:i:s') . " -->
-             <style>";
+  $styles = "<!-- Version: " . constant('SOLOFOLIO_VERSION') . " CSS generated at: " . date(' Y-m-d H:i:s') . " --><style>";
 
   $styles .= $wp_filesystem->get_contents($base_url . "/css/base.css");
   $styles .= $wp_filesystem->get_contents($base_url . "/css/breakpoints.css");
