@@ -44,7 +44,7 @@ body {
 dd, dt, li, p { line-height: 1.6em }
 p, table, ul, ol { margin: 1rem 0 }
 dd { margin-bottom: 1em }
-th { font-weight: bold }
+th, .bypostauthor { font-weight: bold }
 th { background-color: rgba(125,125,125,.2) }
 td, th { padding: .5rem 1rem .5rem 1rem; border: 1px solid rgba(125,125,125,.2); }
 dt { font-weight: bold; margin-top: .5rem; }
@@ -59,7 +59,7 @@ sup { vertical-align: super }
 sub { vertical-align: sub }
 acronym { text-transform: uppercase }
 acronym, abbr { border-bottom: .1em dotted }
-blockquote p { padding: 1em; border-left: 8px solid rgba(125,125,125,.2); }
+blockquote p, .sticky { padding: 1em; border-left: 8px solid rgba(125,125,125,.2); }
 blockquote cite { display: block; margin-top: 1em; }
 strong { font-weight: bold }
 img { border: none }
@@ -257,7 +257,7 @@ input:focus, textarea:focus, button:focus { outline: none }
 .alignright { float: right }
 .wp-caption { margin-bottom: 1rem }
 .caption,
-.wp-caption .wp-caption-text, .vert-scroll .wp-caption-text {
+.wp-caption .wp-caption-text, .vert-scroll .wp-caption-text, .gallery-caption {
   font-size: .9rem;
   line-height: 1.4;
   padding-top: .2rem;
