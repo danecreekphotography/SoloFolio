@@ -186,7 +186,7 @@ if (!function_exists('sl_cyclereact_js')) {
 	}
 }
 
-wp_enqueue_script('jquery-cycle2', get_template_directory_uri().'/includes/gallery/js/jquery.cycle2.min.js', array(), null, true );
+wp_enqueue_script('jquery-cycle2', get_template_directory_uri().'/includes/gallery/js/jquery.cycle2.js', array(), null, true );
 wp_enqueue_script('picturefill-background', get_template_directory_uri().'/includes/gallery/js/picturefill-background.js', array('jquery'), null, true);
 wp_enqueue_script('solofolio-cyclereact', get_template_directory_uri().'/includes/gallery/js/cyclereact.js', array('jquery'), null, true);
 ?>

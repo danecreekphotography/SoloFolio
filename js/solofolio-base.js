@@ -9,6 +9,8 @@ jQuery(window).load(function(){
 
   jQuery(".wrapper").fitVids();
 
+  jQuery('.thumb img').retina();
+
   jQuery('.menu-icon').click(function(){
     jQuery(".header-content").toggle();
     jQuery(this).toggleClass("active");

@@ -5,7 +5,7 @@
 
 jQuery(function() {
 	var pushy = jQuery('.pushy'), //menu css class
-		body = jQuery('body'),f
+		body = jQuery('body'),
 		push = jQuery('.push'), //css class to add pushy capability
 		siteOverlay = jQuery('.site-overlay'), //site overlay
 		pushyClass = "pushy-left pushy-open", //menu position & menu open class
