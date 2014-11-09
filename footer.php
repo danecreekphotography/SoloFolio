@@ -7,7 +7,7 @@
     <?php $text = get_theme_mod( 'solofolio_copyright_text' ); if (!empty($text)) { ?>
       &copy; <?php echo date("Y"); ?> <?php echo get_theme_mod( 'solofolio_copyright_text' ); ?>
     <?php } if (get_theme_mod('solofolio_show_attribution', true)) { ?>
-      / Powered by <a title="The ultimate WordPress portfolio theme." href="http://solofol.io" target="_blank">SoloFolio</a>
+      / Powered by <a title="Powered by SoloFolio, a WordPress Photography Portfolio Theme" href="http://solofol.io" target="_blank">SoloFolio</a>
     <?php } ?>
   </div>
 </div>
