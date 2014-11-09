@@ -710,3 +710,155 @@ input:focus, textarea:focus, button:focus { outline: none }
   .single-post .pagination-nav .right h4 { text-align: left }
   .entry img { max-width: 100% }
 }
+
+/* Heights Layout */
+@media only screen and (min-width: 1025px) {
+  .heights .header-meta { margin-bottom: 1em }
+  .heights .solofolio-cyclereact-fill { background-position: 50% 50% }
+  .heights .header { height: 100% }
+  .heights .header-inner {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    overflow-y: auto;
+  }
+  .heights .header-content ul li a { line-height: 1.6 }
+
+  /* Story Template */
+  .heights.page-template-story-php .menu-btn {
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    left: 40px;
+    height: 40px;
+    text-align: center;
+    padding: 0 1rem;
+    position: fixed;
+    top: 0;
+    line-height: 40px;
+    z-index: 9997;
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+  }
+  .heights.page-template-story-php .wrapper {
+    top: 1rem !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+  .heights.page-template-story-php .wrapper p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .heights.page-template-story-php .pushy {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    z-index: 9999;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
+  }
+  .heights.page-template-story-php .pushy-open { left: 0 }
+  .heights.page-template-story-php .site-overlay { display: none }
+  .heights.page-template-story-php.pushy-active .menu-btn { display: none }
+  .heights.page-template-story-php.pushy-active .site-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9998;
+    background-color: rgba(0,0,0,0.5);
+  }
+  .heights.page-template-story-php.pushy-active { overflow-x: hidden }
+}
+
+/* Horizon Layout */
+@media only screen and (min-width: 1025px) {
+  .horizon .wrapper { top: 85px }
+  .horizon .header {
+    display: table;
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: .75rem 0;
+    width: 100%;
+    z-index: 300;
+  }
+  .horizon .logo {
+    display: table-cell;
+    padding: 0 1.5rem 0 40px;
+  }
+  .horizon .logo-text a { vertical-align: text-top }
+  .horizon .logo-img img { display: block }
+  .horizon .header-inner { display: table-row }
+  .horizon .header-meta { display: table-cell }
+  .horizon .header-meta div {
+    display: inline-block;
+    padding: 0 .5rem;
+  }
+  .horizon .header-content {
+    display: table-cell;
+    padding-right: 40px;
+    text-align: right;
+  }
+  .horizon .logo, .horizon .header-meta, .horizon .header-content { vertical-align: middle }
+  .horizon .sidebar-widget { margin-left: 1rem }
+  .horizon .sidebar-widget:first-child { margin: 0 }
+  .horizon .header-content ul li {
+    display: inline-block;
+    padding: 0 10px;
+  }
+  .horizon .header-content ul li:last-child { padding-right: 0 }
+  .horizon .header-content h3 { display: none }
+  .horizon .content-page { max-width: 900px }
+  .horizon .content-about-image {
+    float: left;
+    padding: 0 2rem 2rem 0;
+  }
+  .horizon .entry img,
+  .horizon .entry .wp-caption img,
+  .horizon .wp-caption,
+  .horizon .entry p,
+  .horizon .tag-links,
+  .horizon .content-about,
+  .horizon .content-page,
+  .horizon .content-parent,
+  .horizon .pagination-nav,
+  .horizon .entry .post-meta,
+  .horizon .comments {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .horizon .comments,
+  .horizon .pagination-nav {
+    max-width: 600px;
+  }
+  .horizon .solofolio-cyclereact-thumbs { text-align: center }
+  .horizon .solofolio-cyclereact-thumbs .thumb {
+    display: inline-block;
+    float: none;
+  }
+  .horizon .solofolio-cyclereact-sidebar {
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+  .horizon .solofolio-cyclereact-sidebar.text li,
+  .horizon .solofolio-cyclereact-sidebar.buttons a { margin-top: 0 }
+  .horizon .solofolio-cyclereact-sidebar.text a { margin-bottom: .5rem }
+  .horizon .solofolio-cyclereact-sidebar.buttons a { margin-bottom: 15px }
+  .horizon .solofolio-cyclereact-caption {
+    line-height: 1.4;
+    margin-top: 55px;
+  }
+  .horizon .solofolio-cyclereact-sidebar.text .solofolio-cyclereact-caption { margin-top: 2rem }
+  .horizon .solofolio-cyclereact-controls {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .horizon .solofolio-cyclereact-fill { background-position: 50% top }
+}
+

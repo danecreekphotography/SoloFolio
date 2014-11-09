@@ -40,9 +40,6 @@ function solofolio_css() {
 
   $styles .= $wp_filesystem->get_contents($base_url . "/style.css");
 
-  if ($is_horizon) { $styles .= $wp_filesystem->get_contents($base_url . "/css/horizon.css"); }
-  else             { $styles .= $wp_filesystem->get_contents($base_url . "/css/heights.css"); }
-
   $styles .= "
   html { font-size: " . $body_font_size . "px }
   body {
@@ -136,113 +133,108 @@ function solofolio_css() {
   .entry p,
   .entry .tag-links,
   .pagination-nav,
-  .comments { max-width: " . $entry_text_width . "px }";
+  .comments { max-width: " . $entry_text_width . "px }
 
-  if ($is_horizon) {
+  @media (min-width: 1025px) {
+    .horizon .header-content h3 { line-height: " . $navigation_header_font_size . "px }
+    .horizon .solofolio-cyclereact-sidebar.buttons a { border: 1px solid " . $navigation_link_color . " }
+    .horizon .wrapper {
+      bottom: " . $layout_spacing . "px;
+      top: " . ($layout_spacing + 45) . "px;
+      right: " . $layout_spacing . "px;
+    }
+    .horizon .logo { width: " . $logo_width . "px }
+    .horizon.admin-bar.page .wrapper { top: " . ($layout_spacing + 77) . "px }
+    .horizon .logo { padding-left: " . $layout_spacing . "px }
+    .horizon .header-content { padding-right: " . $layout_spacing . "px }
+    .horizon .solofolio-cyclereact-title {
+      padding-top: " . ($layout_spacing + 45) . "px;
+      padding-right: " . ($layout_spacing - 20) . "px;
+      padding-bottom: " . $layout_spacing . "px;
+    }
+    .horizon .solofolio-cyclereact-sidebar {
+      top: " . ($layout_spacing + 45) . "px;
+      right: " . $layout_spacing . "px;
+    }
+    .horizon .solofolio-cyclereact-stage,
+    .horizon .solofolio-cyclereact-title { right: " . ($header_width + 20) . "px }
+    .horizon .solofolio-cyclereact-thumbs {
+      top: 35px;
+      padding: " . $layout_spacing . "px;
+    }
+  }
+  .heights .solofolio-cyclereact-sidebar { padding-right: " . $layout_spacing . "px }
+  .heights .solofolio-cyclereact-sidebar.buttons a { border: 1px solid " . $navigation_link_color . " }
+  @media (min-width: 1025px) {
+    .heights .wrapper {
+      bottom: " . $layout_spacing . "px;
+      left: " . $layout_spacing . "px;
+      right: " . $layout_spacing . "px;
+      top: " . $layout_spacing . "px;
+    }
+    .heights .header { width: " . $header_width . "px }
+    .heights .header-meta { max-width: " . ($header_width - ($layout_spacing * 2)) . "px }
+    .heights .admin-bar.page .wrapper { top: " . ($layout_spacing + 32) . "px}
+    .heights .admin-bar.page .solofolio-cyclereact-thumbs { padding-top: " . ($layout_spacing + 22) . "px }
+    .heights .solofolio-cyclereact-stage,
+    .heights .solofolio-cyclereact-thumbs,
+    .heights .solofolio-cyclereact-title { left: " . $header_width . "px !important }
+    .heights .solofolio-cyclereact-sidebar {
+      bottom: " . $layout_spacing . "px;
+      background-color: ". $header_background_color . ";
+    }
+    .heights .solofolio-cyclereact-thumbs,
+    .heights .solofolio-cyclereact-title { padding: " . $layout_spacing . "px }
+    .heights .solofolio-cyclereact-thumbs { padding-top: " . ($layout_spacing - 10) . "px }
+    .heights .header-inner {
+      left: " . $layout_spacing . "px;
+      top: " . $layout_spacing . "px;
+      bottom: " . $layout_spacing . "px;
+    }
+    .heights.page-template-story-php .pushy { width: " . $header_width . "px }
+    .heights.page-template-story-php .pushy-left {
+      -webkit-transform: translate3d(-" . $header_width . "px,0,0);
+      -moz-transform: translate3d(-" . $header_width . "px,0,0);
+      -ms-transform: translate3d(-" . $header_width . "px,0,0);
+      -o-transform: translate3d(-" . $header_width . "px,0,0);
+      transform: translate3d(-" . $header_width . "px,0,0);
+    }
+    .heights.page-template-story-php .vert-scroll {
+      padding-left: " . $layout_spacing . "px;
+      padding-right: " . $layout_spacing . "px;
+    }
+  }";
+  if ($header_background_color == $background_color) {
     $styles .= "
-    @media (min-width: 1025px) {
-      .header-content h3 { line-height: " . $navigation_header_font_size . "px }
-      .solofolio-cyclereact-sidebar.buttons a { border: 1px solid " . $navigation_link_color . " }
-      .wrapper {
-        bottom: " . $layout_spacing . "px;
-        top: " . ($layout_spacing + 45) . "px;
-        right: " . $layout_spacing . "px;
-      }
-      .logo { width: " . $logo_width . "px }
-      .admin-bar.page .wrapper { top: " . ($layout_spacing + 77) . "px }
-      .logo { padding-left: " . $layout_spacing . "px }
-      .header-content { padding-right: " . $layout_spacing . "px }
-      .solofolio-cyclereact-title {
-        padding-top: " . ($layout_spacing + 45) . "px;
-        padding-right: " . ($layout_spacing - 20) . "px;
-        padding-bottom: " . $layout_spacing . "px;
-      }
-      .solofolio-cyclereact-sidebar {
-        top: " . ($layout_spacing + 45) . "px;
-        right: " . $layout_spacing . "px;
-      }
-      .solofolio-cyclereact-stage,
-      .solofolio-cyclereact-title { right: " . ($header_width + 20) . "px }
-      .solofolio-cyclereact-thumbs {
-        top: 35px;
-        padding: " . $layout_spacing . "px;
-      }
+    .heights .solofolio-cyclereact-stage,
+    .heights .solofolio-cyclereact-thumbs,
+    .heights .solofolio-cyclereact-title { left: " . ($header_width - $layout_spacing) . "px !important }";
+  }
+  if (!$center_blog) {
+    $styles .= "
+    .heights .wrapper {
+      left: " . ($header_width + $layout_spacing) . "px;
+      width: auto;
     }";
   } else {
     $styles .= "
-    .solofolio-cyclereact-sidebar { padding-right: " . $layout_spacing . "px }
-    .solofolio-cyclereact-sidebar.buttons a { border: 1px solid " . $navigation_link_color . " }
-    @media (min-width: 1025px) {
-      .wrapper {
-        bottom: " . $layout_spacing . "px;
-        left: " . $layout_spacing . "px;
-        right: " . $layout_spacing . "px;
-        top: " . $layout_spacing . "px;
+    .heights .wrapper {
+      left: " . ($header_width + $layout_spacing) . "px;
+      width: auto;
+    }
+    @media (min-width: " . ($header_width + $entry_width + 20) . "px) {
+      .heights .wrapper { max-width: 100% }
+      .heights.single .outer-wrap,
+      .heights.blog .outer-wrap,
+      .heights.search .outer-wrap {
+        margin: 0 auto;
+        position: relative;
+        max-width: " . ($header_width + $entry_width + 20) . "px;
       }
-      .header { width: " . $header_width . "px }
-      .header-meta { max-width: " . ($header_width - ($layout_spacing * 2)) . "px }
-      .admin-bar.page .wrapper { top: " . ($layout_spacing + 32) . "px}
-      .admin-bar.page .solofolio-cyclereact-thumbs { padding-top: " . ($layout_spacing + 22) . "px }
-      .solofolio-cyclereact-stage,
-      .solofolio-cyclereact-thumbs,
-      .solofolio-cyclereact-title { left: " . $header_width . "px !important }
-      .solofolio-cyclereact-sidebar {
-        bottom: " . $layout_spacing . "px;
-        background-color: ". $header_background_color . ";
-      }
-      .solofolio-cyclereact-thumbs,
-      .solofolio-cyclereact-title { padding: " . $layout_spacing . "px }
-      .solofolio-cyclereact-thumbs { padding-top: " . ($layout_spacing - 10) . "px }
-      .header-inner {
-        left: " . $layout_spacing . "px;
-        top: " . $layout_spacing . "px;
-        bottom: " . $layout_spacing . "px;
-      }
-      .page-template-story-php .pushy { width: " . $header_width . "px }
-      .page-template-story-php .pushy-left {
-        -webkit-transform: translate3d(-" . $header_width . "px,0,0);
-        -moz-transform: translate3d(-" . $header_width . "px,0,0);
-        -ms-transform: translate3d(-" . $header_width . "px,0,0);
-        -o-transform: translate3d(-" . $header_width . "px,0,0);
-        transform: translate3d(-" . $header_width . "px,0,0);
-      }
-      .page-template-story-php .vert-scroll {
-        padding-left: " . $layout_spacing . "px;
-        padding-right: " . $layout_spacing . "px;
-      }
+      .heights.single .header,
+      .heights.blog .header,
+      .heights.search .header { left: auto }
     }";
-    if ($header_background_color == $background_color) {
-      $styles .= "
-      .solofolio-cyclereact-stage,
-      .solofolio-cyclereact-thumbs,
-      .solofolio-cyclereact-title { left: " . ($header_width - $layout_spacing) . "px !important }";
-    }
-    if (!$center_blog) {
-      $styles .= "
-      .wrapper {
-        left: " . ($header_width + $layout_spacing) . "px;
-        width: auto;
-      }";
-    } else {
-      $styles .= "
-      .wrapper {
-        left: " . ($header_width + $layout_spacing) . "px;
-        width: auto;
-      }
-      @media (min-width: " . ($header_width + $entry_width + 20) . "px) {
-        .wrapper { max-width: 100% }
-        .single .outer-wrap,
-        .blog .outer-wrap,
-        .search .outer-wrap {
-          margin: 0 auto;
-          position: relative;
-          max-width: " . ($header_width + $entry_width + 20) . "px;
-        }
-        .single .header,
-        .blog .header,
-        .search .header { left: auto }
-      }";
-    }
   }
   $styles .= "</style>";
 
