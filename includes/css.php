@@ -36,10 +36,9 @@ function solofolio_css() {
   $navigation_link_color_hover    = get_theme_mod('solofolio_navigation_link_color_hover',    '#333333');
   $base_url                       = get_template_directory_uri();
 
-  $styles = "<!-- Version: " . constant('SOLOFOLIO_VERSION') . " CSS generated at: " . date(' Y-m-d H:i:s') . " --><style>";
+  $styles = "<!-- CSS (" . constant('SOLOFOLIO_VERSION') . ") generated at: " . date(' Y-m-d H:i:s') . " --><style>";
 
-  $styles .= $wp_filesystem->get_contents($base_url . "/css/base.css");
-  $styles .= $wp_filesystem->get_contents($base_url . "/css/breakpoints.css");
+  $styles .= $wp_filesystem->get_contents($base_url . "/style.css");
 
   if ($is_horizon) { $styles .= $wp_filesystem->get_contents($base_url . "/css/horizon.css"); }
   else             { $styles .= $wp_filesystem->get_contents($base_url . "/css/heights.css"); }
