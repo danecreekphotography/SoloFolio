@@ -7,12 +7,12 @@ $galleryTitle = get_post_meta($post->ID, 'solofolio-gallery-title', true);
 $galleryText 	= get_post_meta($post->ID, 'solofolio-gallery-text', true);
 
 if ($galleryTitle || $galleryText) {
-	$i++;
 	$output .= "
-		<div class='solofolio-gallery-title solofolio-vertscroll-title'>
+		<div class='solofolio-gallery-title solofolio-vertscroll-title' id='" . $i . "'>
 			<h2>" . $galleryTitle . "</h2>
 			<div>" . wpautop($galleryText) . "</div>
 		</div>";
+	$i++;
 }
 
 foreach ($attachment_ids as $id) {
@@ -27,7 +27,7 @@ foreach ($attachment_ids as $id) {
 		$caption = wptexturize($attachment->post_content);
 	}
 
-	$output .= "\n\n<div class='vert-scroll' style=\"max-width:" . $xlarge[1] . "px; \">";
+	$output .= "\n\n<div class='vert-scroll' style=\"max-width:" . $xlarge[1] . "px; \" id='" . $i . "'>";
 
 	$output .= "<picture id='" . $i . "'>
 								<!--[if IE 9]><video style='display: none;''><![endif]-->
