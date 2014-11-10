@@ -1,8 +1,6 @@
 <?php
 class Solofolio_Custom_Menu extends WP_Widget {
   public function __construct() {
-    add_action( 'init', array( $this, 'widget_textdomain' ) );
-
     parent::__construct(
       'solofolio-custom-menu',
       __( 'SoloFolio Custom Menu', 'scm' ),
@@ -88,23 +86,8 @@ class Solofolio_Custom_Menu extends WP_Widget {
     </p>
     <?php
 
-  } // end form
-
-  /*--------------------------------------------------*/
-  /* Public Functions
-  /*--------------------------------------------------*/
-
-  /**
-   * Loads the Widget's text domain for localization and translation.
-   */
-  public function widget_textdomain() {
-
-    // TODO be sure to change 'widget-name' to the name of *your* plugin
-    load_plugin_textdomain( 'scm', false, plugin_dir_path( __FILE__ ) . 'lang/' );
-
-  } // end widget_textdomain
-
-} // end class
+  }
+}
 
 add_action( 'widgets_init', create_function( '', 'register_widget("Solofolio_Custom_Menu");' ) );
 ?>

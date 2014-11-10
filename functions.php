@@ -1,6 +1,6 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.17");
+define("SOLOFOLIO_VERSION",     "7.0.18");
 
 include_once("includes/gallery.php");         // Gallery shortcode replacement
 include_once("includes/social-widget.php");   // Social media widget
@@ -11,16 +11,6 @@ include_once("includes/css.php");             // CSS constructor
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
 update_option('image_default_link_type','none');
-
-function fix_output_buffer() {
-  ob_start();
-}
-add_action('init', 'fix_output_buffer');
-
-function solofolio_remove_smileys($bool) {
-  return false;
-}
-add_filter('option_use_smilies', 'solofolio_remove_smileys', 99, 1);
 
 # Adapted from http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
 function solofolio_wp_title( $title, $sep ) {
@@ -65,14 +55,7 @@ add_action( 'customize_preview_init', 'solofolio_css_cache_reset' );
 add_action( 'customize_save_after', 'solofolio_css_cache_reset' );
 add_action( 'after_switch_theme', 'solofolio_css_cache_reset' );
 
-function solofolio_mime_types( $mimes ){
-  $mimes['svg'] = 'image/svg+xml';
-  return $mimes;
-}
-add_filter( 'upload_mimes', 'solofolio_mime_types' );
-add_filter( 'mime_types', 'solofolio_mime_types' );
-
-if ( ! isset( $content_width ) ) $content_width = 900;
+if ( !isset( $content_width ) ) $content_width = 900;
 
 function filter_ptags_on_images($content) {
   $content = preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
@@ -92,13 +75,14 @@ function solofolio_load_fonts() {
 }
 add_action('wp_print_styles', 'solofolio_load_fonts');
 
-function solofolio_footer_scripts() {
-  wp_enqueue_script('jquery-retina', get_template_directory_uri().'/js/jquery.retina.min.js', array('jquery'), null, true);
-  wp_enqueue_script('jquery-fitvids', get_template_directory_uri().'/js/jquery.fitvids.min.js', array('jquery'), null, true);
+function solofolio_scripts() {
+  wp_enqueue_style( 'solofolio-style', get_stylesheet_uri() );
+  wp_enqueue_script('jquery-retina', get_template_directory_uri().'/js/jquery.retina.js', array('jquery'), null, true);
+  wp_enqueue_script('jquery-fitvids', get_template_directory_uri().'/js/jquery.fitvids.js', array('jquery'), null, true);
   wp_enqueue_script('pushy', get_template_directory_uri().'/js/pushy.js', array('jquery'), null, true);
   wp_enqueue_script('solofolio-base', get_template_directory_uri().'/js/solofolio-base.js', array('jquery'), null, true);
 }
-add_action('wp_enqueue_scripts', 'solofolio_footer_scripts');
+add_action('wp_enqueue_scripts', 'solofolio_scripts');
 
 // Add additional image size for large displays, change defaults for others.
 function solofolio_set_image_sizes() {

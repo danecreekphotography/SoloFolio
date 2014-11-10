@@ -157,27 +157,11 @@ if (!function_exists('sl_cyclereact_js')) {
 		.header .header-content .solofolio-cyclereact-sidebar {
 			display: block;
 		}
-		.wrapper {
+		body.page .wrapper {
 			padding: 0;
 			position: absolute;
 			overflow: hidden;
-		}
-		@media only screen and (min-width: 1025px) {
-			.wrapper {
-				left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) ."px;
-			}
-		}
-		@media only screen and (max-width: 1024px) {
-			.solofolio-cyclereact-sidebar {
-				padding-right: 20px;
-			}
-			.solofolio-cyclereact-stage {
-				right: 0;
-			}
-			.wrapper {
-				right: 20px;
-				bottom: 20px;
-			}
+			left: " . get_theme_mod( 'solofolio_layout_spacing', '20' ) ."px;
 		}
 		</style>
 		";
@@ -186,7 +170,7 @@ if (!function_exists('sl_cyclereact_js')) {
 	}
 }
 
-wp_enqueue_script('jquery-cycle2', get_template_directory_uri().'/includes/gallery/js/jquery.cycle2.min.js', array(), null, true );
+wp_enqueue_script('jquery-cycle2', get_template_directory_uri().'/includes/gallery/js/jquery.cycle2.js', array(), null, true );
 wp_enqueue_script('picturefill-background', get_template_directory_uri().'/includes/gallery/js/picturefill-background.js', array('jquery'), null, true);
 wp_enqueue_script('solofolio-cyclereact', get_template_directory_uri().'/includes/gallery/js/cyclereact.js', array('jquery'), null, true);
 ?>

@@ -15,11 +15,6 @@ By @afarkas @jdalton @jon_neal @rem
 http://github.com/aFarkas/html5shiv
 License: MIT/GPL2
 
-jknav
-By Yu-Jie Lin
-http://code.google.com/p/lilbtn/wiki/JsJqueryJknav
-License: BSD License
-
 jQuery Retina Plugin
 By Tyler Craft
 http://github.com/tylercraft/jQuery-Retina
