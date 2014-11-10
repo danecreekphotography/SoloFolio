@@ -691,7 +691,7 @@ function solofolio_sanitize_boolean( $value ) {
 }
 
 function solofolio_sanitize_html( $value ) {
-  return ($value);
+	return strip_tags($value, '<style><script>');
 }
 
 ?>
