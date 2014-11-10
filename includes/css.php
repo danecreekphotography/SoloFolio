@@ -1,10 +1,5 @@
 <?php
-require_once(ABSPATH . 'wp-admin/includes/file.php');
-
 function solofolio_css() {
-  WP_Filesystem();
-  global $wp_filesystem;
-
   $layout_spacing                 = get_theme_mod('solofolio_layout_spacing',                 '40');
   $header_width                   = get_theme_mod('solofolio_header_width',                   '280');
   $logo_width                     = get_theme_mod('solofolio_logo_width',                     '200');
@@ -36,9 +31,7 @@ function solofolio_css() {
   $navigation_link_color_hover    = get_theme_mod('solofolio_navigation_link_color_hover',    '#333333');
   $base_url                       = get_template_directory_uri();
 
-  $styles = "<!-- CSS (" . constant('SOLOFOLIO_VERSION') . ") generated at: " . date(' Y-m-d H:i:s') . " --><style>";
-
-  $styles .= $wp_filesystem->get_contents($base_url . "/style.css");
+  $styles = "<!-- v" . constant('SOLOFOLIO_VERSION') . " generated on: " . date(' Y-m-d \a\t H:i:s') . " --><style>";
 
   $styles .= "
   html { font-size: " . $body_font_size . "px }

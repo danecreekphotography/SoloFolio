@@ -75,13 +75,14 @@ function solofolio_load_fonts() {
 }
 add_action('wp_print_styles', 'solofolio_load_fonts');
 
-function solofolio_footer_scripts() {
+function solofolio_scripts() {
+  wp_enqueue_style( 'solofolio-style', get_stylesheet_uri() );
   wp_enqueue_script('jquery-retina', get_template_directory_uri().'/js/jquery.retina.js', array('jquery'), null, true);
   wp_enqueue_script('jquery-fitvids', get_template_directory_uri().'/js/jquery.fitvids.js', array('jquery'), null, true);
   wp_enqueue_script('pushy', get_template_directory_uri().'/js/pushy.js', array('jquery'), null, true);
   wp_enqueue_script('solofolio-base', get_template_directory_uri().'/js/solofolio-base.js', array('jquery'), null, true);
 }
-add_action('wp_enqueue_scripts', 'solofolio_footer_scripts');
+add_action('wp_enqueue_scripts', 'solofolio_scripts');
 
 // Add additional image size for large displays, change defaults for others.
 function solofolio_set_image_sizes() {
