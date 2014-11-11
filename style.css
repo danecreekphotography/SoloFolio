@@ -178,6 +178,7 @@ button {
   border: none;
   font-weight: normal;
   text-decoration: none;
+  max-width: 100%;
 }
 .logo a img:hover { border: none }
 .site-title { font-size: 24px }
