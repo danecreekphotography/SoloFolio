@@ -11,6 +11,12 @@ jQuery(window).load(function(){
 
   jQuery('.thumb img').retina();
 
+  jQuery("img.lazy").unveil(400, function() {
+    jQuery(this).load(function() {
+      this.style.opacity = 1;
+    });
+  });
+
   jQuery('.menu-icon').click(function(){
     jQuery(".header-content").toggle();
     jQuery(this).toggleClass("active");
