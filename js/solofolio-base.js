@@ -26,5 +26,8 @@ jQuery(window).load(function(){
       $target.toggle().addClass('visible');
     }
   });
+
+  /* Open menu containing sub-page */
+  jQuery('.solofolio-custom-menu .menu').has('.current_page_item').show().addClass('visible');
 });
 
