@@ -11,7 +11,7 @@ jQuery(window).load(function(){
 
   jQuery('.thumb img').retina();
 
-  jQuery("img.lazy").unveil(600, function() {
+  jQuery("img.lazy").unveil(1200, function() {
     jQuery(this).load(function() {
       this.style.opacity = 1;
     });
