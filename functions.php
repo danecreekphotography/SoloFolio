@@ -1,10 +1,11 @@
 <?php
 
-define("SOLOFOLIO_VERSION",     "7.0.23");
+define("SOLOFOLIO_VERSION",     "7.0.24");
 
 include_once("includes/gallery.php");         // Gallery shortcode replacement
 include_once("includes/social-widget.php");   // Social media widget
 include_once("includes/menu-widget.php");     // Custom menu widget
+include_once("includes/lazy-load.php");       // Lazy loader
 include_once("includes/customize.php");       // Customizer configuration
 include_once("includes/css.php");             // CSS constructor
 
@@ -77,6 +78,7 @@ add_action('wp_print_styles', 'solofolio_load_fonts');
 
 function solofolio_scripts() {
   wp_enqueue_style( 'solofolio-style', get_stylesheet_uri() );
+  wp_enqueue_script( 'lazy-load', get_template_directory_uri().'/js/lazy-load.js', array('jquery'), null, true);
   wp_enqueue_script('jquery-retina', get_template_directory_uri().'/js/jquery.retina.js', array('jquery'), null, true);
   wp_enqueue_script('jquery-fitvids', get_template_directory_uri().'/js/jquery.fitvids.js', array('jquery'), null, true);
   wp_enqueue_script('pushy', get_template_directory_uri().'/js/pushy.js', array('jquery'), null, true);

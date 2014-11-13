@@ -39,3 +39,8 @@ Pushy
 By Christopher Yee
 http://www.christopheryee.ca/pushy/
 License: MIT
+
+Unveil
+By Luis Almeida
+https://github.com/luis-almeida/unveil
+License: GPL2
