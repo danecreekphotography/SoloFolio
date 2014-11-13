@@ -1,3 +1,9 @@
+<?php
+$title = the_title('', '', false);
+$prev_post = get_adjacent_post(false, '', true);
+$next_post = get_adjacent_post(false, '', false);
+?>
+
 <?php get_header(); ?>
 
 <div class="content-index">
@@ -13,9 +19,11 @@
 					</div>
 				<?php endif; ?>
 				<div class="post-meta">
+					<?php if ( !empty($title) ) { ?>
 					<h2 class="post-title">
 						<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a>
 					</h2>
+					<?php } ?>
 					<h4 class="post-byline">
 						<?php if (get_theme_mod('solofolio_blog_showdate')) { echo get_the_date(); } ?>
 						<?php if (get_theme_mod('solofolio_blog_showauthor')) {?>by <?php the_author() ?><?php } ?>
@@ -30,18 +38,12 @@
 		<?php if (is_single()) : ?>
 			<div class="pagination-nav">
 				<div class="left">
-					<?php
-					$prev_post = get_adjacent_post(false, '', true);
-
-					if(!empty($prev_post)) { ?>
+					<?php if(!empty($prev_post)) { ?>
 					<h4>Previous</h4>
 					<?php previous_post_link('%link', '%title'); } ?>
 				</div>
 				<div class="right">
-					<?php
-					$next_post = get_adjacent_post(false, '', false);
-
-					if(!empty($next_post)) { ?>
+					<?php if(!empty($next_post)) { ?>
 					<h4>Next</h4>
 					<?php next_post_link('%link', '%title'); } ?>
 				</div>
