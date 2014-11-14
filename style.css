@@ -2,7 +2,7 @@
 Theme Name: SoloFolio
 Theme URI: http://solofol.io/
 Description: A portfolio platform for creatives.
-Version: 7.0.26
+Version: 7.0.27
 Author: Joel Hawksley
 Author URI: http://www.joelhawksley.com/
 License: GNU General Public License v2 or later
@@ -174,6 +174,7 @@ button {
   margin-left: .25rem;
   width: 2rem;
 }
+.logo-img a { display: inline-block }
 .logo a img {
   border: none;
   font-weight: normal;
@@ -254,11 +255,7 @@ input:focus, textarea:focus, button:focus { outline: none }
   height: 225px;
 }
 .comments input, .comments textarea { width: 100%; }
-.entry .aligncenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+.entry .aligncenter { display: block }
 .entry img {
   display: block;
   margin-bottom: 1em;
@@ -304,27 +301,46 @@ input:focus, textarea:focus, button:focus { outline: none }
 .vert-scroll:first-child { margin-top: 0; }
 .vert-scroll:last-child { margin-bottom: 0; }
 .vert-scroll .wp-caption-text {
-  margin-left: auto;
-  margin-right: auto;
   text-align: left;
   max-width: 900px;
 }
 .vert-scroll img {
   display: block;
   max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 0;
   width: auto;
 }
 .solofolio-cyclereact-thumbs { display: none }
 /* Centering */
-.outer-wrap { min-height: 100% }
-.content-index, { width: 100% }
+.content-index { width: 100% }
 .content-index .entry .wp-caption { max-width: 100% }
 .content-page p img {
   height: auto;
   width: 100%;
+}
+.entry,
+.entry .wp-caption,
+.entry .wp-caption img,
+.entry img,
+.content-index,
+.content-about,
+.content-parent,
+.content-about-content,
+.content-about-image,
+.post-meta,
+.entry p,
+.entry .aligncenter,
+.tag-links,
+.comments,
+.pagination-nav,
+.solofolio-gallery-title p,
+.page-template-story-php .wrapper p,
+.page-template-story-php .wrapper img,
+.page-template-story-php .wrapper .wp-caption,
+.vert-scroll img,
+.vert-scroll .wp-caption-text  {
+  margin-left: auto;
+  margin-right: auto;
 }
 /* Grid */
 .grid:after {
@@ -359,9 +375,10 @@ input:focus, textarea:focus, button:focus { outline: none }
 }
 /* Story template */
 .menu-btn { display: none }
+.page-template-story-php .wrapper img { display: block }
 .page-template-story-php .wrapper h1,
 .page-template-story-php .wrapper h3 { text-align: center }
-.page-template-story-php p { margin: 2rem 0 }
+.page-template-story-php p { margin-top: 2rem; margin-bottom: 2rem; }
 /* Lazy loader */
 .lazy-hidden {
   opacity: 0;
@@ -639,25 +656,6 @@ input:focus, textarea:focus, button:focus { outline: none }
     padding-left: 0;
     padding-right: 1rem;
   }
-  .entry,
-  .entry .wp-caption,
-  .entry .wp-caption img,
-  .entry img,
-  .content-index,
-  .content-about,
-  .content-parent,
-  .content-about-content,
-  .content-about-image,
-  .post-meta,
-  .page-template-story-php p,
-  .entry p,
-  .tag-links,
-  .comments,
-  .pagination-nav,
-  .solofolio-gallery-title p {
-    margin-left: auto;
-    margin-right: auto;
-  }
   .entry { margin-bottom: 2rem }
   .post-meta, .entry p {
     max-width: 600px;
@@ -666,11 +664,7 @@ input:focus, textarea:focus, button:focus { outline: none }
     margin: .25em auto auto auto;
     max-width: none;
   }
-  .entry p {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-  }
+  .entry p { text-align: left }
   .comments .commentlist li { padding: 0 }
   .footer { padding: 1rem }
   .footer .copyright-label { display: none }
@@ -678,7 +672,6 @@ input:focus, textarea:focus, button:focus { outline: none }
   .pagination-nav h4 { padding: 0 }
   .wrapper h1 { font-size: 22px }
   .vert-scroll .wp-caption-text { max-width: none }
-  .single .outer-wrap, .blog .outer-wrap { width: 100% }
   .solofolio-cyclereact-fill { background-position: 50% 50% }
   .solofolio-gallery-title h2 { text-align: center }
 }
@@ -752,13 +745,6 @@ input:focus, textarea:focus, button:focus { outline: none }
     left: 0 !important;
     right: 0 !important;
   }
-  .heights.page-template-story-php .wrapper img { display: block }
-  .heights.page-template-story-php .wrapper p,
-  .heights.page-template-story-php .wrapper .wp-caption,
-  .heights.page-template-story-php .wrapper img {
-    margin-left: auto;
-    margin-right: auto;
-  }
   .heights.page-template-story-php .pushy {
     position: fixed;
     height: 100%;
@@ -800,7 +786,6 @@ input:focus, textarea:focus, button:focus { outline: none }
     padding: 0 1.5rem 0 40px;
   }
   .horizon .logo-text a { vertical-align: text-top }
-  .horizon .logo-img img { display: block }
   .horizon .header-inner { display: table-row }
   .horizon .header-meta { display: table-cell }
   .horizon .header-meta div {
@@ -821,24 +806,9 @@ input:focus, textarea:focus, button:focus { outline: none }
   }
   .horizon .header-content ul li:last-child { padding-right: 0 }
   .horizon .header-content h3 { display: none }
-  .horizon .content-page { max-width: 900px }
   .horizon .content-about-image {
     float: left;
     padding: 0 2rem 2rem 0;
-  }
-  .horizon .entry img,
-  .horizon .entry .wp-caption img,
-  .horizon .wp-caption,
-  .horizon .entry p,
-  .horizon .tag-links,
-  .horizon .content-about,
-  .horizon .content-page,
-  .horizon .content-parent,
-  .horizon .pagination-nav,
-  .horizon .entry .post-meta,
-  .horizon .comments {
-    margin-left: auto;
-    margin-right: auto;
   }
   .horizon .comments,
   .horizon .pagination-nav {

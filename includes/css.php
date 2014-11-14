@@ -7,7 +7,6 @@ function solofolio_css() {
   $entry_text_width               = get_theme_mod('solofolio_entry_text_width',               '600');
   $button_size                    = get_theme_mod('solofolio_gallery_controls_size',          '30');
   $is_horizon                     = get_theme_mod('solofolio_layout_mode') ==                 'horizon';
-  $center_blog                    = get_theme_mod('solofolio_blog_center_layout',             true);
   $font_logo = str_replace("+"," ", get_theme_mod('solofolio_font_logo',                      'Roboto'));
   $font_body = str_replace("+"," ", get_theme_mod('solofolio_font_body',                      'Roboto'));
   $navigation_font_size           = get_theme_mod('solofolio_navigation_font_size',           '14');
@@ -52,7 +51,7 @@ function solofolio_css() {
     color: " . $logo_color . ";
   }
   .site-title a:hover { color: " . $logo_color_hover . " }
-  .logo-img img { width: " . $logo_width . "px }
+  .logo-img a { width: " . $logo_width . "px }
   .solofolio-cyclereact-thumbs .thumb { border-color: ". $background_color . " }
   .solofolio-cyclereact-title,
   .footer { background-color: " . $background_color . " }
@@ -196,38 +195,22 @@ function solofolio_css() {
       padding-left: " . $layout_spacing . "px;
       padding-right: " . $layout_spacing . "px;
     }
+    .heights .wrapper {
+      left: " . ($header_width + $layout_spacing) . "px;
+    }
+    @media only screen and (min-width: 2000px) {
+      .blog.heights .wrapper,
+      .page-template-about-php.heights .wrapper,
+      .page-template-parent-php.heights .wrapper {
+        left: " . $layout_spacing . "px;
+      }
+    }
   }";
   if ($header_background_color == $background_color) {
     $styles .= "
     .heights .solofolio-cyclereact-stage,
     .heights .solofolio-cyclereact-thumbs,
     .heights .solofolio-cyclereact-title { left: " . ($header_width - $layout_spacing) . "px !important }";
-  }
-  if (!$center_blog) {
-    $styles .= "
-    .heights .wrapper {
-      left: " . ($header_width + $layout_spacing) . "px;
-      width: auto;
-    }";
-  } else {
-    $styles .= "
-    .heights .wrapper {
-      left: " . ($header_width + $layout_spacing) . "px;
-      width: auto;
-    }
-    @media (min-width: " . ($header_width + $entry_width + 20) . "px) {
-      .heights .wrapper { max-width: 100% }
-      .heights.single .outer-wrap,
-      .heights.blog .outer-wrap,
-      .heights.search .outer-wrap {
-        margin: 0 auto;
-        position: relative;
-        max-width: " . ($header_width + $entry_width + 20) . "px;
-      }
-      .heights.single .header,
-      .heights.blog .header,
-      .heights.search .header { left: auto }
-    }";
   }
   $styles .= "</style>";
 
