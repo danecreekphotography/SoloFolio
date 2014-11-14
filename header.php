@@ -43,7 +43,11 @@
 			</div>
 		<?php } ?>
 		<div class="header-meta">
-			<?php if (get_theme_mod( 'solofolio_phone' ) != '') { ?>
+			<?php if (get_theme_mod( 'solofolio_subheading' ) != '') { ?>
+				<div class="header-subheading">
+					<?php echo get_theme_mod( 'solofolio_subheading', 'John Doe' ); ?>
+				</div>
+			<?php } if (get_theme_mod( 'solofolio_phone' ) != '') { ?>
 				<div class="header-phone">
 					<a href="tel:<?php echo get_theme_mod( 'solofolio_phone' ); ?>"><?php echo get_theme_mod( 'solofolio_phone', '555-555-5555' ); ?></a>
 				</div>

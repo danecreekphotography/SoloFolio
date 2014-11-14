@@ -367,6 +367,21 @@ function solofolio_customize_register( $wp_customize )
 		'priority'    => 30,
 	) );
 
+	$wp_customize->add_setting( 'solofolio_subheading', array(
+			'transport'   => 'postMessage',
+			'default'           => 'John Doe',
+			'sanitize_callback' => 'solofolio_sanitize_html',
+      ));
+
+	$wp_customize->add_control( 'solofolio_subheading', array(
+		'transport'   => 'postMessage',
+		'label' => 'Subheading',
+		'settings' => 'solofolio_subheading',
+		'section' => 'solofolio_content_section',
+		'type' => 'text',
+		'priority' => '30',
+	) );
+
 		$wp_customize->add_setting( 'solofolio_phone', array(
 			'transport'   => 'postMessage',
 			'default'           => '555-555-5555',
@@ -481,6 +496,20 @@ function solofolio_customize_register( $wp_customize )
 			'section'  => 'solofolio_options_section',
 			'type'     => 'checkbox',
       'priority' => 40,
+		));
+
+		$wp_customize->add_setting( 'solofolio_blog_center_layout', array(
+    	'default'    => '1',
+    	'sanitize_callback' => 'solofolio_sanitize_boolean',
+    	'transport'   => 'refresh',
+		));
+
+		$wp_customize->add_control( 'solofolio_blog_center_layout', array(
+			'settings' => 'solofolio_blog_center_layout',
+			'label'    => __('Center-align blog', 'solofolio'),
+			'section'  => 'solofolio_options_section',
+			'type'     => 'checkbox',
+      'priority' => 50,
 		));
 
 		$wp_customize->add_setting( 'solofolio_show_attribution', array(

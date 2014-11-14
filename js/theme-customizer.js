@@ -19,6 +19,12 @@
 		} );
 	} );
 
+	wp.customize( 'solofolio_subheading', function( value ) {
+		value.bind( function( newval ) {
+			jQuery( '.header-subheading' ).html( newval );
+		} );
+	} );
+
 	wp.customize( 'solofolio_phone', function( value ) {
 		value.bind( function( newval ) {
 			jQuery( '.header-phone a' ).html( newval );
