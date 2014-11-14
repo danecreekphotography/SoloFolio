@@ -255,6 +255,7 @@ input:focus, textarea:focus, button:focus { outline: none }
   height: 225px;
 }
 .comments input, .comments textarea { width: 100%; }
+.entry h1 { text-align: center }
 .entry .aligncenter { display: block }
 .entry img {
   display: block;
